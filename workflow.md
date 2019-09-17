@@ -2,35 +2,41 @@
 ## General Git Workflow for Project
 
 <ol>
-	<li>Pull from master to branch</li>
+	<li>Pull from master to branch
 		<ul>
 			<li><code>git pull -r origin master</code></li>
 			<li>We should always be rebasing to keep commit history clean</li>
 		</ul>
+	</li>
 	<li>Make changes on local branch</li>
 	<li>Test changes</li>
-	<li>Show changes and which files are currently staged</li>
+	<li>Show changes and which files are currently staged
 		<ul>
-		<li><code>git status</code></li>
+			<li><code>git status</code></li>
 		</ul>
-	<li>Add changes</li>
+	</li>
+	<li>Add changes
 		<ul>
 			<li><code>git add file1 file2 ...</code></li> <li><code>git add .</code></li>
 			<li>Second option stages all changes</li>
 		</ul>
-	<li>Commit changes </li>
+	</li>
+	<li>Commit changes 
 		<ul>
-		<li><code>git commit -m "descriptive message"</code></li>
+			<li><code>git commit -m "descriptive message"</code></li>
 		</ul>
-	<li>Pull again in case master has changed</li>
+	</li>
+	<li>Pull again in case master has changed
 		<ul>
 			<li><code>git pull -r origin master</code></li>
 		</ul>
-	<li>Push to branch</li>
+	</li>
+	<li>Push to branch
 		<ul>
 			<li><code>git push origin branch_name</code></li>
 			<li>We should pretty much never be pushing directly to master (except at the beginning when we're setting things up)</li>
 		</ul>
+	</li>
 	<li>Submit pull request on Github when it's ready to be in master</li>
 </ol>
 
