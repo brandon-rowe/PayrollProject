@@ -177,8 +177,8 @@ namespace PayrollGUIProto {
 			this->splitContainer1->Panel2->Controls->Add(this->userGenFormPassLabel);
 			this->splitContainer1->Panel2->Controls->Add(this->usrGenFormUsrLabel);
 			this->splitContainer1->Panel2->Controls->Add(this->userGenFormLabel);
-			this->splitContainer1->Size = System::Drawing::Size(991, 495);
-			this->splitContainer1->SplitterDistance = 494;
+			this->splitContainer1->Size = System::Drawing::Size(1079, 495);
+			this->splitContainer1->SplitterDistance = 537;
 			this->splitContainer1->TabIndex = 0;
 			// 
 			// loginFormButton
@@ -441,7 +441,7 @@ namespace PayrollGUIProto {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(991, 495);
+			this->ClientSize = System::Drawing::Size(1079, 495);
 			this->Controls->Add(this->splitContainer1);
 			this->Name = L"UserDashboard";
 			this->Text = L"UserDashboard";

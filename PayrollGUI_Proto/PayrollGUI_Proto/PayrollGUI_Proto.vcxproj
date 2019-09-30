@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="AddEmployeeForm.cpp" />
     <ClCompile Include="CompanyInformationForm.cpp" />
+    <ClCompile Include="EmployeeManagementForm.cpp" />
     <ClCompile Include="PayrollProto.cpp" />
     <ClCompile Include="LoginAndCreateUserForm.cpp" />
   </ItemGroup>
@@ -144,6 +145,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CompanyInformationForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EmployeeManagementForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PayrollProto.h">
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyInformationForm.resx">
       <DependentUpon>CompanyInformationForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagementForm.resx">
+      <DependentUpon>EmployeeManagementForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollProto.resx">
       <DependentUpon>PayrollProto.h</DependentUpon>
