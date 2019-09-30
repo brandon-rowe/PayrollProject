@@ -1,12 +1,16 @@
 #include "PayrollProto.h"
-#include "LoginAndCreateUserForm.h"
-#include "CompanyInformationForm.h"
-#include "AddEmployeeForm.h"
-#include "EmployeeManagementForm.h"
 #include <Windows.h>
 
-int main()
+using namespace PayrollGUIProto;
+[STAThreadAttribute]
+int main(array <System::String ^> ^args)
 {
+	//allow for styling
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(true);
+
+	//create main window and run it
+Application::Run(gcnew PayrollProto()); 
 	return 0;
 }
 
