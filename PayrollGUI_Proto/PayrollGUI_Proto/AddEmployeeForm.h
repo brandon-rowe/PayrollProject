@@ -70,21 +70,29 @@ namespace PayrollGUIProto {
 
 
 	private: System::Windows::Forms::Label^ AddEmployeeFormLabel;
-	private: System::Windows::Forms::TextBox^ addEmployeeFormUniqueIDTxtBox;
 
-	private: System::Windows::Forms::Label^ addEmployeeFormUniqueIDLabel;
-	private: System::Windows::Forms::Label^ addEmployeeFormUniqueIDDescLabel1;
-	private: System::Windows::Forms::Label^ addEmployeeFormUniqueIDDescLabel2;
+
+
+
+
 	private: System::Windows::Forms::Button^ addEmployeeFormBackButton;
 	private: System::Windows::Forms::Button^ addEmployeeFormNextButton;
 	private: System::Windows::Forms::TextBox^ addEmployeePositionTxtBox;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ addEmployeeFormPositionLable;
+
 	private: System::Windows::Forms::Button^ addEmployeeFormAddButton;
 	private: System::Windows::Forms::Label^ addEmployeeFormAddUsrDescLabel1;
 	private: System::Windows::Forms::Label^ addEmployeeFormAddUsrDescLabel2;
 	private: System::Windows::Forms::Label^ addEmployeeFormAddUsrDescLabel3;
 	private: System::Windows::Forms::Label^ addEmployeeFormPermissionsLabel;
 	private: System::Windows::Forms::CheckedListBox^ addEmployeeFormPermissionsCheckedListBox1;
+	private: System::Windows::Forms::ComboBox^ paymentTypeComboBox1;
+
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -116,20 +124,22 @@ namespace PayrollGUIProto {
 			this->addEmployeeFormAddyLabel = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormFirstNameLabel = (gcnew System::Windows::Forms::Label());
 			this->AddEmployeeFormLabel = (gcnew System::Windows::Forms::Label());
-			this->addEmployeeFormUniqueIDTxtBox = (gcnew System::Windows::Forms::TextBox());
-			this->addEmployeeFormUniqueIDLabel = (gcnew System::Windows::Forms::Label());
-			this->addEmployeeFormUniqueIDDescLabel1 = (gcnew System::Windows::Forms::Label());
-			this->addEmployeeFormUniqueIDDescLabel2 = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormBackButton = (gcnew System::Windows::Forms::Button());
 			this->addEmployeeFormNextButton = (gcnew System::Windows::Forms::Button());
 			this->addEmployeePositionTxtBox = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->addEmployeeFormPositionLable = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormAddButton = (gcnew System::Windows::Forms::Button());
 			this->addEmployeeFormAddUsrDescLabel1 = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormAddUsrDescLabel2 = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormAddUsrDescLabel3 = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormPermissionsLabel = (gcnew System::Windows::Forms::Label());
 			this->addEmployeeFormPermissionsCheckedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
+			this->paymentTypeComboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// addEmployeeFormPhoneTxtBox
@@ -251,42 +261,6 @@ namespace PayrollGUIProto {
 			this->AddEmployeeFormLabel->TabIndex = 23;
 			this->AddEmployeeFormLabel->Text = L"Add New Employee";
 			// 
-			// addEmployeeFormUniqueIDTxtBox
-			// 
-			this->addEmployeeFormUniqueIDTxtBox->Location = System::Drawing::Point(629, 114);
-			this->addEmployeeFormUniqueIDTxtBox->Name = L"addEmployeeFormUniqueIDTxtBox";
-			this->addEmployeeFormUniqueIDTxtBox->Size = System::Drawing::Size(121, 20);
-			this->addEmployeeFormUniqueIDTxtBox->TabIndex = 37;
-			// 
-			// addEmployeeFormUniqueIDLabel
-			// 
-			this->addEmployeeFormUniqueIDLabel->AutoSize = true;
-			this->addEmployeeFormUniqueIDLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->addEmployeeFormUniqueIDLabel->Location = System::Drawing::Point(470, 112);
-			this->addEmployeeFormUniqueIDLabel->Name = L"addEmployeeFormUniqueIDLabel";
-			this->addEmployeeFormUniqueIDLabel->Size = System::Drawing::Size(143, 20);
-			this->addEmployeeFormUniqueIDLabel->TabIndex = 36;
-			this->addEmployeeFormUniqueIDLabel->Text = L"Unique Identifier";
-			// 
-			// addEmployeeFormUniqueIDDescLabel1
-			// 
-			this->addEmployeeFormUniqueIDDescLabel1->AutoSize = true;
-			this->addEmployeeFormUniqueIDDescLabel1->Location = System::Drawing::Point(471, 137);
-			this->addEmployeeFormUniqueIDDescLabel1->Name = L"addEmployeeFormUniqueIDDescLabel1";
-			this->addEmployeeFormUniqueIDDescLabel1->Size = System::Drawing::Size(363, 13);
-			this->addEmployeeFormUniqueIDDescLabel1->TabIndex = 38;
-			this->addEmployeeFormUniqueIDDescLabel1->Text = L"Please provide unique numerical identification of employees to store records";
-			// 
-			// addEmployeeFormUniqueIDDescLabel2
-			// 
-			this->addEmployeeFormUniqueIDDescLabel2->AutoSize = true;
-			this->addEmployeeFormUniqueIDDescLabel2->Location = System::Drawing::Point(491, 150);
-			this->addEmployeeFormUniqueIDDescLabel2->Name = L"addEmployeeFormUniqueIDDescLabel2";
-			this->addEmployeeFormUniqueIDDescLabel2->Size = System::Drawing::Size(389, 13);
-			this->addEmployeeFormUniqueIDDescLabel2->TabIndex = 39;
-			this->addEmployeeFormUniqueIDDescLabel2->Text = L"This may include (last 4 digits of SSN, Employee ID number, Employee Code...etc";
-			// 
 			// addEmployeeFormBackButton
 			// 
 			this->addEmployeeFormBackButton->Location = System::Drawing::Point(675, 434);
@@ -307,29 +281,29 @@ namespace PayrollGUIProto {
 			// 
 			// addEmployeePositionTxtBox
 			// 
-			this->addEmployeePositionTxtBox->Location = System::Drawing::Point(629, 223);
+			this->addEmployeePositionTxtBox->Location = System::Drawing::Point(629, 189);
 			this->addEmployeePositionTxtBox->Name = L"addEmployeePositionTxtBox";
 			this->addEmployeePositionTxtBox->Size = System::Drawing::Size(121, 20);
 			this->addEmployeePositionTxtBox->TabIndex = 43;
 			// 
-			// label1
+			// addEmployeeFormPositionLable
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(470, 221);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(73, 20);
-			this->label1->TabIndex = 42;
-			this->label1->Text = L"Position";
+			this->addEmployeeFormPositionLable->AutoSize = true;
+			this->addEmployeeFormPositionLable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->addEmployeeFormPositionLable->Location = System::Drawing::Point(470, 187);
+			this->addEmployeeFormPositionLable->Name = L"addEmployeeFormPositionLable";
+			this->addEmployeeFormPositionLable->Size = System::Drawing::Size(73, 20);
+			this->addEmployeeFormPositionLable->TabIndex = 42;
+			this->addEmployeeFormPositionLable->Text = L"Position";
 			// 
 			// addEmployeeFormAddButton
 			// 
 			this->addEmployeeFormAddButton->Location = System::Drawing::Point(743, 336);
 			this->addEmployeeFormAddButton->Name = L"addEmployeeFormAddButton";
-			this->addEmployeeFormAddButton->Size = System::Drawing::Size(75, 23);
+			this->addEmployeeFormAddButton->Size = System::Drawing::Size(102, 23);
 			this->addEmployeeFormAddButton->TabIndex = 44;
-			this->addEmployeeFormAddButton->Text = L"Add User";
+			this->addEmployeeFormAddButton->Text = L"Add Employee";
 			this->addEmployeeFormAddButton->UseVisualStyleBackColor = true;
 			// 
 			// addEmployeeFormAddUsrDescLabel1
@@ -382,11 +356,73 @@ namespace PayrollGUIProto {
 			this->addEmployeeFormPermissionsCheckedListBox1->Size = System::Drawing::Size(386, 34);
 			this->addEmployeeFormPermissionsCheckedListBox1->TabIndex = 49;
 			// 
+			// paymentTypeComboBox1
+			// 
+			this->paymentTypeComboBox1->FormattingEnabled = true;
+			this->paymentTypeComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Salary", L"Hourly" });
+			this->paymentTypeComboBox1->Location = System::Drawing::Point(629, 233);
+			this->paymentTypeComboBox1->Name = L"paymentTypeComboBox1";
+			this->paymentTypeComboBox1->Size = System::Drawing::Size(121, 21);
+			this->paymentTypeComboBox1->TabIndex = 50;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(470, 234);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(121, 20);
+			this->label2->TabIndex = 51;
+			this->label2->Text = L"Payment Type";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(629, 114);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(121, 20);
+			this->textBox1->TabIndex = 53;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(470, 112);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(121, 20);
+			this->label1->TabIndex = 52;
+			this->label1->Text = L"Marital Status";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(629, 150);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(121, 20);
+			this->textBox2->TabIndex = 55;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(470, 148);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(107, 20);
+			this->label3->TabIndex = 54;
+			this->label3->Text = L"Dependents";
+			// 
 			// AddEmployeeForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(991, 495);
+			this->ClientSize = System::Drawing::Size(1079, 495);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->paymentTypeComboBox1);
 			this->Controls->Add(this->addEmployeeFormPermissionsCheckedListBox1);
 			this->Controls->Add(this->addEmployeeFormPermissionsLabel);
 			this->Controls->Add(this->addEmployeeFormAddUsrDescLabel3);
@@ -394,13 +430,9 @@ namespace PayrollGUIProto {
 			this->Controls->Add(this->addEmployeeFormAddUsrDescLabel1);
 			this->Controls->Add(this->addEmployeeFormAddButton);
 			this->Controls->Add(this->addEmployeePositionTxtBox);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->addEmployeeFormPositionLable);
 			this->Controls->Add(this->addEmployeeFormBackButton);
 			this->Controls->Add(this->addEmployeeFormNextButton);
-			this->Controls->Add(this->addEmployeeFormUniqueIDDescLabel2);
-			this->Controls->Add(this->addEmployeeFormUniqueIDDescLabel1);
-			this->Controls->Add(this->addEmployeeFormUniqueIDTxtBox);
-			this->Controls->Add(this->addEmployeeFormUniqueIDLabel);
 			this->Controls->Add(this->addEmployeeFormPhoneTxtBox);
 			this->Controls->Add(this->addEmployeeFormPhoneLabel);
 			this->Controls->Add(this->addEmployeeFormLastNameTxtBox);

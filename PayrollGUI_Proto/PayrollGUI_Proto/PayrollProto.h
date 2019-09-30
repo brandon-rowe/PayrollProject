@@ -80,6 +80,10 @@ namespace PayrollGUIProto {
 	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator5;
 	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator6;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButton4;
+	private: System::Windows::Forms::Button^ dashboardEmployeeMGMTButton;
+
+
+
 
 
 
@@ -120,7 +124,7 @@ namespace PayrollGUIProto {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PayrollProto::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Employee = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -138,6 +142,7 @@ namespace PayrollGUIProto {
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripButton4 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->dashboardEmployeeMGMTButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->Menue->SuspendLayout();
 			this->SuspendLayout();
@@ -153,15 +158,15 @@ namespace PayrollGUIProto {
 			// 
 			// dataGridView1
 			// 
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Teal;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::Teal;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->Employee,
@@ -284,12 +289,22 @@ namespace PayrollGUIProto {
 			this->toolStripButton4->Size = System::Drawing::Size(71, 19);
 			this->toolStripButton4->Text = L"Metrics";
 			// 
+			// dashboardEmployeeMGMTButton
+			// 
+			this->dashboardEmployeeMGMTButton->Location = System::Drawing::Point(953, 371);
+			this->dashboardEmployeeMGMTButton->Name = L"dashboardEmployeeMGMTButton";
+			this->dashboardEmployeeMGMTButton->Size = System::Drawing::Size(93, 37);
+			this->dashboardEmployeeMGMTButton->TabIndex = 3;
+			this->dashboardEmployeeMGMTButton->Text = L"Manage Employee Data";
+			this->dashboardEmployeeMGMTButton->UseVisualStyleBackColor = true;
+			// 
 			// PayrollProto
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(991, 495);
+			this->ClientSize = System::Drawing::Size(1079, 495);
+			this->Controls->Add(this->dashboardEmployeeMGMTButton);
 			this->Controls->Add(this->Menue);
 			this->Controls->Add(this->dataGridView1);
 			this->Name = L"PayrollProto";
@@ -321,6 +336,7 @@ private: System::Void ToolStripLabel4_Click(System::Object^ sender, System::Even
 }
 private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+		 
 private: System::Void DataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void ToolStripComboBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -329,6 +345,7 @@ private: System::Void ToolStripMenuItem1_Click(System::Object^ sender, System::E
 }
 private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 private: System::Void PayrollProto_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
