@@ -1,4 +1,8 @@
 #pragma once
+#include "LoginAndCreateUserForm.h"
+#include "CompanyInformationForm.h"
+#include "AddEmployeeForm.h"
+#include "EmployeeManagementForm.h"
 
 namespace PayrollGUIProto {
 

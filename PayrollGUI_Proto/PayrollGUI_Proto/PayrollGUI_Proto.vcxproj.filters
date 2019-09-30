@@ -30,6 +30,9 @@
     <ClCompile Include="EmployeeManagementForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PayrollProto.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EmployeeManagementForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

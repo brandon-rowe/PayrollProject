@@ -139,6 +139,7 @@
     <ClCompile Include="EmployeeManagementForm.cpp" />
     <ClCompile Include="PayrollProto.cpp" />
     <ClCompile Include="LoginAndCreateUserForm.cpp" />
+    <ClCompile Include="test form.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddEmployeeForm.h">
@@ -154,6 +155,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="LoginAndCreateUserForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="test form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
