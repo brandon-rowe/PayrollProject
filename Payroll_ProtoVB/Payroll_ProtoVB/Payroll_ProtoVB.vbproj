@@ -97,6 +97,12 @@
     <Compile Include="LoginAndCreateUserForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PayrollForm.Designer.vb">
+      <DependentUpon>PayrollForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PayrollProto.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAndCreateUserForm.resx">
       <DependentUpon>LoginAndCreateUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollForm.resx">
+      <DependentUpon>PayrollForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollProto.resx">
       <DependentUpon>PayrollProto.vb</DependentUpon>
