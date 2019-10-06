@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\bin\Debug\Payroll_ProtoVB.exe.config
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\bin\Debug\Payroll_ProtoVB.exe
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\bin\Debug\Payroll_ProtoVB.pdb
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\bin\Debug\Payroll_ProtoVB.xml
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.vbprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.PayrollProto.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.Resources.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.vbproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.exe
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.xml
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.pdb
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.LoginAndCreateUserForm.resources
