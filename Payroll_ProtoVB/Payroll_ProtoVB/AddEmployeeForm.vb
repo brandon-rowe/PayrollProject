@@ -1,4 +1,27 @@
 ﻿Public Class AddEmployeeForm
+    Inherits System.Windows.Forms.Form
+
+    Dim adminFname As String
+    Dim adminLname As String
+    Dim adminAddress As String
+    Dim adminState As String
+    Dim adminZip As Long
+    Dim adminPhone As Long
+    Dim adminUname As String
+    Dim adminPword As String
+
+    'Separate admin info from employee info
+
+    Dim Fname As String
+    Dim Lname As String
+    Dim address As String
+    Dim state As String
+    Dim zip As Long
+    Dim phone As Long
+    Dim Uname As String
+    Dim Pword As String
+
+
 
     'load form
     Private Sub AddEmployeeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -131,7 +154,8 @@
 
     'buttons'
     'add employee
-    Private Sub AddEmployeeFormAddButton_Click(sender As Object, e As EventArgs) Handles addEmployeeFormAddButton.Click
+    Public Sub AddEmployeeFormAddButton_Click(sender As Object, e As EventArgs) Handles addEmployeeFormAddButton.Click
+
     End Sub
 
     'back
