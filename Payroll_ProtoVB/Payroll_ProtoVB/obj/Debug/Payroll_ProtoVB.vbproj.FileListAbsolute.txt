@@ -11,3 +11,11 @@ C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_Pr
 C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.xml
 C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.pdb
 C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.LoginAndCreateUserForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.AddEmployeeForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.CompanyInfoForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.EmployeeManagmentForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.PayrollForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.PayStubForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.DetailedPaymentRecordForm.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.EmployPayRateCalculate.resources
+C:\Users\Admin\source\repos\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.MetricsForm.resources

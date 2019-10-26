@@ -2,6 +2,10 @@
 
     'load form
     Private Sub PayrollForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeeFuture' table. You can move, or remove it, as needed.
+        Me.EmployeeFutureTableAdapter.Fill(Me._540GroupProjectDataSet.EmployeeFuture)
+        'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeePast' table. You can move, or remove it, as needed.
+        Me.EmployeePastTableAdapter.Fill(Me._540GroupProjectDataSet.EmployeePast)
 
     End Sub
 
@@ -68,146 +72,162 @@
     'end search operations'
 
     'previous payments tab data grid
-    Private Sub PayrollDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PayrollDataGridView2.CellContentClick
+    Private Sub PayrollDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PayrollDataGridViewPast.CellContentClick
 
     End Sub
 
     'present and expected paydates data grid
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PayrollDataGridViewFuture.CellContentClick
 
     End Sub
 
     'paystub groupbox- contains formatting for paystub layout
-    Private Sub PayStubGroupBox_Enter(sender As Object, e As EventArgs) Handles PayStubGroupBox.Enter
+    Private Sub PayStubGroupBox_Enter(sender As Object, e As EventArgs)
 
     End Sub
 
     'paystub labels'
     'date printed
-    Private Sub DatePrintLabel_Click(sender As Object, e As EventArgs) Handles datePrintLabel.Click
+    Private Sub DatePrintLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'pay to order
-    Private Sub PayToOrderLabel_Click(sender As Object, e As EventArgs) Handles payToOrderLabel.Click
+    Private Sub PayToOrderLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'pay to order- employee name
-    Private Sub PayToOrderEmployeeNameLabel_Click(sender As Object, e As EventArgs) Handles payToOrderEmployeeNameLabel.Click
+    Private Sub PayToOrderEmployeeNameLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'pay to order- numerical payment amount
-    Private Sub PayNumLabel_Click(sender As Object, e As EventArgs) Handles payNumLabel.Click
+    Private Sub PayNumLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'pay to order- string format of payment amount
-    Private Sub PayStrLabel_Click(sender As Object, e As EventArgs) Handles payStrLabel.Click
+    Private Sub PayStrLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'currency base
-    Private Sub DOLLARSLabel_Click(sender As Object, e As EventArgs) Handles DOLLARSLabel.Click
+    Private Sub DOLLARSLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'memo for pay period
-    Private Sub Memeo_Click(sender As Object, e As EventArgs) Handles memo.Click
+    Private Sub Memeo_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     'pay period
-    Private Sub PayPeriodLabel_Click(sender As Object, e As EventArgs) Handles payPeriodLabel.Click
+    Private Sub PayPeriodLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub DateDashLabel_Click(sender As Object, e As EventArgs) Handles dateDashLabel.Click
+    Private Sub DateDashLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub SignatureLabel_Click(sender As Object, e As EventArgs) Handles signatureLabel.Click
+    Private Sub SignatureLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
     'end of labels'
 
     'masked texts boxes for paystub'
     'compnay name
-    Private Sub CompanyNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles companyNameMTxtBox.MaskInputRejected
+    Private Sub CompanyNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
     'company address
-    Private Sub CompanyAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles companyAddyMTxtBox.MaskInputRejected
+    Private Sub CompanyAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
     'bank name
-    Private Sub BankNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles bankNameMTxtBox.MaskInputRejected
+    Private Sub BankNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
     'bank address
-    Private Sub BankAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles bankAddyMTxtBox.MaskInputRejected
+    Private Sub BankAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
     'reference number
-    Private Sub RefNumMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles RefNumMTxtBox.MaskInputRejected
+    Private Sub RefNumMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
-    Private Sub EmpNameTxtBox_TextChanged(sender As Object, e As EventArgs) Handles empNameTxtBox.TextChanged
+    Private Sub EmpNameTxtBox_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub PayNumMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles payNumMTxtBox.MaskInputRejected
+    Private Sub PayNumMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
-    Private Sub PayStrMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles payStrMTxtBox.MaskInputRejected
+    Private Sub PayStrMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
-    Private Sub EmpNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles empNameMTxtBox.MaskInputRejected
+    Private Sub EmpNameMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
-    Private Sub EmpAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles empAddyMTxtBox.MaskInputRejected
+    Private Sub EmpAddyMTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 
-    Private Sub AccountNumberTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles accountNumberTxtBox.MaskInputRejected
+    Private Sub AccountNumberTxtBox_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
     'end of Masked Text Boxes'
 
     'date components'
     'date on which the paystub will be printed
-    Private Sub PrntDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles prntDatePicker.ValueChanged
+    Private Sub PrntDatePicker_ValueChanged(sender As Object, e As EventArgs)
 
     End Sub
 
     'start date for pay period
-    Private Sub StrtPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles strtPayPeriodDatePicker.ValueChanged
+    Private Sub StrtPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs)
 
     End Sub
 
     'end date for pay period
-    Private Sub EndPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles endPayPeriodDatePicker.ValueChanged
+    Private Sub EndPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs)
 
     End Sub
     'end of date components'
 
     'print paystub'
     'button'
-    Private Sub PrintButton_Click(sender As Object, e As EventArgs) Handles printButton.Click
+    Private Sub PrintButton_Click(sender As Object, e As EventArgs) Handles payStubViewBTN.Click
 
     End Sub
 
     'printDocument'
     Private Sub PrintDocumentPaystub_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocumentPaystub.PrintPage
+
+    End Sub
+
+    Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub PastPayTab_Click(sender As Object, e As EventArgs) Handles PastPayTab.Click
+
+    End Sub
+
+    Private Sub FuturePayTab_Click(sender As Object, e As EventArgs) Handles FuturePayTab.Click
+
+    End Sub
+
+    Private Sub PayStubGroupBox_Enter_1(sender As Object, e As EventArgs)
 
     End Sub
     'end of printing components'
