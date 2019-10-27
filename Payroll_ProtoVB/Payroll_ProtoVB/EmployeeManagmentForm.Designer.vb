@@ -61,9 +61,9 @@ Partial Class EmployeeManagmentForm
         Me.employeeSearchLabel = New System.Windows.Forms.Label()
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
-        Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.EmployeeIDLabel = New System.Windows.Forms.Label()
+        Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -472,8 +472,8 @@ Partial Class EmployeeManagmentForm
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameTxtBox)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1072, 495)
-        Me.splitContainer1.SplitterDistance = 396
+        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
+        Me.splitContainer1.SplitterDistance = 379
         Me.splitContainer1.TabIndex = 1
         '
         'employeeMGMTFormCancelButton1
@@ -484,16 +484,6 @@ Partial Class EmployeeManagmentForm
         Me.employeeMGMTFormCancelButton1.TabIndex = 81
         Me.employeeMGMTFormCancelButton1.Text = "Cancel"
         Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
-        '
-        'employeeMGMTFormCancelButton2
-        '
-        Me.employeeMGMTFormCancelButton2.Location = New System.Drawing.Point(539, 379)
-        Me.employeeMGMTFormCancelButton2.Name = "employeeMGMTFormCancelButton2"
-        Me.employeeMGMTFormCancelButton2.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormCancelButton2.TabIndex = 80
-        Me.employeeMGMTFormCancelButton2.Text = "Cancel"
-        Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
-        Me.employeeMGMTFormCancelButton2.Visible = False
         '
         'TextBox1
         '
@@ -516,11 +506,21 @@ Partial Class EmployeeManagmentForm
         Me.EmployeeIDLabel.Text = "Employee ID"
         Me.EmployeeIDLabel.Visible = False
         '
+        'employeeMGMTFormCancelButton2
+        '
+        Me.employeeMGMTFormCancelButton2.Location = New System.Drawing.Point(539, 379)
+        Me.employeeMGMTFormCancelButton2.Name = "employeeMGMTFormCancelButton2"
+        Me.employeeMGMTFormCancelButton2.Size = New System.Drawing.Size(75, 23)
+        Me.employeeMGMTFormCancelButton2.TabIndex = 80
+        Me.employeeMGMTFormCancelButton2.Text = "Cancel"
+        Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
+        Me.employeeMGMTFormCancelButton2.Visible = False
+        '
         'EmployeeManagmentForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1072, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmployeeManagmentForm"
         Me.Text = "EmployeeManagmentForm"

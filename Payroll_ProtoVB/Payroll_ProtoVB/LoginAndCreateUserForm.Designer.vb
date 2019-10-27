@@ -328,15 +328,15 @@ Partial Class LoginAndCreateUserForm
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormPassLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormUsrNameLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1079, 495)
-        Me.splitContainer1.SplitterDistance = 537
+        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
+        Me.splitContainer1.SplitterDistance = 511
         Me.splitContainer1.TabIndex = 1
         '
         'LoginAndCreateUserForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1079, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "LoginAndCreateUserForm"
         Me.Text = "LoginAndCreateUserForm"
