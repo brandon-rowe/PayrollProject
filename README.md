@@ -9,7 +9,7 @@ Payroll Project for CSCI 540 (Software Engineering)
 <h6>Resources</h6>
 
 Extra links that help with github.
-###Basics
+### Basics
 + [Github Getting Started](https://rogerdudler.github.io/git-guide/)
 + [Git Commit Messages](https://chris.beams.io/posts/git-commit/)
 + [Mastering Markup](https://guides.github.com/features/mastering-markdown/)
@@ -18,7 +18,7 @@ Extra links that help with github.
 + [Finding Open-Source Programs](https://help.github.com/en/articles/finding-open-source-projects-on-github)
 + [Github Code Review](https://github.com/features/code-review/)
 
-###Branching
+### Branching
 + [Git-checkout docs](https://git-scm.com/docs/git-checkout)
 + [Branching](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html)
 + [Delete Branch locally and remotely](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely)
