@@ -467,7 +467,7 @@ Partial Class PayStubForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.ClientSize = New System.Drawing.Size(1079, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.printStubBTN)
         Me.Controls.Add(Me.menueStrip)
         Me.Controls.Add(Me.PayStubGroupBox)
