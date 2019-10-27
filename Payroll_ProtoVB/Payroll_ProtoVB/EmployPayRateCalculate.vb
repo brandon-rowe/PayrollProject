@@ -3,7 +3,4 @@
 
     End Sub
 
-    Private Sub MenueStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles menueStrip.ItemClicked
-
-    End Sub
 End Class
