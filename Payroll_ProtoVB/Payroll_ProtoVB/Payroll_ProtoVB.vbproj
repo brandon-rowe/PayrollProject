@@ -86,16 +86,40 @@
     <Compile Include="CompanyInfoForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DetailedPaymentRecordForm.Designer.vb">
+      <DependentUpon>DetailedPaymentRecordForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetailedPaymentRecordForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EmployeeManagmentForm.Designer.vb">
       <DependentUpon>EmployeeManagmentForm.vb</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManagmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployPayRateCalculate.Designer.vb">
+      <DependentUpon>EmployPayRateCalculate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployPayRateCalculate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginAndCreateUserForm.Designer.vb">
       <DependentUpon>LoginAndCreateUserForm.vb</DependentUpon>
     </Compile>
     <Compile Include="LoginAndCreateUserForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetricsForm.Designer.vb">
+      <DependentUpon>MetricsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MetricsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollForm.Designer.vb">
+      <DependentUpon>PayrollForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PayrollProto.vb">
@@ -120,6 +144,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PayStubForm.Designer.vb">
+      <DependentUpon>PayStubForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayStubForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_540GroupProjectDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddEmployeeForm.resx">
@@ -128,11 +163,23 @@
     <EmbeddedResource Include="CompanyInfoForm.resx">
       <DependentUpon>CompanyInfoForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailedPaymentRecordForm.resx">
+      <DependentUpon>DetailedPaymentRecordForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeManagmentForm.resx">
       <DependentUpon>EmployeeManagmentForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployPayRateCalculate.resx">
+      <DependentUpon>EmployPayRateCalculate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginAndCreateUserForm.resx">
       <DependentUpon>LoginAndCreateUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetricsForm.resx">
+      <DependentUpon>MetricsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollForm.resx">
+      <DependentUpon>PayrollForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollProto.resx">
       <DependentUpon>PayrollProto.vb</DependentUpon>
@@ -142,6 +189,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayStubForm.resx">
+      <DependentUpon>PayStubForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +205,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="_540GroupProjectDataSet1.xsc">
+      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_540GroupProjectDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_540GroupProjectDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_540GroupProjectDataSet1.xss">
+      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

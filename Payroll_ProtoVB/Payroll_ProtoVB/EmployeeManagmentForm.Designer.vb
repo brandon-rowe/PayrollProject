@@ -62,6 +62,8 @@ Partial Class EmployeeManagmentForm
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
         Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.EmployeeIDLabel = New System.Windows.Forms.Label()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -109,7 +111,7 @@ Partial Class EmployeeManagmentForm
         '
         'employeeMGMTWageRateTxtBox
         '
-        Me.employeeMGMTWageRateTxtBox.Location = New System.Drawing.Point(145, 231)
+        Me.employeeMGMTWageRateTxtBox.Location = New System.Drawing.Point(145, 263)
         Me.employeeMGMTWageRateTxtBox.Name = "employeeMGMTWageRateTxtBox"
         Me.employeeMGMTWageRateTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTWageRateTxtBox.TabIndex = 77
@@ -119,7 +121,7 @@ Partial Class EmployeeManagmentForm
         '
         Me.employeeMGMTFormWageRateLabel.AutoSize = True
         Me.employeeMGMTFormWageRateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormWageRateLabel.Location = New System.Drawing.Point(17, 231)
+        Me.employeeMGMTFormWageRateLabel.Location = New System.Drawing.Point(17, 263)
         Me.employeeMGMTFormWageRateLabel.Name = "employeeMGMTFormWageRateLabel"
         Me.employeeMGMTFormWageRateLabel.Size = New System.Drawing.Size(99, 20)
         Me.employeeMGMTFormWageRateLabel.TabIndex = 76
@@ -206,7 +208,7 @@ Partial Class EmployeeManagmentForm
         '
         'employeeMGMTFormPhoneTxtBox
         '
-        Me.employeeMGMTFormPhoneTxtBox.Location = New System.Drawing.Point(145, 187)
+        Me.employeeMGMTFormPhoneTxtBox.Location = New System.Drawing.Point(145, 231)
         Me.employeeMGMTFormPhoneTxtBox.Name = "employeeMGMTFormPhoneTxtBox"
         Me.employeeMGMTFormPhoneTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormPhoneTxtBox.TabIndex = 67
@@ -216,7 +218,7 @@ Partial Class EmployeeManagmentForm
         '
         Me.employeeMGMTFormPhoneLabel.AutoSize = True
         Me.employeeMGMTFormPhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormPhoneLabel.Location = New System.Drawing.Point(17, 185)
+        Me.employeeMGMTFormPhoneLabel.Location = New System.Drawing.Point(17, 229)
         Me.employeeMGMTFormPhoneLabel.Name = "employeeMGMTFormPhoneLabel"
         Me.employeeMGMTFormPhoneLabel.Size = New System.Drawing.Size(60, 20)
         Me.employeeMGMTFormPhoneLabel.TabIndex = 66
@@ -245,7 +247,7 @@ Partial Class EmployeeManagmentForm
         '
         'employeeMGMTFormZipTxtBox
         '
-        Me.employeeMGMTFormZipTxtBox.Location = New System.Drawing.Point(145, 153)
+        Me.employeeMGMTFormZipTxtBox.Location = New System.Drawing.Point(145, 197)
         Me.employeeMGMTFormZipTxtBox.Name = "employeeMGMTFormZipTxtBox"
         Me.employeeMGMTFormZipTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormZipTxtBox.TabIndex = 63
@@ -255,7 +257,7 @@ Partial Class EmployeeManagmentForm
         '
         Me.employeeMGMTFormZipLabel.AutoSize = True
         Me.employeeMGMTFormZipLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormZipLabel.Location = New System.Drawing.Point(17, 151)
+        Me.employeeMGMTFormZipLabel.Location = New System.Drawing.Point(17, 195)
         Me.employeeMGMTFormZipLabel.Name = "employeeMGMTFormZipLabel"
         Me.employeeMGMTFormZipLabel.Size = New System.Drawing.Size(34, 20)
         Me.employeeMGMTFormZipLabel.TabIndex = 62
@@ -264,7 +266,7 @@ Partial Class EmployeeManagmentForm
         '
         'employeeMGMTFormStateTxtBox
         '
-        Me.employeeMGMTFormStateTxtBox.Location = New System.Drawing.Point(145, 124)
+        Me.employeeMGMTFormStateTxtBox.Location = New System.Drawing.Point(145, 168)
         Me.employeeMGMTFormStateTxtBox.Name = "employeeMGMTFormStateTxtBox"
         Me.employeeMGMTFormStateTxtBox.Size = New System.Drawing.Size(148, 20)
         Me.employeeMGMTFormStateTxtBox.TabIndex = 61
@@ -274,7 +276,7 @@ Partial Class EmployeeManagmentForm
         '
         Me.employeeMGMTFormStateLabel.AutoSize = True
         Me.employeeMGMTFormStateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormStateLabel.Location = New System.Drawing.Point(17, 122)
+        Me.employeeMGMTFormStateLabel.Location = New System.Drawing.Point(17, 166)
         Me.employeeMGMTFormStateLabel.Name = "employeeMGMTFormStateLabel"
         Me.employeeMGMTFormStateLabel.Size = New System.Drawing.Size(53, 20)
         Me.employeeMGMTFormStateLabel.TabIndex = 60
@@ -283,7 +285,7 @@ Partial Class EmployeeManagmentForm
         '
         'employeeMGMTFormAddyTxtBox
         '
-        Me.employeeMGMTFormAddyTxtBox.Location = New System.Drawing.Point(145, 91)
+        Me.employeeMGMTFormAddyTxtBox.Location = New System.Drawing.Point(145, 135)
         Me.employeeMGMTFormAddyTxtBox.Name = "employeeMGMTFormAddyTxtBox"
         Me.employeeMGMTFormAddyTxtBox.Size = New System.Drawing.Size(240, 20)
         Me.employeeMGMTFormAddyTxtBox.TabIndex = 59
@@ -302,7 +304,7 @@ Partial Class EmployeeManagmentForm
         '
         Me.employeeMGMTFormAddyLabel.AutoSize = True
         Me.employeeMGMTFormAddyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormAddyLabel.Location = New System.Drawing.Point(17, 91)
+        Me.employeeMGMTFormAddyLabel.Location = New System.Drawing.Point(17, 135)
         Me.employeeMGMTFormAddyLabel.Name = "employeeMGMTFormAddyLabel"
         Me.employeeMGMTFormAddyLabel.Size = New System.Drawing.Size(75, 20)
         Me.employeeMGMTFormAddyLabel.TabIndex = 57
@@ -441,6 +443,8 @@ Partial Class EmployeeManagmentForm
         '
         'splitContainer1.Panel2
         '
+        Me.splitContainer1.Panel2.Controls.Add(Me.TextBox1)
+        Me.splitContainer1.Panel2.Controls.Add(Me.EmployeeIDLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormCancelButton2)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTPayableHrsLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTPayableHrsTxtBox)
@@ -468,8 +472,8 @@ Partial Class EmployeeManagmentForm
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameTxtBox)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1079, 495)
-        Me.splitContainer1.SplitterDistance = 399
+        Me.splitContainer1.Size = New System.Drawing.Size(1072, 495)
+        Me.splitContainer1.SplitterDistance = 396
         Me.splitContainer1.TabIndex = 1
         '
         'employeeMGMTFormCancelButton1
@@ -491,11 +495,32 @@ Partial Class EmployeeManagmentForm
         Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
         Me.employeeMGMTFormCancelButton2.Visible = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(144, 92)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.TabIndex = 82
+        Me.TextBox1.Visible = False
+        '
+        'EmployeeIDLabel
+        '
+        Me.EmployeeIDLabel.AutoSize = True
+        Me.EmployeeIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeIDLabel.Location = New System.Drawing.Point(16, 92)
+        Me.EmployeeIDLabel.Name = "EmployeeIDLabel"
+        Me.EmployeeIDLabel.Size = New System.Drawing.Size(111, 20)
+        Me.EmployeeIDLabel.TabIndex = 81
+        Me.EmployeeIDLabel.Text = "Employee ID"
+        Me.EmployeeIDLabel.Visible = False
+        '
         'EmployeeManagmentForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1079, 495)
+        Me.ClientSize = New System.Drawing.Size(1072, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmployeeManagmentForm"
         Me.Text = "EmployeeManagmentForm"
@@ -549,4 +574,6 @@ Partial Class EmployeeManagmentForm
     Private WithEvents splitContainer1 As SplitContainer
     Private WithEvents employeeMGMTFormCancelButton2 As Button
     Private WithEvents employeeMGMTFormCancelButton1 As Button
+    Private WithEvents TextBox1 As TextBox
+    Private WithEvents EmployeeIDLabel As Label
 End Class

@@ -22,5 +22,130 @@ Payroll_ProtoVB
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.AdminDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeFutureDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeePastDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.AdminRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeFutureRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeePastRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.AdminRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeeFutureRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSet.EmployeePastRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.AdminTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.EmployeeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.EmployeeFutureTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.EmployeePastTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Payroll_ProtoVB._540GroupProjectDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Payroll_ProtoVB._540GroupProjectDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Payroll_ProtoVB._540GroupProjectDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.UpdateAll(Payroll_ProtoVB._540GroupProjectDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>
