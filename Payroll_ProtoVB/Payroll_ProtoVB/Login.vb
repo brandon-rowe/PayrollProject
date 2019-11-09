@@ -1,4 +1,4 @@
-﻿Public Class LoginAndCreateUserForm
+﻿Public Class Login
     Inherits System.Windows.Forms.Form
 
     Dim Fname As String
@@ -11,7 +11,7 @@
     Dim Pword As String
 
     'load form
-    Private Sub LoginAndCreateUserForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
