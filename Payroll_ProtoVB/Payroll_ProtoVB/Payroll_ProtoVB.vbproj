@@ -137,10 +137,10 @@
     <Compile Include="PayStub.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_540GroupProjectDataSet1.Designer.vb">
+    <Compile Include="Primary.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+      <DependentUpon>Primary.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -186,16 +186,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="_540GroupProjectDataSet1.xsc">
-      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+    <None Include="Primary.xsc">
+      <DependentUpon>Primary.xsd</DependentUpon>
     </None>
-    <None Include="_540GroupProjectDataSet1.xsd">
+    <None Include="Primary.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_540GroupProjectDataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>Primary.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="_540GroupProjectDataSet1.xss">
-      <DependentUpon>_540GroupProjectDataSet1.xsd</DependentUpon>
+    <None Include="Primary.xss">
+      <DependentUpon>Primary.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
