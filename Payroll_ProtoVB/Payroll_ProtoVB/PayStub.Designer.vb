@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PayStubForm
+Partial Class PayStub
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class PayStubForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayStubForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayStub))
         Me.PayStubGroupBox = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.signatureLabel = New System.Windows.Forms.Label()
@@ -462,7 +462,7 @@ Partial Class PayStubForm
         Me.printStubBTN.Text = "Print"
         Me.printStubBTN.UseVisualStyleBackColor = True
         '
-        'PayStubForm
+        'PayStub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -471,7 +471,7 @@ Partial Class PayStubForm
         Me.Controls.Add(Me.printStubBTN)
         Me.Controls.Add(Me.menueStrip)
         Me.Controls.Add(Me.PayStubGroupBox)
-        Me.Name = "PayStubForm"
+        Me.Name = "PayStub"
         Me.Text = "PayStubForm"
         Me.PayStubGroupBox.ResumeLayout(False)
         Me.PayStubGroupBox.PerformLayout()

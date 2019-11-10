@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DetailedPaymentRecordForm
+Partial Class PaymentRecord
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class DetailedPaymentRecordForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetailedPaymentRecordForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentRecord))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
@@ -307,7 +307,7 @@ Partial Class DetailedPaymentRecordForm
         Me.backBTN.Text = "Back"
         Me.backBTN.UseVisualStyleBackColor = True
         '
-        'DetailedPaymentRecordForm
+        'PaymentRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -328,7 +328,7 @@ Partial Class DetailedPaymentRecordForm
         Me.Controls.Add(Me.EmployeeIDTxtBox)
         Me.Controls.Add(Me.EmployeeIDLabel)
         Me.Controls.Add(Me.menueStrip)
-        Me.Name = "DetailedPaymentRecordForm"
+        Me.Name = "PaymentRecord"
         Me.Text = "DetailedPaymentRecordForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()

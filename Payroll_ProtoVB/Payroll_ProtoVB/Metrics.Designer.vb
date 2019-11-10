@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MetricsForm
+Partial Class Metrics
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class MetricsForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MetricsForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Metrics))
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
@@ -129,13 +129,13 @@ Partial Class MetricsForm
         Me.metricsTstripBTN.Size = New System.Drawing.Size(74, 19)
         Me.metricsTstripBTN.Text = "Metrics"
         '
-        'MetricsForm
+        'Metrics
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.menueStrip)
-        Me.Name = "MetricsForm"
+        Me.Name = "Metrics"
         Me.Text = "MetricsForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
