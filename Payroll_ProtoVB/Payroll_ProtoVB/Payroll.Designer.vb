@@ -47,7 +47,6 @@ Partial Class Payroll
         Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeePastBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me._540GroupProjectDataSet = New Payroll_ProtoVB._540GroupProjectDataSet()
         Me.FuturePayTab = New System.Windows.Forms.TabPage()
         Me.PayrollDataGridViewFuture = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,15 +56,12 @@ Partial Class Payroll
         Me.PrintDocumentPaystub = New System.Drawing.Printing.PrintDocument()
         Me.payStubViewBTN = New System.Windows.Forms.Button()
         Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeePastTableAdapter = New Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.EmployeePastTableAdapter()
-        Me.EmployeeFutureTableAdapter = New Payroll_ProtoVB._540GroupProjectDataSetTableAdapters.EmployeeFutureTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
         CType(Me.PayrollDataGridViewPast, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeePastBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._540GroupProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FuturePayTab.SuspendLayout()
         CType(Me.PayrollDataGridViewFuture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,12 +249,7 @@ Partial Class Payroll
         'EmployeePastBindingSource1
         '
         Me.EmployeePastBindingSource1.DataMember = "EmployeePast"
-        Me.EmployeePastBindingSource1.DataSource = Me._540GroupProjectDataSet
-        '
-        '_540GroupProjectDataSet
-        '
-        Me._540GroupProjectDataSet.DataSetName = "_540GroupProjectDataSet"
-        Me._540GroupProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+
         '
         'FuturePayTab
         '
@@ -306,7 +297,6 @@ Partial Class Payroll
         'EmployeeFutureBindingSource
         '
         Me.EmployeeFutureBindingSource.DataMember = "EmployeeFuture"
-        Me.EmployeeFutureBindingSource.DataSource = Me._540GroupProjectDataSet
         '
         'PrintDocumentPaystub
         '
@@ -320,19 +310,7 @@ Partial Class Payroll
         Me.payStubViewBTN.TabIndex = 17
         Me.payStubViewBTN.Text = "View Paystub "
         Me.payStubViewBTN.UseVisualStyleBackColor = True
-        '
-        'EmployeePastBindingSource
-        '
-        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
-        Me.EmployeePastBindingSource.DataSource = Me._540GroupProjectDataSet
-        '
-        'EmployeePastTableAdapter
-        '
-        Me.EmployeePastTableAdapter.ClearBeforeFill = True
-        '
-        'EmployeeFutureTableAdapter
-        '
-        Me.EmployeeFutureTableAdapter.ClearBeforeFill = True
+
         '
         'Button1
         '
@@ -363,7 +341,6 @@ Partial Class Payroll
         Me.PastPayTab.ResumeLayout(False)
         CType(Me.PayrollDataGridViewPast, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeePastBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._540GroupProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FuturePayTab.ResumeLayout(False)
         CType(Me.PayrollDataGridViewFuture, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -393,15 +370,12 @@ Partial Class Payroll
     Friend WithEvents PayrollDataGridViewFuture As DataGridView
     Friend WithEvents PrintDocumentPaystub As Printing.PrintDocument
     Friend WithEvents payStubViewBTN As Button
-    Friend WithEvents _540GroupProjectDataSet As _540GroupProjectDataSet
     Friend WithEvents EmployeePastBindingSource As BindingSource
-    Friend WithEvents EmployeePastTableAdapter As _540GroupProjectDataSetTableAdapters.EmployeePastTableAdapter
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmployeePastBindingSource1 As BindingSource
     Friend WithEvents EmployeeFutureBindingSource As BindingSource
-    Friend WithEvents EmployeeFutureTableAdapter As _540GroupProjectDataSetTableAdapters.EmployeeFutureTableAdapter
     Friend WithEvents IDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DateDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents AmountDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn

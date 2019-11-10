@@ -26,7 +26,7 @@
         Uname = usrGenFormUsrNameTxtBox.Text
         Pword = usrGenFormPassTxtBox.Text
 
-        Dim AddEmployeeForm As New Form(Fname, Lname, address, state, zip, phone, Uname, Pword)
+        Dim AddEmployeeForm As New Form()
         AddEmployeeForm.ShowDialog()
 
         'Console.WriteLine(Fname)
