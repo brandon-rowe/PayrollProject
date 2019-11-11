@@ -27,7 +27,7 @@
         Uname = usrGenFormUsrNameTxtBox.Text
         Pword = usrGenFormPassTxtBox.Text
 
-        address = street + state + zip
+        address = street + " " + state + " " + zip
 
         Console.WriteLine(Fname)
         Console.WriteLine(Lname)
@@ -38,6 +38,10 @@
         Console.WriteLine(phone)
         Console.WriteLine(Uname)
         Console.WriteLine(Pword)
+
+        Dim AddEmployee = New AddEmployee()
+        AddEmployee.Show()
+        'Me.Close()
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
@@ -46,5 +50,8 @@
 
         Console.WriteLine(Uname)
         Console.WriteLine(Pword)
+        Dim Payroll = New Payroll()
+        Payroll.Show()
+        'Me.Close()
     End Sub
 End Class
