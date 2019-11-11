@@ -2,6 +2,10 @@
     Inherits System.Windows.Forms.Form
     'load form
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
+        Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
+        'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
+        Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
         'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeeFuture' table. You can move, or remove it, as needed.
         'Me.EmployeeFutureTableAdapter.Fill(Me._540GroupProjectDataSet.EmployeeFuture)
         'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeePast' table. You can move, or remove it, as needed.
