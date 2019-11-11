@@ -4,8 +4,9 @@
     Dim Fname As String
     Dim Lname As String
     Dim address As String
+    Dim street As String
     Dim state As String
-    Dim zip As Long
+    Dim zip As String
     Dim phone As Long
     Dim Uname As String
     Dim Pword As String
@@ -19,24 +20,31 @@
     Private Sub UsrGenFormCreateUsrButton_Click(sender As Object, e As EventArgs) Handles usrGenFormCreateUsrButton.Click
         Fname = usrGenFormFirstNameTxtBox.Text
         Lname = usrGenFormLastNameTxtBox.Text
-        address = usrGenFormAddyTxtBox.Text
+        street = usrGenFormAddyTxtBox.Text
         state = usrGenFormStateTxtBox.Text
         zip = usrGenFormZipTxtBox.Text
         phone = usrGenFormPhoneTxtBox.Text
         Uname = usrGenFormUsrNameTxtBox.Text
         Pword = usrGenFormPassTxtBox.Text
 
-        Dim AddEmployeeForm As New Form()
-        AddEmployeeForm.ShowDialog()
+        address = street + state + zip
 
-        'Console.WriteLine(Fname)
-        'Console.WriteLine(Lname)
-        'Console.WriteLine(address)
-        'Console.WriteLine(state)
-        'Console.WriteLine(zip)
-        'Console.WriteLine(phone)
-        'Console.WriteLine(Uname)
-        'Console.WriteLine(Pword)
+        Console.WriteLine(Fname)
+        Console.WriteLine(Lname)
+        Console.WriteLine(address)
+        Console.WriteLine(street)
+        Console.WriteLine(state)
+        Console.WriteLine(zip)
+        Console.WriteLine(phone)
+        Console.WriteLine(Uname)
+        Console.WriteLine(Pword)
     End Sub
 
+    Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
+        Uname = loginUsrTxt.Text
+        Pword = loginPwTxt.Text
+
+        Console.WriteLine(Uname)
+        Console.WriteLine(Pword)
+    End Sub
 End Class

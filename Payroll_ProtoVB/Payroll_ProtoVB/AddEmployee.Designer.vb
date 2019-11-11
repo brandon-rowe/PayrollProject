@@ -47,7 +47,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormStateTxtBox = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormStateLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddyTxtBox = New System.Windows.Forms.TextBox()
-        Me.addEmployeeFormFirstNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.addEmpFnameTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormAddyLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.AddEmployeeFormLabel = New System.Windows.Forms.Label()
@@ -58,7 +58,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormDepStatTxtBox.Location = New System.Drawing.Point(658, 146)
         Me.addEmployeeFormDepStatTxtBox.Name = "addEmployeeFormDepStatTxtBox"
         Me.addEmployeeFormDepStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormDepStatTxtBox.TabIndex = 84
+        Me.addEmployeeFormDepStatTxtBox.TabIndex = 7
         '
         'addEmployeeFormDepStatLabel
         '
@@ -75,7 +75,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormMaritalStatTxtBox.Location = New System.Drawing.Point(658, 110)
         Me.addEmployeeFormMaritalStatTxtBox.Name = "addEmployeeFormMaritalStatTxtBox"
         Me.addEmployeeFormMaritalStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormMaritalStatTxtBox.TabIndex = 82
+        Me.addEmployeeFormMaritalStatTxtBox.TabIndex = 6
         '
         'addEmployeeFormMstatLabel
         '
@@ -104,7 +104,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormpaymentTypeComboBox1.Location = New System.Drawing.Point(658, 229)
         Me.addEmployeeFormpaymentTypeComboBox1.Name = "addEmployeeFormpaymentTypeComboBox1"
         Me.addEmployeeFormpaymentTypeComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.addEmployeeFormpaymentTypeComboBox1.TabIndex = 79
+        Me.addEmployeeFormpaymentTypeComboBox1.TabIndex = 9
         '
         'addEmployeeFormPermissionsCheckedListBox1
         '
@@ -113,7 +113,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormPermissionsCheckedListBox1.Location = New System.Drawing.Point(622, 270)
         Me.addEmployeeFormPermissionsCheckedListBox1.Name = "addEmployeeFormPermissionsCheckedListBox1"
         Me.addEmployeeFormPermissionsCheckedListBox1.Size = New System.Drawing.Size(386, 34)
-        Me.addEmployeeFormPermissionsCheckedListBox1.TabIndex = 78
+        Me.addEmployeeFormPermissionsCheckedListBox1.TabIndex = 10
         '
         'addEmployeeFormPermissionsLabel
         '
@@ -157,7 +157,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormAddButton.Location = New System.Drawing.Point(772, 332)
         Me.addEmployeeFormAddButton.Name = "addEmployeeFormAddButton"
         Me.addEmployeeFormAddButton.Size = New System.Drawing.Size(102, 23)
-        Me.addEmployeeFormAddButton.TabIndex = 73
+        Me.addEmployeeFormAddButton.TabIndex = 11
         Me.addEmployeeFormAddButton.Text = "Add Employee"
         Me.addEmployeeFormAddButton.UseVisualStyleBackColor = True
         '
@@ -166,7 +166,7 @@ Partial Class AddEmployee
         Me.addEmployeePositionTxtBox.Location = New System.Drawing.Point(658, 185)
         Me.addEmployeePositionTxtBox.Name = "addEmployeePositionTxtBox"
         Me.addEmployeePositionTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeePositionTxtBox.TabIndex = 72
+        Me.addEmployeePositionTxtBox.TabIndex = 8
         '
         'addEmployeeFormPositionLable
         '
@@ -201,7 +201,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormPhoneTxtBox.Location = New System.Drawing.Point(232, 284)
         Me.addEmployeeFormPhoneTxtBox.Name = "addEmployeeFormPhoneTxtBox"
         Me.addEmployeeFormPhoneTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormPhoneTxtBox.TabIndex = 68
+        Me.addEmployeeFormPhoneTxtBox.TabIndex = 5
         '
         'addEmployeeFormPhoneLabel
         '
@@ -218,7 +218,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormLastNameTxtBox.Location = New System.Drawing.Point(232, 146)
         Me.addEmployeeFormLastNameTxtBox.Name = "addEmployeeFormLastNameTxtBox"
         Me.addEmployeeFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormLastNameTxtBox.TabIndex = 66
+        Me.addEmployeeFormLastNameTxtBox.TabIndex = 1
         '
         'addEmployeeFormLastNameLabel
         '
@@ -235,7 +235,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormZipTxtBox.Location = New System.Drawing.Point(232, 249)
         Me.addEmployeeFormZipTxtBox.Name = "addEmployeeFormZipTxtBox"
         Me.addEmployeeFormZipTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormZipTxtBox.TabIndex = 64
+        Me.addEmployeeFormZipTxtBox.TabIndex = 4
         '
         'addEmployeeFormZipLabel
         '
@@ -252,7 +252,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormStateTxtBox.Location = New System.Drawing.Point(232, 217)
         Me.addEmployeeFormStateTxtBox.Name = "addEmployeeFormStateTxtBox"
         Me.addEmployeeFormStateTxtBox.Size = New System.Drawing.Size(148, 20)
-        Me.addEmployeeFormStateTxtBox.TabIndex = 62
+        Me.addEmployeeFormStateTxtBox.TabIndex = 3
         '
         'addEmployeeFormStateLabel
         '
@@ -269,14 +269,14 @@ Partial Class AddEmployee
         Me.addEmployeeFormAddyTxtBox.Location = New System.Drawing.Point(232, 183)
         Me.addEmployeeFormAddyTxtBox.Name = "addEmployeeFormAddyTxtBox"
         Me.addEmployeeFormAddyTxtBox.Size = New System.Drawing.Size(240, 20)
-        Me.addEmployeeFormAddyTxtBox.TabIndex = 60
+        Me.addEmployeeFormAddyTxtBox.TabIndex = 2
         '
-        'addEmployeeFormFirstNameTxtBox
+        'addEmpFnameTxt
         '
-        Me.addEmployeeFormFirstNameTxtBox.Location = New System.Drawing.Point(232, 110)
-        Me.addEmployeeFormFirstNameTxtBox.Name = "addEmployeeFormFirstNameTxtBox"
-        Me.addEmployeeFormFirstNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormFirstNameTxtBox.TabIndex = 59
+        Me.addEmpFnameTxt.Location = New System.Drawing.Point(232, 110)
+        Me.addEmpFnameTxt.Name = "addEmpFnameTxt"
+        Me.addEmpFnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.addEmpFnameTxt.TabIndex = 0
         '
         'addEmployeeFormAddyLabel
         '
@@ -308,7 +308,7 @@ Partial Class AddEmployee
         Me.AddEmployeeFormLabel.TabIndex = 56
         Me.AddEmployeeFormLabel.Text = "Add New Employee"
         '
-        'AddEmployeeForm
+        'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -338,11 +338,11 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormStateTxtBox)
         Me.Controls.Add(Me.addEmployeeFormStateLabel)
         Me.Controls.Add(Me.addEmployeeFormAddyTxtBox)
-        Me.Controls.Add(Me.addEmployeeFormFirstNameTxtBox)
+        Me.Controls.Add(Me.addEmpFnameTxt)
         Me.Controls.Add(Me.addEmployeeFormAddyLabel)
         Me.Controls.Add(Me.addEmployeeFormFirstNameLabel)
         Me.Controls.Add(Me.AddEmployeeFormLabel)
-        Me.Name = "AddEmployeeForm"
+        Me.Name = "AddEmployee"
         Me.Text = "AddEmployeeForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -374,7 +374,7 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormStateTxtBox As TextBox
     Private WithEvents addEmployeeFormStateLabel As Label
     Private WithEvents addEmployeeFormAddyTxtBox As TextBox
-    Private WithEvents addEmployeeFormFirstNameTxtBox As TextBox
+    Private WithEvents addEmpFnameTxt As TextBox
     Private WithEvents addEmployeeFormAddyLabel As Label
     Private WithEvents addEmployeeFormFirstNameLabel As Label
     Private WithEvents AddEmployeeFormLabel As Label
