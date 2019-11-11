@@ -33,11 +33,11 @@ Partial Class AddEmployee
         Me.addEmployeeFormAddUsrDescLabel3 = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel2 = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel1 = New System.Windows.Forms.Label()
-        Me.addEmployeeFormAddButton = New System.Windows.Forms.Button()
+        Me.AddEmpBtn = New System.Windows.Forms.Button()
         Me.addEmployeePositionTxtBox = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormPositionLable = New System.Windows.Forms.Label()
         Me.addEmployeeFormBackButton = New System.Windows.Forms.Button()
-        Me.addEmployeeFormNextButton = New System.Windows.Forms.Button()
+        Me.nextBtn = New System.Windows.Forms.Button()
         Me.addEmployeeFormPhoneTxtBox = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormPhoneLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormLastNameTxtBox = New System.Windows.Forms.TextBox()
@@ -152,14 +152,14 @@ Partial Class AddEmployee
         Me.addEmployeeFormAddUsrDescLabel1.TabIndex = 74
         Me.addEmployeeFormAddUsrDescLabel1.Text = "Add Employee, hit next to continue when finished"
         '
-        'addEmployeeFormAddButton
+        'AddEmpBtn
         '
-        Me.addEmployeeFormAddButton.Location = New System.Drawing.Point(772, 332)
-        Me.addEmployeeFormAddButton.Name = "addEmployeeFormAddButton"
-        Me.addEmployeeFormAddButton.Size = New System.Drawing.Size(102, 23)
-        Me.addEmployeeFormAddButton.TabIndex = 11
-        Me.addEmployeeFormAddButton.Text = "Add Employee"
-        Me.addEmployeeFormAddButton.UseVisualStyleBackColor = True
+        Me.AddEmpBtn.Location = New System.Drawing.Point(772, 332)
+        Me.AddEmpBtn.Name = "AddEmpBtn"
+        Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
+        Me.AddEmpBtn.TabIndex = 11
+        Me.AddEmpBtn.Text = "Add Employee"
+        Me.AddEmpBtn.UseVisualStyleBackColor = True
         '
         'addEmployeePositionTxtBox
         '
@@ -187,14 +187,14 @@ Partial Class AddEmployee
         Me.addEmployeeFormBackButton.Text = "Back"
         Me.addEmployeeFormBackButton.UseVisualStyleBackColor = True
         '
-        'addEmployeeFormNextButton
+        'nextBtn
         '
-        Me.addEmployeeFormNextButton.Location = New System.Drawing.Point(812, 430)
-        Me.addEmployeeFormNextButton.Name = "addEmployeeFormNextButton"
-        Me.addEmployeeFormNextButton.Size = New System.Drawing.Size(75, 23)
-        Me.addEmployeeFormNextButton.TabIndex = 69
-        Me.addEmployeeFormNextButton.Text = "Next"
-        Me.addEmployeeFormNextButton.UseVisualStyleBackColor = True
+        Me.nextBtn.Location = New System.Drawing.Point(812, 430)
+        Me.nextBtn.Name = "nextBtn"
+        Me.nextBtn.Size = New System.Drawing.Size(75, 23)
+        Me.nextBtn.TabIndex = 69
+        Me.nextBtn.Text = "Next"
+        Me.nextBtn.UseVisualStyleBackColor = True
         '
         'addEmployeeFormPhoneTxtBox
         '
@@ -324,11 +324,11 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel3)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel2)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel1)
-        Me.Controls.Add(Me.addEmployeeFormAddButton)
+        Me.Controls.Add(Me.AddEmpBtn)
         Me.Controls.Add(Me.addEmployeePositionTxtBox)
         Me.Controls.Add(Me.addEmployeeFormPositionLable)
         Me.Controls.Add(Me.addEmployeeFormBackButton)
-        Me.Controls.Add(Me.addEmployeeFormNextButton)
+        Me.Controls.Add(Me.nextBtn)
         Me.Controls.Add(Me.addEmployeeFormPhoneTxtBox)
         Me.Controls.Add(Me.addEmployeeFormPhoneLabel)
         Me.Controls.Add(Me.addEmployeeFormLastNameTxtBox)
@@ -360,11 +360,11 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormAddUsrDescLabel3 As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel2 As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel1 As Label
-    Private WithEvents addEmployeeFormAddButton As Button
+    Private WithEvents AddEmpBtn As Button
     Private WithEvents addEmployeePositionTxtBox As TextBox
     Private WithEvents addEmployeeFormPositionLable As Label
     Private WithEvents addEmployeeFormBackButton As Button
-    Private WithEvents addEmployeeFormNextButton As Button
+    Private WithEvents nextBtn As Button
     Private WithEvents addEmployeeFormPhoneTxtBox As TextBox
     Private WithEvents addEmployeeFormPhoneLabel As Label
     Private WithEvents addEmployeeFormLastNameTxtBox As TextBox

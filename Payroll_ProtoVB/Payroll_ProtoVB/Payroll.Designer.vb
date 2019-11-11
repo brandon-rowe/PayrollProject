@@ -24,7 +24,7 @@ Partial Class Payroll
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
@@ -43,15 +43,9 @@ Partial Class Payroll
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.PastPayTab = New System.Windows.Forms.TabPage()
         Me.PayrollDataGridViewPast = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeePastBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.FuturePayTab = New System.Windows.Forms.TabPage()
         Me.PayrollDataGridViewFuture = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeFutureBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PrintDocumentPaystub = New System.Drawing.Printing.PrintDocument()
         Me.payStubViewBTN = New System.Windows.Forms.Button()
@@ -209,47 +203,24 @@ Partial Class Payroll
         'PayrollDataGridViewPast
         '
         Me.PayrollDataGridViewPast.AutoGenerateColumns = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource1
         Me.PayrollDataGridViewPast.Location = New System.Drawing.Point(-3, -3)
         Me.PayrollDataGridViewPast.Name = "PayrollDataGridViewPast"
         Me.PayrollDataGridViewPast.Size = New System.Drawing.Size(796, 307)
         Me.PayrollDataGridViewPast.TabIndex = 1
         '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "Employee ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        '
-        'DateDataGridViewTextBoxColumn
-        '
-        Me.DateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "date"
-        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
-        '
-        'AmountDataGridViewTextBoxColumn
-        '
-        Me.AmountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "amount"
-        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
-        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
-        '
         'EmployeePastBindingSource1
         '
         Me.EmployeePastBindingSource1.DataMember = "EmployeePast"
-
         '
         'FuturePayTab
         '
@@ -266,33 +237,11 @@ Partial Class Payroll
         '
         Me.PayrollDataGridViewFuture.AutoGenerateColumns = False
         Me.PayrollDataGridViewFuture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PayrollDataGridViewFuture.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn1, Me.DateDataGridViewTextBoxColumn1, Me.AmountDataGridViewTextBoxColumn1})
         Me.PayrollDataGridViewFuture.DataSource = Me.EmployeeFutureBindingSource
         Me.PayrollDataGridViewFuture.Location = New System.Drawing.Point(3, 0)
         Me.PayrollDataGridViewFuture.Name = "PayrollDataGridViewFuture"
         Me.PayrollDataGridViewFuture.Size = New System.Drawing.Size(787, 307)
         Me.PayrollDataGridViewFuture.TabIndex = 0
-        '
-        'IDDataGridViewTextBoxColumn1
-        '
-        Me.IDDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.IDDataGridViewTextBoxColumn1.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn1.Name = "IDDataGridViewTextBoxColumn1"
-        '
-        'DateDataGridViewTextBoxColumn1
-        '
-        Me.DateDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DateDataGridViewTextBoxColumn1.DataPropertyName = "date"
-        Me.DateDataGridViewTextBoxColumn1.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn1.Name = "DateDataGridViewTextBoxColumn1"
-        '
-        'AmountDataGridViewTextBoxColumn1
-        '
-        Me.AmountDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.AmountDataGridViewTextBoxColumn1.DataPropertyName = "amount"
-        Me.AmountDataGridViewTextBoxColumn1.HeaderText = "Amount"
-        Me.AmountDataGridViewTextBoxColumn1.Name = "AmountDataGridViewTextBoxColumn1"
         '
         'EmployeeFutureBindingSource
         '
@@ -310,7 +259,6 @@ Partial Class Payroll
         Me.payStubViewBTN.TabIndex = 17
         Me.payStubViewBTN.Text = "View Paystub "
         Me.payStubViewBTN.UseVisualStyleBackColor = True
-
         '
         'Button1
         '
@@ -321,7 +269,7 @@ Partial Class Payroll
         Me.Button1.Text = "Employee Detail View"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'PayrollForm
+        'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -333,7 +281,7 @@ Partial Class Payroll
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.payrollFormEmployeeSearchLabel)
         Me.Controls.Add(Me.menueStrip)
-        Me.Name = "PayrollForm"
+        Me.Name = "Payroll"
         Me.Text = "PayrollForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
