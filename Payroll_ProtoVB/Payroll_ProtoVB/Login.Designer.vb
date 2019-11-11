@@ -42,7 +42,7 @@ Partial Class Login
         Me.userGenFormPassLabel = New System.Windows.Forms.Label()
         Me.usrGenFormUsrNameLabel = New System.Windows.Forms.Label()
         Me.userGenFormLabel = New System.Windows.Forms.Label()
-        Me.loginFormButton = New System.Windows.Forms.Button()
+        Me.loginBtn = New System.Windows.Forms.Button()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.loginPwTxt = New System.Windows.Forms.TextBox()
         Me.loginUsrTxt = New System.Windows.Forms.TextBox()
@@ -229,14 +229,14 @@ Partial Class Login
         Me.userGenFormLabel.TabIndex = 1
         Me.userGenFormLabel.Text = "Create New User"
         '
-        'loginFormButton
+        'loginBtn
         '
-        Me.loginFormButton.Location = New System.Drawing.Point(226, 277)
-        Me.loginFormButton.Name = "loginFormButton"
-        Me.loginFormButton.Size = New System.Drawing.Size(75, 23)
-        Me.loginFormButton.TabIndex = 2
-        Me.loginFormButton.Text = "Login"
-        Me.loginFormButton.UseVisualStyleBackColor = True
+        Me.loginBtn.Location = New System.Drawing.Point(226, 277)
+        Me.loginBtn.Name = "loginBtn"
+        Me.loginBtn.Size = New System.Drawing.Size(75, 23)
+        Me.loginBtn.TabIndex = 2
+        Me.loginBtn.Text = "Login"
+        Me.loginBtn.UseVisualStyleBackColor = True
         '
         'pictureBox1
         '
@@ -298,7 +298,7 @@ Partial Class Login
         '
         'splitContainer1.Panel1
         '
-        Me.splitContainer1.Panel1.Controls.Add(Me.loginFormButton)
+        Me.splitContainer1.Panel1.Controls.Add(Me.loginBtn)
         Me.splitContainer1.Panel1.Controls.Add(Me.pictureBox1)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginPwTxt)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginUsrTxt)
@@ -371,7 +371,7 @@ Partial Class Login
     Private WithEvents userGenFormPassLabel As Label
     Private WithEvents usrGenFormUsrNameLabel As Label
     Private WithEvents userGenFormLabel As Label
-    Private WithEvents loginFormButton As Button
+    Private WithEvents loginBtn As Button
     Private WithEvents pictureBox1 As PictureBox
     Private WithEvents loginPwTxt As TextBox
     Private WithEvents loginUsrTxt As TextBox

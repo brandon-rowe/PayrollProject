@@ -40,7 +40,7 @@
         Console.WriteLine(Pword)
     End Sub
 
-    Private Sub loginFormButton_Click(sender As Object, e As EventArgs) Handles loginFormButton.Click
+    Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
 
