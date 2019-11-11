@@ -142,6 +142,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Primary.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Primary.vb">
+      <DependentUpon>Primary.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddEmployee.resx">
