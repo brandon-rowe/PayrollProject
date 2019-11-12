@@ -22,43 +22,41 @@ Partial Class AddEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.addEmployeeFormDepStatTxtBox = New System.Windows.Forms.TextBox()
+        Me.DependentsTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormDepStatLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormMaritalStatTxtBox = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormMstatLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormPaymentTypeLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormpaymentTypeComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.PayTypeTxt = New System.Windows.Forms.ComboBox()
         Me.addEmployeeFormPermissionsCheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.addEmployeeFormPermissionsLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel3 = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel2 = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel1 = New System.Windows.Forms.Label()
         Me.AddEmpBtn = New System.Windows.Forms.Button()
-        Me.addEmployeePositionTxtBox = New System.Windows.Forms.TextBox()
+        Me.PositionTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormPositionLable = New System.Windows.Forms.Label()
-        Me.addEmployeeFormBackButton = New System.Windows.Forms.Button()
-        Me.nextBtn = New System.Windows.Forms.Button()
-        Me.addEmployeeFormPhoneTxtBox = New System.Windows.Forms.TextBox()
-        Me.addEmployeeFormPhoneLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormLastNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.BackBtn = New System.Windows.Forms.Button()
+        Me.NextBtn = New System.Windows.Forms.Button()
+        Me.LnameTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormLastNameLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormZipTxtBox = New System.Windows.Forms.TextBox()
+        Me.ZipTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormZipLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormStateTxtBox = New System.Windows.Forms.TextBox()
+        Me.StateTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormStateLabel = New System.Windows.Forms.Label()
-        Me.addEmployeeFormAddyTxtBox = New System.Windows.Forms.TextBox()
-        Me.addEmpFnameTxt = New System.Windows.Forms.TextBox()
+        Me.AddressTxt = New System.Windows.Forms.TextBox()
+        Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormAddyLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.AddEmployeeFormLabel = New System.Windows.Forms.Label()
+        Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
-        'addEmployeeFormDepStatTxtBox
+        'DependentsTxt
         '
-        Me.addEmployeeFormDepStatTxtBox.Location = New System.Drawing.Point(658, 146)
-        Me.addEmployeeFormDepStatTxtBox.Name = "addEmployeeFormDepStatTxtBox"
-        Me.addEmployeeFormDepStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormDepStatTxtBox.TabIndex = 7
+        Me.DependentsTxt.Location = New System.Drawing.Point(658, 146)
+        Me.DependentsTxt.Name = "DependentsTxt"
+        Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
+        Me.DependentsTxt.TabIndex = 7
         '
         'addEmployeeFormDepStatLabel
         '
@@ -69,13 +67,6 @@ Partial Class AddEmployee
         Me.addEmployeeFormDepStatLabel.Size = New System.Drawing.Size(107, 20)
         Me.addEmployeeFormDepStatLabel.TabIndex = 83
         Me.addEmployeeFormDepStatLabel.Text = "Dependents"
-        '
-        'addEmployeeFormMaritalStatTxtBox
-        '
-        Me.addEmployeeFormMaritalStatTxtBox.Location = New System.Drawing.Point(658, 110)
-        Me.addEmployeeFormMaritalStatTxtBox.Name = "addEmployeeFormMaritalStatTxtBox"
-        Me.addEmployeeFormMaritalStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormMaritalStatTxtBox.TabIndex = 6
         '
         'addEmployeeFormMstatLabel
         '
@@ -97,14 +88,14 @@ Partial Class AddEmployee
         Me.addEmployeeFormPaymentTypeLabel.TabIndex = 80
         Me.addEmployeeFormPaymentTypeLabel.Text = "Payment Type"
         '
-        'addEmployeeFormpaymentTypeComboBox1
+        'PayTypeTxt
         '
-        Me.addEmployeeFormpaymentTypeComboBox1.FormattingEnabled = True
-        Me.addEmployeeFormpaymentTypeComboBox1.Items.AddRange(New Object() {"Salary", "Hourly"})
-        Me.addEmployeeFormpaymentTypeComboBox1.Location = New System.Drawing.Point(658, 229)
-        Me.addEmployeeFormpaymentTypeComboBox1.Name = "addEmployeeFormpaymentTypeComboBox1"
-        Me.addEmployeeFormpaymentTypeComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.addEmployeeFormpaymentTypeComboBox1.TabIndex = 9
+        Me.PayTypeTxt.FormattingEnabled = True
+        Me.PayTypeTxt.Items.AddRange(New Object() {"Salary", "Hourly"})
+        Me.PayTypeTxt.Location = New System.Drawing.Point(658, 229)
+        Me.PayTypeTxt.Name = "PayTypeTxt"
+        Me.PayTypeTxt.Size = New System.Drawing.Size(121, 21)
+        Me.PayTypeTxt.TabIndex = 9
         '
         'addEmployeeFormPermissionsCheckedListBox1
         '
@@ -161,12 +152,12 @@ Partial Class AddEmployee
         Me.AddEmpBtn.Text = "Add Employee"
         Me.AddEmpBtn.UseVisualStyleBackColor = True
         '
-        'addEmployeePositionTxtBox
+        'PositionTxt
         '
-        Me.addEmployeePositionTxtBox.Location = New System.Drawing.Point(658, 185)
-        Me.addEmployeePositionTxtBox.Name = "addEmployeePositionTxtBox"
-        Me.addEmployeePositionTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeePositionTxtBox.TabIndex = 8
+        Me.PositionTxt.Location = New System.Drawing.Point(658, 185)
+        Me.PositionTxt.Name = "PositionTxt"
+        Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
+        Me.PositionTxt.TabIndex = 8
         '
         'addEmployeeFormPositionLable
         '
@@ -178,47 +169,30 @@ Partial Class AddEmployee
         Me.addEmployeeFormPositionLable.TabIndex = 71
         Me.addEmployeeFormPositionLable.Text = "Position"
         '
-        'addEmployeeFormBackButton
+        'BackBtn
         '
-        Me.addEmployeeFormBackButton.Location = New System.Drawing.Point(704, 430)
-        Me.addEmployeeFormBackButton.Name = "addEmployeeFormBackButton"
-        Me.addEmployeeFormBackButton.Size = New System.Drawing.Size(75, 23)
-        Me.addEmployeeFormBackButton.TabIndex = 70
-        Me.addEmployeeFormBackButton.Text = "Back"
-        Me.addEmployeeFormBackButton.UseVisualStyleBackColor = True
+        Me.BackBtn.Location = New System.Drawing.Point(704, 430)
+        Me.BackBtn.Name = "BackBtn"
+        Me.BackBtn.Size = New System.Drawing.Size(75, 23)
+        Me.BackBtn.TabIndex = 70
+        Me.BackBtn.Text = "Back"
+        Me.BackBtn.UseVisualStyleBackColor = True
         '
-        'nextBtn
+        'NextBtn
         '
-        Me.nextBtn.Location = New System.Drawing.Point(812, 430)
-        Me.nextBtn.Name = "nextBtn"
-        Me.nextBtn.Size = New System.Drawing.Size(75, 23)
-        Me.nextBtn.TabIndex = 69
-        Me.nextBtn.Text = "Next"
-        Me.nextBtn.UseVisualStyleBackColor = True
+        Me.NextBtn.Location = New System.Drawing.Point(812, 430)
+        Me.NextBtn.Name = "NextBtn"
+        Me.NextBtn.Size = New System.Drawing.Size(75, 23)
+        Me.NextBtn.TabIndex = 69
+        Me.NextBtn.Text = "Next"
+        Me.NextBtn.UseVisualStyleBackColor = True
         '
-        'addEmployeeFormPhoneTxtBox
+        'LnameTxt
         '
-        Me.addEmployeeFormPhoneTxtBox.Location = New System.Drawing.Point(232, 284)
-        Me.addEmployeeFormPhoneTxtBox.Name = "addEmployeeFormPhoneTxtBox"
-        Me.addEmployeeFormPhoneTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormPhoneTxtBox.TabIndex = 5
-        '
-        'addEmployeeFormPhoneLabel
-        '
-        Me.addEmployeeFormPhoneLabel.AutoSize = True
-        Me.addEmployeeFormPhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addEmployeeFormPhoneLabel.Location = New System.Drawing.Point(73, 282)
-        Me.addEmployeeFormPhoneLabel.Name = "addEmployeeFormPhoneLabel"
-        Me.addEmployeeFormPhoneLabel.Size = New System.Drawing.Size(60, 20)
-        Me.addEmployeeFormPhoneLabel.TabIndex = 67
-        Me.addEmployeeFormPhoneLabel.Text = "Phone"
-        '
-        'addEmployeeFormLastNameTxtBox
-        '
-        Me.addEmployeeFormLastNameTxtBox.Location = New System.Drawing.Point(232, 146)
-        Me.addEmployeeFormLastNameTxtBox.Name = "addEmployeeFormLastNameTxtBox"
-        Me.addEmployeeFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormLastNameTxtBox.TabIndex = 1
+        Me.LnameTxt.Location = New System.Drawing.Point(232, 146)
+        Me.LnameTxt.Name = "LnameTxt"
+        Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.LnameTxt.TabIndex = 1
         '
         'addEmployeeFormLastNameLabel
         '
@@ -230,12 +204,12 @@ Partial Class AddEmployee
         Me.addEmployeeFormLastNameLabel.TabIndex = 65
         Me.addEmployeeFormLastNameLabel.Text = "Last Name"
         '
-        'addEmployeeFormZipTxtBox
+        'ZipTxt
         '
-        Me.addEmployeeFormZipTxtBox.Location = New System.Drawing.Point(232, 249)
-        Me.addEmployeeFormZipTxtBox.Name = "addEmployeeFormZipTxtBox"
-        Me.addEmployeeFormZipTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.addEmployeeFormZipTxtBox.TabIndex = 4
+        Me.ZipTxt.Location = New System.Drawing.Point(232, 249)
+        Me.ZipTxt.Name = "ZipTxt"
+        Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
+        Me.ZipTxt.TabIndex = 4
         '
         'addEmployeeFormZipLabel
         '
@@ -247,12 +221,12 @@ Partial Class AddEmployee
         Me.addEmployeeFormZipLabel.TabIndex = 63
         Me.addEmployeeFormZipLabel.Text = "Zip"
         '
-        'addEmployeeFormStateTxtBox
+        'StateTxt
         '
-        Me.addEmployeeFormStateTxtBox.Location = New System.Drawing.Point(232, 217)
-        Me.addEmployeeFormStateTxtBox.Name = "addEmployeeFormStateTxtBox"
-        Me.addEmployeeFormStateTxtBox.Size = New System.Drawing.Size(148, 20)
-        Me.addEmployeeFormStateTxtBox.TabIndex = 3
+        Me.StateTxt.Location = New System.Drawing.Point(232, 217)
+        Me.StateTxt.Name = "StateTxt"
+        Me.StateTxt.Size = New System.Drawing.Size(148, 20)
+        Me.StateTxt.TabIndex = 3
         '
         'addEmployeeFormStateLabel
         '
@@ -264,19 +238,19 @@ Partial Class AddEmployee
         Me.addEmployeeFormStateLabel.TabIndex = 61
         Me.addEmployeeFormStateLabel.Text = "State"
         '
-        'addEmployeeFormAddyTxtBox
+        'AddressTxt
         '
-        Me.addEmployeeFormAddyTxtBox.Location = New System.Drawing.Point(232, 183)
-        Me.addEmployeeFormAddyTxtBox.Name = "addEmployeeFormAddyTxtBox"
-        Me.addEmployeeFormAddyTxtBox.Size = New System.Drawing.Size(240, 20)
-        Me.addEmployeeFormAddyTxtBox.TabIndex = 2
+        Me.AddressTxt.Location = New System.Drawing.Point(232, 183)
+        Me.AddressTxt.Name = "AddressTxt"
+        Me.AddressTxt.Size = New System.Drawing.Size(240, 20)
+        Me.AddressTxt.TabIndex = 2
         '
-        'addEmpFnameTxt
+        'FnameTxt
         '
-        Me.addEmpFnameTxt.Location = New System.Drawing.Point(232, 110)
-        Me.addEmpFnameTxt.Name = "addEmpFnameTxt"
-        Me.addEmpFnameTxt.Size = New System.Drawing.Size(121, 20)
-        Me.addEmpFnameTxt.TabIndex = 0
+        Me.FnameTxt.Location = New System.Drawing.Point(232, 110)
+        Me.FnameTxt.Name = "FnameTxt"
+        Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.FnameTxt.TabIndex = 0
         '
         'addEmployeeFormAddyLabel
         '
@@ -308,37 +282,44 @@ Partial Class AddEmployee
         Me.AddEmployeeFormLabel.TabIndex = 56
         Me.AddEmployeeFormLabel.Text = "Add New Employee"
         '
+        'MaritalStatCB
+        '
+        Me.MaritalStatCB.FormattingEnabled = True
+        Me.MaritalStatCB.Items.AddRange(New Object() {"Single", "Married"})
+        Me.MaritalStatCB.Location = New System.Drawing.Point(658, 107)
+        Me.MaritalStatCB.Name = "MaritalStatCB"
+        Me.MaritalStatCB.Size = New System.Drawing.Size(121, 21)
+        Me.MaritalStatCB.TabIndex = 84
+        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
-        Me.Controls.Add(Me.addEmployeeFormDepStatTxtBox)
+        Me.Controls.Add(Me.MaritalStatCB)
+        Me.Controls.Add(Me.DependentsTxt)
         Me.Controls.Add(Me.addEmployeeFormDepStatLabel)
-        Me.Controls.Add(Me.addEmployeeFormMaritalStatTxtBox)
         Me.Controls.Add(Me.addEmployeeFormMstatLabel)
         Me.Controls.Add(Me.addEmployeeFormPaymentTypeLabel)
-        Me.Controls.Add(Me.addEmployeeFormpaymentTypeComboBox1)
+        Me.Controls.Add(Me.PayTypeTxt)
         Me.Controls.Add(Me.addEmployeeFormPermissionsCheckedListBox1)
         Me.Controls.Add(Me.addEmployeeFormPermissionsLabel)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel3)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel2)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel1)
         Me.Controls.Add(Me.AddEmpBtn)
-        Me.Controls.Add(Me.addEmployeePositionTxtBox)
+        Me.Controls.Add(Me.PositionTxt)
         Me.Controls.Add(Me.addEmployeeFormPositionLable)
-        Me.Controls.Add(Me.addEmployeeFormBackButton)
-        Me.Controls.Add(Me.nextBtn)
-        Me.Controls.Add(Me.addEmployeeFormPhoneTxtBox)
-        Me.Controls.Add(Me.addEmployeeFormPhoneLabel)
-        Me.Controls.Add(Me.addEmployeeFormLastNameTxtBox)
+        Me.Controls.Add(Me.BackBtn)
+        Me.Controls.Add(Me.NextBtn)
+        Me.Controls.Add(Me.LnameTxt)
         Me.Controls.Add(Me.addEmployeeFormLastNameLabel)
-        Me.Controls.Add(Me.addEmployeeFormZipTxtBox)
+        Me.Controls.Add(Me.ZipTxt)
         Me.Controls.Add(Me.addEmployeeFormZipLabel)
-        Me.Controls.Add(Me.addEmployeeFormStateTxtBox)
+        Me.Controls.Add(Me.StateTxt)
         Me.Controls.Add(Me.addEmployeeFormStateLabel)
-        Me.Controls.Add(Me.addEmployeeFormAddyTxtBox)
-        Me.Controls.Add(Me.addEmpFnameTxt)
+        Me.Controls.Add(Me.AddressTxt)
+        Me.Controls.Add(Me.FnameTxt)
         Me.Controls.Add(Me.addEmployeeFormAddyLabel)
         Me.Controls.Add(Me.addEmployeeFormFirstNameLabel)
         Me.Controls.Add(Me.AddEmployeeFormLabel)
@@ -349,33 +330,31 @@ Partial Class AddEmployee
 
     End Sub
 
-    Private WithEvents addEmployeeFormDepStatTxtBox As TextBox
+    Private WithEvents DependentsTxt As TextBox
     Private WithEvents addEmployeeFormDepStatLabel As Label
-    Private WithEvents addEmployeeFormMaritalStatTxtBox As TextBox
     Private WithEvents addEmployeeFormMstatLabel As Label
     Private WithEvents addEmployeeFormPaymentTypeLabel As Label
-    Private WithEvents addEmployeeFormpaymentTypeComboBox1 As ComboBox
+    Private WithEvents PayTypeTxt As ComboBox
     Private WithEvents addEmployeeFormPermissionsCheckedListBox1 As CheckedListBox
     Private WithEvents addEmployeeFormPermissionsLabel As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel3 As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel2 As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel1 As Label
     Private WithEvents AddEmpBtn As Button
-    Private WithEvents addEmployeePositionTxtBox As TextBox
+    Private WithEvents PositionTxt As TextBox
     Private WithEvents addEmployeeFormPositionLable As Label
-    Private WithEvents addEmployeeFormBackButton As Button
-    Private WithEvents nextBtn As Button
-    Private WithEvents addEmployeeFormPhoneTxtBox As TextBox
-    Private WithEvents addEmployeeFormPhoneLabel As Label
-    Private WithEvents addEmployeeFormLastNameTxtBox As TextBox
+    Private WithEvents BackBtn As Button
+    Private WithEvents NextBtn As Button
+    Private WithEvents LnameTxt As TextBox
     Private WithEvents addEmployeeFormLastNameLabel As Label
-    Private WithEvents addEmployeeFormZipTxtBox As TextBox
+    Private WithEvents ZipTxt As TextBox
     Private WithEvents addEmployeeFormZipLabel As Label
-    Private WithEvents addEmployeeFormStateTxtBox As TextBox
+    Private WithEvents StateTxt As TextBox
     Private WithEvents addEmployeeFormStateLabel As Label
-    Private WithEvents addEmployeeFormAddyTxtBox As TextBox
-    Private WithEvents addEmpFnameTxt As TextBox
+    Private WithEvents AddressTxt As TextBox
+    Private WithEvents FnameTxt As TextBox
     Private WithEvents addEmployeeFormAddyLabel As Label
     Private WithEvents addEmployeeFormFirstNameLabel As Label
     Private WithEvents AddEmployeeFormLabel As Label
+    Private WithEvents MaritalStatCB As ComboBox
 End Class

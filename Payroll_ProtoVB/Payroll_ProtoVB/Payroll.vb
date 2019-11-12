@@ -2,10 +2,10 @@
     Inherits System.Windows.Forms.Form
     'load form
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeeFuture' table. You can move, or remove it, as needed.
-        'Me.EmployeeFutureTableAdapter.Fill(Me._540GroupProjectDataSet.EmployeeFuture)
-        'TODO: This line of code loads data into the '_540GroupProjectDataSet.EmployeePast' table. You can move, or remove it, as needed.
-        'Me.EmployeePastTableAdapter.Fill(Me._540GroupProjectDataSet.EmployeePast)
+        'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
+        Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
+        'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
+        Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
     End Sub
 
     Private Sub metricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
@@ -16,10 +16,6 @@
     Private Sub calcPayBTN_Click(sender As Object, e As EventArgs) Handles calcPayBTN.Click
         Dim PayCalc = New PayRateCalc()
         PayCalc.Show()
-    End Sub
-
-    Private Sub payTstripBTN_Click(sender As Object, e As EventArgs) Handles payTstripBTN.Click
-
     End Sub
 
     Private Sub payStubViewBTN_Click(sender As Object, e As EventArgs) Handles payStubViewBTN.Click

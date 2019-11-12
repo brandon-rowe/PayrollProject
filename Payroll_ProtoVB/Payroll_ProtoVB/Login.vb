@@ -10,6 +10,7 @@
     Dim phone As Long
     Dim Uname As String
     Dim Pword As String
+    Dim Pword2 As String
 
     'load form
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -18,38 +19,27 @@
 
     'create user button
     Private Sub UsrGenFormCreateUsrButton_Click(sender As Object, e As EventArgs) Handles usrGenFormCreateUsrButton.Click
-        Fname = usrGenFormFirstNameTxtBox.Text
-        Lname = usrGenFormLastNameTxtBox.Text
-        street = usrGenFormAddyTxtBox.Text
-        state = usrGenFormStateTxtBox.Text
-        zip = usrGenFormZipTxtBox.Text
-        phone = usrGenFormPhoneTxtBox.Text
-        Uname = usrGenFormUsrNameTxtBox.Text
-        Pword = usrGenFormPassTxtBox.Text
-
+        Fname = FnameTxt.Text
+        Lname = LnameTxt.Text
+        street = StreetTxt.Text
+        state = StateTxt.Text
+        zip = ZipTxt.Text
+        Uname = CreateUnameTxt.Text
+        Pword = CreatePwordTxt.Text
+        Pword2 = VerifyPwordTxt.Text
         address = street + " " + state + " " + zip
 
-        Console.WriteLine(Fname)
-        Console.WriteLine(Lname)
-        Console.WriteLine(address)
-        Console.WriteLine(street)
-        Console.WriteLine(state)
-        Console.WriteLine(zip)
-        Console.WriteLine(phone)
-        Console.WriteLine(Uname)
-        Console.WriteLine(Pword)
+        'If (Pword == Pword2) Then
 
         Dim AddEmployee = New AddEmployee()
-        AddEmployee.Show()
-        'Me.Close()
+            AddEmployee.Show()
+            'Me.Close()
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
 
-        Console.WriteLine(Uname)
-        Console.WriteLine(Pword)
         Dim Payroll = New Payroll()
         Payroll.Show()
         'Me.Close()
