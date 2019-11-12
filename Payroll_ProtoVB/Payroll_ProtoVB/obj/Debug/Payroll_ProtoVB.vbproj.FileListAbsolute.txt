@@ -64,3 +64,4 @@ C:\Users\Risen\Documents\540GroupProject\PayrollProject\Payroll_ProtoVB\Payroll_
 C:\Users\Risen\Documents\540GroupProject\PayrollProject\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.xml
 C:\Users\Risen\Documents\540GroupProject\PayrollProject\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.pdb
 C:\Users\Risen\Documents\540GroupProject\PayrollProject\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.EmpDashboard.resources
+C:\Users\project\Desktop\PayrollProject\Payroll_ProtoVB\Payroll_ProtoVB\obj\Debug\Payroll_ProtoVB.EmpDashboard.resources

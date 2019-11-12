@@ -23,22 +23,20 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.usrGenFormCreateUsrButton = New System.Windows.Forms.Button()
-        Me.usrGenFormPhoneTxtBox = New System.Windows.Forms.TextBox()
-        Me.usrGenFormPhoneLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormLastNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.LnameTxt = New System.Windows.Forms.TextBox()
         Me.usrGenFormLastNameLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormZipTxtBox = New System.Windows.Forms.TextBox()
+        Me.ZipTxt = New System.Windows.Forms.TextBox()
         Me.usrGenFormZipLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormStateTxtBox = New System.Windows.Forms.TextBox()
+        Me.StateTxt = New System.Windows.Forms.TextBox()
         Me.usrGenFormStateLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormAddyTxtBox = New System.Windows.Forms.TextBox()
-        Me.usrGenFormFirstNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.StreetTxt = New System.Windows.Forms.TextBox()
+        Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.usrGenFormAddyLabel = New System.Windows.Forms.Label()
         Me.usrGenFormFirstNameLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormPassVryfyTxtBox = New System.Windows.Forms.TextBox()
+        Me.VerifyPwordTxt = New System.Windows.Forms.TextBox()
         Me.userGenFormPassVrfyLabel = New System.Windows.Forms.Label()
-        Me.usrGenFormPassTxtBox = New System.Windows.Forms.TextBox()
-        Me.usrGenFormUsrNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.CreatePwordTxt = New System.Windows.Forms.TextBox()
+        Me.CreateUnameTxt = New System.Windows.Forms.TextBox()
         Me.userGenFormPassLabel = New System.Windows.Forms.Label()
         Me.usrGenFormUsrNameLabel = New System.Windows.Forms.Label()
         Me.userGenFormLabel = New System.Windows.Forms.Label()
@@ -66,29 +64,12 @@ Partial Class Login
         Me.usrGenFormCreateUsrButton.Text = "Create User"
         Me.usrGenFormCreateUsrButton.UseVisualStyleBackColor = True
         '
-        'usrGenFormPhoneTxtBox
+        'LnameTxt
         '
-        Me.usrGenFormPhoneTxtBox.Location = New System.Drawing.Point(199, 263)
-        Me.usrGenFormPhoneTxtBox.Name = "usrGenFormPhoneTxtBox"
-        Me.usrGenFormPhoneTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormPhoneTxtBox.TabIndex = 5
-        '
-        'usrGenFormPhoneLabel
-        '
-        Me.usrGenFormPhoneLabel.AutoSize = True
-        Me.usrGenFormPhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usrGenFormPhoneLabel.Location = New System.Drawing.Point(40, 261)
-        Me.usrGenFormPhoneLabel.Name = "usrGenFormPhoneLabel"
-        Me.usrGenFormPhoneLabel.Size = New System.Drawing.Size(60, 20)
-        Me.usrGenFormPhoneLabel.TabIndex = 21
-        Me.usrGenFormPhoneLabel.Text = "Phone"
-        '
-        'usrGenFormLastNameTxtBox
-        '
-        Me.usrGenFormLastNameTxtBox.Location = New System.Drawing.Point(199, 125)
-        Me.usrGenFormLastNameTxtBox.Name = "usrGenFormLastNameTxtBox"
-        Me.usrGenFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormLastNameTxtBox.TabIndex = 1
+        Me.LnameTxt.Location = New System.Drawing.Point(199, 125)
+        Me.LnameTxt.Name = "LnameTxt"
+        Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.LnameTxt.TabIndex = 1
         '
         'usrGenFormLastNameLabel
         '
@@ -100,12 +81,12 @@ Partial Class Login
         Me.usrGenFormLastNameLabel.TabIndex = 19
         Me.usrGenFormLastNameLabel.Text = "Last Name"
         '
-        'usrGenFormZipTxtBox
+        'ZipTxt
         '
-        Me.usrGenFormZipTxtBox.Location = New System.Drawing.Point(199, 228)
-        Me.usrGenFormZipTxtBox.Name = "usrGenFormZipTxtBox"
-        Me.usrGenFormZipTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormZipTxtBox.TabIndex = 4
+        Me.ZipTxt.Location = New System.Drawing.Point(199, 228)
+        Me.ZipTxt.Name = "ZipTxt"
+        Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
+        Me.ZipTxt.TabIndex = 4
         '
         'usrGenFormZipLabel
         '
@@ -117,12 +98,12 @@ Partial Class Login
         Me.usrGenFormZipLabel.TabIndex = 17
         Me.usrGenFormZipLabel.Text = "Zip"
         '
-        'usrGenFormStateTxtBox
+        'StateTxt
         '
-        Me.usrGenFormStateTxtBox.Location = New System.Drawing.Point(199, 196)
-        Me.usrGenFormStateTxtBox.Name = "usrGenFormStateTxtBox"
-        Me.usrGenFormStateTxtBox.Size = New System.Drawing.Size(148, 20)
-        Me.usrGenFormStateTxtBox.TabIndex = 3
+        Me.StateTxt.Location = New System.Drawing.Point(199, 196)
+        Me.StateTxt.Name = "StateTxt"
+        Me.StateTxt.Size = New System.Drawing.Size(148, 20)
+        Me.StateTxt.TabIndex = 3
         '
         'usrGenFormStateLabel
         '
@@ -134,19 +115,19 @@ Partial Class Login
         Me.usrGenFormStateLabel.TabIndex = 15
         Me.usrGenFormStateLabel.Text = "State"
         '
-        'usrGenFormAddyTxtBox
+        'StreetTxt
         '
-        Me.usrGenFormAddyTxtBox.Location = New System.Drawing.Point(199, 162)
-        Me.usrGenFormAddyTxtBox.Name = "usrGenFormAddyTxtBox"
-        Me.usrGenFormAddyTxtBox.Size = New System.Drawing.Size(240, 20)
-        Me.usrGenFormAddyTxtBox.TabIndex = 2
+        Me.StreetTxt.Location = New System.Drawing.Point(199, 162)
+        Me.StreetTxt.Name = "StreetTxt"
+        Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
+        Me.StreetTxt.TabIndex = 2
         '
-        'usrGenFormFirstNameTxtBox
+        'FnameTxt
         '
-        Me.usrGenFormFirstNameTxtBox.Location = New System.Drawing.Point(199, 89)
-        Me.usrGenFormFirstNameTxtBox.Name = "usrGenFormFirstNameTxtBox"
-        Me.usrGenFormFirstNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormFirstNameTxtBox.TabIndex = 0
+        Me.FnameTxt.Location = New System.Drawing.Point(199, 89)
+        Me.FnameTxt.Name = "FnameTxt"
+        Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.FnameTxt.TabIndex = 0
         '
         'usrGenFormAddyLabel
         '
@@ -168,12 +149,12 @@ Partial Class Login
         Me.usrGenFormFirstNameLabel.TabIndex = 11
         Me.usrGenFormFirstNameLabel.Text = "First Name"
         '
-        'usrGenFormPassVryfyTxtBox
+        'VerifyPwordTxt
         '
-        Me.usrGenFormPassVryfyTxtBox.Location = New System.Drawing.Point(335, 427)
-        Me.usrGenFormPassVryfyTxtBox.Name = "usrGenFormPassVryfyTxtBox"
-        Me.usrGenFormPassVryfyTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormPassVryfyTxtBox.TabIndex = 8
+        Me.VerifyPwordTxt.Location = New System.Drawing.Point(335, 427)
+        Me.VerifyPwordTxt.Name = "VerifyPwordTxt"
+        Me.VerifyPwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.VerifyPwordTxt.TabIndex = 8
         '
         'userGenFormPassVrfyLabel
         '
@@ -185,19 +166,19 @@ Partial Class Login
         Me.userGenFormPassVrfyLabel.TabIndex = 9
         Me.userGenFormPassVrfyLabel.Text = "Verify Password"
         '
-        'usrGenFormPassTxtBox
+        'CreatePwordTxt
         '
-        Me.usrGenFormPassTxtBox.Location = New System.Drawing.Point(335, 393)
-        Me.usrGenFormPassTxtBox.Name = "usrGenFormPassTxtBox"
-        Me.usrGenFormPassTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormPassTxtBox.TabIndex = 7
+        Me.CreatePwordTxt.Location = New System.Drawing.Point(335, 393)
+        Me.CreatePwordTxt.Name = "CreatePwordTxt"
+        Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.CreatePwordTxt.TabIndex = 7
         '
-        'usrGenFormUsrNameTxtBox
+        'CreateUnameTxt
         '
-        Me.usrGenFormUsrNameTxtBox.Location = New System.Drawing.Point(335, 365)
-        Me.usrGenFormUsrNameTxtBox.Name = "usrGenFormUsrNameTxtBox"
-        Me.usrGenFormUsrNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.usrGenFormUsrNameTxtBox.TabIndex = 6
+        Me.CreateUnameTxt.Location = New System.Drawing.Point(335, 365)
+        Me.CreateUnameTxt.Name = "CreateUnameTxt"
+        Me.CreateUnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.CreateUnameTxt.TabIndex = 6
         '
         'userGenFormPassLabel
         '
@@ -309,22 +290,20 @@ Partial Class Login
         'splitContainer1.Panel2
         '
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormCreateUsrButton)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormPhoneTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormPhoneLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormLastNameTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.LnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormLastNameLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormZipTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.ZipTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormZipLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormStateTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.StateTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormStateLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormAddyTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormFirstNameTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.StreetTxt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormFirstNameLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormPassVryfyTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.VerifyPwordTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormPassVrfyLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormPassTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormUsrNameTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.CreatePwordTxt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.CreateUnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormPassLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormUsrNameLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormLabel)
@@ -352,22 +331,20 @@ Partial Class Login
     End Sub
 
     Private WithEvents usrGenFormCreateUsrButton As Button
-    Private WithEvents usrGenFormPhoneTxtBox As TextBox
-    Private WithEvents usrGenFormPhoneLabel As Label
-    Private WithEvents usrGenFormLastNameTxtBox As TextBox
+    Private WithEvents LnameTxt As TextBox
     Private WithEvents usrGenFormLastNameLabel As Label
-    Private WithEvents usrGenFormZipTxtBox As TextBox
+    Private WithEvents ZipTxt As TextBox
     Private WithEvents usrGenFormZipLabel As Label
-    Private WithEvents usrGenFormStateTxtBox As TextBox
+    Private WithEvents StateTxt As TextBox
     Private WithEvents usrGenFormStateLabel As Label
-    Private WithEvents usrGenFormAddyTxtBox As TextBox
-    Private WithEvents usrGenFormFirstNameTxtBox As TextBox
+    Private WithEvents StreetTxt As TextBox
+    Private WithEvents FnameTxt As TextBox
     Private WithEvents usrGenFormAddyLabel As Label
     Private WithEvents usrGenFormFirstNameLabel As Label
-    Private WithEvents usrGenFormPassVryfyTxtBox As TextBox
+    Private WithEvents VerifyPwordTxt As TextBox
     Private WithEvents userGenFormPassVrfyLabel As Label
-    Private WithEvents usrGenFormPassTxtBox As TextBox
-    Private WithEvents usrGenFormUsrNameTxtBox As TextBox
+    Private WithEvents CreatePwordTxt As TextBox
+    Private WithEvents CreateUnameTxt As TextBox
     Private WithEvents userGenFormPassLabel As Label
     Private WithEvents usrGenFormUsrNameLabel As Label
     Private WithEvents userGenFormLabel As Label
