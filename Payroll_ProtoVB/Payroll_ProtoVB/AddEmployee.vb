@@ -12,9 +12,6 @@
     Dim position As String
     Dim paymentType As String
 
-    Private Sub AddEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
         Fname = FnameTxt.Text
@@ -35,10 +32,30 @@
         Console.WriteLine(dependents)
         Console.WriteLine(position)
         Console.WriteLine(paymentType)
+
+
+        FnameTxt.Clear()
+        LnameTxt.Clear()
+        AddressTxt.Clear()
+        StateTxt.Clear()
+        ZipTxt.Clear()
+        MaritalStatCB.Refresh()
+        MaritalStatCB.ResetText()
+        DependentsTxt.Clear()
+        PositionTxt.Clear()
+        PayTypeTxt.Refresh()
+        PayTypeTxt.ResetText()
+        'not correct usage, will not revert to default blank permissions.
+        AccessCTRL.Refresh()
+        AccessCTRL.ResetText()
+
+
+
     End Sub
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
-        Dim Payroll = New Payroll()
-        Payroll.Show()
+        'Dim EmpDashboard = New EmpDashboard()
+        Login.BringToFront() 'this still works I want to find a way to have it set where there aren't random popups on the screen everytime we move to a new form.
+
     End Sub
 End Class

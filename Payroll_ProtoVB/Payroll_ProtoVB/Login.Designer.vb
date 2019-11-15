@@ -31,7 +31,7 @@ Partial Class Login
         Me.usrGenFormStateLabel = New System.Windows.Forms.Label()
         Me.StreetTxt = New System.Windows.Forms.TextBox()
         Me.FnameTxt = New System.Windows.Forms.TextBox()
-        Me.usrGenFormAddyLabel = New System.Windows.Forms.Label()
+        Me.StreetLbl = New System.Windows.Forms.Label()
         Me.usrGenFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.VerifyPwordTxt = New System.Windows.Forms.MaskedTextBox()
         Me.userGenFormPassVrfyLabel = New System.Windows.Forms.Label()
@@ -129,15 +129,15 @@ Partial Class Login
         Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
         Me.FnameTxt.TabIndex = 0
         '
-        'usrGenFormAddyLabel
+        'StreetLbl
         '
-        Me.usrGenFormAddyLabel.AutoSize = True
-        Me.usrGenFormAddyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usrGenFormAddyLabel.Location = New System.Drawing.Point(38, 162)
-        Me.usrGenFormAddyLabel.Name = "usrGenFormAddyLabel"
-        Me.usrGenFormAddyLabel.Size = New System.Drawing.Size(75, 20)
-        Me.usrGenFormAddyLabel.TabIndex = 12
-        Me.usrGenFormAddyLabel.Text = "Address"
+        Me.StreetLbl.AutoSize = True
+        Me.StreetLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StreetLbl.Location = New System.Drawing.Point(38, 162)
+        Me.StreetLbl.Name = "StreetLbl"
+        Me.StreetLbl.Size = New System.Drawing.Size(130, 20)
+        Me.StreetLbl.TabIndex = 12
+        Me.StreetLbl.Text = "Street Address"
         '
         'usrGenFormFirstNameLabel
         '
@@ -285,7 +285,7 @@ Partial Class Login
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormStateLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.StreetTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
-        Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormAddyLabel)
+        Me.splitContainer1.Panel2.Controls.Add(Me.StreetLbl)
         Me.splitContainer1.Panel2.Controls.Add(Me.usrGenFormFirstNameLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.VerifyPwordTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.userGenFormPassVrfyLabel)
@@ -342,7 +342,7 @@ Partial Class Login
     Private WithEvents usrGenFormStateLabel As Label
     Private WithEvents StreetTxt As TextBox
     Private WithEvents FnameTxt As TextBox
-    Private WithEvents usrGenFormAddyLabel As Label
+    Private WithEvents StreetLbl As Label
     Private WithEvents usrGenFormFirstNameLabel As Label
     Private WithEvents VerifyPwordTxt As MaskedTextBox
     Private WithEvents userGenFormPassVrfyLabel As Label

@@ -27,7 +27,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormMstatLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormPaymentTypeLabel = New System.Windows.Forms.Label()
         Me.PayTypeTxt = New System.Windows.Forms.ComboBox()
-        Me.addEmployeeFormPermissionsCheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.AccessCTRL = New System.Windows.Forms.CheckedListBox()
         Me.addEmployeeFormPermissionsLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel3 = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel2 = New System.Windows.Forms.Label()
@@ -90,6 +90,7 @@ Partial Class AddEmployee
         '
         'PayTypeTxt
         '
+        Me.PayTypeTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.PayTypeTxt.FormattingEnabled = True
         Me.PayTypeTxt.Items.AddRange(New Object() {"Salary", "Hourly"})
         Me.PayTypeTxt.Location = New System.Drawing.Point(658, 229)
@@ -97,14 +98,14 @@ Partial Class AddEmployee
         Me.PayTypeTxt.Size = New System.Drawing.Size(121, 21)
         Me.PayTypeTxt.TabIndex = 9
         '
-        'addEmployeeFormPermissionsCheckedListBox1
+        'AccessCTRL
         '
-        Me.addEmployeeFormPermissionsCheckedListBox1.FormattingEnabled = True
-        Me.addEmployeeFormPermissionsCheckedListBox1.Items.AddRange(New Object() {"FullAccess(Can View and Edit Employe Records, Wages, Edit Payroll Rollout)", "PartialAccess(Can View Employee information and Metrics)"})
-        Me.addEmployeeFormPermissionsCheckedListBox1.Location = New System.Drawing.Point(622, 270)
-        Me.addEmployeeFormPermissionsCheckedListBox1.Name = "addEmployeeFormPermissionsCheckedListBox1"
-        Me.addEmployeeFormPermissionsCheckedListBox1.Size = New System.Drawing.Size(386, 34)
-        Me.addEmployeeFormPermissionsCheckedListBox1.TabIndex = 10
+        Me.AccessCTRL.FormattingEnabled = True
+        Me.AccessCTRL.Items.AddRange(New Object() {"FullAccess(Can View and Edit Employe Records, Wages, Edit Payroll Rollout)", "PartialAccess(Can View Employee information and Metrics)"})
+        Me.AccessCTRL.Location = New System.Drawing.Point(622, 270)
+        Me.AccessCTRL.Name = "AccessCTRL"
+        Me.AccessCTRL.Size = New System.Drawing.Size(386, 34)
+        Me.AccessCTRL.TabIndex = 10
         '
         'addEmployeeFormPermissionsLabel
         '
@@ -284,6 +285,7 @@ Partial Class AddEmployee
         '
         'MaritalStatCB
         '
+        Me.MaritalStatCB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.MaritalStatCB.FormattingEnabled = True
         Me.MaritalStatCB.Items.AddRange(New Object() {"Single", "Married"})
         Me.MaritalStatCB.Location = New System.Drawing.Point(658, 107)
@@ -302,7 +304,7 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormMstatLabel)
         Me.Controls.Add(Me.addEmployeeFormPaymentTypeLabel)
         Me.Controls.Add(Me.PayTypeTxt)
-        Me.Controls.Add(Me.addEmployeeFormPermissionsCheckedListBox1)
+        Me.Controls.Add(Me.AccessCTRL)
         Me.Controls.Add(Me.addEmployeeFormPermissionsLabel)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel3)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel2)
@@ -335,7 +337,7 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormMstatLabel As Label
     Private WithEvents addEmployeeFormPaymentTypeLabel As Label
     Private WithEvents PayTypeTxt As ComboBox
-    Private WithEvents addEmployeeFormPermissionsCheckedListBox1 As CheckedListBox
+    Private WithEvents AccessCTRL As CheckedListBox
     Private WithEvents addEmployeeFormPermissionsLabel As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel3 As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel2 As Label
