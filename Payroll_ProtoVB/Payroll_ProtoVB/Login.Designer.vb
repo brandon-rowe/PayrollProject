@@ -33,21 +33,21 @@ Partial Class Login
         Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.usrGenFormAddyLabel = New System.Windows.Forms.Label()
         Me.usrGenFormFirstNameLabel = New System.Windows.Forms.Label()
-        Me.VerifyPwordTxt = New System.Windows.Forms.TextBox()
+        Me.VerifyPwordTxt = New System.Windows.Forms.MaskedTextBox()
         Me.userGenFormPassVrfyLabel = New System.Windows.Forms.Label()
-        Me.CreatePwordTxt = New System.Windows.Forms.TextBox()
         Me.CreateUnameTxt = New System.Windows.Forms.TextBox()
         Me.userGenFormPassLabel = New System.Windows.Forms.Label()
         Me.usrGenFormUsrNameLabel = New System.Windows.Forms.Label()
         Me.userGenFormLabel = New System.Windows.Forms.Label()
         Me.loginBtn = New System.Windows.Forms.Button()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.loginPwTxt = New System.Windows.Forms.TextBox()
         Me.loginUsrTxt = New System.Windows.Forms.TextBox()
         Me.loginformPassLabel = New System.Windows.Forms.Label()
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
         Me.loginFormLable = New System.Windows.Forms.Label()
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
+        Me.CreatePwordTxt = New System.Windows.Forms.MaskedTextBox()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
@@ -60,7 +60,7 @@ Partial Class Login
         Me.usrGenFormCreateUsrButton.Location = New System.Drawing.Point(381, 460)
         Me.usrGenFormCreateUsrButton.Name = "usrGenFormCreateUsrButton"
         Me.usrGenFormCreateUsrButton.Size = New System.Drawing.Size(75, 23)
-        Me.usrGenFormCreateUsrButton.TabIndex = 9
+        Me.usrGenFormCreateUsrButton.TabIndex = 8
         Me.usrGenFormCreateUsrButton.Text = "Create User"
         Me.usrGenFormCreateUsrButton.UseVisualStyleBackColor = True
         '
@@ -153,8 +153,9 @@ Partial Class Login
         '
         Me.VerifyPwordTxt.Location = New System.Drawing.Point(335, 427)
         Me.VerifyPwordTxt.Name = "VerifyPwordTxt"
+        Me.VerifyPwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.VerifyPwordTxt.Size = New System.Drawing.Size(121, 20)
-        Me.VerifyPwordTxt.TabIndex = 8
+        Me.VerifyPwordTxt.TabIndex = 7
         '
         'userGenFormPassVrfyLabel
         '
@@ -166,19 +167,12 @@ Partial Class Login
         Me.userGenFormPassVrfyLabel.TabIndex = 9
         Me.userGenFormPassVrfyLabel.Text = "Verify Password"
         '
-        'CreatePwordTxt
-        '
-        Me.CreatePwordTxt.Location = New System.Drawing.Point(335, 393)
-        Me.CreatePwordTxt.Name = "CreatePwordTxt"
-        Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
-        Me.CreatePwordTxt.TabIndex = 7
-        '
         'CreateUnameTxt
         '
         Me.CreateUnameTxt.Location = New System.Drawing.Point(335, 365)
         Me.CreateUnameTxt.Name = "CreateUnameTxt"
         Me.CreateUnameTxt.Size = New System.Drawing.Size(121, 20)
-        Me.CreateUnameTxt.TabIndex = 6
+        Me.CreateUnameTxt.TabIndex = 5
         '
         'userGenFormPassLabel
         '
@@ -227,13 +221,6 @@ Partial Class Login
         Me.pictureBox1.TabIndex = 5
         Me.pictureBox1.TabStop = False
         '
-        'loginPwTxt
-        '
-        Me.loginPwTxt.Location = New System.Drawing.Point(181, 240)
-        Me.loginPwTxt.Name = "loginPwTxt"
-        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
-        Me.loginPwTxt.TabIndex = 1
-        '
         'loginUsrTxt
         '
         Me.loginUsrTxt.Location = New System.Drawing.Point(181, 211)
@@ -279,9 +266,9 @@ Partial Class Login
         '
         'splitContainer1.Panel1
         '
+        Me.splitContainer1.Panel1.Controls.Add(Me.loginPwTxt)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginBtn)
         Me.splitContainer1.Panel1.Controls.Add(Me.pictureBox1)
-        Me.splitContainer1.Panel1.Controls.Add(Me.loginPwTxt)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginUsrTxt)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginformPassLabel)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginFormUsrLabel)
@@ -310,6 +297,22 @@ Partial Class Login
         Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
         Me.splitContainer1.SplitterDistance = 511
         Me.splitContainer1.TabIndex = 1
+        '
+        'loginPwTxt
+        '
+        Me.loginPwTxt.Location = New System.Drawing.Point(181, 242)
+        Me.loginPwTxt.Name = "loginPwTxt"
+        Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
+        Me.loginPwTxt.TabIndex = 1
+        '
+        'CreatePwordTxt
+        '
+        Me.CreatePwordTxt.Location = New System.Drawing.Point(335, 393)
+        Me.CreatePwordTxt.Name = "CreatePwordTxt"
+        Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.CreatePwordTxt.TabIndex = 6
         '
         'Login
         '
@@ -341,19 +344,19 @@ Partial Class Login
     Private WithEvents FnameTxt As TextBox
     Private WithEvents usrGenFormAddyLabel As Label
     Private WithEvents usrGenFormFirstNameLabel As Label
-    Private WithEvents VerifyPwordTxt As TextBox
+    Private WithEvents VerifyPwordTxt As MaskedTextBox
     Private WithEvents userGenFormPassVrfyLabel As Label
-    Private WithEvents CreatePwordTxt As TextBox
     Private WithEvents CreateUnameTxt As TextBox
     Private WithEvents userGenFormPassLabel As Label
     Private WithEvents usrGenFormUsrNameLabel As Label
     Private WithEvents userGenFormLabel As Label
     Private WithEvents loginBtn As Button
     Private WithEvents pictureBox1 As PictureBox
-    Private WithEvents loginPwTxt As TextBox
     Private WithEvents loginUsrTxt As TextBox
     Private WithEvents loginformPassLabel As Label
     Private WithEvents loginFormUsrLabel As Label
     Private WithEvents loginFormLable As Label
     Private WithEvents splitContainer1 As SplitContainer
+    Private WithEvents CreatePwordTxt As MaskedTextBox
+    Private WithEvents loginPwTxt As MaskedTextBox
 End Class

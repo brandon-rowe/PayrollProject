@@ -9,8 +9,9 @@
     Dim zip As String
     Dim phone As Long
     Dim Uname As String
+    Dim CPword As String
+    Dim VryPword As String
     Dim Pword As String
-    Dim Pword2 As String
 
     'load form
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,23 +26,65 @@
         state = StateTxt.Text
         zip = ZipTxt.Text
         Uname = CreateUnameTxt.Text
-        Pword = CreatePwordTxt.Text
-        Pword2 = VerifyPwordTxt.Text
+        CPword = CreatePwordTxt.Text
+        VryPword = VerifyPwordTxt.Text
         address = street + " " + state + " " + zip
 
-        'If (Pword == Pword2) Then
+        'include  if (Pword.Contains("/") Or (Pword.Contains("\") Or (Pword.Contains("{")) Or (Pword.Contains("}")) Or (Pword.Contains("(")) Or (Pword.Contains(")")))
+        'Password Requriment- Less than 15 Characters
+        If CPword.Length() > 15 Then
+            Dim MSG, style, title, response, MyString
+            MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
+            title = "Input Error- Password"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
+        End If
 
-        Dim AddEmployee = New AddEmployee()
+        'Password Verification
+        If (CPword <> VryPword) Then
+            Dim MSG, style, title, response, MyString
+            MSG = "Passwords do not match"
+            title = "Input Error- Password"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
+
+            'if passwords match proceed to next form, must be contained within else if, otherwise dialog box will generate,
+            'but Information will still be transferred.
+
+        ElseIf CPword = VryPword Then
+            Dim AddEmployee = New AddEmployee()
             AddEmployee.Show()
-            'Me.Close()
+        End If
+
+        'Me.Close()
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
+        If Pword.Length() > 15 Then
+            Dim MSG, style, title, response, MyString
+            MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
+            title = "Input Error- Password"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
 
+        ElseIf Pword.Length <= 15 Then
         Dim Payroll = New Payroll()
         Payroll.Show()
+        End If
+
         'Me.Close()
     End Sub
+
+
 End Class
