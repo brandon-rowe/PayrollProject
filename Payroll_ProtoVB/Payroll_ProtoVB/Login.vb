@@ -112,7 +112,7 @@
 
         'only moves to next form if all conditions met.
         If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
-            Dim AddEmployee = New AddEmployee()
+            'Dim AddEmployee = New AddEmployee()
             AddEmployee.Show()
 
             FnameTxt.Clear()
@@ -166,7 +166,6 @@
             End If
 
         ElseIf Pword.Length() > 0 AndAlso Pword.Length() <= 15 AndAlso Uname.Length > 0 Then
-            'Dim Payroll = New Payroll()
             EmpDashboard.Show()
         End If
 

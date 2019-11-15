@@ -37,10 +37,6 @@ Partial Class EmpDashboard
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Primary = New Payroll_ProtoVB.Primary()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.btnDetailedView = New System.Windows.Forms.Button()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,10 +50,14 @@ Partial Class EmpDashboard
         Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.btnDetailedView = New System.Windows.Forms.Button()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menueStrip
@@ -163,29 +163,6 @@ Partial Class EmpDashboard
         Me.DataGridView1.Size = New System.Drawing.Size(858, 397)
         Me.DataGridView1.TabIndex = 5
         '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'btnDetailedView
-        '
-        Me.btnDetailedView.Location = New System.Drawing.Point(892, 442)
-        Me.btnDetailedView.Name = "btnDetailedView"
-        Me.btnDetailedView.Size = New System.Drawing.Size(99, 41)
-        Me.btnDetailedView.TabIndex = 6
-        Me.btnDetailedView.Text = "Detailed Employee View"
-        Me.btnDetailedView.UseVisualStyleBackColor = True
-        '
         'IDDataGridViewTextBoxColumn
         '
         Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
@@ -270,6 +247,29 @@ Partial Class EmpDashboard
         Me.SsnDataGridViewTextBoxColumn.HeaderText = "SSN"
         Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'btnDetailedView
+        '
+        Me.btnDetailedView.Location = New System.Drawing.Point(892, 442)
+        Me.btnDetailedView.Name = "btnDetailedView"
+        Me.btnDetailedView.Size = New System.Drawing.Size(99, 41)
+        Me.btnDetailedView.TabIndex = 6
+        Me.btnDetailedView.Text = "Detailed Employee View"
+        Me.btnDetailedView.UseVisualStyleBackColor = True
+        '
         'EmpDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,8 +283,8 @@ Partial Class EmpDashboard
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

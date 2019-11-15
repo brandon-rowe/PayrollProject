@@ -156,6 +156,7 @@ Partial Class Login
         Me.VerifyPwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.VerifyPwordTxt.Size = New System.Drawing.Size(121, 20)
         Me.VerifyPwordTxt.TabIndex = 7
+        Me.VerifyPwordTxt.UseSystemPasswordChar = True
         '
         'userGenFormPassVrfyLabel
         '
@@ -305,6 +306,7 @@ Partial Class Login
         Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
         Me.loginPwTxt.TabIndex = 1
+        Me.loginPwTxt.UseSystemPasswordChar = True
         '
         'CreatePwordTxt
         '
@@ -313,6 +315,7 @@ Partial Class Login
         Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
         Me.CreatePwordTxt.TabIndex = 6
+        Me.CreatePwordTxt.UseSystemPasswordChar = True
         '
         'Login
         '

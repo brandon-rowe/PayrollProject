@@ -49,6 +49,8 @@ Partial Class AddEmployee
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.AddEmployeeFormLabel = New System.Windows.Forms.Label()
         Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
+        Me.SSN_Label = New System.Windows.Forms.Label()
+        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -56,7 +58,7 @@ Partial Class AddEmployee
         Me.DependentsTxt.Location = New System.Drawing.Point(658, 146)
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
-        Me.DependentsTxt.TabIndex = 7
+        Me.DependentsTxt.TabIndex = 8
         '
         'addEmployeeFormDepStatLabel
         '
@@ -92,6 +94,7 @@ Partial Class AddEmployee
         '
         Me.PayTypeTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.PayTypeTxt.FormattingEnabled = True
+        Me.PayTypeTxt.ItemHeight = 13
         Me.PayTypeTxt.Items.AddRange(New Object() {"Salary", "Hourly"})
         Me.PayTypeTxt.Location = New System.Drawing.Point(658, 229)
         Me.PayTypeTxt.Name = "PayTypeTxt"
@@ -105,7 +108,7 @@ Partial Class AddEmployee
         Me.AccessCTRL.Location = New System.Drawing.Point(622, 270)
         Me.AccessCTRL.Name = "AccessCTRL"
         Me.AccessCTRL.Size = New System.Drawing.Size(386, 34)
-        Me.AccessCTRL.TabIndex = 10
+        Me.AccessCTRL.TabIndex = 11
         '
         'addEmployeeFormPermissionsLabel
         '
@@ -149,7 +152,7 @@ Partial Class AddEmployee
         Me.AddEmpBtn.Location = New System.Drawing.Point(772, 332)
         Me.AddEmpBtn.Name = "AddEmpBtn"
         Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
-        Me.AddEmpBtn.TabIndex = 11
+        Me.AddEmpBtn.TabIndex = 12
         Me.AddEmpBtn.Text = "Add Employee"
         Me.AddEmpBtn.UseVisualStyleBackColor = True
         '
@@ -158,7 +161,7 @@ Partial Class AddEmployee
         Me.PositionTxt.Location = New System.Drawing.Point(658, 185)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
-        Me.PositionTxt.TabIndex = 8
+        Me.PositionTxt.TabIndex = 9
         '
         'addEmployeeFormPositionLable
         '
@@ -175,7 +178,7 @@ Partial Class AddEmployee
         Me.BackBtn.Location = New System.Drawing.Point(704, 430)
         Me.BackBtn.Name = "BackBtn"
         Me.BackBtn.Size = New System.Drawing.Size(75, 23)
-        Me.BackBtn.TabIndex = 70
+        Me.BackBtn.TabIndex = 13
         Me.BackBtn.Text = "Back"
         Me.BackBtn.UseVisualStyleBackColor = True
         '
@@ -184,7 +187,7 @@ Partial Class AddEmployee
         Me.NextBtn.Location = New System.Drawing.Point(812, 430)
         Me.NextBtn.Name = "NextBtn"
         Me.NextBtn.Size = New System.Drawing.Size(75, 23)
-        Me.NextBtn.TabIndex = 69
+        Me.NextBtn.TabIndex = 14
         Me.NextBtn.Text = "Next"
         Me.NextBtn.UseVisualStyleBackColor = True
         '
@@ -291,13 +294,36 @@ Partial Class AddEmployee
         Me.MaritalStatCB.Location = New System.Drawing.Point(658, 107)
         Me.MaritalStatCB.Name = "MaritalStatCB"
         Me.MaritalStatCB.Size = New System.Drawing.Size(121, 21)
-        Me.MaritalStatCB.TabIndex = 84
+        Me.MaritalStatCB.TabIndex = 7
+        '
+        'SSN_Label
+        '
+        Me.SSN_Label.AutoSize = True
+        Me.SSN_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SSN_Label.Location = New System.Drawing.Point(73, 284)
+        Me.SSN_Label.Name = "SSN_Label"
+        Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
+        Me.SSN_Label.TabIndex = 86
+        Me.SSN_Label.Text = "SSN"
+        '
+        'SSN_Txt
+        '
+        Me.SSN_Txt.Location = New System.Drawing.Point(232, 286)
+        Me.SSN_Txt.Mask = "000-00-0000"
+        Me.SSN_Txt.Name = "SSN_Txt"
+        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
+        Me.SSN_Txt.TabIndex = 6
+        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        Me.SSN_Txt.UseSystemPasswordChar = True
         '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
+        Me.Controls.Add(Me.SSN_Txt)
+        Me.Controls.Add(Me.SSN_Label)
         Me.Controls.Add(Me.MaritalStatCB)
         Me.Controls.Add(Me.DependentsTxt)
         Me.Controls.Add(Me.addEmployeeFormDepStatLabel)
@@ -359,4 +385,6 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormFirstNameLabel As Label
     Private WithEvents AddEmployeeFormLabel As Label
     Private WithEvents MaritalStatCB As ComboBox
+    Private WithEvents SSN_Label As Label
+    Private WithEvents SSN_Txt As MaskedTextBox
 End Class

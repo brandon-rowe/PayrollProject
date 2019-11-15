@@ -58,4 +58,5 @@
         Login.BringToFront() 'this still works I want to find a way to have it set where there aren't random popups on the screen everytime we move to a new form.
 
     End Sub
+
 End Class
