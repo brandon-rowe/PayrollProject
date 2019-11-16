@@ -123,7 +123,7 @@
             CreateUnameTxt.Clear()
             CreatePwordTxt.Clear()
             VerifyPwordTxt.Clear()
-
+            Me.Hide()
         End If
 
         'Me.Close()

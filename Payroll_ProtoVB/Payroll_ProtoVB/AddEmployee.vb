@@ -55,7 +55,8 @@
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
         'Dim EmpDashboard = New EmpDashboard()
-        Login.BringToFront() 'this still works I want to find a way to have it set where there aren't random popups on the screen everytime we move to a new form.
+        Me.Close()
+        Login.Show()
 
     End Sub
 
