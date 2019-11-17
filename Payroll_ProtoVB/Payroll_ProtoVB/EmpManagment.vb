@@ -5,4 +5,9 @@
 
     End Sub
 
+    Private Sub EmployeeMGMTFormCancelButton1_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormCancelButton1.Click
+        Me.Close()
+        EmpDashboard.BringToFront()
+
+    End Sub
 End Class

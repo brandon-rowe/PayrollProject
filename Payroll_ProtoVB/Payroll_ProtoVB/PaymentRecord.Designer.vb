@@ -44,6 +44,12 @@ Partial Class PaymentRecord
         Me.employeeMGMTFormFirstNameTxtBox = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.dataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PaymentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.endPayPeriodDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.dateDashLabel = New System.Windows.Forms.Label()
         Me.strtPayPeriodDatePicker = New System.Windows.Forms.DateTimePicker()
@@ -52,17 +58,11 @@ Partial Class PaymentRecord
         Me.endDateLabel = New System.Windows.Forms.Label()
         Me.populateTabelBTN = New System.Windows.Forms.Button()
         Me.backBTN = New System.Windows.Forms.Button()
-        Me.Primary = New Payroll_ProtoVB.Primary()
-        Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeePastTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeePastTableAdapter()
-        Me.PaymentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menueStrip.SuspendLayout()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menueStrip
@@ -159,12 +159,10 @@ Partial Class PaymentRecord
         'EmployeeIDTxtBox
         '
         Me.EmployeeIDTxtBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.EmployeeIDTxtBox.Enabled = False
         Me.EmployeeIDTxtBox.Location = New System.Drawing.Point(251, 31)
         Me.EmployeeIDTxtBox.Name = "EmployeeIDTxtBox"
         Me.EmployeeIDTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.EmployeeIDTxtBox.TabIndex = 84
-        Me.EmployeeIDTxtBox.Visible = False
         '
         'EmployeeIDLabel
         '
@@ -175,16 +173,13 @@ Partial Class PaymentRecord
         Me.EmployeeIDLabel.Size = New System.Drawing.Size(111, 20)
         Me.EmployeeIDLabel.TabIndex = 83
         Me.EmployeeIDLabel.Text = "Employee ID"
-        Me.EmployeeIDLabel.Visible = False
         '
         'employeeMGMTFormLastNameTxtBox
         '
-        Me.employeeMGMTFormLastNameTxtBox.Enabled = False
         Me.employeeMGMTFormLastNameTxtBox.Location = New System.Drawing.Point(252, 97)
         Me.employeeMGMTFormLastNameTxtBox.Name = "employeeMGMTFormLastNameTxtBox"
         Me.employeeMGMTFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormLastNameTxtBox.TabIndex = 88
-        Me.employeeMGMTFormLastNameTxtBox.Visible = False
         '
         'employeeMGMTFormLastNameLabel
         '
@@ -195,16 +190,13 @@ Partial Class PaymentRecord
         Me.employeeMGMTFormLastNameLabel.Size = New System.Drawing.Size(95, 20)
         Me.employeeMGMTFormLastNameLabel.TabIndex = 87
         Me.employeeMGMTFormLastNameLabel.Text = "Last Name"
-        Me.employeeMGMTFormLastNameLabel.Visible = False
         '
         'employeeMGMTFormFirstNameTxtBox
         '
-        Me.employeeMGMTFormFirstNameTxtBox.Enabled = False
         Me.employeeMGMTFormFirstNameTxtBox.Location = New System.Drawing.Point(252, 65)
         Me.employeeMGMTFormFirstNameTxtBox.Name = "employeeMGMTFormFirstNameTxtBox"
         Me.employeeMGMTFormFirstNameTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormFirstNameTxtBox.TabIndex = 86
-        Me.employeeMGMTFormFirstNameTxtBox.Visible = False
         '
         'employeeMGMTFormFirstNameLabel
         '
@@ -215,7 +207,6 @@ Partial Class PaymentRecord
         Me.employeeMGMTFormFirstNameLabel.Size = New System.Drawing.Size(96, 20)
         Me.employeeMGMTFormFirstNameLabel.TabIndex = 85
         Me.employeeMGMTFormFirstNameLabel.Text = "First Name"
-        Me.employeeMGMTFormFirstNameLabel.Visible = False
         '
         'dataGridView1
         '
@@ -237,6 +228,40 @@ Partial Class PaymentRecord
         Me.dataGridView1.Name = "dataGridView1"
         Me.dataGridView1.Size = New System.Drawing.Size(546, 391)
         Me.dataGridView1.TabIndex = 89
+        '
+        'PaymentIDDataGridViewTextBoxColumn
+        '
+        Me.PaymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID"
+        Me.PaymentIDDataGridViewTextBoxColumn.HeaderText = "Payment ID"
+        Me.PaymentIDDataGridViewTextBoxColumn.Name = "PaymentIDDataGridViewTextBoxColumn"
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "Employee ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        '
+        'DateDataGridViewTextBoxColumn
+        '
+        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "date"
+        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
+        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
+        '
+        'AmountDataGridViewTextBoxColumn
+        '
+        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "amount"
+        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
+        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
+        '
+        'EmployeePastBindingSource
+        '
+        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
+        Me.EmployeePastBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'endPayPeriodDatePicker
         '
@@ -281,7 +306,6 @@ Partial Class PaymentRecord
         Me.DateRangeLabel.Size = New System.Drawing.Size(106, 20)
         Me.DateRangeLabel.TabIndex = 93
         Me.DateRangeLabel.Text = "Date Range"
-        Me.DateRangeLabel.Visible = False
         '
         'startDateLabel
         '
@@ -321,43 +345,9 @@ Partial Class PaymentRecord
         Me.backBTN.Text = "Back"
         Me.backBTN.UseVisualStyleBackColor = True
         '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmployeePastBindingSource
-        '
-        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
-        Me.EmployeePastBindingSource.DataSource = Me.Primary
-        '
         'EmployeePastTableAdapter
         '
         Me.EmployeePastTableAdapter.ClearBeforeFill = True
-        '
-        'PaymentIDDataGridViewTextBoxColumn
-        '
-        Me.PaymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID"
-        Me.PaymentIDDataGridViewTextBoxColumn.HeaderText = "Payment ID"
-        Me.PaymentIDDataGridViewTextBoxColumn.Name = "PaymentIDDataGridViewTextBoxColumn"
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "Employee ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        '
-        'DateDataGridViewTextBoxColumn
-        '
-        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "date"
-        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
-        '
-        'AmountDataGridViewTextBoxColumn
-        '
-        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "amount"
-        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
-        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
         '
         'PaymentRecord
         '
@@ -385,8 +375,8 @@ Partial Class PaymentRecord
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
