@@ -1,6 +1,10 @@
-﻿Public Class AddEmployee
+﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+
+Public Class AddEmployee
     Inherits System.Windows.Forms.Form
     'load form
+
+    Dim employTA As New EmployeeTableAdapter
     Dim Fname As String
     Dim Lname As String
     Dim address As String
@@ -11,6 +15,9 @@
     Dim dependents As String
     Dim position As String
     Dim paymentType As String
+    Dim ssn As String
+    'Dim ID As Integer
+
 
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
@@ -27,7 +34,11 @@
         dependents = DependentsTxt.Text
         position = PositionTxt.Text
         paymentType = PayTypeCBox.Text
+        ssn = SSN_Txt.Text
+        'ID = employTA.maxIDQuery()
+        'ID = ID + 1
 
+        'Console.WriteLine(ID)
         Console.WriteLine(Fname)
         Console.WriteLine(Lname)
         Console.WriteLine(address)
@@ -51,6 +62,8 @@
         'not correct usage, will not revert to default blank permissions.
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
+
+        employTA.InsertQuery(6, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn)
         'B. Rowe: Some table adapter code here to update variables to table.
         'B. Rowe: Should be an insert query table adapter.
 
@@ -76,5 +89,13 @@
         'ATTENTION: This button should navigate to Login.vb
         Me.Close()
         Login.Show()
+    End Sub
+
+    Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
+
     End Sub
 End Class
