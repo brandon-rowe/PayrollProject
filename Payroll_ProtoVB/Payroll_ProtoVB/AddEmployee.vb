@@ -48,13 +48,14 @@
         'not correct usage, will not revert to default blank permissions.
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
+        'B. Rowe: Some table adapter code here to update variables to table.
+        'B. Rowe: Should be an insert query table adapter.
 
 
 
     End Sub
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
-        'Dim EmpDashboard = New EmpDashboard()
         Me.Close()
         Login.Show()
 
