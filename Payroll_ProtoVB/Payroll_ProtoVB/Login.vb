@@ -32,7 +32,10 @@
         address = street + " " + state + " " + zip
 
         'only moves to next form if all conditions met.
+
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
+            'ATTENTION: This button should navigate to AddEmployee.vb
+
             AddEmployee.Show()
 
             FnameTxt.Clear()
@@ -129,9 +132,17 @@
 
 
         'Me.Close()
+        If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
+
+            Dim AddEmployee = New AddEmployee()
+            AddEmployee.Show()
+            'Me.Hide()
+        End If
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
+        'ATTENTION: This button should navigate to EmpDashboard.vb
+
         UnameVryfy = CreateUnameTxt.Text
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
@@ -169,10 +180,8 @@
 
         ElseIf Pword.Length() > 0 AndAlso Pword.Length() <= 15 AndAlso Uname.Length > 0 Then
             EmpDashboard.Show()
+            'Me.Hide()
         End If
-
-        'Me.Close()
     End Sub
-
 
 End Class

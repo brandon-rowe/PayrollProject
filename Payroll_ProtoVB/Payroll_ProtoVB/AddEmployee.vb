@@ -14,16 +14,19 @@
 
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
+        'ATTENTION: This button should remain on AddEmployee.vb 
+        'until Next Or Back button is selected
+
         Fname = FnameTxt.Text
         Lname = LnameTxt.Text
-        street = AddressTxt.Text
+        street = StreetTxt.Text
         state = StateTxt.Text
         zip = ZipTxt.Text
         address = street + " " + state + " " + zip
         status = MaritalStatCB.Text
         dependents = DependentsTxt.Text
         position = PositionTxt.Text
-        paymentType = PayTypeTxt.Text
+        paymentType = PayTypeCBox.Text
 
         Console.WriteLine(Fname)
         Console.WriteLine(Lname)
@@ -36,28 +39,42 @@
 
         FnameTxt.Clear()
         LnameTxt.Clear()
-        AddressTxt.Clear()
+        StreetTxt.Clear()
         StateTxt.Clear()
         ZipTxt.Clear()
         MaritalStatCB.Refresh()
         MaritalStatCB.ResetText()
         DependentsTxt.Clear()
         PositionTxt.Clear()
-        PayTypeTxt.Refresh()
-        PayTypeTxt.ResetText()
+        PayTypeCBox.Refresh()
+        PayTypeCBox.ResetText()
         'not correct usage, will not revert to default blank permissions.
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
+        'B. Rowe: Some table adapter code here to update variables to table.
+        'B. Rowe: Should be an insert query table adapter.
 
 
 
     End Sub
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
-        'Dim EmpDashboard = New EmpDashboard()
+        'ATTENTION: This button should navigate to Login.vb
         Me.Close()
         Login.Show()
-
+        Login.FnameTxt.Clear()
+        Login.LnameTxt.Clear()
+        Login.StreetTxt.Clear()
+        Login.StateTxt.Clear()
+        Login.ZipTxt.Clear()
+        Login.CreateUnameTxt.Clear()
+        Login.CreatePwordTxt.Clear()
+        Login.VerifyPwordTxt.Clear()
     End Sub
 
+    Private Sub BackBtn_Click(sender As Object, e As EventArgs) Handles BackBtn.Click
+        'ATTENTION: This button should navigate to Login.vb
+        Me.Close()
+        Login.Show()
+    End Sub
 End Class

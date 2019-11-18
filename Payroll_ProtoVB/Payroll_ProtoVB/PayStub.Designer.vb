@@ -55,7 +55,7 @@ Partial Class PayStub
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -403,16 +403,16 @@ Partial Class PayStub
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(74, 6)
         '
-        'ToolStripButton1
+        'payTstripBTN
         '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.Honeydew
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(74, 19)
-        Me.ToolStripButton1.Text = "Payroll"
-        Me.ToolStripButton1.ToolTipText = "Payroll"
+        Me.payTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.payTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.payTstripBTN.Image = CType(resources.GetObject("payTstripBTN.Image"), System.Drawing.Image)
+        Me.payTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.payTstripBTN.Name = "payTstripBTN"
+        Me.payTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.payTstripBTN.Text = "Payroll"
+        Me.payTstripBTN.ToolTipText = "Payroll"
         '
         'ToolStripSeparator3
         '
@@ -444,7 +444,7 @@ Partial Class PayStub
         Me.menueStrip.AutoSize = False
         Me.menueStrip.BackColor = System.Drawing.Color.Teal
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.ToolStripButton1, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -513,7 +513,7 @@ Partial Class PayStub
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents calcPayBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents payTstripBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator

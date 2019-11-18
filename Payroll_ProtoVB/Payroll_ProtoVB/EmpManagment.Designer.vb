@@ -23,29 +23,28 @@ Partial Class EmpManagment
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.employeeMGMTPayableHrsLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTPayableHrsTxtBox = New System.Windows.Forms.TextBox()
+        Me.PayHrsTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormRmvEmployeeButton = New System.Windows.Forms.Button()
         Me.employeeMGMTFormEditButton = New System.Windows.Forms.Button()
-        Me.employeeMGMTWageRateTxtBox = New System.Windows.Forms.TextBox()
+        Me.PayRateTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormWageRateLabel = New System.Windows.Forms.Label()
-        Me.employeeMgmtFormDepStatTxtBox = New System.Windows.Forms.TextBox()
+        Me.DependentsTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTDependLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTMarriedStatTxtBox = New System.Windows.Forms.TextBox()
+        Me.MaritalStatusTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormMarriedStatLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormPaymentTypeLabel = New System.Windows.Forms.Label()
-        Me.paymentTypeComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.employeeMGMTPositionTxtBox = New System.Windows.Forms.TextBox()
+        Me.paymentTypeCBox = New System.Windows.Forms.ComboBox()
+        Me.PositionTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormPositionLable = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormPhoneTxtBox = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormPhoneLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormLastNameTxtBox = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormLastNameLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormZipTxtBox = New System.Windows.Forms.TextBox()
+        Me.SSN_Label = New System.Windows.Forms.Label()
+        Me.LnameTxt = New System.Windows.Forms.TextBox()
+        Me.LnameLabel = New System.Windows.Forms.Label()
+        Me.ZipTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormZipLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormStateTxtBox = New System.Windows.Forms.TextBox()
+        Me.StateTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormStateLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormAddyTxtBox = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormFirstNameTxtBox = New System.Windows.Forms.TextBox()
+        Me.StreetTxt = New System.Windows.Forms.TextBox()
+        Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormAddyLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormAddButton = New System.Windows.Forms.Button()
@@ -54,15 +53,16 @@ Partial Class EmpManagment
         Me.employeeMgmtFormSearchTxtBox = New System.Windows.Forms.TextBox()
         Me.employeeMgmtFormEmployeeSearch = New System.Windows.Forms.Label()
         Me.loginFormButton = New System.Windows.Forms.Button()
-        Me.employeeMgmtPassTxtBox = New System.Windows.Forms.TextBox()
         Me.employeeMgmtFormUsrTxtBox = New System.Windows.Forms.TextBox()
         Me.loginformPassLabel = New System.Windows.Forms.Label()
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
         Me.employeeSearchLabel = New System.Windows.Forms.Label()
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.EmployeeIDLabel = New System.Windows.Forms.Label()
+        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
+        Me.EmpIDTxt = New System.Windows.Forms.TextBox()
+        Me.EmpIDLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
@@ -81,13 +81,13 @@ Partial Class EmpManagment
         Me.employeeMGMTPayableHrsLabel.Text = "Payable Hours"
         Me.employeeMGMTPayableHrsLabel.Visible = False
         '
-        'employeeMGMTPayableHrsTxtBox
+        'PayHrsTxt
         '
-        Me.employeeMGMTPayableHrsTxtBox.Location = New System.Drawing.Point(525, 229)
-        Me.employeeMGMTPayableHrsTxtBox.Name = "employeeMGMTPayableHrsTxtBox"
-        Me.employeeMGMTPayableHrsTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTPayableHrsTxtBox.TabIndex = 78
-        Me.employeeMGMTPayableHrsTxtBox.Visible = False
+        Me.PayHrsTxt.Location = New System.Drawing.Point(525, 229)
+        Me.PayHrsTxt.Name = "PayHrsTxt"
+        Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
+        Me.PayHrsTxt.TabIndex = 78
+        Me.PayHrsTxt.Visible = False
         '
         'employeeMGMTFormRmvEmployeeButton
         '
@@ -109,13 +109,13 @@ Partial Class EmpManagment
         Me.employeeMGMTFormEditButton.UseVisualStyleBackColor = True
         Me.employeeMGMTFormEditButton.Visible = False
         '
-        'employeeMGMTWageRateTxtBox
+        'PayRateTxt
         '
-        Me.employeeMGMTWageRateTxtBox.Location = New System.Drawing.Point(145, 263)
-        Me.employeeMGMTWageRateTxtBox.Name = "employeeMGMTWageRateTxtBox"
-        Me.employeeMGMTWageRateTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTWageRateTxtBox.TabIndex = 77
-        Me.employeeMGMTWageRateTxtBox.Visible = False
+        Me.PayRateTxt.Location = New System.Drawing.Point(145, 263)
+        Me.PayRateTxt.Name = "PayRateTxt"
+        Me.PayRateTxt.Size = New System.Drawing.Size(121, 20)
+        Me.PayRateTxt.TabIndex = 77
+        Me.PayRateTxt.Visible = False
         '
         'employeeMGMTFormWageRateLabel
         '
@@ -128,13 +128,13 @@ Partial Class EmpManagment
         Me.employeeMGMTFormWageRateLabel.Text = "Wage Rate"
         Me.employeeMGMTFormWageRateLabel.Visible = False
         '
-        'employeeMgmtFormDepStatTxtBox
+        'DependentsTxt
         '
-        Me.employeeMgmtFormDepStatTxtBox.Location = New System.Drawing.Point(525, 58)
-        Me.employeeMgmtFormDepStatTxtBox.Name = "employeeMgmtFormDepStatTxtBox"
-        Me.employeeMgmtFormDepStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormDepStatTxtBox.TabIndex = 75
-        Me.employeeMgmtFormDepStatTxtBox.Visible = False
+        Me.DependentsTxt.Location = New System.Drawing.Point(525, 58)
+        Me.DependentsTxt.Name = "DependentsTxt"
+        Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
+        Me.DependentsTxt.TabIndex = 75
+        Me.DependentsTxt.Visible = False
         '
         'employeeMGMTDependLabel
         '
@@ -147,13 +147,13 @@ Partial Class EmpManagment
         Me.employeeMGMTDependLabel.Text = "Dependents"
         Me.employeeMGMTDependLabel.Visible = False
         '
-        'employeeMGMTMarriedStatTxtBox
+        'MaritalStatusTxt
         '
-        Me.employeeMGMTMarriedStatTxtBox.Location = New System.Drawing.Point(525, 24)
-        Me.employeeMGMTMarriedStatTxtBox.Name = "employeeMGMTMarriedStatTxtBox"
-        Me.employeeMGMTMarriedStatTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTMarriedStatTxtBox.TabIndex = 73
-        Me.employeeMGMTMarriedStatTxtBox.Visible = False
+        Me.MaritalStatusTxt.Location = New System.Drawing.Point(525, 24)
+        Me.MaritalStatusTxt.Name = "MaritalStatusTxt"
+        Me.MaritalStatusTxt.Size = New System.Drawing.Size(121, 20)
+        Me.MaritalStatusTxt.TabIndex = 73
+        Me.MaritalStatusTxt.Visible = False
         '
         'employeeMGMTFormMarriedStatLabel
         '
@@ -177,23 +177,23 @@ Partial Class EmpManagment
         Me.employeeMGMTFormPaymentTypeLabel.Text = "Payment Type"
         Me.employeeMGMTFormPaymentTypeLabel.Visible = False
         '
-        'paymentTypeComboBox1
+        'paymentTypeCBox
         '
-        Me.paymentTypeComboBox1.FormattingEnabled = True
-        Me.paymentTypeComboBox1.Items.AddRange(New Object() {"Salary", "Hourly"})
-        Me.paymentTypeComboBox1.Location = New System.Drawing.Point(525, 169)
-        Me.paymentTypeComboBox1.Name = "paymentTypeComboBox1"
-        Me.paymentTypeComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.paymentTypeComboBox1.TabIndex = 70
-        Me.paymentTypeComboBox1.Visible = False
+        Me.paymentTypeCBox.FormattingEnabled = True
+        Me.paymentTypeCBox.Items.AddRange(New Object() {"Salary", "Hourly"})
+        Me.paymentTypeCBox.Location = New System.Drawing.Point(525, 169)
+        Me.paymentTypeCBox.Name = "paymentTypeCBox"
+        Me.paymentTypeCBox.Size = New System.Drawing.Size(121, 21)
+        Me.paymentTypeCBox.TabIndex = 70
+        Me.paymentTypeCBox.Visible = False
         '
-        'employeeMGMTPositionTxtBox
+        'PositionTxt
         '
-        Me.employeeMGMTPositionTxtBox.Location = New System.Drawing.Point(525, 122)
-        Me.employeeMGMTPositionTxtBox.Name = "employeeMGMTPositionTxtBox"
-        Me.employeeMGMTPositionTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTPositionTxtBox.TabIndex = 69
-        Me.employeeMGMTPositionTxtBox.Visible = False
+        Me.PositionTxt.Location = New System.Drawing.Point(525, 122)
+        Me.PositionTxt.Name = "PositionTxt"
+        Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
+        Me.PositionTxt.TabIndex = 69
+        Me.PositionTxt.Visible = False
         '
         'employeeMGMTFormPositionLable
         '
@@ -206,52 +206,44 @@ Partial Class EmpManagment
         Me.employeeMGMTFormPositionLable.Text = "Position"
         Me.employeeMGMTFormPositionLable.Visible = False
         '
-        'employeeMGMTFormPhoneTxtBox
+        'SSN_Label
         '
-        Me.employeeMGMTFormPhoneTxtBox.Location = New System.Drawing.Point(145, 231)
-        Me.employeeMGMTFormPhoneTxtBox.Name = "employeeMGMTFormPhoneTxtBox"
-        Me.employeeMGMTFormPhoneTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTFormPhoneTxtBox.TabIndex = 67
-        Me.employeeMGMTFormPhoneTxtBox.Visible = False
+        Me.SSN_Label.AutoSize = True
+        Me.SSN_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SSN_Label.Location = New System.Drawing.Point(17, 229)
+        Me.SSN_Label.Name = "SSN_Label"
+        Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
+        Me.SSN_Label.TabIndex = 66
+        Me.SSN_Label.Text = "SSN"
+        Me.SSN_Label.Visible = False
         '
-        'employeeMGMTFormPhoneLabel
+        'LnameTxt
         '
-        Me.employeeMGMTFormPhoneLabel.AutoSize = True
-        Me.employeeMGMTFormPhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormPhoneLabel.Location = New System.Drawing.Point(17, 229)
-        Me.employeeMGMTFormPhoneLabel.Name = "employeeMGMTFormPhoneLabel"
-        Me.employeeMGMTFormPhoneLabel.Size = New System.Drawing.Size(60, 20)
-        Me.employeeMGMTFormPhoneLabel.TabIndex = 66
-        Me.employeeMGMTFormPhoneLabel.Text = "Phone"
-        Me.employeeMGMTFormPhoneLabel.Visible = False
+        Me.LnameTxt.Enabled = False
+        Me.LnameTxt.Location = New System.Drawing.Point(145, 56)
+        Me.LnameTxt.Name = "LnameTxt"
+        Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.LnameTxt.TabIndex = 65
+        Me.LnameTxt.Visible = False
         '
-        'employeeMGMTFormLastNameTxtBox
+        'LnameLabel
         '
-        Me.employeeMGMTFormLastNameTxtBox.Enabled = False
-        Me.employeeMGMTFormLastNameTxtBox.Location = New System.Drawing.Point(145, 56)
-        Me.employeeMGMTFormLastNameTxtBox.Name = "employeeMGMTFormLastNameTxtBox"
-        Me.employeeMGMTFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTFormLastNameTxtBox.TabIndex = 65
-        Me.employeeMGMTFormLastNameTxtBox.Visible = False
+        Me.LnameLabel.AutoSize = True
+        Me.LnameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LnameLabel.Location = New System.Drawing.Point(17, 56)
+        Me.LnameLabel.Name = "LnameLabel"
+        Me.LnameLabel.Size = New System.Drawing.Size(95, 20)
+        Me.LnameLabel.TabIndex = 64
+        Me.LnameLabel.Text = "Last Name"
+        Me.LnameLabel.Visible = False
         '
-        'employeeMGMTFormLastNameLabel
+        'ZipTxt
         '
-        Me.employeeMGMTFormLastNameLabel.AutoSize = True
-        Me.employeeMGMTFormLastNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormLastNameLabel.Location = New System.Drawing.Point(17, 56)
-        Me.employeeMGMTFormLastNameLabel.Name = "employeeMGMTFormLastNameLabel"
-        Me.employeeMGMTFormLastNameLabel.Size = New System.Drawing.Size(95, 20)
-        Me.employeeMGMTFormLastNameLabel.TabIndex = 64
-        Me.employeeMGMTFormLastNameLabel.Text = "Last Name"
-        Me.employeeMGMTFormLastNameLabel.Visible = False
-        '
-        'employeeMGMTFormZipTxtBox
-        '
-        Me.employeeMGMTFormZipTxtBox.Location = New System.Drawing.Point(145, 197)
-        Me.employeeMGMTFormZipTxtBox.Name = "employeeMGMTFormZipTxtBox"
-        Me.employeeMGMTFormZipTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTFormZipTxtBox.TabIndex = 63
-        Me.employeeMGMTFormZipTxtBox.Visible = False
+        Me.ZipTxt.Location = New System.Drawing.Point(145, 197)
+        Me.ZipTxt.Name = "ZipTxt"
+        Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
+        Me.ZipTxt.TabIndex = 63
+        Me.ZipTxt.Visible = False
         '
         'employeeMGMTFormZipLabel
         '
@@ -264,13 +256,13 @@ Partial Class EmpManagment
         Me.employeeMGMTFormZipLabel.Text = "Zip"
         Me.employeeMGMTFormZipLabel.Visible = False
         '
-        'employeeMGMTFormStateTxtBox
+        'StateTxt
         '
-        Me.employeeMGMTFormStateTxtBox.Location = New System.Drawing.Point(145, 168)
-        Me.employeeMGMTFormStateTxtBox.Name = "employeeMGMTFormStateTxtBox"
-        Me.employeeMGMTFormStateTxtBox.Size = New System.Drawing.Size(148, 20)
-        Me.employeeMGMTFormStateTxtBox.TabIndex = 61
-        Me.employeeMGMTFormStateTxtBox.Visible = False
+        Me.StateTxt.Location = New System.Drawing.Point(145, 168)
+        Me.StateTxt.Name = "StateTxt"
+        Me.StateTxt.Size = New System.Drawing.Size(148, 20)
+        Me.StateTxt.TabIndex = 61
+        Me.StateTxt.Visible = False
         '
         'employeeMGMTFormStateLabel
         '
@@ -283,22 +275,22 @@ Partial Class EmpManagment
         Me.employeeMGMTFormStateLabel.Text = "State"
         Me.employeeMGMTFormStateLabel.Visible = False
         '
-        'employeeMGMTFormAddyTxtBox
+        'StreetTxt
         '
-        Me.employeeMGMTFormAddyTxtBox.Location = New System.Drawing.Point(145, 135)
-        Me.employeeMGMTFormAddyTxtBox.Name = "employeeMGMTFormAddyTxtBox"
-        Me.employeeMGMTFormAddyTxtBox.Size = New System.Drawing.Size(240, 20)
-        Me.employeeMGMTFormAddyTxtBox.TabIndex = 59
-        Me.employeeMGMTFormAddyTxtBox.Visible = False
+        Me.StreetTxt.Location = New System.Drawing.Point(145, 135)
+        Me.StreetTxt.Name = "StreetTxt"
+        Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
+        Me.StreetTxt.TabIndex = 59
+        Me.StreetTxt.Visible = False
         '
-        'employeeMGMTFormFirstNameTxtBox
+        'FnameTxt
         '
-        Me.employeeMGMTFormFirstNameTxtBox.Enabled = False
-        Me.employeeMGMTFormFirstNameTxtBox.Location = New System.Drawing.Point(145, 24)
-        Me.employeeMGMTFormFirstNameTxtBox.Name = "employeeMGMTFormFirstNameTxtBox"
-        Me.employeeMGMTFormFirstNameTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMGMTFormFirstNameTxtBox.TabIndex = 58
-        Me.employeeMGMTFormFirstNameTxtBox.Visible = False
+        Me.FnameTxt.Enabled = False
+        Me.FnameTxt.Location = New System.Drawing.Point(145, 24)
+        Me.FnameTxt.Name = "FnameTxt"
+        Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.FnameTxt.TabIndex = 58
+        Me.FnameTxt.Visible = False
         '
         'employeeMGMTFormAddyLabel
         '
@@ -374,13 +366,6 @@ Partial Class EmpManagment
         Me.loginFormButton.Text = "Continue"
         Me.loginFormButton.UseVisualStyleBackColor = True
         '
-        'employeeMgmtPassTxtBox
-        '
-        Me.employeeMgmtPassTxtBox.Location = New System.Drawing.Point(132, 167)
-        Me.employeeMgmtPassTxtBox.Name = "employeeMgmtPassTxtBox"
-        Me.employeeMgmtPassTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtPassTxtBox.TabIndex = 10
-        '
         'employeeMgmtFormUsrTxtBox
         '
         Me.employeeMgmtFormUsrTxtBox.Location = New System.Drawing.Point(132, 138)
@@ -427,6 +412,7 @@ Partial Class EmpManagment
         '
         'splitContainer1.Panel1
         '
+        Me.splitContainer1.Panel1.Controls.Add(Me.loginPwTxt)
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeMGMTFormCancelButton1)
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeMGMTFormAddButton)
         Me.splitContainer1.Panel1.Controls.Add(Me.addEmployeLinkLabel)
@@ -434,7 +420,6 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtFormSearchTxtBox)
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtFormEmployeeSearch)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginFormButton)
-        Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtPassTxtBox)
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtFormUsrTxtBox)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginformPassLabel)
         Me.splitContainer1.Panel1.Controls.Add(Me.loginFormUsrLabel)
@@ -442,38 +427,47 @@ Partial Class EmpManagment
         '
         'splitContainer1.Panel2
         '
-        Me.splitContainer1.Panel2.Controls.Add(Me.TextBox1)
-        Me.splitContainer1.Panel2.Controls.Add(Me.EmployeeIDLabel)
+        Me.splitContainer1.Panel2.Controls.Add(Me.SSN_Txt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDTxt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormCancelButton2)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTPayableHrsLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTPayableHrsTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.PayHrsTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormRmvEmployeeButton)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormEditButton)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTWageRateTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.PayRateTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormWageRateLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMgmtFormDepStatTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.DependentsTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTDependLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTMarriedStatTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.MaritalStatusTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormMarriedStatLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormPaymentTypeLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.paymentTypeComboBox1)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTPositionTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.paymentTypeCBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.PositionTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormPositionLable)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormPhoneTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormPhoneLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormLastNameTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormLastNameLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormZipTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.SSN_Label)
+        Me.splitContainer1.Panel2.Controls.Add(Me.LnameTxt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.LnameLabel)
+        Me.splitContainer1.Panel2.Controls.Add(Me.ZipTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormZipLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormStateTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.StateTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormStateLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyTxtBox)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameTxtBox)
+        Me.splitContainer1.Panel2.Controls.Add(Me.StreetTxt)
+        Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1040, 495)
-        Me.splitContainer1.SplitterDistance = 383
+        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
+        Me.splitContainer1.SplitterDistance = 378
         Me.splitContainer1.TabIndex = 1
+        '
+        'loginPwTxt
+        '
+        Me.loginPwTxt.Location = New System.Drawing.Point(132, 166)
+        Me.loginPwTxt.Name = "loginPwTxt"
+        Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
+        Me.loginPwTxt.TabIndex = 82
+        Me.loginPwTxt.UseSystemPasswordChar = True
         '
         'employeeMGMTFormCancelButton1
         '
@@ -484,26 +478,37 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton1.Text = "Cancel"
         Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'SSN_Txt
         '
-        Me.TextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(144, 92)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 82
-        Me.TextBox1.Visible = False
+        Me.SSN_Txt.Location = New System.Drawing.Point(145, 231)
+        Me.SSN_Txt.Mask = "000-00-0000"
+        Me.SSN_Txt.Name = "SSN_Txt"
+        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
+        Me.SSN_Txt.TabIndex = 86
+        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        Me.SSN_Txt.UseSystemPasswordChar = True
         '
-        'EmployeeIDLabel
+        'EmpIDTxt
         '
-        Me.EmployeeIDLabel.AutoSize = True
-        Me.EmployeeIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeeIDLabel.Location = New System.Drawing.Point(16, 92)
-        Me.EmployeeIDLabel.Name = "EmployeeIDLabel"
-        Me.EmployeeIDLabel.Size = New System.Drawing.Size(111, 20)
-        Me.EmployeeIDLabel.TabIndex = 81
-        Me.EmployeeIDLabel.Text = "Employee ID"
-        Me.EmployeeIDLabel.Visible = False
+        Me.EmpIDTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.EmpIDTxt.Enabled = False
+        Me.EmpIDTxt.Location = New System.Drawing.Point(144, 92)
+        Me.EmpIDTxt.Name = "EmpIDTxt"
+        Me.EmpIDTxt.Size = New System.Drawing.Size(121, 20)
+        Me.EmpIDTxt.TabIndex = 82
+        Me.EmpIDTxt.Visible = False
+        '
+        'EmpIDLabel
+        '
+        Me.EmpIDLabel.AutoSize = True
+        Me.EmpIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmpIDLabel.Location = New System.Drawing.Point(16, 92)
+        Me.EmpIDLabel.Name = "EmpIDLabel"
+        Me.EmpIDLabel.Size = New System.Drawing.Size(111, 20)
+        Me.EmpIDLabel.TabIndex = 81
+        Me.EmpIDLabel.Text = "Employee ID"
+        Me.EmpIDLabel.Visible = False
         '
         'employeeMGMTFormCancelButton2
         '
@@ -519,7 +524,7 @@ Partial Class EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1040, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
         Me.Text = "EmpManagementForm"
@@ -534,29 +539,28 @@ Partial Class EmpManagment
     End Sub
 
     Private WithEvents employeeMGMTPayableHrsLabel As Label
-    Private WithEvents employeeMGMTPayableHrsTxtBox As TextBox
+    Private WithEvents PayHrsTxt As TextBox
     Private WithEvents employeeMGMTFormRmvEmployeeButton As Button
     Private WithEvents employeeMGMTFormEditButton As Button
-    Private WithEvents employeeMGMTWageRateTxtBox As TextBox
+    Private WithEvents PayRateTxt As TextBox
     Private WithEvents employeeMGMTFormWageRateLabel As Label
-    Private WithEvents employeeMgmtFormDepStatTxtBox As TextBox
+    Private WithEvents DependentsTxt As TextBox
     Private WithEvents employeeMGMTDependLabel As Label
-    Private WithEvents employeeMGMTMarriedStatTxtBox As TextBox
+    Private WithEvents MaritalStatusTxt As TextBox
     Private WithEvents employeeMGMTFormMarriedStatLabel As Label
     Private WithEvents employeeMGMTFormPaymentTypeLabel As Label
-    Private WithEvents paymentTypeComboBox1 As ComboBox
-    Private WithEvents employeeMGMTPositionTxtBox As TextBox
+    Private WithEvents paymentTypeCBox As ComboBox
+    Private WithEvents PositionTxt As TextBox
     Private WithEvents employeeMGMTFormPositionLable As Label
-    Private WithEvents employeeMGMTFormPhoneTxtBox As TextBox
-    Private WithEvents employeeMGMTFormPhoneLabel As Label
-    Private WithEvents employeeMGMTFormLastNameTxtBox As TextBox
-    Private WithEvents employeeMGMTFormLastNameLabel As Label
-    Private WithEvents employeeMGMTFormZipTxtBox As TextBox
+    Private WithEvents SSN_Label As Label
+    Private WithEvents LnameTxt As TextBox
+    Private WithEvents LnameLabel As Label
+    Private WithEvents ZipTxt As TextBox
     Private WithEvents employeeMGMTFormZipLabel As Label
-    Private WithEvents employeeMGMTFormStateTxtBox As TextBox
+    Private WithEvents StateTxt As TextBox
     Private WithEvents employeeMGMTFormStateLabel As Label
-    Private WithEvents employeeMGMTFormAddyTxtBox As TextBox
-    Private WithEvents employeeMGMTFormFirstNameTxtBox As TextBox
+    Private WithEvents StreetTxt As TextBox
+    Private WithEvents FnameTxt As TextBox
     Private WithEvents employeeMGMTFormAddyLabel As Label
     Private WithEvents employeeMGMTFormFirstNameLabel As Label
     Private WithEvents employeeMGMTFormAddButton As Button
@@ -565,7 +569,6 @@ Partial Class EmpManagment
     Private WithEvents employeeMgmtFormSearchTxtBox As TextBox
     Private WithEvents employeeMgmtFormEmployeeSearch As Label
     Private WithEvents loginFormButton As Button
-    Private WithEvents employeeMgmtPassTxtBox As TextBox
     Private WithEvents employeeMgmtFormUsrTxtBox As TextBox
     Private WithEvents loginformPassLabel As Label
     Private WithEvents loginFormUsrLabel As Label
@@ -573,6 +576,8 @@ Partial Class EmpManagment
     Private WithEvents splitContainer1 As SplitContainer
     Private WithEvents employeeMGMTFormCancelButton2 As Button
     Private WithEvents employeeMGMTFormCancelButton1 As Button
-    Private WithEvents TextBox1 As TextBox
-    Private WithEvents EmployeeIDLabel As Label
+    Private WithEvents EmpIDTxt As TextBox
+    Private WithEvents EmpIDLabel As Label
+    Private WithEvents loginPwTxt As MaskedTextBox
+    Private WithEvents SSN_Txt As MaskedTextBox
 End Class
