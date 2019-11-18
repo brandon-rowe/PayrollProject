@@ -14,6 +14,9 @@
 
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
+        'ATTENTION: This button should remain on AddEmployee.vb 
+        'until Next Or Back button is selected
+
         Fname = FnameTxt.Text
         Lname = LnameTxt.Text
         street = StreetTxt.Text
@@ -56,7 +59,7 @@
     End Sub
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
-
+        'ATTENTION: This button should navigate to Login.vb
         Me.Close()
         Login.Show()
         Login.FnameTxt.Clear()
@@ -69,4 +72,9 @@
         Login.VerifyPwordTxt.Clear()
     End Sub
 
+    Private Sub BackBtn_Click(sender As Object, e As EventArgs) Handles BackBtn.Click
+        'ATTENTION: This button should navigate to Login.vb
+        Me.Close()
+        Login.Show()
+    End Sub
 End Class

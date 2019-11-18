@@ -58,12 +58,12 @@ Partial Class EmpManagment
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
         Me.employeeSearchLabel = New System.Windows.Forms.Label()
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
+        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         Me.EmpIDTxt = New System.Windows.Forms.TextBox()
         Me.EmpIDLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
-        Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
-        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -456,9 +456,18 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1040, 495)
-        Me.splitContainer1.SplitterDistance = 383
+        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
+        Me.splitContainer1.SplitterDistance = 378
         Me.splitContainer1.TabIndex = 1
+        '
+        'loginPwTxt
+        '
+        Me.loginPwTxt.Location = New System.Drawing.Point(132, 166)
+        Me.loginPwTxt.Name = "loginPwTxt"
+        Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
+        Me.loginPwTxt.TabIndex = 82
+        Me.loginPwTxt.UseSystemPasswordChar = True
         '
         'employeeMGMTFormCancelButton1
         '
@@ -468,6 +477,17 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton1.TabIndex = 81
         Me.employeeMGMTFormCancelButton1.Text = "Cancel"
         Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
+        '
+        'SSN_Txt
+        '
+        Me.SSN_Txt.Location = New System.Drawing.Point(145, 231)
+        Me.SSN_Txt.Mask = "000-00-0000"
+        Me.SSN_Txt.Name = "SSN_Txt"
+        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
+        Me.SSN_Txt.TabIndex = 86
+        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        Me.SSN_Txt.UseSystemPasswordChar = True
         '
         'EmpIDTxt
         '
@@ -500,31 +520,11 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
         Me.employeeMGMTFormCancelButton2.Visible = False
         '
-        'loginPwTxt
-        '
-        Me.loginPwTxt.Location = New System.Drawing.Point(132, 166)
-        Me.loginPwTxt.Name = "loginPwTxt"
-        Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
-        Me.loginPwTxt.TabIndex = 82
-        Me.loginPwTxt.UseSystemPasswordChar = True
-        '
-        'SSN_Txt
-        '
-        Me.SSN_Txt.Location = New System.Drawing.Point(145, 231)
-        Me.SSN_Txt.Mask = "000-00-0000"
-        Me.SSN_Txt.Name = "SSN_Txt"
-        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
-        Me.SSN_Txt.TabIndex = 86
-        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
-        Me.SSN_Txt.UseSystemPasswordChar = True
-        '
         'EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1040, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
         Me.Text = "EmpManagementForm"

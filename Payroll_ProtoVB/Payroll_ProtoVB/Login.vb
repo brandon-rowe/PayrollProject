@@ -34,6 +34,8 @@
         'only moves to next form if all conditions met.
 
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
+            'ATTENTION: This button should navigate to AddEmployee.vb
+
             AddEmployee.Show()
 
             FnameTxt.Clear()
@@ -139,6 +141,8 @@
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
+        'ATTENTION: This button should navigate to EmpDashboard.vb
+
         UnameVryfy = CreateUnameTxt.Text
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
@@ -179,4 +183,5 @@
             'Me.Hide()
         End If
     End Sub
+
 End Class
