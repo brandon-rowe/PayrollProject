@@ -24,4 +24,21 @@
             Application.Exit()
         End If
     End Sub
+
+    Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
+        Dim MSG, style, title, response, confirm, MyString, yes, no
+        MSG = "Would You Like To Print the PayStub? "
+        title = "Payroll- Rollout Payroll"
+        style = vbYesNo + vbDefaultButton1
+        response = MsgBox(MSG, style, title)
+        If response = vbYes Then
+            MSG = "Printing in Process "
+            title = "Payroll- Rollout Payroll"
+            style = vbOK + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If (response = vbOKOnly) Then
+                MyString = "OK"
+            End If
+        End If
+    End Sub
 End Class

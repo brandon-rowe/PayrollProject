@@ -57,13 +57,13 @@ Partial Class PayStub
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
-        Me.printStubBTN = New System.Windows.Forms.Button()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.DetailViewBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.PaystubBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
+        Me.printStubBTN = New System.Windows.Forms.Button()
         Me.PayStubGroupBox.SuspendLayout()
         Me.menueStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -435,15 +435,6 @@ Partial Class PayStub
         Me.menueStrip.TabIndex = 5
         Me.menueStrip.Text = "ToolStrip1"
         '
-        'printStubBTN
-        '
-        Me.printStubBTN.Location = New System.Drawing.Point(891, 408)
-        Me.printStubBTN.Name = "printStubBTN"
-        Me.printStubBTN.Size = New System.Drawing.Size(79, 23)
-        Me.printStubBTN.TabIndex = 18
-        Me.printStubBTN.Text = "Print"
-        Me.printStubBTN.UseVisualStyleBackColor = True
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
@@ -488,6 +479,15 @@ Partial Class PayStub
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(74, 19)
         Me.ExitBtn.Text = "Exit"
+        '
+        'printStubBTN
+        '
+        Me.printStubBTN.Location = New System.Drawing.Point(891, 408)
+        Me.printStubBTN.Name = "printStubBTN"
+        Me.printStubBTN.Size = New System.Drawing.Size(79, 23)
+        Me.printStubBTN.TabIndex = 18
+        Me.printStubBTN.Text = "Print"
+        Me.printStubBTN.UseVisualStyleBackColor = True
         '
         'PayStub
         '
