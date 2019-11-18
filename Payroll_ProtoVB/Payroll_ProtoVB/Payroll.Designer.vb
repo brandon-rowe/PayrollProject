@@ -61,7 +61,7 @@ Partial Class Payroll
         Me.PrintDocumentPaystub = New System.Drawing.Printing.PrintDocument()
         Me.payStubViewBTN = New System.Windows.Forms.Button()
         Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmpRecordView = New System.Windows.Forms.Button()
+        Me.EmpRecord = New System.Windows.Forms.Button()
         Me.EmployeePastTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeePastTableAdapter()
         Me.EmployeeFutureTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
         Me.menueStrip.SuspendLayout()
@@ -344,14 +344,14 @@ Partial Class Payroll
         Me.payStubViewBTN.Text = "View Paystub "
         Me.payStubViewBTN.UseVisualStyleBackColor = True
         '
-        'EmpRecordView
+        'EmpRecord
         '
-        Me.EmpRecordView.Location = New System.Drawing.Point(939, 356)
-        Me.EmpRecordView.Name = "EmpRecordView"
-        Me.EmpRecordView.Size = New System.Drawing.Size(79, 36)
-        Me.EmpRecordView.TabIndex = 18
-        Me.EmpRecordView.Text = "Employee Detail View"
-        Me.EmpRecordView.UseVisualStyleBackColor = True
+        Me.EmpRecord.Location = New System.Drawing.Point(939, 356)
+        Me.EmpRecord.Name = "EmpRecord"
+        Me.EmpRecord.Size = New System.Drawing.Size(79, 36)
+        Me.EmpRecord.TabIndex = 18
+        Me.EmpRecord.Text = "Employee Detail View"
+        Me.EmpRecord.UseVisualStyleBackColor = True
         '
         'EmployeePastTableAdapter
         '
@@ -366,7 +366,7 @@ Partial Class Payroll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
-        Me.Controls.Add(Me.EmpRecordView)
+        Me.Controls.Add(Me.EmpRecord)
         Me.Controls.Add(Me.payStubViewBTN)
         Me.Controls.Add(Me.TabControl)
         Me.Controls.Add(Me.PayrollFormSearch)
@@ -423,7 +423,7 @@ Partial Class Payroll
     Friend WithEvents DateDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents AmountDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents calcPayBTN As ToolStripButton
-    Friend WithEvents EmpRecordView As Button
+    Friend WithEvents EmpRecord As Button
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeePastBindingSource2 As BindingSource

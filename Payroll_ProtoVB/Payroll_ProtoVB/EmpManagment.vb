@@ -32,4 +32,5 @@
     Private Sub employeeMGMTFormRmvEmployeeButton_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormRmvEmployeeButton.Click
         'B. Rowe: We need to think through the functionality of these buttons.
     End Sub
+
 End Class
