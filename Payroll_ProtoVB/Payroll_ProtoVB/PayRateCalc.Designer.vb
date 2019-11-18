@@ -33,12 +33,8 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DetailViewBtn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PaystubBtn = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.EditBtn = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -99,7 +95,7 @@ Partial Class PayRateCalc
         Me.menueStrip.AutoSize = False
         Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.PayTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator6, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.DetailViewBtn, Me.ToolStripSeparator2, Me.PaystubBtn, Me.ToolStripSeparator5, Me.EditBtn, Me.ToolStripSeparator7, Me.ExitBtn})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.PayTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator6, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator5, Me.ExitBtn})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -139,50 +135,15 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
         '
-        'DetailViewBtn
-        '
-        Me.DetailViewBtn.BackColor = System.Drawing.Color.AliceBlue
-        Me.DetailViewBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.DetailViewBtn.Image = CType(resources.GetObject("DetailViewBtn.Image"), System.Drawing.Image)
-        Me.DetailViewBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.DetailViewBtn.Name = "DetailViewBtn"
-        Me.DetailViewBtn.Size = New System.Drawing.Size(74, 19)
-        Me.DetailViewBtn.Text = "Detail View"
-        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
         '
-        'PaystubBtn
-        '
-        Me.PaystubBtn.BackColor = System.Drawing.Color.AliceBlue
-        Me.PaystubBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.PaystubBtn.Image = CType(resources.GetObject("PaystubBtn.Image"), System.Drawing.Image)
-        Me.PaystubBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.PaystubBtn.Name = "PaystubBtn"
-        Me.PaystubBtn.Size = New System.Drawing.Size(74, 19)
-        Me.PaystubBtn.Text = "Paystub"
-        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(74, 6)
-        '
-        'EditBtn
-        '
-        Me.EditBtn.BackColor = System.Drawing.Color.AliceBlue
-        Me.EditBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.EditBtn.Image = CType(resources.GetObject("EditBtn.Image"), System.Drawing.Image)
-        Me.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.EditBtn.Name = "EditBtn"
-        Me.EditBtn.Size = New System.Drawing.Size(74, 19)
-        Me.EditBtn.Text = "Edit"
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(74, 6)
         '
         'ExitBtn
         '
@@ -349,11 +310,7 @@ Partial Class PayRateCalc
     Friend WithEvents HoursworkedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SsnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents DetailViewBtn As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents PaystubBtn As ToolStripButton
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents EditBtn As ToolStripButton
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents ExitBtn As ToolStripButton
 End Class

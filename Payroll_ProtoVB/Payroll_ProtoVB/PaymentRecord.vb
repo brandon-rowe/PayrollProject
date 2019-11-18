@@ -1,4 +1,5 @@
 ﻿Public Class PaymentRecord
+
     Private Sub PaymentRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
         Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
@@ -7,7 +8,7 @@
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
         Me.Refresh()
     End Sub
-    Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles payTstripBTN.Click
+    Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles PayTstripBTN.Click
         Payroll.Show()
     End Sub
 

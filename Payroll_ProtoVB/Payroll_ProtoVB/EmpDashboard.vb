@@ -27,12 +27,6 @@
         Me.Close()
     End Sub
 
-    Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs) Handles DetailViewBTN.Click
-        'ATTENTION: This button should navigate to EmpManagement.vb
-        EmpManagment.Show()
-        Me.Close()
-    End Sub
-
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Dim Response As Integer
         Response = MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -40,5 +34,11 @@
             Me.Close()
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
+        'ATTENTION: This button should navigate to EmpManagement.vb
+        EmpManagment.Show()
+        Me.Close()
     End Sub
 End Class

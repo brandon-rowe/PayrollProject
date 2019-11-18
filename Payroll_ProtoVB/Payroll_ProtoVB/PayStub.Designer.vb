@@ -58,12 +58,11 @@ Partial Class PayStub
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DetailViewBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PaystubBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.printStubBTN = New System.Windows.Forms.Button()
+        Me.Cancel = New System.Windows.Forms.Button()
         Me.PayStubGroupBox.SuspendLayout()
         Me.menueStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -426,7 +425,7 @@ Partial Class PayStub
         Me.menueStrip.AutoSize = False
         Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.DetailViewBTN, Me.ToolStripSeparator2, Me.PaystubBTN, Me.ToolStripSeparator6, Me.ExitBtn})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator6, Me.ExitBtn})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -440,30 +439,10 @@ Partial Class PayStub
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
         '
-        'DetailViewBTN
-        '
-        Me.DetailViewBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.DetailViewBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.DetailViewBTN.Image = CType(resources.GetObject("DetailViewBTN.Image"), System.Drawing.Image)
-        Me.DetailViewBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.DetailViewBTN.Name = "DetailViewBTN"
-        Me.DetailViewBTN.Size = New System.Drawing.Size(74, 19)
-        Me.DetailViewBTN.Text = "Detail View"
-        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
-        '
-        'PaystubBTN
-        '
-        Me.PaystubBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.PaystubBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.PaystubBTN.Image = CType(resources.GetObject("PaystubBTN.Image"), System.Drawing.Image)
-        Me.PaystubBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.PaystubBTN.Name = "PaystubBTN"
-        Me.PaystubBTN.Size = New System.Drawing.Size(74, 19)
-        Me.PaystubBTN.Text = "Paystub"
         '
         'ToolStripSeparator6
         '
@@ -482,12 +461,21 @@ Partial Class PayStub
         '
         'printStubBTN
         '
-        Me.printStubBTN.Location = New System.Drawing.Point(891, 408)
+        Me.printStubBTN.Location = New System.Drawing.Point(776, 408)
         Me.printStubBTN.Name = "printStubBTN"
         Me.printStubBTN.Size = New System.Drawing.Size(79, 23)
         Me.printStubBTN.TabIndex = 18
         Me.printStubBTN.Text = "Print"
         Me.printStubBTN.UseVisualStyleBackColor = True
+        '
+        'Cancel
+        '
+        Me.Cancel.Location = New System.Drawing.Point(686, 408)
+        Me.Cancel.Name = "Cancel"
+        Me.Cancel.Size = New System.Drawing.Size(79, 23)
+        Me.Cancel.TabIndex = 19
+        Me.Cancel.Text = "Cancel"
+        Me.Cancel.UseVisualStyleBackColor = True
         '
         'PayStub
         '
@@ -495,6 +483,7 @@ Partial Class PayStub
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.ClientSize = New System.Drawing.Size(1028, 495)
+        Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.printStubBTN)
         Me.Controls.Add(Me.menueStrip)
         Me.Controls.Add(Me.PayStubGroupBox)
@@ -545,9 +534,8 @@ Partial Class PayStub
     Private WithEvents menueStrip As ToolStrip
     Friend WithEvents printStubBTN As Button
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents DetailViewBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents PaystubBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents ExitBtn As ToolStripButton
+    Friend WithEvents Cancel As Button
 End Class

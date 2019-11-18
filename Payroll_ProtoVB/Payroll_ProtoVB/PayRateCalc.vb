@@ -29,7 +29,6 @@
     End Sub
 
 
-
     'Test Calculation
     'These variables will be set from the DB once we have it setup and the
     'table adapters are working properly.

@@ -31,21 +31,16 @@
         Me.Close()
     End Sub
 
-    Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles PayrollFormSearch.Click
+    Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
     End Sub
 
-    Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs) Handles DetailViewBTN.Click
+    Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs)
         'ATTENTION: This button should navigate to PaymentRecord.vb
-        PaymentRecord.Show()
+        PaymentRecordBTN.Show()
         Me.Close()
     End Sub
 
-    Private Sub PaystubBTN_Click(sender As Object, e As EventArgs) Handles PaystubBTN.Click
-        'ATTENTION: This button should navigate to PayStub.vb
-        PayStub.Show()
-        Me.Close()
-    End Sub
 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Dim Response As Integer
@@ -54,5 +49,15 @@
             Me.Close()
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub PaymentRecordBTN_Click(sender As Object, e As EventArgs) Handles PaymentRecordBTN.Click
+        PaymentRecord.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
+        'ATTENTION: This button should navigate to PayStub.vb
+        PayStub.Show()
+        Me.Close()
     End Sub
 End Class
