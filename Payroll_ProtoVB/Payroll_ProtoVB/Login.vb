@@ -33,12 +33,13 @@
         VryPword = VerifyPwordTxt.Text
         address = street + " " + state + " " + zip
 
-        'only moves to next form if all conditions met.
-
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
-            'ATTENTION: This button should navigate to AddEmployee.vb
 
-            AddEmployee.Show()
+            If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
+                Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip)
+                AddEmployee.Show()
+                Me.Hide()
+            End If
 
             FnameTxt.Clear()
             LnameTxt.Clear()
@@ -131,59 +132,14 @@
                 End If
             End If
         End If
-
-
-        'Me.Close()
-        If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
-
-            Dim AddEmployee = New AddEmployee()
-            AddEmployee.Show()
-            'Me.Hide()
-        End If
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         'ATTENTION: This button should navigate to EmpDashboard.vb
-
-        UnameVryfy = CreateUnameTxt.Text
+        'We need to add a sqladapter to check the Username & Password to validate credentials.
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
-
-        'used to determine if username is contained within the system, as of now checks against local field for create username
-        If Uname <> UnameVryfy Then
-            Dim MSG, style, title, response, MyString
-            MSG = "User Name not Recognized "
-            title = "Input Error- User Name"
-            style = vbOKOnly + vbDefaultButton1
-            response = MsgBox(MSG, style, title)
-            If response = vbOKOnly Then
-                MyString = "OK"
-            End If
-        End If
-        If Uname.Length() = 0 Then
-            Dim MSG, style, title, response, MyString
-            MSG = "Username field Empty, please Provide User Name "
-            title = "Input Error- User Name"
-            style = vbOKOnly + vbDefaultButton1
-            response = MsgBox(MSG, style, title)
-            If response = vbOKOnly Then
-                MyString = "OK"
-            End If
-        End If
-        If Pword.Length = 0 OrElse Pword.Length() > 15 Then
-            Dim MSG, style, title, response, MyString
-            MSG = "The Password Input is invalid: Password Not Provided or exceeds 15 characters "
-            title = "Input Error- Password"
-            style = vbOKOnly + vbDefaultButton1
-            response = MsgBox(MSG, style, title)
-            If response = vbOKOnly Then
-                MyString = "OK"
-            End If
-
-        ElseIf Pword.Length() > 0 AndAlso Pword.Length() <= 15 AndAlso Uname.Length > 0 Then
-            EmpDashboard.Show()
-            'Me.Hide()
-        End If
+        EmpDashboard.Show()
     End Sub
 
     Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click

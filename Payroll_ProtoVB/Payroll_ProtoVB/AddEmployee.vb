@@ -18,6 +18,21 @@ Public Class AddEmployee
     Dim ssn As String
     Dim ID As Integer
 
+    Public Sub New(ByVal nFname As String, ByVal nLname As String, ByVal nstreet As String, ByVal nstate As String, ByVal nzip As String)
+        InitializeComponent()
+        Fname = nFname
+        Lname = nLname
+        street = nstreet
+        state = nstate
+        zip = nzip
+        FnameTxt.Text = Fname.ToString()
+        LnameTxt.Text = Lname.ToString()
+        StreetTxt.Text = street.ToString()
+        StateTxt.Text = state.ToString()
+        ZipTxt.Text = zip.ToString()
+    End Sub
+
+
 
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
@@ -35,16 +50,6 @@ Public Class AddEmployee
         position = PositionTxt.Text
         paymentType = PayTypeCBox.Text
         ssn = SSN_Txt.Text
-
-        'Console.WriteLine(ID)
-        Console.WriteLine(Fname)
-        Console.WriteLine(Lname)
-        Console.WriteLine(address)
-        Console.WriteLine(status)
-        Console.WriteLine(dependents)
-        Console.WriteLine(position)
-        Console.WriteLine(paymentType)
-
 
         FnameTxt.Clear()
         LnameTxt.Clear()
@@ -96,5 +101,6 @@ Public Class AddEmployee
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
         status = MaritalStatCB.Text
     End Sub
+
 
 End Class

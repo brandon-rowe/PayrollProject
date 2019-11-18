@@ -48,8 +48,8 @@ Partial Class Login
         Me.SignUp = New System.Windows.Forms.Button()
         Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
         Me.SignUpGB = New System.Windows.Forms.GroupBox()
-        Me.CreatePwordTxt = New System.Windows.Forms.MaskedTextBox()
         Me.backToLoginBtn = New System.Windows.Forms.Button()
+        Me.CreatePwordTxt = New System.Windows.Forms.MaskedTextBox()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
@@ -257,7 +257,7 @@ Partial Class Login
         '
         Me.splitContainer1.Panel2.Controls.Add(Me.SignUpGB)
         Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
-        Me.splitContainer1.SplitterDistance = 511
+        Me.splitContainer1.SplitterDistance = 575
         Me.splitContainer1.TabIndex = 1
         '
         'LoginGB
@@ -321,15 +321,6 @@ Partial Class Login
         Me.SignUpGB.TabStop = False
         Me.SignUpGB.Text = "Sign Up"
         '
-        'CreatePwordTxt
-        '
-        Me.CreatePwordTxt.Location = New System.Drawing.Point(178, 279)
-        Me.CreatePwordTxt.Name = "CreatePwordTxt"
-        Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.CreatePwordTxt.Size = New System.Drawing.Size(206, 20)
-        Me.CreatePwordTxt.TabIndex = 6
-        Me.CreatePwordTxt.UseSystemPasswordChar = True
-        '
         'backToLoginBtn
         '
         Me.backToLoginBtn.Location = New System.Drawing.Point(273, 370)
@@ -338,6 +329,15 @@ Partial Class Login
         Me.backToLoginBtn.TabIndex = 20
         Me.backToLoginBtn.Text = "Have Account?"
         Me.backToLoginBtn.UseVisualStyleBackColor = True
+        '
+        'CreatePwordTxt
+        '
+        Me.CreatePwordTxt.Location = New System.Drawing.Point(178, 279)
+        Me.CreatePwordTxt.Name = "CreatePwordTxt"
+        Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.CreatePwordTxt.Size = New System.Drawing.Size(206, 20)
+        Me.CreatePwordTxt.TabIndex = 6
+        Me.CreatePwordTxt.UseSystemPasswordChar = True
         '
         'Login
         '

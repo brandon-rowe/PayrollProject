@@ -14,7 +14,7 @@ Public Class EmpManagment
 
     Private Sub EmployeeMGMTFormAddButton_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormAddButton.Click
         'ATTENTION: This button should navigate to AddEmployee.vb
-        AddEmployee.ShowDialog()
+        'AddEmployee.Show()
     End Sub
 
     Private Sub EmployeeMGMTFormCancelButton2_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormCancelButton2.Click
