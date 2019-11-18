@@ -17,6 +17,8 @@
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Create the Logic Class when the form loads
         LginLog = New LoginLogic()
+        LoginGB.Visible = True
+        SignUpGB.Visible = False
     End Sub
 
     'create user button
@@ -184,4 +186,13 @@
         End If
     End Sub
 
+    Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click
+        LoginGB.Visible = False
+        SignUpGB.Visible = True
+    End Sub
+
+    Private Sub backToLoginBtn_Click(sender As Object, e As EventArgs) Handles backToLoginBtn.Click
+        LoginGB.Visible = True
+        SignUpGB.Visible = False
+    End Sub
 End Class
