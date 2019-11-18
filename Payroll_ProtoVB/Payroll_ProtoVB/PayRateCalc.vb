@@ -2,15 +2,8 @@
     Private Sub PayRateCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
-        'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
-        Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
 
     End Sub
-
-    'Test Calculation
-    'These variables will be set from the DB once we have it setup and the
-    'table adapters are working properly.
-
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
         EmpDashboard.Show()
     End Sub
@@ -25,6 +18,11 @@
     Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
         Metrics.Show()
     End Sub
+
+
+    'Test Calculation
+    'These variables will be set from the DB once we have it setup and the
+    'table adapters are working properly.
 
     'Dim hourlyPayRate As Double
     'Dim numHours As Double
