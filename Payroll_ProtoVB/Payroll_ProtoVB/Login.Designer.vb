@@ -346,6 +346,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login | Sign Up"
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.splitContainer1.Panel1.ResumeLayout(False)

@@ -74,7 +74,7 @@ Partial Class EmpManagment
         '
         Me.employeeMGMTPayableHrsLabel.AutoSize = True
         Me.employeeMGMTPayableHrsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTPayableHrsLabel.Location = New System.Drawing.Point(394, 229)
+        Me.employeeMGMTPayableHrsLabel.Location = New System.Drawing.Point(398, 207)
         Me.employeeMGMTPayableHrsLabel.Name = "employeeMGMTPayableHrsLabel"
         Me.employeeMGMTPayableHrsLabel.Size = New System.Drawing.Size(125, 20)
         Me.employeeMGMTPayableHrsLabel.TabIndex = 79
@@ -82,7 +82,7 @@ Partial Class EmpManagment
         '
         'PayHrsTxt
         '
-        Me.PayHrsTxt.Location = New System.Drawing.Point(525, 229)
+        Me.PayHrsTxt.Location = New System.Drawing.Point(525, 209)
         Me.PayHrsTxt.Name = "PayHrsTxt"
         Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayHrsTxt.TabIndex = 12
@@ -124,7 +124,7 @@ Partial Class EmpManagment
         '
         'DependentsTxt
         '
-        Me.DependentsTxt.Location = New System.Drawing.Point(525, 58)
+        Me.DependentsTxt.Location = New System.Drawing.Point(525, 68)
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
         Me.DependentsTxt.TabIndex = 9
@@ -133,7 +133,7 @@ Partial Class EmpManagment
         '
         Me.employeeMGMTDependLabel.AutoSize = True
         Me.employeeMGMTDependLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTDependLabel.Location = New System.Drawing.Point(398, 56)
+        Me.employeeMGMTDependLabel.Location = New System.Drawing.Point(398, 68)
         Me.employeeMGMTDependLabel.Name = "employeeMGMTDependLabel"
         Me.employeeMGMTDependLabel.Size = New System.Drawing.Size(107, 20)
         Me.employeeMGMTDependLabel.TabIndex = 74
@@ -160,7 +160,7 @@ Partial Class EmpManagment
         '
         Me.employeeMGMTFormPaymentTypeLabel.AutoSize = True
         Me.employeeMGMTFormPaymentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormPaymentTypeLabel.Location = New System.Drawing.Point(398, 165)
+        Me.employeeMGMTFormPaymentTypeLabel.Location = New System.Drawing.Point(398, 161)
         Me.employeeMGMTFormPaymentTypeLabel.Name = "employeeMGMTFormPaymentTypeLabel"
         Me.employeeMGMTFormPaymentTypeLabel.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormPaymentTypeLabel.TabIndex = 71
@@ -170,14 +170,14 @@ Partial Class EmpManagment
         '
         Me.paymentTypeCBox.FormattingEnabled = True
         Me.paymentTypeCBox.Items.AddRange(New Object() {"Salary", "Hourly"})
-        Me.paymentTypeCBox.Location = New System.Drawing.Point(525, 169)
+        Me.paymentTypeCBox.Location = New System.Drawing.Point(525, 163)
         Me.paymentTypeCBox.Name = "paymentTypeCBox"
         Me.paymentTypeCBox.Size = New System.Drawing.Size(121, 21)
         Me.paymentTypeCBox.TabIndex = 11
         '
         'PositionTxt
         '
-        Me.PositionTxt.Location = New System.Drawing.Point(525, 122)
+        Me.PositionTxt.Location = New System.Drawing.Point(525, 110)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
         Me.PositionTxt.TabIndex = 10
@@ -186,7 +186,7 @@ Partial Class EmpManagment
         '
         Me.employeeMGMTFormPositionLable.AutoSize = True
         Me.employeeMGMTFormPositionLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormPositionLable.Location = New System.Drawing.Point(398, 122)
+        Me.employeeMGMTFormPositionLable.Location = New System.Drawing.Point(398, 110)
         Me.employeeMGMTFormPositionLable.Name = "employeeMGMTFormPositionLable"
         Me.employeeMGMTFormPositionLable.Size = New System.Drawing.Size(73, 20)
         Me.employeeMGMTFormPositionLable.TabIndex = 68
@@ -429,8 +429,8 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
-        Me.splitContainer1.SplitterDistance = 378
+        Me.splitContainer1.Size = New System.Drawing.Size(1070, 495)
+        Me.splitContainer1.SplitterDistance = 393
         Me.splitContainer1.TabIndex = 1
         '
         'loginPwTxt
@@ -493,9 +493,10 @@ Partial Class EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 495)
+        Me.ClientSize = New System.Drawing.Size(1070, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EmpManagementForm"
         Me.splitContainer1.Panel1.ResumeLayout(False)
         Me.splitContainer1.Panel1.PerformLayout()

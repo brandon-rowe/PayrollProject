@@ -313,6 +313,7 @@ Partial Class PayRateCalc
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "PayRateCalc"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EmployPayRateCalculate"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()

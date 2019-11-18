@@ -398,6 +398,7 @@ Partial Class PaymentRecord
         Me.Controls.Add(Me.EmployeeIDLabel)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "PaymentRecord"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DetailedPaymentRecordForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()

@@ -307,6 +307,7 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormAddyLabel)
         Me.Controls.Add(Me.addEmployeeFormFirstNameLabel)
         Me.Name = "AddEmployee"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Employees"
         Me.ResumeLayout(False)
         Me.PerformLayout()

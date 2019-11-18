@@ -443,6 +443,7 @@ Partial Class Payroll
         Me.Controls.Add(Me.payrollFormEmployeeSearchLabel)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "Payroll"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PayrollForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()

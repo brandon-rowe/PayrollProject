@@ -151,6 +151,7 @@ Partial Class Metrics
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "Metrics"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MetricsForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()

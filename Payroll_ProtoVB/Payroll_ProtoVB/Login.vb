@@ -140,6 +140,7 @@
         Uname = loginUsrTxt.Text
         Pword = loginPwTxt.Text
         EmpDashboard.Show()
+        Me.Hide()
     End Sub
 
     Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click

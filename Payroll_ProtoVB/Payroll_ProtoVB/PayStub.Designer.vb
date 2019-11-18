@@ -499,6 +499,7 @@ Partial Class PayStub
         Me.Controls.Add(Me.menueStrip)
         Me.Controls.Add(Me.PayStubGroupBox)
         Me.Name = "PayStub"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PayStubForm"
         Me.PayStubGroupBox.ResumeLayout(False)
         Me.PayStubGroupBox.PerformLayout()

@@ -18,6 +18,16 @@ Public Class AddEmployee
     Dim ssn As String
     Dim ID As Integer
 
+    'empty constructor
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    'constructor to pass admin user generation info.
     Public Sub New(ByVal nFname As String, ByVal nLname As String, ByVal nstreet As String, ByVal nstate As String, ByVal nzip As String)
         InitializeComponent()
         Fname = nFname
@@ -78,6 +88,8 @@ Public Class AddEmployee
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
         'ATTENTION: This button should navigate to Login.vb
         Me.Close()
+        Login.LoginGB.Visible = True
+        Login.SignUpGB.Visible = False
         Login.Show()
         Login.FnameTxt.Clear()
         Login.LnameTxt.Clear()
@@ -102,6 +114,5 @@ Public Class AddEmployee
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
         status = MaritalStatCB.Text
     End Sub
-
 
 End Class
