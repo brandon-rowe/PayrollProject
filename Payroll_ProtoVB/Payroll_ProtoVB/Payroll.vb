@@ -37,7 +37,7 @@
         Me.Close()
     End Sub
 
-    Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles MyBaseFormSearch.Click
+    Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles PayrollFormSearch.Click
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
     End Sub
 

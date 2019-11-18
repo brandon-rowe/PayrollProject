@@ -79,7 +79,6 @@ Partial Class EmpManagment
         Me.employeeMGMTPayableHrsLabel.Size = New System.Drawing.Size(125, 20)
         Me.employeeMGMTPayableHrsLabel.TabIndex = 79
         Me.employeeMGMTPayableHrsLabel.Text = "Payable Hours"
-        Me.employeeMGMTPayableHrsLabel.Visible = False
         '
         'PayHrsTxt
         '
@@ -87,7 +86,6 @@ Partial Class EmpManagment
         Me.PayHrsTxt.Name = "PayHrsTxt"
         Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayHrsTxt.TabIndex = 78
-        Me.PayHrsTxt.Visible = False
         '
         'employeeMGMTFormRmvEmployeeButton
         '
@@ -97,7 +95,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormRmvEmployeeButton.TabIndex = 47
         Me.employeeMGMTFormRmvEmployeeButton.Text = "Remove Employee"
         Me.employeeMGMTFormRmvEmployeeButton.UseVisualStyleBackColor = True
-        Me.employeeMGMTFormRmvEmployeeButton.Visible = False
         '
         'employeeMGMTFormEditButton
         '
@@ -107,7 +104,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormEditButton.TabIndex = 46
         Me.employeeMGMTFormEditButton.Text = "Edit Fields"
         Me.employeeMGMTFormEditButton.UseVisualStyleBackColor = True
-        Me.employeeMGMTFormEditButton.Visible = False
         '
         'PayRateTxt
         '
@@ -115,7 +111,6 @@ Partial Class EmpManagment
         Me.PayRateTxt.Name = "PayRateTxt"
         Me.PayRateTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayRateTxt.TabIndex = 77
-        Me.PayRateTxt.Visible = False
         '
         'employeeMGMTFormWageRateLabel
         '
@@ -126,7 +121,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormWageRateLabel.Size = New System.Drawing.Size(99, 20)
         Me.employeeMGMTFormWageRateLabel.TabIndex = 76
         Me.employeeMGMTFormWageRateLabel.Text = "Wage Rate"
-        Me.employeeMGMTFormWageRateLabel.Visible = False
         '
         'DependentsTxt
         '
@@ -134,7 +128,6 @@ Partial Class EmpManagment
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
         Me.DependentsTxt.TabIndex = 75
-        Me.DependentsTxt.Visible = False
         '
         'employeeMGMTDependLabel
         '
@@ -145,7 +138,6 @@ Partial Class EmpManagment
         Me.employeeMGMTDependLabel.Size = New System.Drawing.Size(107, 20)
         Me.employeeMGMTDependLabel.TabIndex = 74
         Me.employeeMGMTDependLabel.Text = "Dependents"
-        Me.employeeMGMTDependLabel.Visible = False
         '
         'MaritalStatusTxt
         '
@@ -153,7 +145,6 @@ Partial Class EmpManagment
         Me.MaritalStatusTxt.Name = "MaritalStatusTxt"
         Me.MaritalStatusTxt.Size = New System.Drawing.Size(121, 20)
         Me.MaritalStatusTxt.TabIndex = 73
-        Me.MaritalStatusTxt.Visible = False
         '
         'employeeMGMTFormMarriedStatLabel
         '
@@ -164,7 +155,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormMarriedStatLabel.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormMarriedStatLabel.TabIndex = 72
         Me.employeeMGMTFormMarriedStatLabel.Text = "Marital Status"
-        Me.employeeMGMTFormMarriedStatLabel.Visible = False
         '
         'employeeMGMTFormPaymentTypeLabel
         '
@@ -175,7 +165,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormPaymentTypeLabel.Size = New System.Drawing.Size(121, 20)
         Me.employeeMGMTFormPaymentTypeLabel.TabIndex = 71
         Me.employeeMGMTFormPaymentTypeLabel.Text = "Payment Type"
-        Me.employeeMGMTFormPaymentTypeLabel.Visible = False
         '
         'paymentTypeCBox
         '
@@ -185,7 +174,6 @@ Partial Class EmpManagment
         Me.paymentTypeCBox.Name = "paymentTypeCBox"
         Me.paymentTypeCBox.Size = New System.Drawing.Size(121, 21)
         Me.paymentTypeCBox.TabIndex = 70
-        Me.paymentTypeCBox.Visible = False
         '
         'PositionTxt
         '
@@ -193,7 +181,6 @@ Partial Class EmpManagment
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
         Me.PositionTxt.TabIndex = 69
-        Me.PositionTxt.Visible = False
         '
         'employeeMGMTFormPositionLable
         '
@@ -204,7 +191,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormPositionLable.Size = New System.Drawing.Size(73, 20)
         Me.employeeMGMTFormPositionLable.TabIndex = 68
         Me.employeeMGMTFormPositionLable.Text = "Position"
-        Me.employeeMGMTFormPositionLable.Visible = False
         '
         'SSN_Label
         '
@@ -215,16 +201,13 @@ Partial Class EmpManagment
         Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
         Me.SSN_Label.TabIndex = 66
         Me.SSN_Label.Text = "SSN"
-        Me.SSN_Label.Visible = False
         '
         'LnameTxt
         '
-        Me.LnameTxt.Enabled = False
         Me.LnameTxt.Location = New System.Drawing.Point(145, 56)
         Me.LnameTxt.Name = "LnameTxt"
         Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
         Me.LnameTxt.TabIndex = 65
-        Me.LnameTxt.Visible = False
         '
         'LnameLabel
         '
@@ -235,7 +218,6 @@ Partial Class EmpManagment
         Me.LnameLabel.Size = New System.Drawing.Size(95, 20)
         Me.LnameLabel.TabIndex = 64
         Me.LnameLabel.Text = "Last Name"
-        Me.LnameLabel.Visible = False
         '
         'ZipTxt
         '
@@ -243,7 +225,6 @@ Partial Class EmpManagment
         Me.ZipTxt.Name = "ZipTxt"
         Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
         Me.ZipTxt.TabIndex = 63
-        Me.ZipTxt.Visible = False
         '
         'employeeMGMTFormZipLabel
         '
@@ -254,7 +235,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormZipLabel.Size = New System.Drawing.Size(34, 20)
         Me.employeeMGMTFormZipLabel.TabIndex = 62
         Me.employeeMGMTFormZipLabel.Text = "Zip"
-        Me.employeeMGMTFormZipLabel.Visible = False
         '
         'StateTxt
         '
@@ -262,7 +242,6 @@ Partial Class EmpManagment
         Me.StateTxt.Name = "StateTxt"
         Me.StateTxt.Size = New System.Drawing.Size(148, 20)
         Me.StateTxt.TabIndex = 61
-        Me.StateTxt.Visible = False
         '
         'employeeMGMTFormStateLabel
         '
@@ -273,7 +252,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormStateLabel.Size = New System.Drawing.Size(53, 20)
         Me.employeeMGMTFormStateLabel.TabIndex = 60
         Me.employeeMGMTFormStateLabel.Text = "State"
-        Me.employeeMGMTFormStateLabel.Visible = False
         '
         'StreetTxt
         '
@@ -281,16 +259,13 @@ Partial Class EmpManagment
         Me.StreetTxt.Name = "StreetTxt"
         Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
         Me.StreetTxt.TabIndex = 59
-        Me.StreetTxt.Visible = False
         '
         'FnameTxt
         '
-        Me.FnameTxt.Enabled = False
         Me.FnameTxt.Location = New System.Drawing.Point(145, 24)
         Me.FnameTxt.Name = "FnameTxt"
         Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
         Me.FnameTxt.TabIndex = 58
-        Me.FnameTxt.Visible = False
         '
         'employeeMGMTFormAddyLabel
         '
@@ -301,7 +276,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormAddyLabel.Size = New System.Drawing.Size(75, 20)
         Me.employeeMGMTFormAddyLabel.TabIndex = 57
         Me.employeeMGMTFormAddyLabel.Text = "Address"
-        Me.employeeMGMTFormAddyLabel.Visible = False
         '
         'employeeMGMTFormFirstNameLabel
         '
@@ -312,7 +286,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormFirstNameLabel.Size = New System.Drawing.Size(96, 20)
         Me.employeeMGMTFormFirstNameLabel.TabIndex = 56
         Me.employeeMGMTFormFirstNameLabel.Text = "First Name"
-        Me.employeeMGMTFormFirstNameLabel.Visible = False
         '
         'employeeMGMTFormAddButton
         '
@@ -492,12 +465,10 @@ Partial Class EmpManagment
         'EmpIDTxt
         '
         Me.EmpIDTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.EmpIDTxt.Enabled = False
         Me.EmpIDTxt.Location = New System.Drawing.Point(144, 92)
         Me.EmpIDTxt.Name = "EmpIDTxt"
         Me.EmpIDTxt.Size = New System.Drawing.Size(121, 20)
         Me.EmpIDTxt.TabIndex = 82
-        Me.EmpIDTxt.Visible = False
         '
         'EmpIDLabel
         '
@@ -508,7 +479,6 @@ Partial Class EmpManagment
         Me.EmpIDLabel.Size = New System.Drawing.Size(111, 20)
         Me.EmpIDLabel.TabIndex = 81
         Me.EmpIDLabel.Text = "Employee ID"
-        Me.EmpIDLabel.Visible = False
         '
         'employeeMGMTFormCancelButton2
         '
@@ -518,7 +488,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton2.TabIndex = 80
         Me.employeeMGMTFormCancelButton2.Text = "Cancel"
         Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
-        Me.employeeMGMTFormCancelButton2.Visible = False
         '
         'EmpManagment
         '
