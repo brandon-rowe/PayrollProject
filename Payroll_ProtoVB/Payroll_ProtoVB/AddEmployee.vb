@@ -62,7 +62,8 @@ Public Class AddEmployee
         PositionTxt.Clear()
         PayTypeCBox.Refresh()
         PayTypeCBox.ResetText()
-        'not correct usage, will not revert to default blank permissions.
+        SSN_Txt.Clear()
+        AccessCTRL.ClearSelected()
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
 

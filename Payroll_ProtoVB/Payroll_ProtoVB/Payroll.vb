@@ -25,12 +25,6 @@
         Me.Close()
     End Sub
 
-    Private Sub payStubViewBTN_Click(sender As Object, e As EventArgs) Handles payStubViewBTN.Click
-        'ATTENTION: This button should navigate to PayStub.vb
-        PayStub.Show()
-        Me.Close()
-    End Sub
-
     Private Sub metricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
         'ATTENTION: This button should navigate to Metrics.vb
         Metrics.Show()
@@ -41,9 +35,24 @@
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
     End Sub
 
-    Private Sub EmpRecord_Click(sender As Object, e As EventArgs) Handles EmpRecord.Click
+    Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs) Handles DetailViewBTN.Click
         'ATTENTION: This button should navigate to PaymentRecord.vb
         PaymentRecord.Show()
         Me.Close()
+    End Sub
+
+    Private Sub PaystubBTN_Click(sender As Object, e As EventArgs) Handles PaystubBTN.Click
+        'ATTENTION: This button should navigate to PayStub.vb
+        PayStub.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
+        Dim Response As Integer
+        Response = MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If Response = vbYes Then
+            Me.Close()
+            Application.Exit()
+        End If
     End Sub
 End Class

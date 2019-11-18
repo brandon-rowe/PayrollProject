@@ -4,17 +4,12 @@
         Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
     End Sub
 
-    Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
+    Private Sub DashBTN_Click(sender As Object, e As EventArgs) Handles dashBTN.Click
         'ATTENTION: This button should stay on EmpDashboard.vb
         Me.Refresh()
     End Sub
 
-    Private Sub BtnDetailedView_Click(sender As Object, e As EventArgs) Handles btnDetailedView.Click
-        'ATTENTION: This button should navigate to EmpManagement.vb
-        EmpManagment.Show()
-        Me.Close()
-    End Sub
-    Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles payTstripBTN.Click
+    Private Sub PayrollBTN_Click(sender As Object, e As EventArgs) Handles payrollBTN.Click
         'ATTENTION: This button should navigate to Payroll.vb
         Payroll.Show()
         Me.Close()
@@ -26,13 +21,24 @@
         Me.Close()
     End Sub
 
-    Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
+    Private Sub MetricsBTN_Click(sender As Object, e As EventArgs) Handles metricsBTN.Click
         'ATTENTION: This button should navigate to Metrics.vb
         Metrics.Show()
         Me.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs) Handles DetailViewBTN.Click
+        'ATTENTION: This button should navigate to EmpManagement.vb
+        EmpManagment.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
+        Dim Response As Integer
+        Response = MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If Response = vbYes Then
+            Me.Close()
+            Application.Exit()
+        End If
     End Sub
 End Class

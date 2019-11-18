@@ -26,27 +26,20 @@ Partial Class Metrics
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.menueStrip.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(74, 6)
         '
         'ToolStripSeparator4
         '
@@ -55,7 +48,7 @@ Partial Class Metrics
         '
         'payTstripBTN
         '
-        Me.payTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.payTstripBTN.BackColor = System.Drawing.Color.AliceBlue
         Me.payTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.payTstripBTN.Image = CType(resources.GetObject("payTstripBTN.Image"), System.Drawing.Image)
         Me.payTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -69,19 +62,9 @@ Partial Class Metrics
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
-        '
         'dashTstripBTN
         '
-        Me.dashTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.dashTstripBTN.BackColor = System.Drawing.Color.AliceBlue
         Me.dashTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.dashTstripBTN.Image = CType(resources.GetObject("dashTstripBTN.Image"), System.Drawing.Image)
         Me.dashTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -92,9 +75,9 @@ Partial Class Metrics
         'menueStrip
         '
         Me.menueStrip.AutoSize = False
-        Me.menueStrip.BackColor = System.Drawing.Color.Teal
+        Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator7, Me.ToolStripSeparator5, Me.ToolStripSeparator6, Me.metricsTstripBTN})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator6, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.ExitBtn})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -105,7 +88,7 @@ Partial Class Metrics
         '
         'calcPayBTN
         '
-        Me.calcPayBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
         Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
         Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -114,11 +97,6 @@ Partial Class Metrics
         Me.calcPayBTN.Text = "Calculate"
         Me.calcPayBTN.ToolTipText = "Payroll"
         '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(74, 6)
-        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
@@ -126,13 +104,28 @@ Partial Class Metrics
         '
         'metricsTstripBTN
         '
-        Me.metricsTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.metricsTstripBTN.BackColor = System.Drawing.Color.AliceBlue
         Me.metricsTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.metricsTstripBTN.Image = CType(resources.GetObject("metricsTstripBTN.Image"), System.Drawing.Image)
         Me.metricsTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.metricsTstripBTN.Name = "metricsTstripBTN"
         Me.metricsTstripBTN.Size = New System.Drawing.Size(74, 19)
         Me.metricsTstripBTN.Text = "Metrics"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
+        '
+        'ExitBtn
+        '
+        Me.ExitBtn.BackColor = System.Drawing.Color.AliceBlue
+        Me.ExitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ExitBtn.Image = CType(resources.GetObject("ExitBtn.Image"), System.Drawing.Image)
+        Me.ExitBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ExitBtn.Name = "ExitBtn"
+        Me.ExitBtn.Size = New System.Drawing.Size(74, 19)
+        Me.ExitBtn.Text = "Exit"
         '
         'Chart1
         '
@@ -165,18 +158,15 @@ Partial Class Metrics
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents payTstripBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents dashTstripBTN As ToolStripButton
     Private WithEvents menueStrip As ToolStrip
     Friend WithEvents calcPayBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents metricsTstripBTN As ToolStripButton
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ExitBtn As ToolStripButton
 End Class

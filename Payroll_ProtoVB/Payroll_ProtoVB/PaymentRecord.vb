@@ -18,4 +18,13 @@
     Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
         Metrics.Show()
     End Sub
+
+    Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
+        Dim Response As Integer
+        Response = MessageBox.Show("Do you want to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If Response = vbYes Then
+            Me.Close()
+            Application.Exit()
+        End If
+    End Sub
 End Class

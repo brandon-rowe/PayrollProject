@@ -25,17 +25,16 @@ Partial Class EmpDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmpDashboard))
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
-        Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
+        Me.dashBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.payrollBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.metricsBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DetailViewBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,7 +52,9 @@ Partial Class EmpDashboard
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.btnDetailedView = New System.Windows.Forms.Button()
+        Me.PaystubBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,61 +64,51 @@ Partial Class EmpDashboard
         'menueStrip
         '
         Me.menueStrip.AutoSize = False
-        Me.menueStrip.BackColor = System.Drawing.Color.Teal
+        Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator7, Me.ToolStripSeparator5, Me.ToolStripSeparator6, Me.metricsTstripBTN})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashBTN, Me.ToolStripSeparator1, Me.payrollBTN, Me.ToolStripSeparator2, Me.calcPayBTN, Me.ToolStripSeparator3, Me.metricsBTN, Me.ToolStripSeparator4, Me.DetailViewBTN, Me.ToolStripSeparator5, Me.PaystubBTN, Me.ToolStripSeparator6, Me.ExitBtn})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.menueStrip.Size = New System.Drawing.Size(95, 495)
+        Me.menueStrip.Size = New System.Drawing.Size(95, 455)
         Me.menueStrip.Stretch = True
         Me.menueStrip.TabIndex = 4
         Me.menueStrip.Text = "ToolStrip1"
         '
-        'dashTstripBTN
+        'dashBTN
         '
-        Me.dashTstripBTN.BackColor = System.Drawing.Color.Honeydew
-        Me.dashTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.dashTstripBTN.Image = CType(resources.GetObject("dashTstripBTN.Image"), System.Drawing.Image)
-        Me.dashTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.dashTstripBTN.Name = "dashTstripBTN"
-        Me.dashTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.dashTstripBTN.Text = "Dashboard"
+        Me.dashBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.dashBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.dashBTN.Image = CType(resources.GetObject("dashBTN.Image"), System.Drawing.Image)
+        Me.dashBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.dashBTN.Name = "dashBTN"
+        Me.dashBTN.Size = New System.Drawing.Size(74, 19)
+        Me.dashBTN.Text = "Dashboard"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
         '
+        'payrollBTN
+        '
+        Me.payrollBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.payrollBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.payrollBTN.Image = CType(resources.GetObject("payrollBTN.Image"), System.Drawing.Image)
+        Me.payrollBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.payrollBTN.Name = "payrollBTN"
+        Me.payrollBTN.Size = New System.Drawing.Size(74, 19)
+        Me.payrollBTN.Text = "Payroll"
+        Me.payrollBTN.ToolTipText = "Payroll"
+        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
-        '
-        'payTstripBTN
-        '
-        Me.payTstripBTN.BackColor = System.Drawing.Color.Honeydew
-        Me.payTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.payTstripBTN.Image = CType(resources.GetObject("payTstripBTN.Image"), System.Drawing.Image)
-        Me.payTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.payTstripBTN.Name = "payTstripBTN"
-        Me.payTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.payTstripBTN.Text = "Payroll"
-        Me.payTstripBTN.ToolTipText = "Payroll"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(74, 6)
-        '
         'calcPayBTN
         '
-        Me.calcPayBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
         Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
         Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -126,30 +117,40 @@ Partial Class EmpDashboard
         Me.calcPayBTN.Text = "Calculate"
         Me.calcPayBTN.ToolTipText = "Payroll"
         '
-        'ToolStripSeparator7
+        'ToolStripSeparator3
         '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(74, 6)
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
+        '
+        'metricsBTN
+        '
+        Me.metricsBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.metricsBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.metricsBTN.Image = CType(resources.GetObject("metricsBTN.Image"), System.Drawing.Image)
+        Me.metricsBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.metricsBTN.Name = "metricsBTN"
+        Me.metricsBTN.Size = New System.Drawing.Size(74, 19)
+        Me.metricsBTN.Text = "Metrics"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(74, 6)
+        '
+        'DetailViewBTN
+        '
+        Me.DetailViewBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.DetailViewBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.DetailViewBTN.Image = CType(resources.GetObject("DetailViewBTN.Image"), System.Drawing.Image)
+        Me.DetailViewBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.DetailViewBTN.Name = "DetailViewBTN"
+        Me.DetailViewBTN.Size = New System.Drawing.Size(74, 19)
+        Me.DetailViewBTN.Text = "Detail View"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(74, 6)
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(74, 6)
-        '
-        'metricsTstripBTN
-        '
-        Me.metricsTstripBTN.BackColor = System.Drawing.Color.Honeydew
-        Me.metricsTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.metricsTstripBTN.Image = CType(resources.GetObject("metricsTstripBTN.Image"), System.Drawing.Image)
-        Me.metricsTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.metricsTstripBTN.Name = "metricsTstripBTN"
-        Me.metricsTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.metricsTstripBTN.Text = "Metrics"
         '
         'DataGridView1
         '
@@ -261,25 +262,40 @@ Partial Class EmpDashboard
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
-        'btnDetailedView
+        'PaystubBTN
         '
-        Me.btnDetailedView.Location = New System.Drawing.Point(892, 442)
-        Me.btnDetailedView.Name = "btnDetailedView"
-        Me.btnDetailedView.Size = New System.Drawing.Size(99, 41)
-        Me.btnDetailedView.TabIndex = 6
-        Me.btnDetailedView.Text = "Detailed Employee View"
-        Me.btnDetailedView.UseVisualStyleBackColor = True
+        Me.PaystubBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.PaystubBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.PaystubBTN.Image = CType(resources.GetObject("PaystubBTN.Image"), System.Drawing.Image)
+        Me.PaystubBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.PaystubBTN.Name = "PaystubBTN"
+        Me.PaystubBTN.Size = New System.Drawing.Size(74, 19)
+        Me.PaystubBTN.Text = "Paystub"
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(74, 6)
+        '
+        'ExitBtn
+        '
+        Me.ExitBtn.BackColor = System.Drawing.Color.AliceBlue
+        Me.ExitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ExitBtn.Image = CType(resources.GetObject("ExitBtn.Image"), System.Drawing.Image)
+        Me.ExitBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ExitBtn.Name = "ExitBtn"
+        Me.ExitBtn.Size = New System.Drawing.Size(74, 19)
+        Me.ExitBtn.Text = "Exit"
         '
         'EmpDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 495)
-        Me.Controls.Add(Me.btnDetailedView)
+        Me.ClientSize = New System.Drawing.Size(1028, 455)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "EmpDashboard"
-        Me.Text = "EmpDashboard"
+        Me.Text = "Employee Dashboard"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -290,22 +306,14 @@ Partial Class EmpDashboard
     End Sub
 
     Private WithEvents menueStrip As ToolStrip
-    Friend WithEvents dashTstripBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents payTstripBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents dashBTN As ToolStripButton
+    Friend WithEvents payrollBTN As ToolStripButton
     Friend WithEvents calcPayBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents metricsTstripBTN As ToolStripButton
+    Friend WithEvents metricsBTN As ToolStripButton
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
-    Friend WithEvents btnDetailedView As Button
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -319,4 +327,13 @@ Partial Class EmpDashboard
     Friend WithEvents HourlyrateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HoursworkedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SsnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents DetailViewBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents PaystubBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Friend WithEvents ExitBtn As ToolStripButton
 End Class
