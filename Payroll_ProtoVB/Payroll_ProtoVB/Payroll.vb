@@ -8,24 +8,36 @@
         Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
     End Sub
 
-    Private Sub metricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
-        Dim Metrics = New Metrics()
-        Metrics.Show()
+    Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
+        EmpDashboard.Show()
+        Me.Close()
     End Sub
 
+    Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles payTstripBTN.Click
+        Me.Refresh()
+    End Sub
+
+
+
     Private Sub calcPayBTN_Click(sender As Object, e As EventArgs) Handles calcPayBTN.Click
-        Dim PayCalc = New PayRateCalc()
-        PayCalc.Show()
+        PayRateCalc.Show()
+        Me.Close()
     End Sub
 
     Private Sub payStubViewBTN_Click(sender As Object, e As EventArgs) Handles payStubViewBTN.Click
         Dim Paystub = New PayStub()
         Paystub.Show()
+        Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub metricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
+        Metrics.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub EmpRecord_Click(sender As Object, e As EventArgs) Handles EmpRecordView.Click
         PaymentRecord.Show()
+        Me.Close()
     End Sub
-
 
 End Class

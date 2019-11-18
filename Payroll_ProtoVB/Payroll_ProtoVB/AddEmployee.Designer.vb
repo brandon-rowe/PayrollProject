@@ -26,7 +26,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormDepStatLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormMstatLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormPaymentTypeLabel = New System.Windows.Forms.Label()
-        Me.PayTypeTxt = New System.Windows.Forms.ComboBox()
+        Me.PayTypeCBox = New System.Windows.Forms.ComboBox()
         Me.AccessCTRL = New System.Windows.Forms.CheckedListBox()
         Me.addEmployeeFormPermissionsLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormAddUsrDescLabel3 = New System.Windows.Forms.Label()
@@ -43,7 +43,7 @@ Partial Class AddEmployee
         Me.addEmployeeFormZipLabel = New System.Windows.Forms.Label()
         Me.StateTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormStateLabel = New System.Windows.Forms.Label()
-        Me.AddressTxt = New System.Windows.Forms.TextBox()
+        Me.StreetTxt = New System.Windows.Forms.TextBox()
         Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormAddyLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
@@ -51,10 +51,6 @@ Partial Class AddEmployee
         Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
         Me.SSN_Label = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
-
-        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
-        Me.SSN_Label = New System.Windows.Forms.Label()
-
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -94,16 +90,16 @@ Partial Class AddEmployee
         Me.addEmployeeFormPaymentTypeLabel.TabIndex = 80
         Me.addEmployeeFormPaymentTypeLabel.Text = "Payment Type"
         '
-        'PayTypeTxt
+        'PayTypeCBox
         '
-        Me.PayTypeTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.PayTypeTxt.FormattingEnabled = True
-        Me.PayTypeTxt.ItemHeight = 13
-        Me.PayTypeTxt.Items.AddRange(New Object() {"Salary", "Hourly"})
-        Me.PayTypeTxt.Location = New System.Drawing.Point(658, 229)
-        Me.PayTypeTxt.Name = "PayTypeTxt"
-        Me.PayTypeTxt.Size = New System.Drawing.Size(121, 21)
-        Me.PayTypeTxt.TabIndex = 9
+        Me.PayTypeCBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.PayTypeCBox.FormattingEnabled = True
+        Me.PayTypeCBox.ItemHeight = 13
+        Me.PayTypeCBox.Items.AddRange(New Object() {"Salary", "Hourly"})
+        Me.PayTypeCBox.Location = New System.Drawing.Point(658, 229)
+        Me.PayTypeCBox.Name = "PayTypeCBox"
+        Me.PayTypeCBox.Size = New System.Drawing.Size(121, 21)
+        Me.PayTypeCBox.TabIndex = 9
         '
         'AccessCTRL
         '
@@ -246,12 +242,12 @@ Partial Class AddEmployee
         Me.addEmployeeFormStateLabel.TabIndex = 61
         Me.addEmployeeFormStateLabel.Text = "State"
         '
-        'AddressTxt
+        'StreetTxt
         '
-        Me.AddressTxt.Location = New System.Drawing.Point(232, 183)
-        Me.AddressTxt.Name = "AddressTxt"
-        Me.AddressTxt.Size = New System.Drawing.Size(240, 20)
-        Me.AddressTxt.TabIndex = 2
+        Me.StreetTxt.Location = New System.Drawing.Point(232, 183)
+        Me.StreetTxt.Name = "StreetTxt"
+        Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
+        Me.StreetTxt.TabIndex = 2
         '
         'FnameTxt
         '
@@ -312,34 +308,14 @@ Partial Class AddEmployee
         '
         'SSN_Txt
         '
-        Me.SSN_Txt.Location = New System.Drawing.Point(232, 286)
-        Me.SSN_Txt.Mask = "000-00-0000"
-        Me.SSN_Txt.Name = "SSN_Txt"
-        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
-        Me.SSN_Txt.TabIndex = 6
-        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
-        Me.SSN_Txt.UseSystemPasswordChar = True
-        '
-        'SSN_Txt
-        '
         Me.SSN_Txt.Location = New System.Drawing.Point(234, 284)
         Me.SSN_Txt.Mask = "000-00-0000"
         Me.SSN_Txt.Name = "SSN_Txt"
         Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
         Me.SSN_Txt.TabIndex = 85
+        Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
         Me.SSN_Txt.UseSystemPasswordChar = True
-        '
-        'SSN_Label
-        '
-        Me.SSN_Label.AutoSize = True
-        Me.SSN_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SSN_Label.Location = New System.Drawing.Point(73, 284)
-        Me.SSN_Label.Name = "SSN_Label"
-        Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
-        Me.SSN_Label.TabIndex = 86
-        Me.SSN_Label.Text = "SSN"
         '
         'AddEmployee
         '
@@ -353,7 +329,7 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormDepStatLabel)
         Me.Controls.Add(Me.addEmployeeFormMstatLabel)
         Me.Controls.Add(Me.addEmployeeFormPaymentTypeLabel)
-        Me.Controls.Add(Me.PayTypeTxt)
+        Me.Controls.Add(Me.PayTypeCBox)
         Me.Controls.Add(Me.AccessCTRL)
         Me.Controls.Add(Me.addEmployeeFormPermissionsLabel)
         Me.Controls.Add(Me.addEmployeeFormAddUsrDescLabel3)
@@ -370,7 +346,7 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormZipLabel)
         Me.Controls.Add(Me.StateTxt)
         Me.Controls.Add(Me.addEmployeeFormStateLabel)
-        Me.Controls.Add(Me.AddressTxt)
+        Me.Controls.Add(Me.StreetTxt)
         Me.Controls.Add(Me.FnameTxt)
         Me.Controls.Add(Me.addEmployeeFormAddyLabel)
         Me.Controls.Add(Me.addEmployeeFormFirstNameLabel)
@@ -386,7 +362,7 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormDepStatLabel As Label
     Private WithEvents addEmployeeFormMstatLabel As Label
     Private WithEvents addEmployeeFormPaymentTypeLabel As Label
-    Private WithEvents PayTypeTxt As ComboBox
+    Private WithEvents PayTypeCBox As ComboBox
     Private WithEvents AccessCTRL As CheckedListBox
     Private WithEvents addEmployeeFormPermissionsLabel As Label
     Private WithEvents addEmployeeFormAddUsrDescLabel3 As Label
@@ -403,7 +379,7 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormZipLabel As Label
     Private WithEvents StateTxt As TextBox
     Private WithEvents addEmployeeFormStateLabel As Label
-    Private WithEvents AddressTxt As TextBox
+    Private WithEvents StreetTxt As TextBox
     Private WithEvents FnameTxt As TextBox
     Private WithEvents addEmployeeFormAddyLabel As Label
     Private WithEvents addEmployeeFormFirstNameLabel As Label

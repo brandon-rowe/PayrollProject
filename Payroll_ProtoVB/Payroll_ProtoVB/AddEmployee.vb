@@ -16,14 +16,14 @@
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
         Fname = FnameTxt.Text
         Lname = LnameTxt.Text
-        street = AddressTxt.Text
+        street = StreetTxt.Text
         state = StateTxt.Text
         zip = ZipTxt.Text
         address = street + " " + state + " " + zip
         status = MaritalStatCB.Text
         dependents = DependentsTxt.Text
         position = PositionTxt.Text
-        paymentType = PayTypeTxt.Text
+        paymentType = PayTypeCBox.Text
 
         Console.WriteLine(Fname)
         Console.WriteLine(Lname)
@@ -36,15 +36,15 @@
 
         FnameTxt.Clear()
         LnameTxt.Clear()
-        AddressTxt.Clear()
+        StreetTxt.Clear()
         StateTxt.Clear()
         ZipTxt.Clear()
         MaritalStatCB.Refresh()
         MaritalStatCB.ResetText()
         DependentsTxt.Clear()
         PositionTxt.Clear()
-        PayTypeTxt.Refresh()
-        PayTypeTxt.ResetText()
+        PayTypeCBox.Refresh()
+        PayTypeCBox.ResetText()
         'not correct usage, will not revert to default blank permissions.
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
