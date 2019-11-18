@@ -56,15 +56,9 @@
     End Sub
 
     Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
-<<<<<<< Updated upstream
+
         Me.Close()
         Login.Show()
-=======
-        'Dim EmpDashboard = New EmpDashboard()
-        Me.Close()
-        Login.Show() 'this still works I want to find a way to have it set where there aren't random popups on the screen everytime we move to a new form.
->>>>>>> Stashed changes
-
         Login.FnameTxt.Clear()
         Login.LnameTxt.Clear()
         Login.StreetTxt.Clear()

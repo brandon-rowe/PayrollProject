@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddEmployee
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddEmployee
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DependentsTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormDepStatLabel = New System.Windows.Forms.Label()
@@ -49,13 +49,12 @@ Partial Class AddEmployee
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.AddEmployeeFormLabel = New System.Windows.Forms.Label()
         Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
-<<<<<<< Updated upstream
         Me.SSN_Label = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
-=======
+
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         Me.SSN_Label = New System.Windows.Forms.Label()
->>>>>>> Stashed changes
+
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -410,11 +409,6 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormFirstNameLabel As Label
     Private WithEvents AddEmployeeFormLabel As Label
     Private WithEvents MaritalStatCB As ComboBox
-<<<<<<< Updated upstream
     Private WithEvents SSN_Label As Label
     Private WithEvents SSN_Txt As MaskedTextBox
-=======
-    Private WithEvents SSN_Txt As MaskedTextBox
-    Private WithEvents SSN_Label As Label
->>>>>>> Stashed changes
 End Class
