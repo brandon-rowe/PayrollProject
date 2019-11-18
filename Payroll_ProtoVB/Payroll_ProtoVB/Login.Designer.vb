@@ -337,20 +337,12 @@ Partial Class Login
     End Sub
 
     Private WithEvents usrGenFormCreateUsrButton As Button
-    Private WithEvents LnameTxt As TextBox
     Private WithEvents usrGenFormLastNameLabel As Label
-    Private WithEvents ZipTxt As TextBox
     Private WithEvents usrGenFormZipLabel As Label
-    Private WithEvents StateTxt As TextBox
     Private WithEvents usrGenFormStateLabel As Label
-    Private WithEvents StreetTxt As TextBox
-    Private WithEvents FnameTxt As TextBox
     Private WithEvents StreetLbl As Label
     Private WithEvents usrGenFormFirstNameLabel As Label
-    Private WithEvents VerifyPwordTxt As MaskedTextBox
     Private WithEvents userGenFormPassVrfyLabel As Label
-    Private WithEvents CreateUnameTxt As TextBox
-    Private WithEvents userGenFormPassLabel As Label
     Private WithEvents usrGenFormUsrNameLabel As Label
     Private WithEvents userGenFormLabel As Label
     Private WithEvents loginBtn As Button
@@ -360,6 +352,14 @@ Partial Class Login
     Private WithEvents loginFormUsrLabel As Label
     Private WithEvents loginFormLable As Label
     Private WithEvents splitContainer1 As SplitContainer
-    Private WithEvents CreatePwordTxt As MaskedTextBox
     Private WithEvents loginPwTxt As MaskedTextBox
+    Protected Friend WithEvents LnameTxt As TextBox
+    Protected Friend WithEvents ZipTxt As TextBox
+    Protected Friend WithEvents StateTxt As TextBox
+    Protected Friend WithEvents StreetTxt As TextBox
+    Protected Friend WithEvents FnameTxt As TextBox
+    Protected Friend WithEvents VerifyPwordTxt As MaskedTextBox
+    Protected Friend WithEvents CreateUnameTxt As TextBox
+    Protected Friend WithEvents userGenFormPassLabel As Label
+    Protected Friend WithEvents CreatePwordTxt As MaskedTextBox
 End Class

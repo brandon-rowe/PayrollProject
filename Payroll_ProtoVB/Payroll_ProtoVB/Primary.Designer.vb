@@ -2532,108 +2532,6 @@ Namespace PrimaryTableAdapters
         Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(ID,Integer)
-            If (fname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("fname")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(fname,String)
-            End If
-            If (lname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("lname")
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(lname,String)
-            End If
-            If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(title,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal Original_ID As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ID,Integer)
-            If (fname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("fname")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(fname,String)
-            End If
-            If (lname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("lname")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(lname,String)
-            End If
-            If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(title,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal Original_ID As Integer) As Integer
-            Return Me.Update(Original_ID, fname, lname, title, Original_ID)
-        End Function
     End Class
     
     '''<summary>
@@ -2777,78 +2675,6 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("hoursworked", "hoursworked")
             tableMapping.ColumnMappings.Add("ssn", "ssn")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Employee] WHERE (([ID] = @Original_ID) AND ([maritalstatus] = "& _ 
-                "@Original_maritalstatus) AND ([dependents] = @Original_dependents) AND ([admin] "& _ 
-                "= @Original_admin) AND ([salaried] = @Original_salaried) AND ([salary] = @Origin"& _ 
-                "al_salary) AND ([hourlyrate] = @Original_hourlyrate) AND ([hoursworked] = @Origi"& _ 
-                "nal_hoursworked))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_maritalstatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maritalstatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_dependents", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dependents", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "admin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_salary", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hourlyrate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hourlyrate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hoursworked", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursworked", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Employee] ([ID], [fname], [lname], [title], [address], [marita"& _ 
-                "lstatus], [dependents], [admin], [salaried], [salary], [hourlyrate], [hoursworke"& _ 
-                "d], [ssn]) VALUES (@ID, @fname, @lname, @title, @address, @maritalstatus, @depen"& _ 
-                "dents, @admin, @salaried, @salary, @hourlyrate, @hoursworked, @ssn);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID,"& _ 
-                " fname, lname, title, address, maritalstatus, dependents, admin, salaried, salar"& _ 
-                "y, hourlyrate, hoursworked, ssn FROM Employee WHERE (ID = @ID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@maritalstatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maritalstatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dependents", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dependents", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "admin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salary", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hourlyrate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hourlyrate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursworked", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursworked", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ssn", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ssn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Employee] SET [ID] = @ID, [fname] = @fname, [lname] = @lname, [titl"& _ 
-                "e] = @title, [address] = @address, [maritalstatus] = @maritalstatus, [dependents"& _ 
-                "] = @dependents, [admin] = @admin, [salaried] = @salaried, [salary] = @salary, ["& _ 
-                "hourlyrate] = @hourlyrate, [hoursworked] = @hoursworked, [ssn] = @ssn WHERE (([I"& _ 
-                "D] = @Original_ID) AND ([maritalstatus] = @Original_maritalstatus) AND ([depende"& _ 
-                "nts] = @Original_dependents) AND ([admin] = @Original_admin) AND ([salaried] = @"& _ 
-                "Original_salaried) AND ([salary] = @Original_salary) AND ([hourlyrate] = @Origin"& _ 
-                "al_hourlyrate) AND ([hoursworked] = @Original_hoursworked));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, fname, "& _ 
-                "lname, title, address, maritalstatus, dependents, admin, salaried, salary, hourl"& _ 
-                "yrate, hoursworked, ssn FROM Employee WHERE (ID = @ID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@maritalstatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maritalstatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dependents", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dependents", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "admin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salary", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hourlyrate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hourlyrate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursworked", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursworked", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ssn", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ssn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_maritalstatus", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maritalstatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_dependents", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dependents", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_admin", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "admin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_salary", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hourlyrate", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hourlyrate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_hoursworked", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursworked", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2891,225 +2717,6 @@ Namespace PrimaryTableAdapters
             Dim dataTable As Primary.EmployeeDataTable = New Primary.EmployeeDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Primary.EmployeeDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Primary) As Integer
-            Return Me.Adapter.Update(dataSet, "Employee")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_maritalstatus As Boolean, ByVal Original_dependents As Integer, ByVal Original_admin As Boolean, ByVal Original_salaried As Boolean, ByVal Original_salary As Decimal, ByVal Original_hourlyrate As Decimal, ByVal Original_hoursworked As Decimal) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_maritalstatus,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_dependents,Integer)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_admin,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_salaried,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_salary,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_hourlyrate,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_hoursworked,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(ID,Integer)
-            If (fname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("fname")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(fname,String)
-            End If
-            If (lname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("lname")
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(lname,String)
-            End If
-            If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(title,String)
-            End If
-            If (address Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("address")
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(address,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(maritalstatus,Boolean)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(dependents,Integer)
-            Me.Adapter.InsertCommand.Parameters(7).Value = CType(admin,Boolean)
-            Me.Adapter.InsertCommand.Parameters(8).Value = CType(salaried,Boolean)
-            Me.Adapter.InsertCommand.Parameters(9).Value = CType(salary,Decimal)
-            Me.Adapter.InsertCommand.Parameters(10).Value = CType(hourlyrate,Decimal)
-            Me.Adapter.InsertCommand.Parameters(11).Value = CType(hoursworked,Decimal)
-            If (ssn Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ssn")
-            Else
-                Me.Adapter.InsertCommand.Parameters(12).Value = CType(ssn,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal ID As Integer,  _
-                    ByVal fname As String,  _
-                    ByVal lname As String,  _
-                    ByVal title As String,  _
-                    ByVal address As String,  _
-                    ByVal maritalstatus As Boolean,  _
-                    ByVal dependents As Integer,  _
-                    ByVal admin As Boolean,  _
-                    ByVal salaried As Boolean,  _
-                    ByVal salary As Decimal,  _
-                    ByVal hourlyrate As Decimal,  _
-                    ByVal hoursworked As Decimal,  _
-                    ByVal ssn As String,  _
-                    ByVal Original_ID As Integer,  _
-                    ByVal Original_maritalstatus As Boolean,  _
-                    ByVal Original_dependents As Integer,  _
-                    ByVal Original_admin As Boolean,  _
-                    ByVal Original_salaried As Boolean,  _
-                    ByVal Original_salary As Decimal,  _
-                    ByVal Original_hourlyrate As Decimal,  _
-                    ByVal Original_hoursworked As Decimal) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ID,Integer)
-            If (fname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("fname")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(fname,String)
-            End If
-            If (lname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("lname")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(lname,String)
-            End If
-            If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(title,String)
-            End If
-            If (address Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("address")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(address,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(maritalstatus,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(dependents,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(admin,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(salaried,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(salary,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(hourlyrate,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(hoursworked,Decimal)
-            If (ssn Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ssn")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(ssn,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_maritalstatus,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_dependents,Integer)
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_admin,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_salaried,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_salary,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_hourlyrate,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_hoursworked,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal fname As String,  _
-                    ByVal lname As String,  _
-                    ByVal title As String,  _
-                    ByVal address As String,  _
-                    ByVal maritalstatus As Boolean,  _
-                    ByVal dependents As Integer,  _
-                    ByVal admin As Boolean,  _
-                    ByVal salaried As Boolean,  _
-                    ByVal salary As Decimal,  _
-                    ByVal hourlyrate As Decimal,  _
-                    ByVal hoursworked As Decimal,  _
-                    ByVal ssn As String,  _
-                    ByVal Original_ID As Integer,  _
-                    ByVal Original_maritalstatus As Boolean,  _
-                    ByVal Original_dependents As Integer,  _
-                    ByVal Original_admin As Boolean,  _
-                    ByVal Original_salaried As Boolean,  _
-                    ByVal Original_salary As Decimal,  _
-                    ByVal Original_hourlyrate As Decimal,  _
-                    ByVal Original_hoursworked As Decimal) As Integer
-            Return Me.Update(Original_ID, fname, lname, title, address, maritalstatus, dependents, admin, salaried, salary, hourlyrate, hoursworked, ssn, Original_ID, Original_maritalstatus, Original_dependents, Original_admin, Original_salaried, Original_salary, Original_hourlyrate, Original_hoursworked)
         End Function
     End Class
     
@@ -3351,90 +2958,6 @@ Namespace PrimaryTableAdapters
         Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
             Return Me.Adapter.Update(dataRows)
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PaymentID,Long)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ID,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_date,Date)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal PaymentID As Long, ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(PaymentID,Long)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(ID,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(_date,Date)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal PaymentID As Long, ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(PaymentID,Long)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(_date,Date)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(amount,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_PaymentID,Long)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_date,Date)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Return Me.Update(Original_PaymentID, ID, _date, amount, Original_PaymentID, Original_ID, Original_date, Original_amount)
-        End Function
     End Class
     
     '''<summary>
@@ -3569,42 +3092,6 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("date", "date")
             tableMapping.ColumnMappings.Add("amount", "amount")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EmployeePast] WHERE (([PaymentID] = @Original_PaymentID) AND ("& _ 
-                "[ID] = @Original_ID) AND ([date] = @Original_date) AND ([amount] = @Original_amo"& _ 
-                "unt))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_amount", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "amount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[EmployeePast] ([PaymentID], [ID], [date], [amount]) VALUES (@P"& _ 
-                "aymentID, @ID, @date, @amount);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID, date, amount FROM Employe"& _ 
-                "ePast WHERE (PaymentID = @PaymentID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@amount", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "amount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EmployeePast] SET [PaymentID] = @PaymentID, [ID] = @ID, [date] = @d"& _ 
-                "ate, [amount] = @amount WHERE (([PaymentID] = @Original_PaymentID) AND ([ID] = @"& _ 
-                "Original_ID) AND ([date] = @Original_date) AND ([amount] = @Original_amount));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "SELECT PaymentID, ID, date, amount FROM EmployeePast WHERE (PaymentID = @Payment"& _ 
-                "ID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@amount", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "amount", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_amount", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "amount", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3647,118 +3134,6 @@ Namespace PrimaryTableAdapters
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Primary.EmployeePastDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Primary) As Integer
-            Return Me.Adapter.Update(dataSet, "EmployeePast")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_PaymentID,Long)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ID,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_date,Date)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal PaymentID As Long, ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(PaymentID,Long)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(ID,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(_date,Date)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal PaymentID As Long, ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(PaymentID,Long)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(_date,Date)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(amount,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_PaymentID,Long)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_ID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_date,Date)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_amount,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal Original_PaymentID As Long, ByVal Original_ID As Integer, ByVal Original_date As Date, ByVal Original_amount As Decimal) As Integer
-            Return Me.Update(Original_PaymentID, ID, _date, amount, Original_PaymentID, Original_ID, Original_date, Original_amount)
-        End Function
     End Class
     
     '''<summary>
@@ -3776,11 +3151,7 @@ Namespace PrimaryTableAdapters
         
         Private _adminTableAdapter As AdminTableAdapter
         
-        Private _employeeTableAdapter As EmployeeTableAdapter
-        
         Private _employeeFutureTableAdapter As EmployeeFutureTableAdapter
-        
-        Private _employeePastTableAdapter As EmployeePastTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -3816,40 +3187,12 @@ Namespace PrimaryTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property EmployeeTableAdapter() As EmployeeTableAdapter
-            Get
-                Return Me._employeeTableAdapter
-            End Get
-            Set
-                Me._employeeTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property EmployeeFutureTableAdapter() As EmployeeFutureTableAdapter
             Get
                 Return Me._employeeFutureTableAdapter
             End Get
             Set
                 Me._employeeFutureTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property EmployeePastTableAdapter() As EmployeePastTableAdapter
-            Get
-                Return Me._employeePastTableAdapter
-            End Get
-            Set
-                Me._employeePastTableAdapter = value
             End Set
         End Property
         
@@ -3876,17 +3219,9 @@ Namespace PrimaryTableAdapters
                             AndAlso (Not (Me._adminTableAdapter.Connection) Is Nothing)) Then
                     Return Me._adminTableAdapter.Connection
                 End If
-                If ((Not (Me._employeeTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._employeeTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._employeeTableAdapter.Connection
-                End If
                 If ((Not (Me._employeeFutureTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._employeeFutureTableAdapter.Connection) Is Nothing)) Then
                     Return Me._employeeFutureTableAdapter.Connection
-                End If
-                If ((Not (Me._employeePastTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._employeePastTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._employeePastTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -3904,13 +3239,7 @@ Namespace PrimaryTableAdapters
                 If (Not (Me._adminTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._employeeFutureTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._employeePastTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -3924,15 +3253,6 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As Primary, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Employee.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._employeeTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._adminTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -3951,15 +3271,6 @@ Namespace PrimaryTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._employeePastTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.EmployeePast.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._employeePastTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             Return result
         End Function
         
@@ -3970,14 +3281,6 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As Primary, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Employee.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._employeeTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._adminTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Admin.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -3994,14 +3297,6 @@ Namespace PrimaryTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._employeePastTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.EmployeePast.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._employeePastTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             Return result
         End Function
         
@@ -4012,14 +3307,6 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As Primary, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._employeePastTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.EmployeePast.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._employeePastTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._employeeFutureTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.EmployeeFuture.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -4033,14 +3320,6 @@ Namespace PrimaryTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._adminTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Employee.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._employeeTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -4090,18 +3369,8 @@ Namespace PrimaryTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._employeeTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._employeeTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
             If ((Not (Me._employeeFutureTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._employeeFutureTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._employeePastTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._employeePastTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -4146,15 +3415,6 @@ Namespace PrimaryTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._adminTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._employeeTableAdapter, Me._employeeTableAdapter.Connection)
-                    Me._employeeTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._employeeTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._employeeTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._employeeTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._employeeTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._employeeFutureTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._employeeFutureTableAdapter, Me._employeeFutureTableAdapter.Connection)
                     Me._employeeFutureTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -4162,15 +3422,6 @@ Namespace PrimaryTableAdapters
                     If Me._employeeFutureTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._employeeFutureTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._employeeFutureTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._employeePastTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._employeePastTableAdapter, Me._employeePastTableAdapter.Connection)
-                    Me._employeePastTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._employeePastTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._employeePastTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._employeePastTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._employeePastTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -4237,17 +3488,9 @@ Namespace PrimaryTableAdapters
                     Me._adminTableAdapter.Connection = CType(revertConnections(Me._adminTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._adminTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._employeeTableAdapter) Is Nothing) Then
-                    Me._employeeTableAdapter.Connection = CType(revertConnections(Me._employeeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._employeeTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._employeeFutureTableAdapter) Is Nothing) Then
                     Me._employeeFutureTableAdapter.Connection = CType(revertConnections(Me._employeeFutureTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._employeeFutureTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._employeePastTableAdapter) Is Nothing) Then
-                    Me._employeePastTableAdapter.Connection = CType(revertConnections(Me._employeePastTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._employeePastTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

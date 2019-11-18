@@ -49,8 +49,13 @@ Partial Class AddEmployee
         Me.addEmployeeFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.AddEmployeeFormLabel = New System.Windows.Forms.Label()
         Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
+<<<<<<< Updated upstream
         Me.SSN_Label = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
+=======
+        Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
+        Me.SSN_Label = New System.Windows.Forms.Label()
+>>>>>>> Stashed changes
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -317,6 +322,26 @@ Partial Class AddEmployee
         Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
         Me.SSN_Txt.UseSystemPasswordChar = True
         '
+        'SSN_Txt
+        '
+        Me.SSN_Txt.Location = New System.Drawing.Point(234, 284)
+        Me.SSN_Txt.Mask = "000-00-0000"
+        Me.SSN_Txt.Name = "SSN_Txt"
+        Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
+        Me.SSN_Txt.TabIndex = 85
+        Me.SSN_Txt.UseSystemPasswordChar = True
+        '
+        'SSN_Label
+        '
+        Me.SSN_Label.AutoSize = True
+        Me.SSN_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SSN_Label.Location = New System.Drawing.Point(73, 284)
+        Me.SSN_Label.Name = "SSN_Label"
+        Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
+        Me.SSN_Label.TabIndex = 86
+        Me.SSN_Label.Text = "SSN"
+        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -385,6 +410,11 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormFirstNameLabel As Label
     Private WithEvents AddEmployeeFormLabel As Label
     Private WithEvents MaritalStatCB As ComboBox
+<<<<<<< Updated upstream
     Private WithEvents SSN_Label As Label
     Private WithEvents SSN_Txt As MaskedTextBox
+=======
+    Private WithEvents SSN_Txt As MaskedTextBox
+    Private WithEvents SSN_Label As Label
+>>>>>>> Stashed changes
 End Class

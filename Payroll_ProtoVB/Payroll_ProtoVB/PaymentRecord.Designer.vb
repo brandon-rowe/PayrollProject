@@ -24,13 +24,13 @@ Partial Class PaymentRecord
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentRecord))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.PayTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
@@ -70,7 +70,7 @@ Partial Class PaymentRecord
         Me.menueStrip.AutoSize = False
         Me.menueStrip.BackColor = System.Drawing.Color.Teal
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.ToolStripButton1, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.PayTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -104,16 +104,16 @@ Partial Class PaymentRecord
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
         '
-        'ToolStripButton1
+        'PayTstripBTN
         '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.Honeydew
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(74, 19)
-        Me.ToolStripButton1.Text = "Payroll"
-        Me.ToolStripButton1.ToolTipText = "Payroll"
+        Me.PayTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.PayTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.PayTstripBTN.Image = CType(resources.GetObject("PayTstripBTN.Image"), System.Drawing.Image)
+        Me.PayTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.PayTstripBTN.Name = "PayTstripBTN"
+        Me.PayTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.PayTstripBTN.Text = "Payroll"
+        Me.PayTstripBTN.ToolTipText = "Payroll"
         '
         'ToolStripSeparator4
         '
@@ -212,14 +212,14 @@ Partial Class PaymentRecord
         '
         Me.dataGridView1.AutoGenerateColumns = False
         Me.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.IDDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn})
         Me.dataGridView1.DataSource = Me.EmployeePastBindingSource
@@ -387,7 +387,7 @@ Partial Class PaymentRecord
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents PayTstripBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents calcPayBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator

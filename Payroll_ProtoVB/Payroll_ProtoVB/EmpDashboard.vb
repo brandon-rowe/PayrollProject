@@ -23,4 +23,28 @@
     Private Sub BtnDetailedView_Click(sender As Object, e As EventArgs) Handles btnDetailedView.Click
         EmpManagment.Show()
     End Sub
+
+    Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
+        Me.Refresh()
+    End Sub
+
+    Private Sub BtnDetailedView_Click(sender As Object, e As EventArgs) Handles btnDetailedView.Click
+        Dim EmpManage = New EmpManagment()
+        EmpManage.Show()
+        Me.Close()
+    End Sub
+    Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles payTstripBTN.Click
+        Payroll.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub CalcPayBTN_Click(sender As Object, e As EventArgs) Handles calcPayBTN.Click
+        PayRateCalc.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
+        Metrics.Show()
+        Me.Close()
+    End Sub
 End Class

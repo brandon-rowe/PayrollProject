@@ -31,16 +31,12 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.PayTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
-        Me.employCalcEditBTN = New System.Windows.Forms.Button()
-        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +50,10 @@ Partial Class PayRateCalc
         Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.employCalcEditBTN = New System.Windows.Forms.Button()
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +106,7 @@ Partial Class PayRateCalc
         Me.menueStrip.AutoSize = False
         Me.menueStrip.BackColor = System.Drawing.Color.Teal
         Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.ToolStripButton1, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.PayTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.ToolStripSeparator7, Me.ToolStripSeparator6, Me.metricsTstripBTN})
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -120,16 +120,16 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
         '
-        'ToolStripButton1
+        'PayTstripBTN
         '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.Honeydew
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(74, 19)
-        Me.ToolStripButton1.Text = "Payroll"
-        Me.ToolStripButton1.ToolTipText = "Payroll"
+        Me.PayTstripBTN.BackColor = System.Drawing.Color.Honeydew
+        Me.PayTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.PayTstripBTN.Image = CType(resources.GetObject("PayTstripBTN.Image"), System.Drawing.Image)
+        Me.PayTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.PayTstripBTN.Name = "PayTstripBTN"
+        Me.PayTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.PayTstripBTN.Text = "Payroll"
+        Me.PayTstripBTN.ToolTipText = "Payroll"
         '
         'ToolStripSeparator4
         '
@@ -162,29 +162,6 @@ Partial Class PayRateCalc
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(541, 361)
         Me.DataGridView1.TabIndex = 4
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'employCalcEditBTN
-        '
-        Me.employCalcEditBTN.Location = New System.Drawing.Point(768, 409)
-        Me.employCalcEditBTN.Name = "employCalcEditBTN"
-        Me.employCalcEditBTN.Size = New System.Drawing.Size(75, 23)
-        Me.employCalcEditBTN.TabIndex = 5
-        Me.employCalcEditBTN.Text = "Edit"
-        Me.employCalcEditBTN.UseVisualStyleBackColor = True
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -271,6 +248,29 @@ Partial Class PayRateCalc
         Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
         Me.SsnDataGridViewTextBoxColumn.Visible = False
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'employCalcEditBTN
+        '
+        Me.employCalcEditBTN.Location = New System.Drawing.Point(768, 409)
+        Me.employCalcEditBTN.Name = "employCalcEditBTN"
+        Me.employCalcEditBTN.Size = New System.Drawing.Size(75, 23)
+        Me.employCalcEditBTN.TabIndex = 5
+        Me.employCalcEditBTN.Text = "Edit"
+        Me.employCalcEditBTN.UseVisualStyleBackColor = True
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
         'PayRateCalc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -300,7 +300,7 @@ Partial Class PayRateCalc
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents PayTstripBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents employCalcEditBTN As Button

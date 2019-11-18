@@ -32,6 +32,7 @@
         address = street + " " + state + " " + zip
 
         'only moves to next form if all conditions met.
+<<<<<<< Updated upstream
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
             AddEmployee.Show()
 
@@ -129,6 +130,14 @@
 
 
         'Me.Close()
+=======
+        If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
+
+            Dim AddEmployee = New AddEmployee()
+            AddEmployee.Show()
+            'Me.Hide()
+        End If
+>>>>>>> Stashed changes
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
@@ -169,10 +178,7 @@
 
         ElseIf Pword.Length() > 0 AndAlso Pword.Length() <= 15 AndAlso Uname.Length > 0 Then
             EmpDashboard.Show()
+            'Me.Hide()
         End If
-
-        'Me.Close()
     End Sub
-
-
 End Class
