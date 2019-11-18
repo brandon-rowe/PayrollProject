@@ -16,7 +16,7 @@ Public Class AddEmployee
     Dim position As String
     Dim paymentType As String
     Dim ssn As String
-    'Dim ID As Integer
+    Dim ID As Integer
 
 
 
@@ -35,8 +35,6 @@ Public Class AddEmployee
         position = PositionTxt.Text
         paymentType = PayTypeCBox.Text
         ssn = SSN_Txt.Text
-        'ID = employTA.maxIDQuery()
-        'ID = ID + 1
 
         'Console.WriteLine(ID)
         Console.WriteLine(Fname)
@@ -63,11 +61,11 @@ Public Class AddEmployee
         AccessCTRL.Refresh()
         AccessCTRL.ResetText()
 
-        employTA.InsertQuery(6, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn)
-        'B. Rowe: Some table adapter code here to update variables to table.
-        'B. Rowe: Should be an insert query table adapter.
 
+        'Update and automate ID assignment by incrementing the number of rows
+        ID = employTA.CountRows() + 1
 
+        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn)
 
     End Sub
 
@@ -92,10 +90,11 @@ Public Class AddEmployee
     End Sub
 
     Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
-
+        paymentType = PayTypeCBox.Text
     End Sub
 
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
-
+        status = MaritalStatCB.Text
     End Sub
+
 End Class

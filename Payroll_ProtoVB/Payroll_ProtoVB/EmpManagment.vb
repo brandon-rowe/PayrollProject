@@ -1,6 +1,10 @@
-﻿Public Class EmpManagment
+﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+
+Public Class EmpManagment
 
     Inherits System.Windows.Forms.Form
+    Dim employTA As New EmployeeTableAdapter
+    Dim ID As Integer
 
     Private Sub EmployeeMGMTFormCancelButton1_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormCancelButton1.Click
         'ATTENTION: This button should navigate to EmpDashboard.vb
@@ -31,6 +35,8 @@
 
     Private Sub employeeMGMTFormRmvEmployeeButton_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormRmvEmployeeButton.Click
         'B. Rowe: We need to think through the functionality of these buttons.
+        ID = EmpIDTxt.Text
+        employTA.DeleteRow(ID)
     End Sub
 
 End Class
