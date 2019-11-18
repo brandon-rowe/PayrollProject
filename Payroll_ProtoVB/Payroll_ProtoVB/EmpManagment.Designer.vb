@@ -85,14 +85,14 @@ Partial Class EmpManagment
         Me.PayHrsTxt.Location = New System.Drawing.Point(525, 229)
         Me.PayHrsTxt.Name = "PayHrsTxt"
         Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
-        Me.PayHrsTxt.TabIndex = 78
+        Me.PayHrsTxt.TabIndex = 12
         '
         'employeeMGMTFormRmvEmployeeButton
         '
         Me.employeeMGMTFormRmvEmployeeButton.Location = New System.Drawing.Point(515, 335)
         Me.employeeMGMTFormRmvEmployeeButton.Name = "employeeMGMTFormRmvEmployeeButton"
         Me.employeeMGMTFormRmvEmployeeButton.Size = New System.Drawing.Size(118, 28)
-        Me.employeeMGMTFormRmvEmployeeButton.TabIndex = 47
+        Me.employeeMGMTFormRmvEmployeeButton.TabIndex = 14
         Me.employeeMGMTFormRmvEmployeeButton.Text = "Remove Employee"
         Me.employeeMGMTFormRmvEmployeeButton.UseVisualStyleBackColor = True
         '
@@ -101,7 +101,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormEditButton.Location = New System.Drawing.Point(539, 290)
         Me.employeeMGMTFormEditButton.Name = "employeeMGMTFormEditButton"
         Me.employeeMGMTFormEditButton.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormEditButton.TabIndex = 46
+        Me.employeeMGMTFormEditButton.TabIndex = 13
         Me.employeeMGMTFormEditButton.Text = "Edit Fields"
         Me.employeeMGMTFormEditButton.UseVisualStyleBackColor = True
         '
@@ -110,7 +110,7 @@ Partial Class EmpManagment
         Me.PayRateTxt.Location = New System.Drawing.Point(145, 263)
         Me.PayRateTxt.Name = "PayRateTxt"
         Me.PayRateTxt.Size = New System.Drawing.Size(121, 20)
-        Me.PayRateTxt.TabIndex = 77
+        Me.PayRateTxt.TabIndex = 7
         '
         'employeeMGMTFormWageRateLabel
         '
@@ -127,7 +127,7 @@ Partial Class EmpManagment
         Me.DependentsTxt.Location = New System.Drawing.Point(525, 58)
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
-        Me.DependentsTxt.TabIndex = 75
+        Me.DependentsTxt.TabIndex = 9
         '
         'employeeMGMTDependLabel
         '
@@ -144,7 +144,7 @@ Partial Class EmpManagment
         Me.MaritalStatusTxt.Location = New System.Drawing.Point(525, 24)
         Me.MaritalStatusTxt.Name = "MaritalStatusTxt"
         Me.MaritalStatusTxt.Size = New System.Drawing.Size(121, 20)
-        Me.MaritalStatusTxt.TabIndex = 73
+        Me.MaritalStatusTxt.TabIndex = 8
         '
         'employeeMGMTFormMarriedStatLabel
         '
@@ -173,14 +173,14 @@ Partial Class EmpManagment
         Me.paymentTypeCBox.Location = New System.Drawing.Point(525, 169)
         Me.paymentTypeCBox.Name = "paymentTypeCBox"
         Me.paymentTypeCBox.Size = New System.Drawing.Size(121, 21)
-        Me.paymentTypeCBox.TabIndex = 70
+        Me.paymentTypeCBox.TabIndex = 11
         '
         'PositionTxt
         '
         Me.PositionTxt.Location = New System.Drawing.Point(525, 122)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
-        Me.PositionTxt.TabIndex = 69
+        Me.PositionTxt.TabIndex = 10
         '
         'employeeMGMTFormPositionLable
         '
@@ -207,7 +207,7 @@ Partial Class EmpManagment
         Me.LnameTxt.Location = New System.Drawing.Point(145, 56)
         Me.LnameTxt.Name = "LnameTxt"
         Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
-        Me.LnameTxt.TabIndex = 65
+        Me.LnameTxt.TabIndex = 1
         '
         'LnameLabel
         '
@@ -224,7 +224,7 @@ Partial Class EmpManagment
         Me.ZipTxt.Location = New System.Drawing.Point(145, 197)
         Me.ZipTxt.Name = "ZipTxt"
         Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
-        Me.ZipTxt.TabIndex = 63
+        Me.ZipTxt.TabIndex = 5
         '
         'employeeMGMTFormZipLabel
         '
@@ -241,7 +241,7 @@ Partial Class EmpManagment
         Me.StateTxt.Location = New System.Drawing.Point(145, 168)
         Me.StateTxt.Name = "StateTxt"
         Me.StateTxt.Size = New System.Drawing.Size(148, 20)
-        Me.StateTxt.TabIndex = 61
+        Me.StateTxt.TabIndex = 4
         '
         'employeeMGMTFormStateLabel
         '
@@ -258,14 +258,14 @@ Partial Class EmpManagment
         Me.StreetTxt.Location = New System.Drawing.Point(145, 135)
         Me.StreetTxt.Name = "StreetTxt"
         Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
-        Me.StreetTxt.TabIndex = 59
+        Me.StreetTxt.TabIndex = 3
         '
         'FnameTxt
         '
         Me.FnameTxt.Location = New System.Drawing.Point(145, 24)
         Me.FnameTxt.Name = "FnameTxt"
         Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
-        Me.FnameTxt.TabIndex = 58
+        Me.FnameTxt.TabIndex = 0
         '
         'employeeMGMTFormAddyLabel
         '
@@ -292,7 +292,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormAddButton.Location = New System.Drawing.Point(263, 345)
         Me.employeeMGMTFormAddButton.Name = "employeeMGMTFormAddButton"
         Me.employeeMGMTFormAddButton.Size = New System.Drawing.Size(102, 23)
-        Me.employeeMGMTFormAddButton.TabIndex = 45
+        Me.employeeMGMTFormAddButton.TabIndex = 5
         Me.employeeMGMTFormAddButton.Text = "Add Employee"
         Me.employeeMGMTFormAddButton.UseVisualStyleBackColor = True
         '
@@ -310,7 +310,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormSearch.Location = New System.Drawing.Point(279, 306)
         Me.employeeMGMTFormSearch.Name = "employeeMGMTFormSearch"
         Me.employeeMGMTFormSearch.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormSearch.TabIndex = 13
+        Me.employeeMGMTFormSearch.TabIndex = 4
         Me.employeeMGMTFormSearch.Text = "Search"
         Me.employeeMGMTFormSearch.UseVisualStyleBackColor = True
         '
@@ -319,7 +319,7 @@ Partial Class EmpManagment
         Me.employeeMgmtFormSearchTxtBox.Location = New System.Drawing.Point(132, 309)
         Me.employeeMgmtFormSearchTxtBox.Name = "employeeMgmtFormSearchTxtBox"
         Me.employeeMgmtFormSearchTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormSearchTxtBox.TabIndex = 12
+        Me.employeeMgmtFormSearchTxtBox.TabIndex = 3
         '
         'employeeMgmtFormEmployeeSearch
         '
@@ -335,7 +335,7 @@ Partial Class EmpManagment
         Me.loginFormButton.Location = New System.Drawing.Point(177, 204)
         Me.loginFormButton.Name = "loginFormButton"
         Me.loginFormButton.Size = New System.Drawing.Size(75, 23)
-        Me.loginFormButton.TabIndex = 11
+        Me.loginFormButton.TabIndex = 2
         Me.loginFormButton.Text = "Continue"
         Me.loginFormButton.UseVisualStyleBackColor = True
         '
@@ -344,7 +344,7 @@ Partial Class EmpManagment
         Me.employeeMgmtFormUsrTxtBox.Location = New System.Drawing.Point(132, 138)
         Me.employeeMgmtFormUsrTxtBox.Name = "employeeMgmtFormUsrTxtBox"
         Me.employeeMgmtFormUsrTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormUsrTxtBox.TabIndex = 9
+        Me.employeeMgmtFormUsrTxtBox.TabIndex = 0
         '
         'loginformPassLabel
         '
@@ -439,7 +439,7 @@ Partial Class EmpManagment
         Me.loginPwTxt.Name = "loginPwTxt"
         Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
-        Me.loginPwTxt.TabIndex = 82
+        Me.loginPwTxt.TabIndex = 1
         Me.loginPwTxt.UseSystemPasswordChar = True
         '
         'employeeMGMTFormCancelButton1
@@ -447,7 +447,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton1.Location = New System.Drawing.Point(86, 204)
         Me.employeeMGMTFormCancelButton1.Name = "employeeMGMTFormCancelButton1"
         Me.employeeMGMTFormCancelButton1.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormCancelButton1.TabIndex = 81
+        Me.employeeMGMTFormCancelButton1.TabIndex = 6
         Me.employeeMGMTFormCancelButton1.Text = "Cancel"
         Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
         '
@@ -458,7 +458,7 @@ Partial Class EmpManagment
         Me.SSN_Txt.Name = "SSN_Txt"
         Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.SSN_Txt.Size = New System.Drawing.Size(121, 20)
-        Me.SSN_Txt.TabIndex = 86
+        Me.SSN_Txt.TabIndex = 6
         Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
         Me.SSN_Txt.UseSystemPasswordChar = True
         '
@@ -468,7 +468,7 @@ Partial Class EmpManagment
         Me.EmpIDTxt.Location = New System.Drawing.Point(144, 92)
         Me.EmpIDTxt.Name = "EmpIDTxt"
         Me.EmpIDTxt.Size = New System.Drawing.Size(121, 20)
-        Me.EmpIDTxt.TabIndex = 82
+        Me.EmpIDTxt.TabIndex = 2
         '
         'EmpIDLabel
         '
@@ -485,7 +485,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton2.Location = New System.Drawing.Point(539, 379)
         Me.employeeMGMTFormCancelButton2.Name = "employeeMGMTFormCancelButton2"
         Me.employeeMGMTFormCancelButton2.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormCancelButton2.TabIndex = 80
+        Me.employeeMGMTFormCancelButton2.TabIndex = 15
         Me.employeeMGMTFormCancelButton2.Text = "Cancel"
         Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
         '
