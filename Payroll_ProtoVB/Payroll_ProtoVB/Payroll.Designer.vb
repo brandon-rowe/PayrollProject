@@ -83,6 +83,8 @@ Partial Class Payroll
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
@@ -256,7 +258,7 @@ Partial Class Payroll
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.fname, Me.lname})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource2
         Me.PayrollDataGridViewPast.Location = New System.Drawing.Point(-3, -3)
         Me.PayrollDataGridViewPast.Name = "PayrollDataGridViewPast"
@@ -509,6 +511,7 @@ Partial Class Payroll
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -550,6 +553,18 @@ Partial Class Payroll
         Me.SaveToolStripButton.Name = "SaveToolStripButton"
         Me.SaveToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.SaveToolStripButton.Text = "&Save"
+        '
+        'fname
+        '
+        Me.fname.DataPropertyName = "fname"
+        Me.fname.HeaderText = "fname"
+        Me.fname.Name = "fname"
+        '
+        'lname
+        '
+        Me.lname.DataPropertyName = "lname"
+        Me.lname.HeaderText = "lname"
+        Me.lname.Name = "lname"
         '
         'Payroll
         '
@@ -658,4 +673,6 @@ Partial Class Payroll
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents SaveToolStripButton As ToolStripButton
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lname As DataGridViewTextBoxColumn
 End Class
