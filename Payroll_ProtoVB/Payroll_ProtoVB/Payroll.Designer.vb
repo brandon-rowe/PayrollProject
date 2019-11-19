@@ -47,6 +47,8 @@ Partial Class Payroll
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeePastBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.FuturePayTab = New System.Windows.Forms.TabPage()
@@ -83,8 +85,7 @@ Partial Class Payroll
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clearBtn = New System.Windows.Forms.Button()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
@@ -288,6 +289,18 @@ Partial Class Payroll
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "amount"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'fname
+        '
+        Me.fname.DataPropertyName = "fname"
+        Me.fname.HeaderText = "fname"
+        Me.fname.Name = "fname"
+        '
+        'lname
+        '
+        Me.lname.DataPropertyName = "lname"
+        Me.lname.HeaderText = "lname"
+        Me.lname.Name = "lname"
         '
         'EmployeePastBindingSource2
         '
@@ -554,23 +567,21 @@ Partial Class Payroll
         Me.SaveToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.SaveToolStripButton.Text = "&Save"
         '
-        'fname
+        'clearBtn
         '
-        Me.fname.DataPropertyName = "fname"
-        Me.fname.HeaderText = "fname"
-        Me.fname.Name = "fname"
-        '
-        'lname
-        '
-        Me.lname.DataPropertyName = "lname"
-        Me.lname.HeaderText = "lname"
-        Me.lname.Name = "lname"
+        Me.clearBtn.Location = New System.Drawing.Point(696, 400)
+        Me.clearBtn.Name = "clearBtn"
+        Me.clearBtn.Size = New System.Drawing.Size(89, 35)
+        Me.clearBtn.TabIndex = 26
+        Me.clearBtn.Text = "Clear Selection"
+        Me.clearBtn.UseVisualStyleBackColor = True
         '
         'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(903, 513)
+        Me.Controls.Add(Me.clearBtn)
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.PayStubBTN)
         Me.Controls.Add(Me.PaymentRecordBTN)
@@ -675,4 +686,5 @@ Partial Class Payroll
     Friend WithEvents SaveToolStripButton As ToolStripButton
     Friend WithEvents fname As DataGridViewTextBoxColumn
     Friend WithEvents lname As DataGridViewTextBoxColumn
+    Friend WithEvents clearBtn As Button
 End Class

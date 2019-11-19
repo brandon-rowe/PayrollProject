@@ -79,4 +79,8 @@ Public Class Payroll
     Private Sub FnameSearch_Click(sender As Object, e As EventArgs) Handles FnameSearch.Click
         Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
     End Sub
+
+    Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
+        Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
+    End Sub
 End Class
