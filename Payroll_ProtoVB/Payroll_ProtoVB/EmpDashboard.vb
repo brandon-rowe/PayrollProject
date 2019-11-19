@@ -1,9 +1,26 @@
-﻿Public Class EmpDashboard
+﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+
+Public Class EmpDashboard
+    Dim employTA As New EmployeeTableAdapter
+
+
     Private Sub EmpDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
     End Sub
 
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+        Dim tbm As New TableAdapterManager
+        Me.Validate()
+        Me.EmployeeBindingSource.EndEdit()
+        tbm.UpdateAll(Me.Primary)
+    End Sub
+
+    Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
+        'ATTENTION: This button should navigate to EmpManagement.vb
+        EmpManagment.Show()
+        Me.Close()
+    End Sub
     Private Sub DashBTN_Click(sender As Object, e As EventArgs) Handles dashBTN.Click
         'ATTENTION: This button should stay on EmpDashboard.vb
         Me.Refresh()
@@ -36,10 +53,5 @@
         End If
     End Sub
 
-    Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
-        'ATTENTION: This button should navigate to EmpManagement.vb
-        EmpManagment.Show()
-        Me.Close()
-    End Sub
 
 End Class

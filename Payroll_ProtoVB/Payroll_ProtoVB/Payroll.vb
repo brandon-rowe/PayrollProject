@@ -71,4 +71,8 @@ Public Class Payroll
             Application.Exit()
         End If
     End Sub
+
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+
+    End Sub
 End Class
