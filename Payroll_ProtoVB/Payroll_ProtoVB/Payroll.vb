@@ -82,5 +82,9 @@ Public Class Payroll
 
     Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
         Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
+        ID = ""
+        EmpIDSeartTxt.Clear()
+        FnameSearchTxt.Clear()
+        LnameSearchTxt.Clear()
     End Sub
 End Class
