@@ -7,12 +7,12 @@
         Dim otHours As Double
         Dim otpay As Double
         Dim regpay As Double
-        Dim totalpay As Double
+        Dim totalpay As Double = 0.0
         Dim regHours As Double
 
         regHours = 40.0
 
-        If numHours <= regHours Then
+        If numHours <= regHours AndAlso numHours >= 0 AndAlso hourlyPayRate >= 0 Then
             totalpay = hourlyPayRate * numHours
         ElseIf numHours > regHours Then
             otHours = numHours - regHours
