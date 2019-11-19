@@ -81,6 +81,7 @@
     <Compile Include="AddEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PayRateLogic.vb" />
     <Compile Include="LoginLogic.vb" />
     <Compile Include="EmpDashboard.Designer.vb">
       <DependentUpon>EmpDashboard.vb</DependentUpon>
