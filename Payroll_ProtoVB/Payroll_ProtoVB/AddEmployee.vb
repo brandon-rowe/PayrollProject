@@ -15,6 +15,7 @@ Public Class AddEmployee
     Dim dependents As String
     Dim position As String
     Dim paymentType As String
+    Dim salaryVry As Boolean
     Dim ssn As String
     Dim ID As Integer
     Dim Uname As String
@@ -85,7 +86,7 @@ Public Class AddEmployee
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
 
-        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn, Uname, Pass)
+        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, salaryVry, 0, 50, 24, ssn, Uname, Pass)
 
     End Sub
 
@@ -113,6 +114,11 @@ Public Class AddEmployee
 
     Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
         paymentType = PayTypeCBox.Text
+        If paymentType = "Salary" Then
+            salaryVry = True
+        ElseIf paymentType = "Hourly" Then
+            salaryVry = False
+        End If
     End Sub
 
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
