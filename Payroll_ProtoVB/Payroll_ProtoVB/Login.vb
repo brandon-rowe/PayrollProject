@@ -1,4 +1,5 @@
-﻿Public Class Login
+﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+Public Class Login
     Inherits System.Windows.Forms.Form
     Dim LginLog As LoginLogic
     Dim Fname As String
@@ -12,6 +13,7 @@
     Dim CPword As String
     Dim VryPword As String
     Dim Pword As String
+    Dim empTA As New EmployeeTableAdapter
 
     'load form
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -137,15 +139,18 @@
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         'ATTENTION: This button should navigate to EmpDashboard.vb
         'We need to add a sqladapter to check the Username & Password to validate credentials.
+
         Uname = loginUsrTxt.Text
         CPword = loginPwTxt.Text
-        If Uname = "admin" And CPword = "123" Then
+
+        'If Uname = "admin" And CPword = "123" Then
+        VryPword = empTA.CheckPassword(Uname)
+        If VryPword = CPword Then
             EmpDashboard.Show()
             Me.Hide()
-
-        ElseIf Uname <> "admin" AndAlso CPword <> "123" Then
+        Else
             Dim MSG, style, title, response, MyString
-            MSG = "User Name or Password Not valid"
+            MSG = "The password didn't work."
             title = "Input Error- Login"
             style = vbOKOnly + vbDefaultButton1
             response = MsgBox(MSG, style, title)
@@ -154,7 +159,7 @@
             End If
         End If
 
-        'want to create acounter that denies functionality if login attempts exceed a certain amount.
+        'want to create a counter that denies functionality if login attempts exceed a certain amount.
     End Sub
 
     Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click
