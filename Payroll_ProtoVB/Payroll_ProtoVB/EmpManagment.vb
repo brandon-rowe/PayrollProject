@@ -16,6 +16,7 @@ Public Class EmpManagment
         'ATTENTION: This button should navigate to AddEmployee.vb
         Dim AddEmployee = New AddEmployee()
         AddEmployee.Show()
+        Me.Close()
     End Sub
 
     Private Sub EmployeeMGMTFormCancelButton2_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormCancelButton2.Click

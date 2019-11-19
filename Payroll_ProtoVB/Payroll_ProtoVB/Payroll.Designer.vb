@@ -24,7 +24,7 @@ Partial Class Payroll
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
@@ -70,6 +70,18 @@ Partial Class Payroll
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PaymentRecordBTN = New System.Windows.Forms.Button()
         Me.PayStubBTN = New System.Windows.Forms.Button()
+        Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
@@ -82,6 +94,8 @@ Partial Class Payroll
         CType(Me.EmployeePastBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         Me.SuspendLayout()
         '
         'metricsTstripBTN
@@ -139,7 +153,7 @@ Partial Class Payroll
         Me.menueStrip.Location = New System.Drawing.Point(0, 0)
         Me.menueStrip.Name = "menueStrip"
         Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.menueStrip.Size = New System.Drawing.Size(95, 512)
+        Me.menueStrip.Size = New System.Drawing.Size(95, 513)
         Me.menueStrip.Stretch = True
         Me.menueStrip.TabIndex = 3
         Me.menueStrip.Text = "ToolStrip1"
@@ -184,7 +198,7 @@ Partial Class Payroll
         '
         Me.payrollFormEmployeeSearchLabel.AutoSize = True
         Me.payrollFormEmployeeSearchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.payrollFormEmployeeSearchLabel.Location = New System.Drawing.Point(136, 20)
+        Me.payrollFormEmployeeSearchLabel.Location = New System.Drawing.Point(110, 408)
         Me.payrollFormEmployeeSearchLabel.Name = "payrollFormEmployeeSearchLabel"
         Me.payrollFormEmployeeSearchLabel.Size = New System.Drawing.Size(155, 15)
         Me.payrollFormEmployeeSearchLabel.TabIndex = 4
@@ -192,14 +206,14 @@ Partial Class Payroll
         '
         'EmpIDSeartTxt
         '
-        Me.EmpIDSeartTxt.Location = New System.Drawing.Point(379, 15)
+        Me.EmpIDSeartTxt.Location = New System.Drawing.Point(353, 403)
         Me.EmpIDSeartTxt.Name = "EmpIDSeartTxt"
         Me.EmpIDSeartTxt.Size = New System.Drawing.Size(151, 20)
         Me.EmpIDSeartTxt.TabIndex = 5
         '
         'EmpIDSearch
         '
-        Me.EmpIDSearch.Location = New System.Drawing.Point(564, 12)
+        Me.EmpIDSearch.Location = New System.Drawing.Point(538, 400)
         Me.EmpIDSearch.Name = "EmpIDSearch"
         Me.EmpIDSearch.Size = New System.Drawing.Size(75, 23)
         Me.EmpIDSearch.TabIndex = 14
@@ -211,7 +225,7 @@ Partial Class Payroll
         Me.TabControl.Controls.Add(Me.PastPayTab)
         Me.TabControl.Controls.Add(Me.FuturePayTab)
         Me.TabControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl.Location = New System.Drawing.Point(139, 128)
+        Me.TabControl.Location = New System.Drawing.Point(95, 28)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
         Me.TabControl.Size = New System.Drawing.Size(801, 336)
@@ -232,14 +246,14 @@ Partial Class Payroll
         '
         Me.PayrollDataGridViewPast.AutoGenerateColumns = False
         Me.PayrollDataGridViewPast.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource2
@@ -356,7 +370,7 @@ Partial Class Payroll
         '
         'FnameSearch
         '
-        Me.FnameSearch.Location = New System.Drawing.Point(564, 48)
+        Me.FnameSearch.Location = New System.Drawing.Point(538, 436)
         Me.FnameSearch.Name = "FnameSearch"
         Me.FnameSearch.Size = New System.Drawing.Size(75, 23)
         Me.FnameSearch.TabIndex = 19
@@ -365,7 +379,7 @@ Partial Class Payroll
         '
         'FnameSearchTxt
         '
-        Me.FnameSearchTxt.Location = New System.Drawing.Point(379, 51)
+        Me.FnameSearchTxt.Location = New System.Drawing.Point(353, 439)
         Me.FnameSearchTxt.Name = "FnameSearchTxt"
         Me.FnameSearchTxt.Size = New System.Drawing.Size(151, 20)
         Me.FnameSearchTxt.TabIndex = 18
@@ -374,7 +388,7 @@ Partial Class Payroll
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(136, 56)
+        Me.Label1.Location = New System.Drawing.Point(110, 444)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(211, 15)
         Me.Label1.TabIndex = 17
@@ -382,7 +396,7 @@ Partial Class Payroll
         '
         'LnameSearch
         '
-        Me.LnameSearch.Location = New System.Drawing.Point(564, 82)
+        Me.LnameSearch.Location = New System.Drawing.Point(538, 470)
         Me.LnameSearch.Name = "LnameSearch"
         Me.LnameSearch.Size = New System.Drawing.Size(75, 23)
         Me.LnameSearch.TabIndex = 22
@@ -391,7 +405,7 @@ Partial Class Payroll
         '
         'LnameSearchTxt
         '
-        Me.LnameSearchTxt.Location = New System.Drawing.Point(379, 85)
+        Me.LnameSearchTxt.Location = New System.Drawing.Point(353, 473)
         Me.LnameSearchTxt.Name = "LnameSearchTxt"
         Me.LnameSearchTxt.Size = New System.Drawing.Size(151, 20)
         Me.LnameSearchTxt.TabIndex = 21
@@ -400,7 +414,7 @@ Partial Class Payroll
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(136, 90)
+        Me.Label2.Location = New System.Drawing.Point(110, 478)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(210, 15)
         Me.Label2.TabIndex = 20
@@ -408,7 +422,7 @@ Partial Class Payroll
         '
         'PaymentRecordBTN
         '
-        Me.PaymentRecordBTN.Location = New System.Drawing.Point(736, 470)
+        Me.PaymentRecordBTN.Location = New System.Drawing.Point(696, 458)
         Me.PaymentRecordBTN.Name = "PaymentRecordBTN"
         Me.PaymentRecordBTN.Size = New System.Drawing.Size(89, 35)
         Me.PaymentRecordBTN.TabIndex = 23
@@ -417,18 +431,123 @@ Partial Class Payroll
         '
         'PayStubBTN
         '
-        Me.PayStubBTN.Location = New System.Drawing.Point(847, 470)
+        Me.PayStubBTN.Location = New System.Drawing.Point(807, 458)
         Me.PayStubBTN.Name = "PayStubBTN"
         Me.PayStubBTN.Size = New System.Drawing.Size(89, 35)
         Me.PayStubBTN.TabIndex = 24
         Me.PayStubBTN.Text = "View Employee PayStub"
         Me.PayStubBTN.UseVisualStyleBackColor = True
         '
+        'BindingNavigator1
+        '
+        Me.BindingNavigator1.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.BindingNavigator1.BindingSource = Me.EmployeePastBindingSource2
+        Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
+        Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem})
+        Me.BindingNavigator1.Location = New System.Drawing.Point(95, 0)
+        Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.BindingNavigator1.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.BindingNavigator1.Name = "BindingNavigator1"
+        Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
+        Me.BindingNavigator1.Size = New System.Drawing.Size(808, 25)
+        Me.BindingNavigator1.TabIndex = 25
+        Me.BindingNavigator1.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 512)
+        Me.ClientSize = New System.Drawing.Size(903, 513)
+        Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.PayStubBTN)
         Me.Controls.Add(Me.PaymentRecordBTN)
         Me.Controls.Add(Me.LnameSearch)
@@ -458,6 +577,9 @@ Partial Class Payroll
         CType(Me.EmployeePastBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BindingNavigator1.ResumeLayout(False)
+        Me.BindingNavigator1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -514,4 +636,16 @@ Partial Class Payroll
     Friend WithEvents PaymentRecordBTN As Button
     Friend WithEvents PayStubBTN As Button
     Friend WithEvents calcPayBTN As ToolStripButton
+    Friend WithEvents BindingNavigator1 As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
 End Class

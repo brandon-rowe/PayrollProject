@@ -3,6 +3,10 @@
 Public Class Payroll
     Inherits System.Windows.Forms.Form
     'load form
+    Public Sub Payroll()
+        InitializeComponent()
+    End Sub
+
     Dim employPast As New EmployeePastTableAdapter
     Dim ID As Integer
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -10,6 +14,14 @@ Public Class Payroll
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
         'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
         Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
+    End Sub
+    'B.Rowe: I restructured this page so that the completed code for buttons are all at the bottom of the page.
+    'This way the most pressing code is at the top. I will do this for all pages.
+
+    Private Sub EmpIDSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
+        'B. Rowe: We need to think through the functionality of this button and how best to implement.
+        ID = EmpIDSeartTxt.Text
+        Me.EmployeePastTableAdapter.GetDataByID(ID)
     End Sub
 
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
@@ -35,18 +47,21 @@ Public Class Payroll
         Me.Close()
     End Sub
 
-    Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
-        'B. Rowe: We need to think through the functionality of this button and how best to implement.
-        ID = EmpIDSeartTxt.Text
-        'employPast.FillByID(ID)
-    End Sub
-
     Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs)
         'ATTENTION: This button should navigate to PaymentRecord.vb
         PaymentRecordBTN.Show()
         Me.Close()
     End Sub
+    Private Sub PaymentRecordBTN_Click(sender As Object, e As EventArgs) Handles PaymentRecordBTN.Click
+        PaymentRecord.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub PayStubBTN_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
+        'ATTENTION: This button should navigate to PayStub.vb
+        PayStub.Show()
+        Me.Close()
+    End Sub
 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Dim Response As Integer
@@ -56,15 +71,4 @@ Public Class Payroll
             Application.Exit()
         End If
     End Sub
-
-    Private Sub PaymentRecordBTN_Click(sender As Object, e As EventArgs) Handles PaymentRecordBTN.Click
-        PaymentRecord.Show()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
-        'ATTENTION: This button should navigate to PayStub.vb
-        PayStub.Show()
-        Me.Close()
-    End Sub
-
 End Class
