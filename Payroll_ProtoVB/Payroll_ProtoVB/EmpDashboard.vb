@@ -13,7 +13,7 @@ Public Class EmpDashboard
         Dim tbm As New TableAdapterManager
         Me.Validate()
         Me.EmployeeBindingSource.EndEdit()
-        tbm.UpdateAll(Me.Primary)
+        Me.TableAdapterManager1.UpdateAll(Me.Primary)
     End Sub
 
     Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click

@@ -6,9 +6,11 @@
     End Sub
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
         EmpDashboard.Show()
+        Me.Close()
     End Sub
     Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles PayTstripBTN.Click
         Payroll.Show()
+        Me.Close()
     End Sub
 
     Private Sub CalcPayBTN_Click(sender As Object, e As EventArgs) Handles calcPayBTN.Click
@@ -17,6 +19,7 @@
 
     Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
         Metrics.Show()
+        Me.Close()
     End Sub
 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click

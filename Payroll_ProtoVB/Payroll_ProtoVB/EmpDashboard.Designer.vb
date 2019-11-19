@@ -69,6 +69,7 @@ Partial Class EmpDashboard
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.TableAdapterManager1 = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -220,18 +221,21 @@ Partial Class EmpDashboard
         Me.MaritalstatusDataGridViewCheckBoxColumn.DataPropertyName = "maritalstatus"
         Me.MaritalstatusDataGridViewCheckBoxColumn.HeaderText = "maritalstatus"
         Me.MaritalstatusDataGridViewCheckBoxColumn.Name = "MaritalstatusDataGridViewCheckBoxColumn"
+        Me.MaritalstatusDataGridViewCheckBoxColumn.Visible = False
         '
         'DependentsDataGridViewTextBoxColumn
         '
         Me.DependentsDataGridViewTextBoxColumn.DataPropertyName = "dependents"
         Me.DependentsDataGridViewTextBoxColumn.HeaderText = "dependents"
         Me.DependentsDataGridViewTextBoxColumn.Name = "DependentsDataGridViewTextBoxColumn"
+        Me.DependentsDataGridViewTextBoxColumn.Visible = False
         '
         'AdminDataGridViewCheckBoxColumn
         '
         Me.AdminDataGridViewCheckBoxColumn.DataPropertyName = "admin"
         Me.AdminDataGridViewCheckBoxColumn.HeaderText = "admin"
         Me.AdminDataGridViewCheckBoxColumn.Name = "AdminDataGridViewCheckBoxColumn"
+        Me.AdminDataGridViewCheckBoxColumn.Visible = False
         '
         'SalariedDataGridViewCheckBoxColumn
         '
@@ -244,24 +248,28 @@ Partial Class EmpDashboard
         Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
         Me.SalaryDataGridViewTextBoxColumn.HeaderText = "salary"
         Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
+        Me.SalaryDataGridViewTextBoxColumn.Visible = False
         '
         'HourlyrateDataGridViewTextBoxColumn
         '
         Me.HourlyrateDataGridViewTextBoxColumn.DataPropertyName = "hourlyrate"
         Me.HourlyrateDataGridViewTextBoxColumn.HeaderText = "hourlyrate"
         Me.HourlyrateDataGridViewTextBoxColumn.Name = "HourlyrateDataGridViewTextBoxColumn"
+        Me.HourlyrateDataGridViewTextBoxColumn.Visible = False
         '
         'HoursworkedDataGridViewTextBoxColumn
         '
         Me.HoursworkedDataGridViewTextBoxColumn.DataPropertyName = "hoursworked"
         Me.HoursworkedDataGridViewTextBoxColumn.HeaderText = "hoursworked"
         Me.HoursworkedDataGridViewTextBoxColumn.Name = "HoursworkedDataGridViewTextBoxColumn"
+        Me.HoursworkedDataGridViewTextBoxColumn.Visible = False
         '
         'SsnDataGridViewTextBoxColumn
         '
         Me.SsnDataGridViewTextBoxColumn.DataPropertyName = "ssn"
         Me.SsnDataGridViewTextBoxColumn.HeaderText = "SSN"
         Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
+        Me.SsnDataGridViewTextBoxColumn.Visible = False
         '
         'EmployeeBindingSource
         '
@@ -413,6 +421,14 @@ Partial Class EmpDashboard
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
         '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.AdminTableAdapter = Nothing
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.EmployeeFutureTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'EmpDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -467,6 +483,10 @@ Partial Class EmpDashboard
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents SaveToolStripButton As ToolStripButton
+    Friend WithEvents toolStripSeparator As ToolStripSeparator
+    Friend WithEvents HelpToolStripButton As ToolStripButton
+    Friend WithEvents TableAdapterManager1 As PrimaryTableAdapters.TableAdapterManager
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -480,7 +500,4 @@ Partial Class EmpDashboard
     Friend WithEvents HourlyrateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HoursworkedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SsnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SaveToolStripButton As ToolStripButton
-    Friend WithEvents toolStripSeparator As ToolStripSeparator
-    Friend WithEvents HelpToolStripButton As ToolStripButton
 End Class
