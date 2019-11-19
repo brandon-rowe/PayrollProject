@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
-        Dim MSG, style, title, response, confirm, MyString, yes, no
+        Dim MSG, style, title, response, MyString
         MSG = "Would You Like To Print the PayStub? "
         title = "Payroll- Rollout Payroll"
         style = vbYesNo + vbDefaultButton1

@@ -37,6 +37,10 @@ Partial Class EmpDashboard
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.EmpDetailedView = New System.Windows.Forms.Button()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,10 +54,6 @@ Partial Class EmpDashboard
         Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
-        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.EmpDetailedView = New System.Windows.Forms.Button()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,6 +168,29 @@ Partial Class EmpDashboard
         Me.DataGridView1.Size = New System.Drawing.Size(858, 397)
         Me.DataGridView1.TabIndex = 5
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'EmpDetailedView
+        '
+        Me.EmpDetailedView.Location = New System.Drawing.Point(887, 425)
+        Me.EmpDetailedView.Name = "EmpDetailedView"
+        Me.EmpDetailedView.Size = New System.Drawing.Size(104, 36)
+        Me.EmpDetailedView.TabIndex = 6
+        Me.EmpDetailedView.Text = "Manage Employee Information"
+        Me.EmpDetailedView.UseVisualStyleBackColor = True
+        '
         'IDDataGridViewTextBoxColumn
         '
         Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
@@ -230,7 +253,6 @@ Partial Class EmpDashboard
         Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
         Me.SalaryDataGridViewTextBoxColumn.HeaderText = "salary"
         Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
-        Me.SalaryDataGridViewTextBoxColumn.Visible = False
         '
         'HourlyrateDataGridViewTextBoxColumn
         '
@@ -251,29 +273,7 @@ Partial Class EmpDashboard
         Me.SsnDataGridViewTextBoxColumn.DataPropertyName = "ssn"
         Me.SsnDataGridViewTextBoxColumn.HeaderText = "SSN"
         Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'EmpDetailedView
-        '
-        Me.EmpDetailedView.Location = New System.Drawing.Point(887, 425)
-        Me.EmpDetailedView.Name = "EmpDetailedView"
-        Me.EmpDetailedView.Size = New System.Drawing.Size(104, 36)
-        Me.EmpDetailedView.TabIndex = 6
-        Me.EmpDetailedView.Text = "Manage Employee Information"
-        Me.EmpDetailedView.UseVisualStyleBackColor = True
+        Me.SsnDataGridViewTextBoxColumn.Visible = False
         '
         'EmpDashboard
         '
@@ -304,6 +304,14 @@ Partial Class EmpDashboard
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Friend WithEvents ExitBtn As ToolStripButton
+    Friend WithEvents EmpDetailedView As Button
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -317,12 +325,4 @@ Partial Class EmpDashboard
     Friend WithEvents HourlyrateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HoursworkedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SsnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents ExitBtn As ToolStripButton
-    Friend WithEvents EmpDetailedView As Button
 End Class

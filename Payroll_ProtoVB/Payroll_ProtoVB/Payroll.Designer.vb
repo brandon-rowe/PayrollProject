@@ -24,7 +24,7 @@ Partial Class Payroll
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
@@ -32,12 +32,13 @@ Partial Class Payroll
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
+        Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.payrollFormEmployeeSearchLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.EmpIDSeartTxt = New System.Windows.Forms.TextBox()
         Me.EmpIDSearch = New System.Windows.Forms.Button()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.PastPayTab = New System.Windows.Forms.TabPage()
@@ -62,14 +63,13 @@ Partial Class Payroll
         Me.EmployeePastTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeePastTableAdapter()
         Me.EmployeeFutureTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
         Me.FnameSearch = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.FnameSearchTxt = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LnameSearch = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.LnameSearchTxt = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PaymentRecordBTN = New System.Windows.Forms.Button()
         Me.PayStubBTN = New System.Windows.Forms.Button()
-        Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
@@ -144,6 +144,17 @@ Partial Class Payroll
         Me.menueStrip.TabIndex = 3
         Me.menueStrip.Text = "ToolStrip1"
         '
+        'calcPayBTN
+        '
+        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
+        Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.calcPayBTN.Name = "calcPayBTN"
+        Me.calcPayBTN.Size = New System.Drawing.Size(74, 19)
+        Me.calcPayBTN.Text = "Calculate"
+        Me.calcPayBTN.ToolTipText = "Payroll"
+        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
@@ -179,12 +190,12 @@ Partial Class Payroll
         Me.payrollFormEmployeeSearchLabel.TabIndex = 4
         Me.payrollFormEmployeeSearchLabel.Text = "Search Employee by ID"
         '
-        'TextBox1
+        'EmpIDSeartTxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(379, 15)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(151, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.EmpIDSeartTxt.Location = New System.Drawing.Point(379, 15)
+        Me.EmpIDSeartTxt.Name = "EmpIDSeartTxt"
+        Me.EmpIDSeartTxt.Size = New System.Drawing.Size(151, 20)
+        Me.EmpIDSeartTxt.TabIndex = 5
         '
         'EmpIDSearch
         '
@@ -221,14 +232,14 @@ Partial Class Payroll
         '
         Me.PayrollDataGridViewPast.AutoGenerateColumns = False
         Me.PayrollDataGridViewPast.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource2
@@ -352,12 +363,12 @@ Partial Class Payroll
         Me.FnameSearch.Text = "Search"
         Me.FnameSearch.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'FnameSearchTxt
         '
-        Me.TextBox2.Location = New System.Drawing.Point(379, 51)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(151, 20)
-        Me.TextBox2.TabIndex = 18
+        Me.FnameSearchTxt.Location = New System.Drawing.Point(379, 51)
+        Me.FnameSearchTxt.Name = "FnameSearchTxt"
+        Me.FnameSearchTxt.Size = New System.Drawing.Size(151, 20)
+        Me.FnameSearchTxt.TabIndex = 18
         '
         'Label1
         '
@@ -378,12 +389,12 @@ Partial Class Payroll
         Me.LnameSearch.Text = "Search"
         Me.LnameSearch.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'LnameSearchTxt
         '
-        Me.TextBox3.Location = New System.Drawing.Point(379, 85)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(151, 20)
-        Me.TextBox3.TabIndex = 21
+        Me.LnameSearchTxt.Location = New System.Drawing.Point(379, 85)
+        Me.LnameSearchTxt.Name = "LnameSearchTxt"
+        Me.LnameSearchTxt.Size = New System.Drawing.Size(151, 20)
+        Me.LnameSearchTxt.TabIndex = 21
         '
         'Label2
         '
@@ -413,17 +424,6 @@ Partial Class Payroll
         Me.PayStubBTN.Text = "View Employee PayStub"
         Me.PayStubBTN.UseVisualStyleBackColor = True
         '
-        'calcPayBTN
-        '
-        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
-        Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.calcPayBTN.Name = "calcPayBTN"
-        Me.calcPayBTN.Size = New System.Drawing.Size(74, 19)
-        Me.calcPayBTN.Text = "Calculate"
-        Me.calcPayBTN.ToolTipText = "Payroll"
-        '
         'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -432,14 +432,14 @@ Partial Class Payroll
         Me.Controls.Add(Me.PayStubBTN)
         Me.Controls.Add(Me.PaymentRecordBTN)
         Me.Controls.Add(Me.LnameSearch)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.LnameSearchTxt)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.FnameSearch)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.FnameSearchTxt)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TabControl)
         Me.Controls.Add(Me.EmpIDSearch)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.EmpIDSeartTxt)
         Me.Controls.Add(Me.payrollFormEmployeeSearchLabel)
         Me.Controls.Add(Me.menueStrip)
         Me.Name = "Payroll"
@@ -471,7 +471,7 @@ Partial Class Payroll
     Friend WithEvents dashTstripBTN As ToolStripButton
     Private WithEvents menueStrip As ToolStrip
     Friend WithEvents payrollFormEmployeeSearchLabel As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents EmpIDSeartTxt As TextBox
     Private WithEvents EmpIDSearch As Button
     Friend WithEvents TabControl As TabControl
     Friend WithEvents PastPayTab As TabPage
@@ -506,10 +506,10 @@ Partial Class Payroll
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Friend WithEvents ExitBtn As ToolStripButton
     Private WithEvents FnameSearch As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents FnameSearchTxt As TextBox
     Friend WithEvents Label1 As Label
     Private WithEvents LnameSearch As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents LnameSearchTxt As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PaymentRecordBTN As Button
     Friend WithEvents PayStubBTN As Button

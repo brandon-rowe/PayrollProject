@@ -139,12 +139,22 @@
         'We need to add a sqladapter to check the Username & Password to validate credentials.
         Uname = loginUsrTxt.Text
         CPword = loginPwTxt.Text
-
         If Uname = "admin" And CPword = "123" Then
             EmpDashboard.Show()
+            Me.Hide()
+
+        ElseIf Uname <> "admin" AndAlso CPword <> "123" Then
+            Dim MSG, style, title, response, MyString
+            MSG = "User Name or Password Not valid"
+            title = "Input Error- Login"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
         End If
 
-        Me.Hide()
+        'want to create acounter that denies functionality if login attempts exceed a certain amount.
     End Sub
 
     Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click

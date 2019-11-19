@@ -10,14 +10,17 @@
     End Sub
     Private Sub PayTstripBTN_Click(sender As Object, e As EventArgs) Handles PayTstripBTN.Click
         Payroll.Show()
+        Me.Close()
     End Sub
 
     Private Sub CalcPayBTN_Click(sender As Object, e As EventArgs) Handles calcPayBTN.Click
         PayRateCalc.Show()
+        Me.Close()
     End Sub
 
     Private Sub MetricsTstripBTN_Click(sender As Object, e As EventArgs) Handles metricsTstripBTN.Click
         Metrics.Show()
+        Me.Close()
     End Sub
 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
@@ -27,5 +30,10 @@
             Me.Close()
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub BackBTN_Click(sender As Object, e As EventArgs) Handles backBTN.Click
+        Payroll.Show()
+        Me.Close()
     End Sub
 End Class

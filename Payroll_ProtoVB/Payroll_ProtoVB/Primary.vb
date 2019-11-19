@@ -6,3 +6,4 @@ End Namespace
 
 Partial Public Class Primary
 End Class
+
