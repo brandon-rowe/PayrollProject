@@ -8,7 +8,7 @@ Public Class Payroll
     End Sub
 
     Dim employPast As New EmployeePastTableAdapter
-    Dim ID As String
+    Dim ID, fname, lname As String
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
@@ -22,6 +22,7 @@ Public Class Payroll
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
         ID = EmpIDSeartTxt.Text
         Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
+        Me.EmployeeFutureTableAdapter.FillByID(Me.Primary.EmployeeFuture, ID)
     End Sub
 
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
@@ -72,11 +73,19 @@ Public Class Payroll
         End If
     End Sub
 
+    Private Sub LnameSearch_Click(sender As Object, e As EventArgs) Handles LnameSearch.Click
+        lname = LnameSearchTxt.Text
+        Me.EmployeePastTableAdapter.FillByLastName(Me.Primary.EmployeePast, lname)
+        Me.EmployeeFutureTableAdapter.FillByLastName(Me.Primary.EmployeeFuture, lname)
+    End Sub
+
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
 
     End Sub
 
     Private Sub FnameSearch_Click(sender As Object, e As EventArgs) Handles FnameSearch.Click
-        Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
+        fname = FnameSearchTxt.Text
+        Me.EmployeePastTableAdapter.FillByFirstName(Me.Primary.EmployeePast, fname)
+        Me.EmployeeFutureTableAdapter.FillByFirstName(Me.Primary.EmployeeFuture, fname)
     End Sub
 End Class
