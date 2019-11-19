@@ -33,13 +33,13 @@
         VryPword = VerifyPwordTxt.Text
         address = street + " " + state + " " + zip
 
+        'this is checking to make sure nothing is blank and that the passwords match
+        'it has been extracted out of this class so that it can be unit tested
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
 
-            If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
-                Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
-                AddEmployee.Show()
-                Me.Hide()
-            End If
+            Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
+            AddEmployee.Show()
+            Me.Hide()
 
             FnameTxt.Clear()
             LnameTxt.Clear()
