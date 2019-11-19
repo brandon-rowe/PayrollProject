@@ -411,6 +411,10 @@ Partial Public Class Primary
         
         Private columntitle As Global.System.Data.DataColumn
         
+        Private columnusern As Global.System.Data.DataColumn
+        
+        Private columnpass As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -479,6 +483,22 @@ Partial Public Class Primary
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property usernColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnusern
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property passColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpass
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -515,9 +535,9 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddAdminRow(ByVal parentEmployeeRowByFK_Admin_Employee As EmployeeRow, ByVal fname As String, ByVal lname As String, ByVal title As String) As AdminRow
+        Public Overloads Function AddAdminRow(ByVal parentEmployeeRowByFK_Admin_Employee As EmployeeRow, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal usern As String, ByVal pass As String) As AdminRow
             Dim rowAdminRow As AdminRow = CType(Me.NewRow,AdminRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fname, lname, title}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fname, lname, title, usern, pass}
             If (Not (parentEmployeeRowByFK_Admin_Employee) Is Nothing) Then
                 columnValuesArray(0) = parentEmployeeRowByFK_Admin_Employee(0)
             End If
@@ -553,6 +573,8 @@ Partial Public Class Primary
             Me.columnfname = MyBase.Columns("fname")
             Me.columnlname = MyBase.Columns("lname")
             Me.columntitle = MyBase.Columns("title")
+            Me.columnusern = MyBase.Columns("usern")
+            Me.columnpass = MyBase.Columns("pass")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -566,6 +588,10 @@ Partial Public Class Primary
             MyBase.Columns.Add(Me.columnlname)
             Me.columntitle = New Global.System.Data.DataColumn("title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntitle)
+            Me.columnusern = New Global.System.Data.DataColumn("usern", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnusern)
+            Me.columnpass = New Global.System.Data.DataColumn("pass", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpass)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
@@ -575,6 +601,8 @@ Partial Public Class Primary
             Me.columnlname.MaxLength = 2147483647
             Me.columntitle.AllowDBNull = false
             Me.columntitle.MaxLength = 2147483647
+            Me.columnusern.MaxLength = 2147483647
+            Me.columnpass.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -738,6 +766,10 @@ Partial Public Class Primary
         
         Private columnssn As Global.System.Data.DataColumn
         
+        Private columnusern As Global.System.Data.DataColumn
+        
+        Private columnpass As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -878,6 +910,22 @@ Partial Public Class Primary
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property usernColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnusern
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property passColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpass
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -914,9 +962,9 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddEmployeeRow(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String) As EmployeeRow
+        Public Overloads Function AddEmployeeRow(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String, ByVal usern As String, ByVal pass As String) As EmployeeRow
             Dim rowEmployeeRow As EmployeeRow = CType(Me.NewRow,EmployeeRow)
-            Dim columnValuesArray() As Object = New Object() {ID, fname, lname, title, address, maritalstatus, dependents, admin, salaried, salary, hourlyrate, hoursworked, ssn}
+            Dim columnValuesArray() As Object = New Object() {ID, fname, lname, title, address, maritalstatus, dependents, admin, salaried, salary, hourlyrate, hoursworked, ssn, usern, pass}
             rowEmployeeRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowEmployeeRow)
             Return rowEmployeeRow
@@ -958,6 +1006,8 @@ Partial Public Class Primary
             Me.columnhourlyrate = MyBase.Columns("hourlyrate")
             Me.columnhoursworked = MyBase.Columns("hoursworked")
             Me.columnssn = MyBase.Columns("ssn")
+            Me.columnusern = MyBase.Columns("usern")
+            Me.columnpass = MyBase.Columns("pass")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -989,6 +1039,10 @@ Partial Public Class Primary
             MyBase.Columns.Add(Me.columnhoursworked)
             Me.columnssn = New Global.System.Data.DataColumn("ssn", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnssn)
+            Me.columnusern = New Global.System.Data.DataColumn("usern", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnusern)
+            Me.columnpass = New Global.System.Data.DataColumn("pass", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpass)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
@@ -1009,6 +1063,8 @@ Partial Public Class Primary
             Me.columnhoursworked.AllowDBNull = false
             Me.columnssn.AllowDBNull = false
             Me.columnssn.MaxLength = 2147483647
+            Me.columnusern.MaxLength = 2147483647
+            Me.columnpass.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1817,6 +1873,36 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property usern() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.usernColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'usern' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.usernColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property pass() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAdmin.passColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'pass' in table 'Admin' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAdmin.passColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property EmployeeRow() As EmployeeRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Admin_Employee")),EmployeeRow)
@@ -1825,6 +1911,30 @@ Partial Public Class Primary
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_Admin_Employee"))
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsusernNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.usernColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetusernNull()
+            Me(Me.tableAdmin.usernColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspassNull() As Boolean
+            Return Me.IsNull(Me.tableAdmin.passColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpassNull()
+            Me(Me.tableAdmin.passColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -1984,6 +2094,60 @@ Partial Public Class Primary
                 Me(Me.tableEmployee.ssnColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property usern() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEmployee.usernColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'usern' in table 'Employee' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEmployee.usernColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property pass() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEmployee.passColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'pass' in table 'Employee' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEmployee.passColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsusernNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.usernColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetusernNull()
+            Me(Me.tableEmployee.usernColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspassNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.passColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpassNull()
+            Me(Me.tableEmployee.passColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -2436,31 +2600,38 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("fname", "fname")
             tableMapping.ColumnMappings.Add("lname", "lname")
             tableMapping.ColumnMappings.Add("title", "title")
+            tableMapping.ColumnMappings.Add("usern", "usern")
+            tableMapping.ColumnMappings.Add("pass", "pass")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Admin] WHERE (([ID] = @Original_ID))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Admin] WHERE (([ID] = @Original_ID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Admin] ([ID], [fname], [lname], [title]) VALUES (@ID, @fname, "& _ 
-                "@lname, @title);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, fname, lname, title FROM Admin WHERE (ID = @ID)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Admin] ([ID], [fname], [lname], [title], [pass], [usern]) VALUES (@I"& _ 
+                "D, @fname, @lname, @title, @pass, @usern);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, fname, lname, title, pass"& _ 
+                ", usern FROM Admin WHERE (ID = @ID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@usern", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "usern", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Admin] SET [ID] = @ID, [fname] = @fname, [lname] = @lname, [title] "& _ 
-                "= @title WHERE (([ID] = @Original_ID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, fname, lname, title FROM Adm"& _ 
-                "in WHERE (ID = @ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Admin] SET [ID] = @ID, [fname] = @fname, [lname] = @lname, [title] = @tit"& _ 
+                "le, [pass] = @pass, [usern] = @usern WHERE (([ID] = @Original_ID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, "& _ 
+                "fname, lname, title, pass, usern FROM Admin WHERE (ID = @ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@usern", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "usern", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -2477,7 +2648,7 @@ Namespace PrimaryTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, fname, lname, title FROM dbo.Admin"
+            Me._commandCollection(0).CommandText = "SELECT ID, fname, lname, title, pass, usern FROM Admin"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -2721,6 +2892,8 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("hourlyrate", "hourlyrate")
             tableMapping.ColumnMappings.Add("hoursworked", "hoursworked")
             tableMapping.ColumnMappings.Add("ssn", "ssn")
+            tableMapping.ColumnMappings.Add("usern", "usern")
+            tableMapping.ColumnMappings.Add("pass", "pass")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -2738,7 +2911,7 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, fname, lname, title, address, maritalstatus, dependents, admin, salari"& _ 
-                "ed, salary, hourlyrate, hoursworked, ssn FROM dbo.Employee"
+                "ed, salary, hourlyrate, hoursworked, ssn, usern, pass FROM dbo.Employee"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -2752,9 +2925,9 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "INSERT INTO Employee(ID, fname, lname, title, address, maritalstatus, dependents,"& _ 
-                " admin, salaried, salary, hourlyrate, hoursworked, ssn)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ID,@fna"& _ 
-                "me,@lname,@title,@address,@maritalstatus,@dependents,@admin,@salaried,@salary,@h"& _ 
-                "ourlyrate,@hoursworked,@ssn)"
+                " admin, salaried, salary, hourlyrate, hoursworked, ssn, usern, pass)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES    "& _ 
+                "    (@ID,@fname,@lname,@title,@address,@maritalstatus,@dependents,@admin,@salari"& _ 
+                "ed,@salary,@hourlyrate,@hoursworked,@ssn,@usern,@pass)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2769,6 +2942,8 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hourlyrate", Global.System.Data.SqlDbType.Money, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "hourlyrate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursworked", Global.System.Data.SqlDbType.Money, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursworked", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ssn", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "ssn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@usern", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "usern", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pass", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "pass", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT        MAX(ID) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Employee"
@@ -2852,7 +3027,7 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String) As Integer
+        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String, ByVal usern As String, ByVal pass As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(ID,Integer)
             If (fname Is Nothing) Then
@@ -2886,6 +3061,16 @@ Namespace PrimaryTableAdapters
                 Throw New Global.System.ArgumentNullException("ssn")
             Else
                 command.Parameters(12).Value = CType(ssn,String)
+            End If
+            If (usern Is Nothing) Then
+                command.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(13).Value = CType(usern,String)
+            End If
+            If (pass Is Nothing) Then
+                command.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(14).Value = CType(pass,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

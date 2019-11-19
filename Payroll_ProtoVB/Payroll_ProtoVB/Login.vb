@@ -36,7 +36,7 @@
         If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
 
             If Fname.Length() > 0 AndAlso Lname.Length() > 0 AndAlso street.Length() > 0 AndAlso state.Length() > 0 AndAlso zip.Length() > 0 AndAlso CPword = VryPword Then
-                Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip)
+                Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
                 AddEmployee.Show()
                 Me.Hide()
             End If
@@ -138,8 +138,12 @@
         'ATTENTION: This button should navigate to EmpDashboard.vb
         'We need to add a sqladapter to check the Username & Password to validate credentials.
         Uname = loginUsrTxt.Text
-        Pword = loginPwTxt.Text
-        EmpDashboard.Show()
+        CPword = loginPwTxt.Text
+
+        If Uname = "admin" And CPword = "123" Then
+            EmpDashboard.Show()
+        End If
+
         Me.Hide()
     End Sub
 

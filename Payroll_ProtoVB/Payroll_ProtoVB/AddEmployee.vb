@@ -17,6 +17,8 @@ Public Class AddEmployee
     Dim paymentType As String
     Dim ssn As String
     Dim ID As Integer
+    Dim Uname As String
+    Dim Pass As String
 
     'empty constructor
     Public Sub New()
@@ -28,13 +30,15 @@ Public Class AddEmployee
 
     End Sub
     'constructor to pass admin user generation info.
-    Public Sub New(ByVal nFname As String, ByVal nLname As String, ByVal nstreet As String, ByVal nstate As String, ByVal nzip As String)
+    Public Sub New(ByVal nFname As String, ByVal nLname As String, ByVal nstreet As String, ByVal nstate As String, ByVal nzip As String, nUname As String, nPass As String)
         InitializeComponent()
         Fname = nFname
         Lname = nLname
         street = nstreet
         state = nstate
         zip = nzip
+        Uname = nUname
+        Pass = nPass
         FnameTxt.Text = Fname.ToString()
         LnameTxt.Text = Lname.ToString()
         StreetTxt.Text = street.ToString()
@@ -81,7 +85,7 @@ Public Class AddEmployee
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
 
-        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn)
+        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, False, 0, 50, 24, ssn, Uname, Pass)
 
     End Sub
 
