@@ -88,4 +88,12 @@ Public Class Payroll
         Me.EmployeePastTableAdapter.FillByFirstName(Me.Primary.EmployeePast, fname)
         Me.EmployeeFutureTableAdapter.FillByFirstName(Me.Primary.EmployeeFuture, fname)
     End Sub
+
+    Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
+        Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
+        ID = ""
+        EmpIDSeartTxt.Clear()
+        FnameSearchTxt.Clear()
+        LnameSearchTxt.Clear()
+    End Sub
 End Class
