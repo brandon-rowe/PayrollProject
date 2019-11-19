@@ -8,7 +8,7 @@ Public Class Payroll
     End Sub
 
     Dim employPast As New EmployeePastTableAdapter
-    Dim ID As Integer
+    Dim ID As String
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
@@ -21,7 +21,7 @@ Public Class Payroll
     Private Sub EmpIDSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
         ID = EmpIDSeartTxt.Text
-        Me.EmployeePastTableAdapter.GetDataByID(ID)
+        Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
     End Sub
 
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
@@ -74,5 +74,9 @@ Public Class Payroll
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
 
+    End Sub
+
+    Private Sub FnameSearch_Click(sender As Object, e As EventArgs) Handles FnameSearch.Click
+        Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
     End Sub
 End Class
