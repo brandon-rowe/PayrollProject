@@ -35,7 +35,7 @@ Public Class EmpManagment
     End Sub
 
     Private Sub employeeMGMTFormRmvEmployeeButton_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormRmvEmployeeButton.Click
-        'B. Rowe: We need to think through the functionality of these buttons.
+        'This button only takes in the ID as a selector to delete the record.
         ID = EmpIDTxt.Text
         employTA.DeleteRow(ID)
     End Sub

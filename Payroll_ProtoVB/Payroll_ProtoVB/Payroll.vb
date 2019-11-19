@@ -1,6 +1,10 @@
-﻿Public Class Payroll
+﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+
+Public Class Payroll
     Inherits System.Windows.Forms.Form
     'load form
+    Dim employPast As New EmployeePastTableAdapter
+    Dim ID As Integer
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
@@ -33,6 +37,8 @@
 
     Private Sub PayrollFormSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
+        ID = EmpIDSeartTxt.Text
+        'employPast.FillByID(ID)
     End Sub
 
     Private Sub DetailViewBTN_Click(sender As Object, e As EventArgs)

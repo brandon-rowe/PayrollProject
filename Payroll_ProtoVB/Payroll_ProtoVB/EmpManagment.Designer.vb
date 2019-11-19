@@ -429,8 +429,8 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormFirstNameLabel)
-        Me.splitContainer1.Size = New System.Drawing.Size(1070, 495)
-        Me.splitContainer1.SplitterDistance = 393
+        Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
+        Me.splitContainer1.SplitterDistance = 377
         Me.splitContainer1.TabIndex = 1
         '
         'loginPwTxt
@@ -493,7 +493,7 @@ Partial Class EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1070, 495)
+        Me.ClientSize = New System.Drawing.Size(1028, 495)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
