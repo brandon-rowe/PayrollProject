@@ -31,6 +31,10 @@
         End If
     End Sub
 
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+        EmployeeTableAdapter.Adapter.Update(Me.Primary)
+    End Sub
+
 
     ' Moved Test Calculation to PayRateLogic.vb for testing purposes
     ' Also we should decouple as much logic away from UI as possible (see MVC architecture)
