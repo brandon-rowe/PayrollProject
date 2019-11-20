@@ -15,40 +15,6 @@ Public Class EmpManagment
         Row = nRow
     End Sub
 
-    Private Sub EmployeeMGMTFormCancelButton1_Click(sender As Object, e As EventArgs)
-        'ATTENTION: This button should navigate to EmpDashboard.vb
-        EmpDashboard.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub EmployeeMGMTFormAddButton_Click(sender As Object, e As EventArgs)
-        'ATTENTION: This button should navigate to AddEmployee.vb
-        Dim AddEmployee = New AddEmployee()
-        AddEmployee.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub EmployeeMGMTFormCancelButton2_Click(sender As Object, e As EventArgs)
-        'ATTENTION: This button should navigate to EmpDashboard.vb
-        EmpDashboard.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub employeeMGMTFormSearch_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormSearch.Click
-        'B. Rowe: We need to think through the functionality of these buttons.
-        Me.employTA.FillByID(Me.Primary.Employee, employeeMgmtFormSearchTxtBox.Text)
-    End Sub
-
-    Private Sub employeeMGMTFormEditButton_Click(sender As Object, e As EventArgs)
-        'How best to implement them and should be link to previous forms to solve
-        'some of these tasks.
-    End Sub
-
-    Private Sub employeeMGMTFormRmvEmployeeButton_Click(sender As Object, e As EventArgs)
-        'This button only takes in the ID as a selector to delete the record.
-        ID = EmpIDTxt.Text
-        employTA.DeleteRow(ID)
-    End Sub
 
     Private Sub EmpManagment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
@@ -67,9 +33,13 @@ Public Class EmpManagment
         ' End If
     End Sub
 
-    Private Sub loginFormButton_Click(sender As Object, e As EventArgs) Handles loginFormButton.Click
-        Uname = employeeMgmtFormUsrTxtBox.Text
-        PWord = loginPwTxt.Text
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        Me.employTA.FillByID(Me.Primary.Employee, SearchEmpTxt.Text)
+    End Sub
+
+    Private Sub ConLoginBtn_Click(sender As Object, e As EventArgs) Handles ConLoginBtn.Click
+        Uname = UnameTxt.Text
+        PWord = PwordTxt.Text
 
         VryPword = employTA.CheckPassword(Uname)
         If VryPword = PWord Then
@@ -87,5 +57,46 @@ Public Class EmpManagment
                 MyString = "OK"
             End If
         End If
+    End Sub
+
+    Private Sub removeEmpBtn_Click(sender As Object, e As EventArgs) Handles removeEmpBtn.Click
+        'This button only takes in the ID as a selector to delete the record.
+
+        ID = EmpIDTxt.Text
+        If ID = "" Then
+            Dim MSG, style, title, response, MyString
+            MSG = "Invalid Employee ID"
+            title = "Input Error- ID"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
+        Else
+            ID = EmpIDTxt.Text
+            employTA.DeleteRow(ID)
+        End If
+    End Sub
+
+    Private Sub cancelBtn_Click(sender As Object, e As EventArgs) Handles cancelBtn.Click
+        'ATTENTION: This button should navigate to EmpDashboard.vb
+        EmpDashboard.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub CancelLoginBtn_Click(sender As Object, e As EventArgs) Handles CancelLoginBtn.Click
+        'ATTENTION: This button should navigate to EmpDashboard.vb
+        EmpDashboard.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
+        'ATTENTION: This button should navigate to AddEmployee.vb
+        AddEmployee.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub editEmpBtn_Click(sender As Object, e As EventArgs) Handles editEmpBtn.Click
+
     End Sub
 End Class

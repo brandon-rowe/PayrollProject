@@ -26,31 +26,32 @@ Partial Class EmpManagment
         Me.employeeSearchLabel = New System.Windows.Forms.Label()
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SearchAddGroupBox = New System.Windows.Forms.GroupBox()
-        Me.employeeMGMTFormAddButton = New System.Windows.Forms.Button()
+        Me.AddEmpBtn = New System.Windows.Forms.Button()
         Me.addEmployeLinkLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormSearch = New System.Windows.Forms.Button()
-        Me.employeeMgmtFormSearchTxtBox = New System.Windows.Forms.TextBox()
+        Me.SearchBtn = New System.Windows.Forms.Button()
+        Me.SearchEmpTxt = New System.Windows.Forms.TextBox()
         Me.employeeMgmtFormEmployeeSearch = New System.Windows.Forms.Label()
         Me.LoginGroupBox = New System.Windows.Forms.GroupBox()
-        Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
-        Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
-        Me.loginFormButton = New System.Windows.Forms.Button()
-        Me.employeeMgmtFormUsrTxtBox = New System.Windows.Forms.TextBox()
+        Me.PwordTxt = New System.Windows.Forms.MaskedTextBox()
+        Me.CancelLoginBtn = New System.Windows.Forms.Button()
+        Me.ConLoginBtn = New System.Windows.Forms.Button()
+        Me.UnameTxt = New System.Windows.Forms.TextBox()
         Me.loginformPassLabel = New System.Windows.Forms.Label()
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
+        Me.WelcomeLabel = New System.Windows.Forms.Label()
         Me.EmployeeInfoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SalaryTxt = New System.Windows.Forms.TextBox()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         Me.EmpIDTxt = New System.Windows.Forms.TextBox()
         Me.EmpIDLabel = New System.Windows.Forms.Label()
-        Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
+        Me.cancelBtn = New System.Windows.Forms.Button()
         Me.employeeMGMTPayableHrsLabel = New System.Windows.Forms.Label()
         Me.PayHrsTxt = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormRmvEmployeeButton = New System.Windows.Forms.Button()
-        Me.employeeMGMTFormEditButton = New System.Windows.Forms.Button()
+        Me.removeEmpBtn = New System.Windows.Forms.Button()
+        Me.editEmpBtn = New System.Windows.Forms.Button()
         Me.PayRateTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormWageRateLabel = New System.Windows.Forms.Label()
         Me.DependentsTxt = New System.Windows.Forms.TextBox()
@@ -70,7 +71,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.TableAdapterManager = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
-        Me.WelcomeLabel = New System.Windows.Forms.Label()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -116,10 +116,10 @@ Partial Class EmpManagment
         '
         'SearchAddGroupBox
         '
-        Me.SearchAddGroupBox.Controls.Add(Me.employeeMGMTFormAddButton)
+        Me.SearchAddGroupBox.Controls.Add(Me.AddEmpBtn)
         Me.SearchAddGroupBox.Controls.Add(Me.addEmployeLinkLabel)
-        Me.SearchAddGroupBox.Controls.Add(Me.employeeMGMTFormSearch)
-        Me.SearchAddGroupBox.Controls.Add(Me.employeeMgmtFormSearchTxtBox)
+        Me.SearchAddGroupBox.Controls.Add(Me.SearchBtn)
+        Me.SearchAddGroupBox.Controls.Add(Me.SearchEmpTxt)
         Me.SearchAddGroupBox.Controls.Add(Me.employeeMgmtFormEmployeeSearch)
         Me.SearchAddGroupBox.Location = New System.Drawing.Point(0, 310)
         Me.SearchAddGroupBox.Name = "SearchAddGroupBox"
@@ -128,14 +128,14 @@ Partial Class EmpManagment
         Me.SearchAddGroupBox.TabStop = False
         Me.SearchAddGroupBox.Visible = False
         '
-        'employeeMGMTFormAddButton
+        'AddEmpBtn
         '
-        Me.employeeMGMTFormAddButton.Location = New System.Drawing.Point(270, 84)
-        Me.employeeMGMTFormAddButton.Name = "employeeMGMTFormAddButton"
-        Me.employeeMGMTFormAddButton.Size = New System.Drawing.Size(102, 23)
-        Me.employeeMGMTFormAddButton.TabIndex = 18
-        Me.employeeMGMTFormAddButton.Text = "Add Employee"
-        Me.employeeMGMTFormAddButton.UseVisualStyleBackColor = True
+        Me.AddEmpBtn.Location = New System.Drawing.Point(270, 84)
+        Me.AddEmpBtn.Name = "AddEmpBtn"
+        Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
+        Me.AddEmpBtn.TabIndex = 18
+        Me.AddEmpBtn.Text = "Add Employee"
+        Me.AddEmpBtn.UseVisualStyleBackColor = True
         '
         'addEmployeLinkLabel
         '
@@ -146,21 +146,21 @@ Partial Class EmpManagment
         Me.addEmployeLinkLabel.TabIndex = 19
         Me.addEmployeLinkLabel.Text = "If Employee Not Found, You may Add them Now"
         '
-        'employeeMGMTFormSearch
+        'SearchBtn
         '
-        Me.employeeMGMTFormSearch.Location = New System.Drawing.Point(286, 45)
-        Me.employeeMGMTFormSearch.Name = "employeeMGMTFormSearch"
-        Me.employeeMGMTFormSearch.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormSearch.TabIndex = 17
-        Me.employeeMGMTFormSearch.Text = "Search"
-        Me.employeeMGMTFormSearch.UseVisualStyleBackColor = True
+        Me.SearchBtn.Location = New System.Drawing.Point(286, 45)
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(75, 23)
+        Me.SearchBtn.TabIndex = 17
+        Me.SearchBtn.Text = "Search"
+        Me.SearchBtn.UseVisualStyleBackColor = True
         '
-        'employeeMgmtFormSearchTxtBox
+        'SearchEmpTxt
         '
-        Me.employeeMgmtFormSearchTxtBox.Location = New System.Drawing.Point(139, 48)
-        Me.employeeMgmtFormSearchTxtBox.Name = "employeeMgmtFormSearchTxtBox"
-        Me.employeeMgmtFormSearchTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormSearchTxtBox.TabIndex = 16
+        Me.SearchEmpTxt.Location = New System.Drawing.Point(139, 48)
+        Me.SearchEmpTxt.Name = "SearchEmpTxt"
+        Me.SearchEmpTxt.Size = New System.Drawing.Size(121, 20)
+        Me.SearchEmpTxt.TabIndex = 16
         '
         'employeeMgmtFormEmployeeSearch
         '
@@ -173,10 +173,10 @@ Partial Class EmpManagment
         '
         'LoginGroupBox
         '
-        Me.LoginGroupBox.Controls.Add(Me.loginPwTxt)
-        Me.LoginGroupBox.Controls.Add(Me.employeeMGMTFormCancelButton1)
-        Me.LoginGroupBox.Controls.Add(Me.loginFormButton)
-        Me.LoginGroupBox.Controls.Add(Me.employeeMgmtFormUsrTxtBox)
+        Me.LoginGroupBox.Controls.Add(Me.PwordTxt)
+        Me.LoginGroupBox.Controls.Add(Me.CancelLoginBtn)
+        Me.LoginGroupBox.Controls.Add(Me.ConLoginBtn)
+        Me.LoginGroupBox.Controls.Add(Me.UnameTxt)
         Me.LoginGroupBox.Controls.Add(Me.loginformPassLabel)
         Me.LoginGroupBox.Controls.Add(Me.loginFormUsrLabel)
         Me.LoginGroupBox.Location = New System.Drawing.Point(16, 103)
@@ -185,39 +185,39 @@ Partial Class EmpManagment
         Me.LoginGroupBox.TabIndex = 15
         Me.LoginGroupBox.TabStop = False
         '
-        'loginPwTxt
+        'PwordTxt
         '
-        Me.loginPwTxt.Location = New System.Drawing.Point(157, 68)
-        Me.loginPwTxt.Name = "loginPwTxt"
-        Me.loginPwTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.loginPwTxt.Size = New System.Drawing.Size(121, 20)
-        Me.loginPwTxt.TabIndex = 10
-        Me.loginPwTxt.UseSystemPasswordChar = True
+        Me.PwordTxt.Location = New System.Drawing.Point(157, 68)
+        Me.PwordTxt.Name = "PwordTxt"
+        Me.PwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.PwordTxt.TabIndex = 10
+        Me.PwordTxt.UseSystemPasswordChar = True
         '
-        'employeeMGMTFormCancelButton1
+        'CancelLoginBtn
         '
-        Me.employeeMGMTFormCancelButton1.Location = New System.Drawing.Point(111, 106)
-        Me.employeeMGMTFormCancelButton1.Name = "employeeMGMTFormCancelButton1"
-        Me.employeeMGMTFormCancelButton1.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormCancelButton1.TabIndex = 12
-        Me.employeeMGMTFormCancelButton1.Text = "Cancel"
-        Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
+        Me.CancelLoginBtn.Location = New System.Drawing.Point(111, 106)
+        Me.CancelLoginBtn.Name = "CancelLoginBtn"
+        Me.CancelLoginBtn.Size = New System.Drawing.Size(75, 23)
+        Me.CancelLoginBtn.TabIndex = 12
+        Me.CancelLoginBtn.Text = "Cancel"
+        Me.CancelLoginBtn.UseVisualStyleBackColor = True
         '
-        'loginFormButton
+        'ConLoginBtn
         '
-        Me.loginFormButton.Location = New System.Drawing.Point(202, 106)
-        Me.loginFormButton.Name = "loginFormButton"
-        Me.loginFormButton.Size = New System.Drawing.Size(75, 23)
-        Me.loginFormButton.TabIndex = 11
-        Me.loginFormButton.Text = "Continue"
-        Me.loginFormButton.UseVisualStyleBackColor = True
+        Me.ConLoginBtn.Location = New System.Drawing.Point(202, 106)
+        Me.ConLoginBtn.Name = "ConLoginBtn"
+        Me.ConLoginBtn.Size = New System.Drawing.Size(75, 23)
+        Me.ConLoginBtn.TabIndex = 11
+        Me.ConLoginBtn.Text = "Continue"
+        Me.ConLoginBtn.UseVisualStyleBackColor = True
         '
-        'employeeMgmtFormUsrTxtBox
+        'UnameTxt
         '
-        Me.employeeMgmtFormUsrTxtBox.Location = New System.Drawing.Point(157, 40)
-        Me.employeeMgmtFormUsrTxtBox.Name = "employeeMgmtFormUsrTxtBox"
-        Me.employeeMgmtFormUsrTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormUsrTxtBox.TabIndex = 9
+        Me.UnameTxt.Location = New System.Drawing.Point(157, 40)
+        Me.UnameTxt.Name = "UnameTxt"
+        Me.UnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.UnameTxt.TabIndex = 9
         '
         'loginformPassLabel
         '
@@ -239,18 +239,29 @@ Partial Class EmpManagment
         Me.loginFormUsrLabel.TabIndex = 13
         Me.loginFormUsrLabel.Text = "User Name"
         '
+        'WelcomeLabel
+        '
+        Me.WelcomeLabel.AutoSize = True
+        Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WelcomeLabel.Location = New System.Drawing.Point(135, 274)
+        Me.WelcomeLabel.Name = "WelcomeLabel"
+        Me.WelcomeLabel.Size = New System.Drawing.Size(104, 24)
+        Me.WelcomeLabel.TabIndex = 111
+        Me.WelcomeLabel.Text = "Welcome!"
+        Me.WelcomeLabel.Visible = False
+        '
         'EmployeeInfoGroupBox
         '
-        Me.EmployeeInfoGroupBox.Controls.Add(Me.TextBox1)
+        Me.EmployeeInfoGroupBox.Controls.Add(Me.SalaryTxt)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.Label1)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.SSN_Txt)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.EmpIDTxt)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.EmpIDLabel)
-        Me.EmployeeInfoGroupBox.Controls.Add(Me.employeeMGMTFormCancelButton2)
+        Me.EmployeeInfoGroupBox.Controls.Add(Me.cancelBtn)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.employeeMGMTPayableHrsLabel)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.PayHrsTxt)
-        Me.EmployeeInfoGroupBox.Controls.Add(Me.employeeMGMTFormRmvEmployeeButton)
-        Me.EmployeeInfoGroupBox.Controls.Add(Me.employeeMGMTFormEditButton)
+        Me.EmployeeInfoGroupBox.Controls.Add(Me.removeEmpBtn)
+        Me.EmployeeInfoGroupBox.Controls.Add(Me.editEmpBtn)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.PayRateTxt)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.employeeMGMTFormWageRateLabel)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.DependentsTxt)
@@ -275,13 +286,13 @@ Partial Class EmpManagment
         Me.EmployeeInfoGroupBox.TabStop = False
         Me.EmployeeInfoGroupBox.Visible = False
         '
-        'TextBox1
+        'SalaryTxt
         '
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hourlyrate", True))
-        Me.TextBox1.Location = New System.Drawing.Point(135, 223)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 109
+        Me.SalaryTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hourlyrate", True))
+        Me.SalaryTxt.Location = New System.Drawing.Point(135, 223)
+        Me.SalaryTxt.Name = "SalaryTxt"
+        Me.SalaryTxt.Size = New System.Drawing.Size(121, 20)
+        Me.SalaryTxt.TabIndex = 109
         '
         'EmployeeBindingSource
         '
@@ -332,14 +343,14 @@ Partial Class EmpManagment
         Me.EmpIDLabel.TabIndex = 108
         Me.EmpIDLabel.Text = "Employee ID"
         '
-        'employeeMGMTFormCancelButton2
+        'cancelBtn
         '
-        Me.employeeMGMTFormCancelButton2.Location = New System.Drawing.Point(529, 371)
-        Me.employeeMGMTFormCancelButton2.Name = "employeeMGMTFormCancelButton2"
-        Me.employeeMGMTFormCancelButton2.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormCancelButton2.TabIndex = 97
-        Me.employeeMGMTFormCancelButton2.Text = "Cancel"
-        Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
+        Me.cancelBtn.Location = New System.Drawing.Point(529, 371)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelBtn.TabIndex = 97
+        Me.cancelBtn.Text = "Cancel"
+        Me.cancelBtn.UseVisualStyleBackColor = True
         '
         'employeeMGMTPayableHrsLabel
         '
@@ -359,23 +370,23 @@ Partial Class EmpManagment
         Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayHrsTxt.TabIndex = 94
         '
-        'employeeMGMTFormRmvEmployeeButton
+        'removeEmpBtn
         '
-        Me.employeeMGMTFormRmvEmployeeButton.Location = New System.Drawing.Point(505, 327)
-        Me.employeeMGMTFormRmvEmployeeButton.Name = "employeeMGMTFormRmvEmployeeButton"
-        Me.employeeMGMTFormRmvEmployeeButton.Size = New System.Drawing.Size(118, 28)
-        Me.employeeMGMTFormRmvEmployeeButton.TabIndex = 96
-        Me.employeeMGMTFormRmvEmployeeButton.Text = "Remove Employee"
-        Me.employeeMGMTFormRmvEmployeeButton.UseVisualStyleBackColor = True
+        Me.removeEmpBtn.Location = New System.Drawing.Point(505, 327)
+        Me.removeEmpBtn.Name = "removeEmpBtn"
+        Me.removeEmpBtn.Size = New System.Drawing.Size(118, 28)
+        Me.removeEmpBtn.TabIndex = 96
+        Me.removeEmpBtn.Text = "Remove Employee"
+        Me.removeEmpBtn.UseVisualStyleBackColor = True
         '
-        'employeeMGMTFormEditButton
+        'editEmpBtn
         '
-        Me.employeeMGMTFormEditButton.Location = New System.Drawing.Point(529, 282)
-        Me.employeeMGMTFormEditButton.Name = "employeeMGMTFormEditButton"
-        Me.employeeMGMTFormEditButton.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormEditButton.TabIndex = 95
-        Me.employeeMGMTFormEditButton.Text = "Edit Fields"
-        Me.employeeMGMTFormEditButton.UseVisualStyleBackColor = True
+        Me.editEmpBtn.Location = New System.Drawing.Point(529, 282)
+        Me.editEmpBtn.Name = "editEmpBtn"
+        Me.editEmpBtn.Size = New System.Drawing.Size(75, 23)
+        Me.editEmpBtn.TabIndex = 95
+        Me.editEmpBtn.Text = "Edit Fields"
+        Me.editEmpBtn.UseVisualStyleBackColor = True
         '
         'PayRateTxt
         '
@@ -544,18 +555,8 @@ Partial Class EmpManagment
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.EmployeeFutureTableAdapter = Nothing
         Me.TableAdapterManager.EmployeePastTableAdapter = Nothing
+        Me.TableAdapterManager.EmployeeTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'WelcomeLabel
-        '
-        Me.WelcomeLabel.AutoSize = True
-        Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WelcomeLabel.Location = New System.Drawing.Point(135, 274)
-        Me.WelcomeLabel.Name = "WelcomeLabel"
-        Me.WelcomeLabel.Size = New System.Drawing.Size(104, 24)
-        Me.WelcomeLabel.TabIndex = 111
-        Me.WelcomeLabel.Text = "Welcome!"
-        Me.WelcomeLabel.Visible = False
         '
         'EmpManagment
         '
@@ -589,16 +590,16 @@ Partial Class EmpManagment
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
     Friend WithEvents TableAdapterManager As PrimaryTableAdapters.TableAdapterManager
     Friend WithEvents EmployeeInfoGroupBox As GroupBox
-    Private WithEvents TextBox1 As TextBox
+    Private WithEvents SalaryTxt As TextBox
     Private WithEvents Label1 As Label
     Private WithEvents SSN_Txt As MaskedTextBox
     Private WithEvents EmpIDTxt As TextBox
     Private WithEvents EmpIDLabel As Label
-    Private WithEvents employeeMGMTFormCancelButton2 As Button
+    Private WithEvents cancelBtn As Button
     Private WithEvents employeeMGMTPayableHrsLabel As Label
     Private WithEvents PayHrsTxt As TextBox
-    Private WithEvents employeeMGMTFormRmvEmployeeButton As Button
-    Private WithEvents employeeMGMTFormEditButton As Button
+    Private WithEvents removeEmpBtn As Button
+    Private WithEvents editEmpBtn As Button
     Private WithEvents PayRateTxt As TextBox
     Private WithEvents employeeMGMTFormWageRateLabel As Label
     Private WithEvents DependentsTxt As TextBox
@@ -617,17 +618,17 @@ Partial Class EmpManagment
     Private WithEvents employeeMGMTFormAddyLabel As Label
     Private WithEvents employeeMGMTFormFirstNameLabel As Label
     Friend WithEvents LoginGroupBox As GroupBox
-    Private WithEvents loginPwTxt As MaskedTextBox
-    Private WithEvents employeeMGMTFormCancelButton1 As Button
-    Private WithEvents loginFormButton As Button
-    Private WithEvents employeeMgmtFormUsrTxtBox As TextBox
+    Private WithEvents PwordTxt As MaskedTextBox
+    Private WithEvents CancelLoginBtn As Button
+    Private WithEvents ConLoginBtn As Button
+    Private WithEvents UnameTxt As TextBox
     Private WithEvents loginformPassLabel As Label
     Private WithEvents loginFormUsrLabel As Label
     Friend WithEvents SearchAddGroupBox As GroupBox
-    Private WithEvents employeeMGMTFormAddButton As Button
+    Private WithEvents AddEmpBtn As Button
     Private WithEvents addEmployeLinkLabel As Label
-    Private WithEvents employeeMGMTFormSearch As Button
-    Private WithEvents employeeMgmtFormSearchTxtBox As TextBox
+    Private WithEvents SearchBtn As Button
+    Private WithEvents SearchEmpTxt As TextBox
     Private WithEvents employeeMgmtFormEmployeeSearch As Label
     Friend WithEvents WelcomeLabel As Label
 End Class

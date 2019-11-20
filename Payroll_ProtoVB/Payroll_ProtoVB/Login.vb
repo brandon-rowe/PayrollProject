@@ -175,4 +175,5 @@ Public Class Login
         LoginGB.Visible = True
         SignUpGB.Visible = False
     End Sub
+
 End Class
