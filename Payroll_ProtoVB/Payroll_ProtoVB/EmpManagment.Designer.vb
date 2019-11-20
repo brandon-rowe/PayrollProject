@@ -23,13 +23,14 @@ Partial Class EmpManagment
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.employeeSearchLabel = New System.Windows.Forms.Label()
+        Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.SearchAddGroupBox = New System.Windows.Forms.GroupBox()
         Me.employeeMGMTFormAddButton = New System.Windows.Forms.Button()
         Me.addEmployeLinkLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormSearch = New System.Windows.Forms.Button()
         Me.employeeMgmtFormSearchTxtBox = New System.Windows.Forms.TextBox()
         Me.employeeMgmtFormEmployeeSearch = New System.Windows.Forms.Label()
-        Me.employeeSearchLabel = New System.Windows.Forms.Label()
-        Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.LoginGroupBox = New System.Windows.Forms.GroupBox()
         Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
@@ -67,61 +68,19 @@ Partial Class EmpManagment
         Me.FnameTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormAddyLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
-        Me.FillBySelectedRowToolStrip = New System.Windows.Forms.ToolStrip()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.TableAdapterManager = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
+        Me.WelcomeLabel = New System.Windows.Forms.Label()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
         Me.splitContainer1.SuspendLayout()
+        Me.SearchAddGroupBox.SuspendLayout()
         Me.LoginGroupBox.SuspendLayout()
         Me.EmployeeInfoGroupBox.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'employeeMGMTFormAddButton
-        '
-        Me.employeeMGMTFormAddButton.Location = New System.Drawing.Point(263, 345)
-        Me.employeeMGMTFormAddButton.Name = "employeeMGMTFormAddButton"
-        Me.employeeMGMTFormAddButton.Size = New System.Drawing.Size(102, 23)
-        Me.employeeMGMTFormAddButton.TabIndex = 5
-        Me.employeeMGMTFormAddButton.Text = "Add Employee"
-        Me.employeeMGMTFormAddButton.UseVisualStyleBackColor = True
-        '
-        'addEmployeLinkLabel
-        '
-        Me.addEmployeLinkLabel.AutoSize = True
-        Me.addEmployeLinkLabel.Location = New System.Drawing.Point(13, 350)
-        Me.addEmployeLinkLabel.Name = "addEmployeLinkLabel"
-        Me.addEmployeLinkLabel.Size = New System.Drawing.Size(235, 13)
-        Me.addEmployeLinkLabel.TabIndex = 14
-        Me.addEmployeLinkLabel.Text = "If Employee Not Found, You may Add them Now"
-        '
-        'employeeMGMTFormSearch
-        '
-        Me.employeeMGMTFormSearch.Location = New System.Drawing.Point(279, 306)
-        Me.employeeMGMTFormSearch.Name = "employeeMGMTFormSearch"
-        Me.employeeMGMTFormSearch.Size = New System.Drawing.Size(75, 23)
-        Me.employeeMGMTFormSearch.TabIndex = 4
-        Me.employeeMGMTFormSearch.Text = "Search"
-        Me.employeeMGMTFormSearch.UseVisualStyleBackColor = True
-        '
-        'employeeMgmtFormSearchTxtBox
-        '
-        Me.employeeMgmtFormSearchTxtBox.Location = New System.Drawing.Point(132, 309)
-        Me.employeeMgmtFormSearchTxtBox.Name = "employeeMgmtFormSearchTxtBox"
-        Me.employeeMgmtFormSearchTxtBox.Size = New System.Drawing.Size(121, 20)
-        Me.employeeMgmtFormSearchTxtBox.TabIndex = 3
-        '
-        'employeeMgmtFormEmployeeSearch
-        '
-        Me.employeeMgmtFormEmployeeSearch.AutoSize = True
-        Me.employeeMgmtFormEmployeeSearch.Location = New System.Drawing.Point(12, 316)
-        Me.employeeMgmtFormEmployeeSearch.Name = "employeeMgmtFormEmployeeSearch"
-        Me.employeeMgmtFormEmployeeSearch.Size = New System.Drawing.Size(108, 13)
-        Me.employeeMgmtFormEmployeeSearch.TabIndex = 0
-        Me.employeeMgmtFormEmployeeSearch.Text = "Search For Employee"
         '
         'employeeSearchLabel
         '
@@ -142,13 +101,10 @@ Partial Class EmpManagment
         '
         'splitContainer1.Panel1
         '
+        Me.splitContainer1.Panel1.Controls.Add(Me.SearchAddGroupBox)
         Me.splitContainer1.Panel1.Controls.Add(Me.LoginGroupBox)
-        Me.splitContainer1.Panel1.Controls.Add(Me.employeeMGMTFormAddButton)
-        Me.splitContainer1.Panel1.Controls.Add(Me.addEmployeLinkLabel)
-        Me.splitContainer1.Panel1.Controls.Add(Me.employeeMGMTFormSearch)
-        Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtFormSearchTxtBox)
-        Me.splitContainer1.Panel1.Controls.Add(Me.employeeMgmtFormEmployeeSearch)
         Me.splitContainer1.Panel1.Controls.Add(Me.employeeSearchLabel)
+        Me.splitContainer1.Panel1.Controls.Add(Me.WelcomeLabel)
         '
         'splitContainer1.Panel2
         '
@@ -157,6 +113,63 @@ Partial Class EmpManagment
         Me.splitContainer1.Size = New System.Drawing.Size(1028, 495)
         Me.splitContainer1.SplitterDistance = 377
         Me.splitContainer1.TabIndex = 1
+        '
+        'SearchAddGroupBox
+        '
+        Me.SearchAddGroupBox.Controls.Add(Me.employeeMGMTFormAddButton)
+        Me.SearchAddGroupBox.Controls.Add(Me.addEmployeLinkLabel)
+        Me.SearchAddGroupBox.Controls.Add(Me.employeeMGMTFormSearch)
+        Me.SearchAddGroupBox.Controls.Add(Me.employeeMgmtFormSearchTxtBox)
+        Me.SearchAddGroupBox.Controls.Add(Me.employeeMgmtFormEmployeeSearch)
+        Me.SearchAddGroupBox.Location = New System.Drawing.Point(0, 310)
+        Me.SearchAddGroupBox.Name = "SearchAddGroupBox"
+        Me.SearchAddGroupBox.Size = New System.Drawing.Size(374, 153)
+        Me.SearchAddGroupBox.TabIndex = 111
+        Me.SearchAddGroupBox.TabStop = False
+        Me.SearchAddGroupBox.Visible = False
+        '
+        'employeeMGMTFormAddButton
+        '
+        Me.employeeMGMTFormAddButton.Location = New System.Drawing.Point(270, 84)
+        Me.employeeMGMTFormAddButton.Name = "employeeMGMTFormAddButton"
+        Me.employeeMGMTFormAddButton.Size = New System.Drawing.Size(102, 23)
+        Me.employeeMGMTFormAddButton.TabIndex = 18
+        Me.employeeMGMTFormAddButton.Text = "Add Employee"
+        Me.employeeMGMTFormAddButton.UseVisualStyleBackColor = True
+        '
+        'addEmployeLinkLabel
+        '
+        Me.addEmployeLinkLabel.AutoSize = True
+        Me.addEmployeLinkLabel.Location = New System.Drawing.Point(20, 89)
+        Me.addEmployeLinkLabel.Name = "addEmployeLinkLabel"
+        Me.addEmployeLinkLabel.Size = New System.Drawing.Size(235, 13)
+        Me.addEmployeLinkLabel.TabIndex = 19
+        Me.addEmployeLinkLabel.Text = "If Employee Not Found, You may Add them Now"
+        '
+        'employeeMGMTFormSearch
+        '
+        Me.employeeMGMTFormSearch.Location = New System.Drawing.Point(286, 45)
+        Me.employeeMGMTFormSearch.Name = "employeeMGMTFormSearch"
+        Me.employeeMGMTFormSearch.Size = New System.Drawing.Size(75, 23)
+        Me.employeeMGMTFormSearch.TabIndex = 17
+        Me.employeeMGMTFormSearch.Text = "Search"
+        Me.employeeMGMTFormSearch.UseVisualStyleBackColor = True
+        '
+        'employeeMgmtFormSearchTxtBox
+        '
+        Me.employeeMgmtFormSearchTxtBox.Location = New System.Drawing.Point(139, 48)
+        Me.employeeMgmtFormSearchTxtBox.Name = "employeeMgmtFormSearchTxtBox"
+        Me.employeeMgmtFormSearchTxtBox.Size = New System.Drawing.Size(121, 20)
+        Me.employeeMgmtFormSearchTxtBox.TabIndex = 16
+        '
+        'employeeMgmtFormEmployeeSearch
+        '
+        Me.employeeMgmtFormEmployeeSearch.AutoSize = True
+        Me.employeeMgmtFormEmployeeSearch.Location = New System.Drawing.Point(19, 55)
+        Me.employeeMgmtFormEmployeeSearch.Name = "employeeMgmtFormEmployeeSearch"
+        Me.employeeMgmtFormEmployeeSearch.Size = New System.Drawing.Size(108, 13)
+        Me.employeeMgmtFormEmployeeSearch.TabIndex = 15
+        Me.employeeMgmtFormEmployeeSearch.Text = "Search For Employee"
         '
         'LoginGroupBox
         '
@@ -520,14 +533,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormFirstNameLabel.TabIndex = 98
         Me.employeeMGMTFormFirstNameLabel.Text = "First Name"
         '
-        'FillBySelectedRowToolStrip
-        '
-        Me.FillBySelectedRowToolStrip.Location = New System.Drawing.Point(0, 0)
-        Me.FillBySelectedRowToolStrip.Name = "FillBySelectedRowToolStrip"
-        Me.FillBySelectedRowToolStrip.Size = New System.Drawing.Size(1028, 25)
-        Me.FillBySelectedRowToolStrip.TabIndex = 2
-        Me.FillBySelectedRowToolStrip.Text = "FillBySelectedRowToolStrip"
-        '
         'EmployeeTableAdapter
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
@@ -541,12 +546,22 @@ Partial Class EmpManagment
         Me.TableAdapterManager.EmployeePastTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'WelcomeLabel
+        '
+        Me.WelcomeLabel.AutoSize = True
+        Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WelcomeLabel.Location = New System.Drawing.Point(135, 274)
+        Me.WelcomeLabel.Name = "WelcomeLabel"
+        Me.WelcomeLabel.Size = New System.Drawing.Size(104, 24)
+        Me.WelcomeLabel.TabIndex = 111
+        Me.WelcomeLabel.Text = "Welcome!"
+        Me.WelcomeLabel.Visible = False
+        '
         'EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
-        Me.Controls.Add(Me.FillBySelectedRowToolStrip)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -556,6 +571,8 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel2.ResumeLayout(False)
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.splitContainer1.ResumeLayout(False)
+        Me.SearchAddGroupBox.ResumeLayout(False)
+        Me.SearchAddGroupBox.PerformLayout()
         Me.LoginGroupBox.ResumeLayout(False)
         Me.LoginGroupBox.PerformLayout()
         Me.EmployeeInfoGroupBox.ResumeLayout(False)
@@ -563,20 +580,13 @@ Partial Class EmpManagment
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Private WithEvents employeeMGMTFormAddButton As Button
-    Private WithEvents addEmployeLinkLabel As Label
-    Private WithEvents employeeMGMTFormSearch As Button
-    Private WithEvents employeeMgmtFormSearchTxtBox As TextBox
-    Private WithEvents employeeMgmtFormEmployeeSearch As Label
     Private WithEvents employeeSearchLabel As Label
     Private WithEvents splitContainer1 As SplitContainer
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
-    Friend WithEvents FillBySelectedRowToolStrip As ToolStrip
     Friend WithEvents TableAdapterManager As PrimaryTableAdapters.TableAdapterManager
     Friend WithEvents EmployeeInfoGroupBox As GroupBox
     Private WithEvents TextBox1 As TextBox
@@ -613,4 +623,11 @@ Partial Class EmpManagment
     Private WithEvents employeeMgmtFormUsrTxtBox As TextBox
     Private WithEvents loginformPassLabel As Label
     Private WithEvents loginFormUsrLabel As Label
+    Friend WithEvents SearchAddGroupBox As GroupBox
+    Private WithEvents employeeMGMTFormAddButton As Button
+    Private WithEvents addEmployeLinkLabel As Label
+    Private WithEvents employeeMGMTFormSearch As Button
+    Private WithEvents employeeMgmtFormSearchTxtBox As TextBox
+    Private WithEvents employeeMgmtFormEmployeeSearch As Label
+    Friend WithEvents WelcomeLabel As Label
 End Class

@@ -21,7 +21,7 @@ Public Class EmpManagment
         Me.Close()
     End Sub
 
-    Private Sub EmployeeMGMTFormAddButton_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormAddButton.Click
+    Private Sub EmployeeMGMTFormAddButton_Click(sender As Object, e As EventArgs)
         'ATTENTION: This button should navigate to AddEmployee.vb
         Dim AddEmployee = New AddEmployee()
         AddEmployee.Show()
@@ -36,7 +36,7 @@ Public Class EmpManagment
 
     Private Sub employeeMGMTFormSearch_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormSearch.Click
         'B. Rowe: We need to think through the functionality of these buttons.
-
+        Me.employTA.FillByID(Me.Primary.Employee, employeeMgmtFormSearchTxtBox.Text)
     End Sub
 
     Private Sub employeeMGMTFormEditButton_Click(sender As Object, e As EventArgs)
@@ -75,6 +75,8 @@ Public Class EmpManagment
         If VryPword = PWord Then
             EmployeeInfoGroupBox.Visible = True
             LoginGroupBox.Visible = False
+            SearchAddGroupBox.Visible = True
+            WelcomeLabel.Visible = True
         Else
             Dim MSG, style, title, response, MyString
             MSG = "The password didn't work."
