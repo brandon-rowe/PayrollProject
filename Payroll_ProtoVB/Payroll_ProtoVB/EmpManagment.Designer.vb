@@ -71,6 +71,7 @@ Partial Class EmpManagment
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.TableAdapterManager = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
+        Me.ClearBtn = New System.Windows.Forms.Button()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -252,6 +253,7 @@ Partial Class EmpManagment
         '
         'EmployeeInfoGroupBox
         '
+        Me.EmployeeInfoGroupBox.Controls.Add(Me.ClearBtn)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.SalaryTxt)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.Label1)
         Me.EmployeeInfoGroupBox.Controls.Add(Me.SSN_Txt)
@@ -345,9 +347,9 @@ Partial Class EmpManagment
         '
         'cancelBtn
         '
-        Me.cancelBtn.Location = New System.Drawing.Point(529, 371)
+        Me.cancelBtn.Location = New System.Drawing.Point(505, 387)
         Me.cancelBtn.Name = "cancelBtn"
-        Me.cancelBtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelBtn.Size = New System.Drawing.Size(118, 23)
         Me.cancelBtn.TabIndex = 97
         Me.cancelBtn.Text = "Cancel"
         Me.cancelBtn.UseVisualStyleBackColor = True
@@ -372,7 +374,7 @@ Partial Class EmpManagment
         '
         'removeEmpBtn
         '
-        Me.removeEmpBtn.Location = New System.Drawing.Point(505, 327)
+        Me.removeEmpBtn.Location = New System.Drawing.Point(505, 353)
         Me.removeEmpBtn.Name = "removeEmpBtn"
         Me.removeEmpBtn.Size = New System.Drawing.Size(118, 28)
         Me.removeEmpBtn.TabIndex = 96
@@ -381,9 +383,9 @@ Partial Class EmpManagment
         '
         'editEmpBtn
         '
-        Me.editEmpBtn.Location = New System.Drawing.Point(529, 282)
+        Me.editEmpBtn.Location = New System.Drawing.Point(505, 324)
         Me.editEmpBtn.Name = "editEmpBtn"
-        Me.editEmpBtn.Size = New System.Drawing.Size(75, 23)
+        Me.editEmpBtn.Size = New System.Drawing.Size(118, 23)
         Me.editEmpBtn.TabIndex = 95
         Me.editEmpBtn.Text = "Edit Fields"
         Me.editEmpBtn.UseVisualStyleBackColor = True
@@ -558,6 +560,15 @@ Partial Class EmpManagment
         Me.TableAdapterManager.EmployeeTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'ClearBtn
+        '
+        Me.ClearBtn.Location = New System.Drawing.Point(505, 295)
+        Me.ClearBtn.Name = "ClearBtn"
+        Me.ClearBtn.Size = New System.Drawing.Size(118, 23)
+        Me.ClearBtn.TabIndex = 111
+        Me.ClearBtn.Text = "Clear Selection"
+        Me.ClearBtn.UseVisualStyleBackColor = True
+        '
         'EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -631,4 +642,5 @@ Partial Class EmpManagment
     Private WithEvents SearchEmpTxt As TextBox
     Private WithEvents employeeMgmtFormEmployeeSearch As Label
     Friend WithEvents WelcomeLabel As Label
+    Private WithEvents ClearBtn As Button
 End Class

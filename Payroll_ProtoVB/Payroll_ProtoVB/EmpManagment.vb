@@ -62,8 +62,7 @@ Public Class EmpManagment
     Private Sub removeEmpBtn_Click(sender As Object, e As EventArgs) Handles removeEmpBtn.Click
         'This button only takes in the ID as a selector to delete the record.
 
-        ID = EmpIDTxt.Text
-        If ID = "" Then
+        If EmpIDTxt.Text = "" Then
             Dim MSG, style, title, response, MyString
             MSG = "Invalid Employee ID"
             title = "Input Error- ID"
@@ -75,6 +74,20 @@ Public Class EmpManagment
         Else
             ID = EmpIDTxt.Text
             employTA.DeleteRow(ID)
+            FnameTxt.Text = ""
+            LnameTxt.Text = ""
+            EmpIDTxt.Text = ""
+            StreetTxt.Text = ""
+            SSN_Txt.Text = ""
+            StreetTxt.Text = ""
+            PayRateTxt.Text = ""
+            SalaryTxt.Text = ""
+            MaritalStatusTxt.Text = ""
+            DependentsTxt.Text = ""
+            PositionTxt.Text = ""
+            paymentTypeCBox.Text = ""
+            PayHrsTxt.Text = ""
+            ID = 0
         End If
     End Sub
 
@@ -98,5 +111,22 @@ Public Class EmpManagment
 
     Private Sub editEmpBtn_Click(sender As Object, e As EventArgs) Handles editEmpBtn.Click
 
+    End Sub
+
+    Private Sub ClearBtn_Click(sender As Object, e As EventArgs) Handles ClearBtn.Click
+        FnameTxt.Text = ""
+        LnameTxt.Text = ""
+        EmpIDTxt.Text = ""
+        StreetTxt.Text = ""
+        SSN_Txt.Text = ""
+        StreetTxt.Text = ""
+        PayRateTxt.Text = ""
+        SalaryTxt.Text = ""
+        MaritalStatusTxt.Text = ""
+        DependentsTxt.Text = ""
+        PositionTxt.Text = ""
+        paymentTypeCBox.Text = ""
+        PayHrsTxt.Text = ""
+        ID = 0
     End Sub
 End Class
