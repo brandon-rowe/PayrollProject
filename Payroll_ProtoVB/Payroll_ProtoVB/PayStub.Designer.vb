@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PayStub
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,16 @@ Partial Class PayStub
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayStub))
         Me.PayStubGroupBox = New System.Windows.Forms.GroupBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.signatureLabel = New System.Windows.Forms.Label()
         Me.accountNumberTxtBox = New System.Windows.Forms.MaskedTextBox()
@@ -33,7 +39,6 @@ Partial Class PayStub
         Me.payPeriodLabel = New System.Windows.Forms.Label()
         Me.strtPayPeriodDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.empAddyMTxtBox = New System.Windows.Forms.MaskedTextBox()
-        Me.empNameMTxtBox = New System.Windows.Forms.MaskedTextBox()
         Me.payNumMTxtBox = New System.Windows.Forms.MaskedTextBox()
         Me.payStrMTxtBox = New System.Windows.Forms.MaskedTextBox()
         Me.DOLLARSLabel = New System.Windows.Forms.Label()
@@ -63,13 +68,29 @@ Partial Class PayStub
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.printStubBTN = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.EmployeeFutureBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeFutureTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
+        Me.EmployeePastTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeePastTableAdapter()
+        Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.PayStubGroupBox.SuspendLayout()
         Me.menueStrip.SuspendLayout()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PayStubGroupBox
         '
         Me.PayStubGroupBox.BackColor = System.Drawing.SystemColors.Control
+        Me.PayStubGroupBox.Controls.Add(Me.TextBox5)
+        Me.PayStubGroupBox.Controls.Add(Me.TextBox4)
+        Me.PayStubGroupBox.Controls.Add(Me.TextBox2)
+        Me.PayStubGroupBox.Controls.Add(Me.TextBox3)
+        Me.PayStubGroupBox.Controls.Add(Me.TextBox1)
         Me.PayStubGroupBox.Controls.Add(Me.Label1)
         Me.PayStubGroupBox.Controls.Add(Me.signatureLabel)
         Me.PayStubGroupBox.Controls.Add(Me.accountNumberTxtBox)
@@ -79,7 +100,6 @@ Partial Class PayStub
         Me.PayStubGroupBox.Controls.Add(Me.payPeriodLabel)
         Me.PayStubGroupBox.Controls.Add(Me.strtPayPeriodDatePicker)
         Me.PayStubGroupBox.Controls.Add(Me.empAddyMTxtBox)
-        Me.PayStubGroupBox.Controls.Add(Me.empNameMTxtBox)
         Me.PayStubGroupBox.Controls.Add(Me.payNumMTxtBox)
         Me.PayStubGroupBox.Controls.Add(Me.payStrMTxtBox)
         Me.PayStubGroupBox.Controls.Add(Me.DOLLARSLabel)
@@ -102,6 +122,55 @@ Partial Class PayStub
         Me.PayStubGroupBox.TabIndex = 4
         Me.PayStubGroupBox.TabStop = False
         Me.PayStubGroupBox.Text = "PayStub"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Font = New System.Drawing.Font("Mistral", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(455, 191)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(81, 24)
+        Me.TextBox5.TabIndex = 29
+        Me.TextBox5.Text = "Bob Burger"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(581, 19)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(20, 20)
+        Me.TextBox4.TabIndex = 28
+        Me.TextBox4.Text = "0"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(125, 173)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(52, 20)
+        Me.TextBox2.TabIndex = 27
+        Me.TextBox2.Text = "Last Name"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Location = New System.Drawing.Point(67, 173)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(52, 20)
+        Me.TextBox3.TabIndex = 26
+        Me.TextBox3.Text = "First Name"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(233, 103)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(52, 20)
+        Me.TextBox1.TabIndex = 25
+        Me.TextBox1.Text = "Last Name"
         '
         'Label1
         '
@@ -132,6 +201,7 @@ Partial Class PayStub
         Me.accountNumberTxtBox.Size = New System.Drawing.Size(235, 20)
         Me.accountNumberTxtBox.TabIndex = 22
         Me.accountNumberTxtBox.Text = "Acc Num: 0242528735571L0008993"
+        Me.accountNumberTxtBox.Visible = False
         '
         'endPayPeriodDatePicker
         '
@@ -193,19 +263,9 @@ Partial Class PayStub
         Me.empAddyMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.empAddyMTxtBox.Location = New System.Drawing.Point(67, 199)
         Me.empAddyMTxtBox.Name = "empAddyMTxtBox"
-        Me.empAddyMTxtBox.Size = New System.Drawing.Size(100, 20)
+        Me.empAddyMTxtBox.Size = New System.Drawing.Size(236, 20)
         Me.empAddyMTxtBox.TabIndex = 16
         Me.empAddyMTxtBox.Text = "Employee Address"
-        '
-        'empNameMTxtBox
-        '
-        Me.empNameMTxtBox.Enabled = False
-        Me.empNameMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.empNameMTxtBox.Location = New System.Drawing.Point(67, 173)
-        Me.empNameMTxtBox.Name = "empNameMTxtBox"
-        Me.empNameMTxtBox.Size = New System.Drawing.Size(100, 20)
-        Me.empNameMTxtBox.TabIndex = 15
-        Me.empNameMTxtBox.Text = "Employee Name"
         '
         'payNumMTxtBox
         '
@@ -264,9 +324,9 @@ Partial Class PayStub
         Me.empNameTxtBox.Enabled = False
         Me.empNameTxtBox.Location = New System.Drawing.Point(175, 103)
         Me.empNameTxtBox.Name = "empNameTxtBox"
-        Me.empNameTxtBox.Size = New System.Drawing.Size(100, 20)
+        Me.empNameTxtBox.Size = New System.Drawing.Size(52, 20)
         Me.empNameTxtBox.TabIndex = 9
-        Me.empNameTxtBox.Text = "Employee Name"
+        Me.empNameTxtBox.Text = "First Name"
         '
         'payToOrderEmployeeNameLabel
         '
@@ -311,37 +371,37 @@ Partial Class PayStub
         Me.prntDatePicker.Name = "prntDatePicker"
         Me.prntDatePicker.Size = New System.Drawing.Size(83, 20)
         Me.prntDatePicker.TabIndex = 5
-        Me.prntDatePicker.Value = New Date(2019, 10, 6, 0, 0, 0, 0)
+        Me.prntDatePicker.Value = New Date(2019, 11, 20, 0, 0, 0, 0)
         '
         'RefNumMTxtBox
         '
         Me.RefNumMTxtBox.Enabled = False
         Me.RefNumMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RefNumMTxtBox.Location = New System.Drawing.Point(462, 31)
+        Me.RefNumMTxtBox.Location = New System.Drawing.Point(513, 19)
         Me.RefNumMTxtBox.Name = "RefNumMTxtBox"
-        Me.RefNumMTxtBox.Size = New System.Drawing.Size(111, 20)
+        Me.RefNumMTxtBox.Size = New System.Drawing.Size(62, 20)
         Me.RefNumMTxtBox.TabIndex = 4
-        Me.RefNumMTxtBox.Text = "Ref Num: 024252"
+        Me.RefNumMTxtBox.Text = "Check #:"
         '
         'bankAddyMTxtBox
         '
         Me.bankAddyMTxtBox.Enabled = False
         Me.bankAddyMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bankAddyMTxtBox.Location = New System.Drawing.Point(245, 45)
+        Me.bankAddyMTxtBox.Location = New System.Drawing.Point(214, 45)
         Me.bankAddyMTxtBox.Name = "bankAddyMTxtBox"
-        Me.bankAddyMTxtBox.Size = New System.Drawing.Size(100, 20)
+        Me.bankAddyMTxtBox.Size = New System.Drawing.Size(211, 20)
         Me.bankAddyMTxtBox.TabIndex = 3
-        Me.bankAddyMTxtBox.Text = "Bank Address"
+        Me.bankAddyMTxtBox.Text = "2344 Lincoln Ave. Spartanburg, SC 29316"
         '
         'bankNameMTxtBox
         '
         Me.bankNameMTxtBox.Enabled = False
         Me.bankNameMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bankNameMTxtBox.Location = New System.Drawing.Point(245, 19)
+        Me.bankNameMTxtBox.Location = New System.Drawing.Point(214, 19)
         Me.bankNameMTxtBox.Name = "bankNameMTxtBox"
-        Me.bankNameMTxtBox.Size = New System.Drawing.Size(100, 20)
+        Me.bankNameMTxtBox.Size = New System.Drawing.Size(114, 20)
         Me.bankNameMTxtBox.TabIndex = 2
-        Me.bankNameMTxtBox.Text = "Bank Name"
+        Me.bankNameMTxtBox.Text = "United Union Bank"
         '
         'companyAddyMTxtBox
         '
@@ -349,9 +409,9 @@ Partial Class PayStub
         Me.companyAddyMTxtBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.companyAddyMTxtBox.Location = New System.Drawing.Point(9, 45)
         Me.companyAddyMTxtBox.Name = "companyAddyMTxtBox"
-        Me.companyAddyMTxtBox.Size = New System.Drawing.Size(100, 20)
+        Me.companyAddyMTxtBox.Size = New System.Drawing.Size(181, 20)
         Me.companyAddyMTxtBox.TabIndex = 1
-        Me.companyAddyMTxtBox.Text = "Company Address"
+        Me.companyAddyMTxtBox.Text = "452 Newt Lane Chesnee, SC 29323"
         '
         'companyNameMTxtBox
         '
@@ -361,7 +421,7 @@ Partial Class PayStub
         Me.companyNameMTxtBox.Name = "companyNameMTxtBox"
         Me.companyNameMTxtBox.Size = New System.Drawing.Size(100, 20)
         Me.companyNameMTxtBox.TabIndex = 0
-        Me.companyNameMTxtBox.Text = "Company Name"
+        Me.companyNameMTxtBox.Text = "Bob's Company"
         '
         'metricsTstripBTN
         '
@@ -477,6 +537,38 @@ Partial Class PayStub
         Me.Cancel.Text = "Cancel"
         Me.Cancel.UseVisualStyleBackColor = True
         '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeFutureBindingSource
+        '
+        Me.EmployeeFutureBindingSource.DataMember = "EmployeeFuture"
+        Me.EmployeeFutureBindingSource.DataSource = Me.Primary
+        '
+        'EmployeeFutureTableAdapter
+        '
+        Me.EmployeeFutureTableAdapter.ClearBeforeFill = True
+        '
+        'EmployeePastTableAdapter1
+        '
+        Me.EmployeePastTableAdapter1.ClearBeforeFill = True
+        '
+        'EmployeePastBindingSource
+        '
+        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
+        Me.EmployeePastBindingSource.DataSource = Me.Primary
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
         'PayStub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -494,6 +586,10 @@ Partial Class PayStub
         Me.PayStubGroupBox.PerformLayout()
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -508,7 +604,6 @@ Partial Class PayStub
     Friend WithEvents payPeriodLabel As Label
     Friend WithEvents strtPayPeriodDatePicker As DateTimePicker
     Friend WithEvents empAddyMTxtBox As MaskedTextBox
-    Friend WithEvents empNameMTxtBox As MaskedTextBox
     Friend WithEvents payNumMTxtBox As MaskedTextBox
     Friend WithEvents payStrMTxtBox As MaskedTextBox
     Friend WithEvents DOLLARSLabel As Label
@@ -538,4 +633,16 @@ Partial Class PayStub
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents ExitBtn As ToolStripButton
     Friend WithEvents Cancel As Button
+    Friend WithEvents Primary As Primary
+    Friend WithEvents EmployeeFutureBindingSource As BindingSource
+    Friend WithEvents EmployeeFutureTableAdapter As PrimaryTableAdapters.EmployeeFutureTableAdapter
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents EmployeePastTableAdapter1 As PrimaryTableAdapters.EmployeePastTableAdapter
+    Friend WithEvents EmployeePastBindingSource As BindingSource
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents EmployeeBindingSource As BindingSource
+    Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
 End Class

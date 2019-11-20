@@ -68,7 +68,13 @@ Public Class Payroll
 
     Private Sub PayStubBTN_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
         'ATTENTION: This button should navigate to PayStub.vb
-        PayStub.Show()
+        If TabControl.SelectedTab Is PastPayTab Then
+            Dim PayStub = New PayStub(PayrollDataGridViewPast.CurrentRow.Cells(1).Value, "past")
+            PayStub.Show()
+        Else
+            Dim PayStub = New PayStub(PayrollDataGridViewFuture.CurrentRow.Cells(1).Value, "future")
+            PayStub.Show()
+        End If
         Me.Close()
     End Sub
 
