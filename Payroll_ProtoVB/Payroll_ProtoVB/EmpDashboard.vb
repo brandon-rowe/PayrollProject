@@ -11,9 +11,10 @@ Public Class EmpDashboard
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
         Dim tbm As New TableAdapterManager
-        Me.Validate()
-        Me.EmployeeBindingSource.EndEdit()
-        Me.TableAdapterManager1.UpdateAll(Me.Primary)
+        ' Me.Validate()
+        'Me.EmployeeBindingSource.EndEdit()
+        'Me.TableAdapterManager1.UpdateAll(Me.Primary)
+        employTA.Adapter.Update(Me.Primary)
     End Sub
 
     Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
@@ -54,5 +55,6 @@ Public Class EmpDashboard
         End If
     End Sub
 
-
+    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
+    End Sub
 End Class
