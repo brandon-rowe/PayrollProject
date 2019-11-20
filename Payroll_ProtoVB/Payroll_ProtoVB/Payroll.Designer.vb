@@ -43,20 +43,10 @@ Partial Class Payroll
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.PastPayTab = New System.Windows.Forms.TabPage()
         Me.PayrollDataGridViewPast = New System.Windows.Forms.DataGridView()
-        Me.PaymentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        'Me.FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        'Me.FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeePastBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.FuturePayTab = New System.Windows.Forms.TabPage()
         Me.PayrollDataGridViewFuture = New System.Windows.Forms.DataGridView()
-        Me.PaymentIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeFutureBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeePastBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeFutureBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -86,6 +76,18 @@ Partial Class Payroll
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.clearBtn = New System.Windows.Forms.Button()
+        Me.PaymentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PaymentIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menueStrip.SuspendLayout()
         Me.TabControl.SuspendLayout()
         Me.PastPayTab.SuspendLayout()
@@ -259,48 +261,12 @@ Partial Class Payroll
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.PayrollDataGridViewPast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource2
         Me.PayrollDataGridViewPast.Location = New System.Drawing.Point(-3, -3)
         Me.PayrollDataGridViewPast.Name = "PayrollDataGridViewPast"
         Me.PayrollDataGridViewPast.Size = New System.Drawing.Size(796, 307)
         Me.PayrollDataGridViewPast.TabIndex = 1
-        '
-        'PaymentIDDataGridViewTextBoxColumn
-        '
-        Me.PaymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID"
-        Me.PaymentIDDataGridViewTextBoxColumn.HeaderText = "Payment ID"
-        Me.PaymentIDDataGridViewTextBoxColumn.Name = "PaymentIDDataGridViewTextBoxColumn"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Employee ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "date"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "amount"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'fname
-        '
-        'Me.fname.DataPropertyName = "fname"
-        'Me.fname.HeaderText = "fname"
-        'Me.fname.Name = "fname"
-        '
-        'lname
-        '
-        'Me.lname.DataPropertyName = "lname"
-        'Me.lname.HeaderText = "lname"
-        'Me.lname.Name = "lname"
         '
         'EmployeePastBindingSource2
         '
@@ -328,36 +294,12 @@ Partial Class Payroll
         Me.PayrollDataGridViewFuture.AutoGenerateColumns = False
         Me.PayrollDataGridViewFuture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PayrollDataGridViewFuture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PayrollDataGridViewFuture.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
+        Me.PayrollDataGridViewFuture.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.PayrollDataGridViewFuture.DataSource = Me.EmployeeFutureBindingSource1
         Me.PayrollDataGridViewFuture.Location = New System.Drawing.Point(0, 0)
         Me.PayrollDataGridViewFuture.Name = "PayrollDataGridViewFuture"
         Me.PayrollDataGridViewFuture.Size = New System.Drawing.Size(787, 307)
         Me.PayrollDataGridViewFuture.TabIndex = 0
-        '
-        'PaymentIDDataGridViewTextBoxColumn1
-        '
-        Me.PaymentIDDataGridViewTextBoxColumn1.DataPropertyName = "PaymentID"
-        Me.PaymentIDDataGridViewTextBoxColumn1.HeaderText = "Payment ID"
-        Me.PaymentIDDataGridViewTextBoxColumn1.Name = "PaymentIDDataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ID"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Employee ID"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "date"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Date"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "amount"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
         'EmployeeFutureBindingSource1
         '
@@ -524,7 +466,6 @@ Partial Class Payroll
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -575,6 +516,78 @@ Partial Class Payroll
         Me.clearBtn.TabIndex = 26
         Me.clearBtn.Text = "Clear Selection"
         Me.clearBtn.UseVisualStyleBackColor = True
+        '
+        'PaymentIDDataGridViewTextBoxColumn
+        '
+        Me.PaymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID"
+        Me.PaymentIDDataGridViewTextBoxColumn.HeaderText = "Payment ID"
+        Me.PaymentIDDataGridViewTextBoxColumn.Name = "PaymentIDDataGridViewTextBoxColumn"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Employee ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "fname"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "First Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "lname"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "date"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "amount"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'PaymentIDDataGridViewTextBoxColumn1
+        '
+        Me.PaymentIDDataGridViewTextBoxColumn1.DataPropertyName = "PaymentID"
+        Me.PaymentIDDataGridViewTextBoxColumn1.HeaderText = "Payment ID"
+        Me.PaymentIDDataGridViewTextBoxColumn1.Name = "PaymentIDDataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Employee ID"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "fname"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "First Name"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "lname"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "date"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "amount"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
         'Payroll
         '
@@ -650,14 +663,6 @@ Partial Class Payroll
     Friend WithEvents EmployeePastTableAdapter As PrimaryTableAdapters.EmployeePastTableAdapter
     Friend WithEvents EmployeeFutureBindingSource1 As BindingSource
     Friend WithEvents EmployeeFutureTableAdapter As PrimaryTableAdapters.EmployeeFutureTableAdapter
-    Friend WithEvents PaymentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents PaymentIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
@@ -687,4 +692,16 @@ Partial Class Payroll
     Friend WithEvents fname As DataGridViewTextBoxColumn
     Friend WithEvents lname As DataGridViewTextBoxColumn
     Friend WithEvents clearBtn As Button
+    Friend WithEvents PaymentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents PaymentIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
 End Class

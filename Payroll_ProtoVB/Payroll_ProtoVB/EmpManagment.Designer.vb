@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class EmpManagment
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class EmpManagment
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.employeeMGMTPayableHrsLabel = New System.Windows.Forms.Label()
         Me.PayHrsTxt = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormRmvEmployeeButton = New System.Windows.Forms.Button()
@@ -45,6 +46,8 @@ Partial Class EmpManagment
         Me.employeeMGMTFormStateLabel = New System.Windows.Forms.Label()
         Me.StreetTxt = New System.Windows.Forms.TextBox()
         Me.FnameTxt = New System.Windows.Forms.TextBox()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.employeeMGMTFormAddyLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormAddButton = New System.Windows.Forms.Button()
@@ -64,6 +67,11 @@ Partial Class EmpManagment
         Me.EmpIDTxt = New System.Windows.Forms.TextBox()
         Me.EmpIDLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormCancelButton2 = New System.Windows.Forms.Button()
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.FillBySelectedRowToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.TableAdapterManager = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -262,10 +270,21 @@ Partial Class EmpManagment
         '
         'FnameTxt
         '
+        Me.FnameTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "fname", True))
         Me.FnameTxt.Location = New System.Drawing.Point(145, 24)
         Me.FnameTxt.Name = "FnameTxt"
         Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
         Me.FnameTxt.TabIndex = 0
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'employeeMGMTFormAddyLabel
         '
@@ -400,6 +419,7 @@ Partial Class EmpManagment
         '
         'splitContainer1.Panel2
         '
+        Me.splitContainer1.Panel2.AutoScroll = True
         Me.splitContainer1.Panel2.Controls.Add(Me.SSN_Txt)
         Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDLabel)
@@ -489,15 +509,39 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton2.Text = "Cancel"
         Me.employeeMGMTFormCancelButton2.UseVisualStyleBackColor = True
         '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'FillBySelectedRowToolStrip
+        '
+        Me.FillBySelectedRowToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.FillBySelectedRowToolStrip.Name = "FillBySelectedRowToolStrip"
+        Me.FillBySelectedRowToolStrip.Size = New System.Drawing.Size(1028, 25)
+        Me.FillBySelectedRowToolStrip.TabIndex = 2
+        Me.FillBySelectedRowToolStrip.Text = "FillBySelectedRowToolStrip"
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AdminTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.EmployeeFutureTableAdapter = Nothing
+        Me.TableAdapterManager.EmployeePastTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'EmpManagment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
+        Me.Controls.Add(Me.FillBySelectedRowToolStrip)
         Me.Controls.Add(Me.splitContainer1)
         Me.Name = "EmpManagment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EmpManagementForm"
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.splitContainer1.Panel1.ResumeLayout(False)
         Me.splitContainer1.Panel1.PerformLayout()
         Me.splitContainer1.Panel2.ResumeLayout(False)
@@ -505,6 +549,7 @@ Partial Class EmpManagment
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.splitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -550,4 +595,9 @@ Partial Class EmpManagment
     Private WithEvents EmpIDLabel As Label
     Private WithEvents loginPwTxt As MaskedTextBox
     Private WithEvents SSN_Txt As MaskedTextBox
+    Friend WithEvents Primary As Primary
+    Friend WithEvents EmployeeBindingSource As BindingSource
+    Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
+    Friend WithEvents FillBySelectedRowToolStrip As ToolStrip
+    Friend WithEvents TableAdapterManager As PrimaryTableAdapters.TableAdapterManager
 End Class

@@ -5,6 +5,12 @@ Public Class EmpManagment
     Inherits System.Windows.Forms.Form
     Dim employTA As New EmployeeTableAdapter
     Dim ID As Integer
+    Dim Row As Integer
+
+    Public Sub New(nRow As Integer)
+        InitializeComponent()
+        Row = nRow
+    End Sub
 
     Private Sub EmployeeMGMTFormCancelButton1_Click(sender As Object, e As EventArgs) Handles employeeMGMTFormCancelButton1.Click
         'ATTENTION: This button should navigate to EmpDashboard.vb
@@ -41,4 +47,8 @@ Public Class EmpManagment
         employTA.DeleteRow(ID)
     End Sub
 
+    Private Sub EmpManagment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
+        Me.employTA.FillBySelectedRow(Me.Primary.Employee, Row)
+    End Sub
 End Class
