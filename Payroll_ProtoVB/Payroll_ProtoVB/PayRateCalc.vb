@@ -35,6 +35,10 @@
         EmployeeTableAdapter.Adapter.Update(Me.Primary)
     End Sub
 
+    Private Sub menueStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles menueStrip.ItemClicked
+
+    End Sub
+
 
     ' Moved Test Calculation to PayRateLogic.vb for testing purposes
     ' Also we should decouple as much logic away from UI as possible (see MVC architecture)
