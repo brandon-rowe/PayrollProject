@@ -38,6 +38,8 @@ Partial Class PaymentRecord
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.EmployeeIDTxtBox = New System.Windows.Forms.TextBox()
+        Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.EmployeeIDLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormLastNameTxtBox = New System.Windows.Forms.TextBox()
         Me.employeeMGMTFormLastNameLabel = New System.Windows.Forms.Label()
@@ -46,10 +48,10 @@ Partial Class PaymentRecord
         Me.dataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PaymentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.endPayPeriodDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.dateDashLabel = New System.Windows.Forms.Label()
         Me.strtPayPeriodDatePicker = New System.Windows.Forms.DateTimePicker()
@@ -60,9 +62,9 @@ Partial Class PaymentRecord
         Me.backBTN = New System.Windows.Forms.Button()
         Me.EmployeePastTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeePastTableAdapter()
         Me.menueStrip.SuspendLayout()
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menueStrip
@@ -164,10 +166,21 @@ Partial Class PaymentRecord
         'EmployeeIDTxtBox
         '
         Me.EmployeeIDTxtBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.EmployeeIDTxtBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeePastBindingSource, "ID", True))
         Me.EmployeeIDTxtBox.Location = New System.Drawing.Point(251, 31)
         Me.EmployeeIDTxtBox.Name = "EmployeeIDTxtBox"
         Me.EmployeeIDTxtBox.Size = New System.Drawing.Size(121, 20)
         Me.EmployeeIDTxtBox.TabIndex = 84
+        '
+        'EmployeePastBindingSource
+        '
+        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
+        Me.EmployeePastBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'EmployeeIDLabel
         '
@@ -181,6 +194,7 @@ Partial Class PaymentRecord
         '
         'employeeMGMTFormLastNameTxtBox
         '
+        Me.employeeMGMTFormLastNameTxtBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeePastBindingSource, "lname", True))
         Me.employeeMGMTFormLastNameTxtBox.Location = New System.Drawing.Point(252, 97)
         Me.employeeMGMTFormLastNameTxtBox.Name = "employeeMGMTFormLastNameTxtBox"
         Me.employeeMGMTFormLastNameTxtBox.Size = New System.Drawing.Size(121, 20)
@@ -198,6 +212,7 @@ Partial Class PaymentRecord
         '
         'employeeMGMTFormFirstNameTxtBox
         '
+        Me.employeeMGMTFormFirstNameTxtBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeePastBindingSource, "fname", True))
         Me.employeeMGMTFormFirstNameTxtBox.Location = New System.Drawing.Point(252, 65)
         Me.employeeMGMTFormFirstNameTxtBox.Name = "employeeMGMTFormFirstNameTxtBox"
         Me.employeeMGMTFormFirstNameTxtBox.Size = New System.Drawing.Size(121, 20)
@@ -226,7 +241,7 @@ Partial Class PaymentRecord
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.IDDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn})
+        Me.dataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.IDDataGridViewTextBoxColumn, Me.fname, Me.lname, Me.DateDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn})
         Me.dataGridView1.DataSource = Me.EmployeePastBindingSource
         Me.dataGridView1.GridColor = System.Drawing.Color.Teal
         Me.dataGridView1.Location = New System.Drawing.Point(398, 31)
@@ -246,6 +261,18 @@ Partial Class PaymentRecord
         Me.IDDataGridViewTextBoxColumn.HeaderText = "Employee ID"
         Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
         '
+        'fname
+        '
+        Me.fname.DataPropertyName = "fname"
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        '
+        'lname
+        '
+        Me.lname.DataPropertyName = "lname"
+        Me.lname.HeaderText = "Last Name"
+        Me.lname.Name = "lname"
+        '
         'DateDataGridViewTextBoxColumn
         '
         Me.DateDataGridViewTextBoxColumn.DataPropertyName = "date"
@@ -258,16 +285,6 @@ Partial Class PaymentRecord
         Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
         Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
         '
-        'EmployeePastBindingSource
-        '
-        Me.EmployeePastBindingSource.DataMember = "EmployeePast"
-        Me.EmployeePastBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'endPayPeriodDatePicker
         '
         Me.endPayPeriodDatePicker.CustomFormat = "MM/dd/yy"
@@ -277,7 +294,7 @@ Partial Class PaymentRecord
         Me.endPayPeriodDatePicker.Name = "endPayPeriodDatePicker"
         Me.endPayPeriodDatePicker.Size = New System.Drawing.Size(83, 20)
         Me.endPayPeriodDatePicker.TabIndex = 92
-        Me.endPayPeriodDatePicker.Value = New Date(2019, 10, 6, 0, 0, 0, 0)
+        Me.endPayPeriodDatePicker.Value = New Date(2019, 11, 19, 0, 0, 0, 0)
         '
         'dateDashLabel
         '
@@ -378,9 +395,9 @@ Partial Class PaymentRecord
         Me.Text = "DetailedPaymentRecordForm"
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -412,12 +429,14 @@ Partial Class PaymentRecord
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeePastBindingSource As BindingSource
     Friend WithEvents EmployeePastTableAdapter As PrimaryTableAdapters.EmployeePastTableAdapter
-    Friend WithEvents PaymentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents ExitBtn As ToolStripButton
+    Friend WithEvents PaymentIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lname As DataGridViewTextBoxColumn
+    Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

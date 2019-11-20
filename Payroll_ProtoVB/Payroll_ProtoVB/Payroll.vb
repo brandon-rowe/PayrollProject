@@ -56,7 +56,13 @@ Public Class Payroll
         Me.Close()
     End Sub
     Private Sub PaymentRecordBTN_Click(sender As Object, e As EventArgs) Handles PaymentRecordBTN.Click
-        PaymentRecord.Show()
+        If TabControl.SelectedTab Is PastPayTab Then
+            Dim PaymentRecord = New PaymentRecord(PayrollDataGridViewPast.CurrentRow.Cells(1).Value)
+            PaymentRecord.Show()
+        Else
+            Dim PaymentRecord = New PaymentRecord(PayrollDataGridViewFuture.CurrentRow.Cells(1).Value)
+            PaymentRecord.Show()
+        End If
         Me.Close()
     End Sub
 

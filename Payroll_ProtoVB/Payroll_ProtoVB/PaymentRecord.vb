@@ -1,9 +1,13 @@
 ﻿Public Class PaymentRecord
 
+    Dim ID As String
+    Public Sub New(nID As Integer)
+        InitializeComponent()
+        ID = nID
+    End Sub
     Private Sub PaymentRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
-        Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
-
+        Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
     End Sub
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
         Me.Refresh()
@@ -35,5 +39,9 @@
     Private Sub BackBTN_Click(sender As Object, e As EventArgs) Handles backBTN.Click
         Payroll.Show()
         Me.Close()
+    End Sub
+
+    Private Sub populateTabelBTN_Click(sender As Object, e As EventArgs) Handles populateTabelBTN.Click
+        Me.EmployeePastTableAdapter.FillByDate(Me.Primary.EmployeePast, strtPayPeriodDatePicker.Value, endPayPeriodDatePicker.Value, ID)
     End Sub
 End Class
