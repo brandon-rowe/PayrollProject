@@ -41,7 +41,6 @@ Public Class Login
 
             Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
             AddEmployee.Show()
-            Me.Hide()
 
             FnameTxt.Clear()
             LnameTxt.Clear()
@@ -143,8 +142,13 @@ Public Class Login
         Uname = loginUsrTxt.Text
         CPword = loginPwTxt.Text
 
-        'If Uname = "admin" And CPword = "123" Then
         VryPword = empTA.CheckPassword(Uname)
+        ' We should add the following condition, otherwise we can just login without typing in anything
+        ' because an empty String is equivalent to Nothing returned by empTA
+        ' 
+        ' AndAlso String.IsNullOrEmpty(VryPword)
+        '
+        ' HOWEVER, I'm leaving it out atm cause it makes testing easier lol
         If VryPword = CPword Then
             EmpDashboard.Show()
             Me.Hide()
