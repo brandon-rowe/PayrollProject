@@ -18,7 +18,7 @@ Public Class EmpDashboard
 
     Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
         'ATTENTION: This button should navigate to EmpManagement.vb
-        Dim EmpManagment = New EmpManagment(5)
+        Dim EmpManagment = New EmpManagment(DataGridView1.CurrentRow.Index + 1)
         EmpManagment.Show()
         Me.Close()
     End Sub

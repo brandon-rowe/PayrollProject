@@ -25,6 +25,8 @@ Partial Class EmpManagment
         Me.components = New System.ComponentModel.Container()
         Me.employeeMGMTPayableHrsLabel = New System.Windows.Forms.Label()
         Me.PayHrsTxt = New System.Windows.Forms.TextBox()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.employeeMGMTFormRmvEmployeeButton = New System.Windows.Forms.Button()
         Me.employeeMGMTFormEditButton = New System.Windows.Forms.Button()
         Me.PayRateTxt = New System.Windows.Forms.TextBox()
@@ -40,14 +42,8 @@ Partial Class EmpManagment
         Me.SSN_Label = New System.Windows.Forms.Label()
         Me.LnameTxt = New System.Windows.Forms.TextBox()
         Me.LnameLabel = New System.Windows.Forms.Label()
-        Me.ZipTxt = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormZipLabel = New System.Windows.Forms.Label()
-        Me.StateTxt = New System.Windows.Forms.TextBox()
-        Me.employeeMGMTFormStateLabel = New System.Windows.Forms.Label()
         Me.StreetTxt = New System.Windows.Forms.TextBox()
         Me.FnameTxt = New System.Windows.Forms.TextBox()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.employeeMGMTFormAddyLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormAddButton = New System.Windows.Forms.Button()
@@ -63,6 +59,8 @@ Partial Class EmpManagment
         Me.splitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.loginPwTxt = New System.Windows.Forms.MaskedTextBox()
         Me.employeeMGMTFormCancelButton1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
         Me.EmpIDTxt = New System.Windows.Forms.TextBox()
         Me.EmpIDLabel = New System.Windows.Forms.Label()
@@ -90,10 +88,21 @@ Partial Class EmpManagment
         '
         'PayHrsTxt
         '
+        Me.PayHrsTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hoursworked", True))
         Me.PayHrsTxt.Location = New System.Drawing.Point(525, 209)
         Me.PayHrsTxt.Name = "PayHrsTxt"
         Me.PayHrsTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayHrsTxt.TabIndex = 12
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'employeeMGMTFormRmvEmployeeButton
         '
@@ -115,7 +124,8 @@ Partial Class EmpManagment
         '
         'PayRateTxt
         '
-        Me.PayRateTxt.Location = New System.Drawing.Point(145, 263)
+        Me.PayRateTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hourlyrate", True))
+        Me.PayRateTxt.Location = New System.Drawing.Point(145, 201)
         Me.PayRateTxt.Name = "PayRateTxt"
         Me.PayRateTxt.Size = New System.Drawing.Size(121, 20)
         Me.PayRateTxt.TabIndex = 7
@@ -124,14 +134,15 @@ Partial Class EmpManagment
         '
         Me.employeeMGMTFormWageRateLabel.AutoSize = True
         Me.employeeMGMTFormWageRateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormWageRateLabel.Location = New System.Drawing.Point(17, 263)
+        Me.employeeMGMTFormWageRateLabel.Location = New System.Drawing.Point(17, 201)
         Me.employeeMGMTFormWageRateLabel.Name = "employeeMGMTFormWageRateLabel"
-        Me.employeeMGMTFormWageRateLabel.Size = New System.Drawing.Size(99, 20)
+        Me.employeeMGMTFormWageRateLabel.Size = New System.Drawing.Size(104, 20)
         Me.employeeMGMTFormWageRateLabel.TabIndex = 76
-        Me.employeeMGMTFormWageRateLabel.Text = "Wage Rate"
+        Me.employeeMGMTFormWageRateLabel.Text = "Hourly Rate"
         '
         'DependentsTxt
         '
+        Me.DependentsTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "dependents", True))
         Me.DependentsTxt.Location = New System.Drawing.Point(525, 68)
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
@@ -149,6 +160,7 @@ Partial Class EmpManagment
         '
         'MaritalStatusTxt
         '
+        Me.MaritalStatusTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "maritalstatus", True))
         Me.MaritalStatusTxt.Location = New System.Drawing.Point(525, 24)
         Me.MaritalStatusTxt.Name = "MaritalStatusTxt"
         Me.MaritalStatusTxt.Size = New System.Drawing.Size(121, 20)
@@ -176,6 +188,7 @@ Partial Class EmpManagment
         '
         'paymentTypeCBox
         '
+        Me.paymentTypeCBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "salaried", True))
         Me.paymentTypeCBox.FormattingEnabled = True
         Me.paymentTypeCBox.Items.AddRange(New Object() {"Salary", "Hourly"})
         Me.paymentTypeCBox.Location = New System.Drawing.Point(525, 163)
@@ -185,6 +198,7 @@ Partial Class EmpManagment
         '
         'PositionTxt
         '
+        Me.PositionTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "title", True))
         Me.PositionTxt.Location = New System.Drawing.Point(525, 110)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
@@ -204,7 +218,7 @@ Partial Class EmpManagment
         '
         Me.SSN_Label.AutoSize = True
         Me.SSN_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SSN_Label.Location = New System.Drawing.Point(17, 229)
+        Me.SSN_Label.Location = New System.Drawing.Point(17, 167)
         Me.SSN_Label.Name = "SSN_Label"
         Me.SSN_Label.Size = New System.Drawing.Size(45, 20)
         Me.SSN_Label.TabIndex = 66
@@ -212,6 +226,7 @@ Partial Class EmpManagment
         '
         'LnameTxt
         '
+        Me.LnameTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "lname", True))
         Me.LnameTxt.Location = New System.Drawing.Point(145, 56)
         Me.LnameTxt.Name = "LnameTxt"
         Me.LnameTxt.Size = New System.Drawing.Size(121, 20)
@@ -227,42 +242,9 @@ Partial Class EmpManagment
         Me.LnameLabel.TabIndex = 64
         Me.LnameLabel.Text = "Last Name"
         '
-        'ZipTxt
-        '
-        Me.ZipTxt.Location = New System.Drawing.Point(145, 197)
-        Me.ZipTxt.Name = "ZipTxt"
-        Me.ZipTxt.Size = New System.Drawing.Size(121, 20)
-        Me.ZipTxt.TabIndex = 5
-        '
-        'employeeMGMTFormZipLabel
-        '
-        Me.employeeMGMTFormZipLabel.AutoSize = True
-        Me.employeeMGMTFormZipLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormZipLabel.Location = New System.Drawing.Point(17, 195)
-        Me.employeeMGMTFormZipLabel.Name = "employeeMGMTFormZipLabel"
-        Me.employeeMGMTFormZipLabel.Size = New System.Drawing.Size(34, 20)
-        Me.employeeMGMTFormZipLabel.TabIndex = 62
-        Me.employeeMGMTFormZipLabel.Text = "Zip"
-        '
-        'StateTxt
-        '
-        Me.StateTxt.Location = New System.Drawing.Point(145, 168)
-        Me.StateTxt.Name = "StateTxt"
-        Me.StateTxt.Size = New System.Drawing.Size(148, 20)
-        Me.StateTxt.TabIndex = 4
-        '
-        'employeeMGMTFormStateLabel
-        '
-        Me.employeeMGMTFormStateLabel.AutoSize = True
-        Me.employeeMGMTFormStateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employeeMGMTFormStateLabel.Location = New System.Drawing.Point(17, 166)
-        Me.employeeMGMTFormStateLabel.Name = "employeeMGMTFormStateLabel"
-        Me.employeeMGMTFormStateLabel.Size = New System.Drawing.Size(53, 20)
-        Me.employeeMGMTFormStateLabel.TabIndex = 60
-        Me.employeeMGMTFormStateLabel.Text = "State"
-        '
         'StreetTxt
         '
+        Me.StreetTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "address", True))
         Me.StreetTxt.Location = New System.Drawing.Point(145, 135)
         Me.StreetTxt.Name = "StreetTxt"
         Me.StreetTxt.Size = New System.Drawing.Size(240, 20)
@@ -275,16 +257,6 @@ Partial Class EmpManagment
         Me.FnameTxt.Name = "FnameTxt"
         Me.FnameTxt.Size = New System.Drawing.Size(121, 20)
         Me.FnameTxt.TabIndex = 0
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'employeeMGMTFormAddyLabel
         '
@@ -420,6 +392,8 @@ Partial Class EmpManagment
         'splitContainer1.Panel2
         '
         Me.splitContainer1.Panel2.AutoScroll = True
+        Me.splitContainer1.Panel2.Controls.Add(Me.TextBox1)
+        Me.splitContainer1.Panel2.Controls.Add(Me.Label1)
         Me.splitContainer1.Panel2.Controls.Add(Me.SSN_Txt)
         Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.EmpIDLabel)
@@ -441,10 +415,6 @@ Partial Class EmpManagment
         Me.splitContainer1.Panel2.Controls.Add(Me.SSN_Label)
         Me.splitContainer1.Panel2.Controls.Add(Me.LnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.LnameLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.ZipTxt)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormZipLabel)
-        Me.splitContainer1.Panel2.Controls.Add(Me.StateTxt)
-        Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormStateLabel)
         Me.splitContainer1.Panel2.Controls.Add(Me.StreetTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.FnameTxt)
         Me.splitContainer1.Panel2.Controls.Add(Me.employeeMGMTFormAddyLabel)
@@ -471,9 +441,28 @@ Partial Class EmpManagment
         Me.employeeMGMTFormCancelButton1.Text = "Cancel"
         Me.employeeMGMTFormCancelButton1.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hourlyrate", True))
+        Me.TextBox1.Location = New System.Drawing.Point(145, 231)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.TabIndex = 82
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(17, 231)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 20)
+        Me.Label1.TabIndex = 83
+        Me.Label1.Text = "Salary"
+        '
         'SSN_Txt
         '
-        Me.SSN_Txt.Location = New System.Drawing.Point(145, 231)
+        Me.SSN_Txt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "ssn", True))
+        Me.SSN_Txt.Location = New System.Drawing.Point(145, 169)
         Me.SSN_Txt.Mask = "000-00-0000"
         Me.SSN_Txt.Name = "SSN_Txt"
         Me.SSN_Txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -485,6 +474,7 @@ Partial Class EmpManagment
         'EmpIDTxt
         '
         Me.EmpIDTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.EmpIDTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "ID", True))
         Me.EmpIDTxt.Location = New System.Drawing.Point(144, 92)
         Me.EmpIDTxt.Name = "EmpIDTxt"
         Me.EmpIDTxt.Size = New System.Drawing.Size(121, 20)
@@ -570,10 +560,6 @@ Partial Class EmpManagment
     Private WithEvents SSN_Label As Label
     Private WithEvents LnameTxt As TextBox
     Private WithEvents LnameLabel As Label
-    Private WithEvents ZipTxt As TextBox
-    Private WithEvents employeeMGMTFormZipLabel As Label
-    Private WithEvents StateTxt As TextBox
-    Private WithEvents employeeMGMTFormStateLabel As Label
     Private WithEvents StreetTxt As TextBox
     Private WithEvents FnameTxt As TextBox
     Private WithEvents employeeMGMTFormAddyLabel As Label
@@ -600,4 +586,6 @@ Partial Class EmpManagment
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
     Friend WithEvents FillBySelectedRowToolStrip As ToolStrip
     Friend WithEvents TableAdapterManager As PrimaryTableAdapters.TableAdapterManager
+    Private WithEvents TextBox1 As TextBox
+    Private WithEvents Label1 As Label
 End Class
