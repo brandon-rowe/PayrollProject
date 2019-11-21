@@ -13,6 +13,7 @@ Public Class Login
     Dim CPword As String
     Dim VryPword As String
     Dim Pword As String
+    Dim PwordVAL As Boolean
     Dim empTA As New EmployeeTableAdapter
 
     'load form
@@ -37,7 +38,7 @@ Public Class Login
 
         'this is checking to make sure nothing is blank and that the passwords match
         'it has been extracted out of this class so that it can be unit tested
-        If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
+        If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) AndAlso PwordVAL = True Then
 
             Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
             AddEmployee.Show()
@@ -108,31 +109,42 @@ Public Class Login
                     MyString = "OK"
                 End If
             End If
-            'include  if (Pword.Contains("/") Or (Pword.Contains("\") Or (Pword.Contains("{")) Or (Pword.Contains("}")) Or (Pword.Contains("(")) Or (Pword.Contains(")")))
+            'Or (Pword.Contains("{")) Or (Pword.Contains("}")) Or (Pword.Contains("(")) Or (Pword.Contains(")"))
+            If (CPword.Contains("/") OrElse (CPword.Contains("\")) OrElse (CPword.Contains("{")) OrElse (CPword.Contains("}")) OrElse (CPword.Contains("(")) OrElse (CPword.Contains(")"))) Then
+                PwordVAL = False
+                Dim MSG, style, title, response, MyString
+                MSG = "The Password Input is invalid: Passwords cannot Contain characters '/', '\', '{', '}', '(', or ')' "
+                title = "Input Error- Password"
+                style = vbOKOnly + vbDefaultButton1
+                response = MsgBox(MSG, style, title)
+                If response = vbOKOnly Then
+                    MyString = "OK"
+                End If
+            End If
             'Password Requriment- Between 1-15 Characters
             If CPword.Length = 0 OrElse CPword.Length() > 15 Then
-                Dim MSG, style, title, response, MyString
-                MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
-                title = "Input Error- Password"
-                style = vbOKOnly + vbDefaultButton1
-                response = MsgBox(MSG, style, title)
-                If response = vbOKOnly Then
-                    MyString = "OK"
+                    Dim MSG, style, title, response, MyString
+                    MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
+                    title = "Input Error- Password"
+                    style = vbOKOnly + vbDefaultButton1
+                    response = MsgBox(MSG, style, title)
+                    If response = vbOKOnly Then
+                        MyString = "OK"
+                    End If
                 End If
-            End If
 
-            'Password Verification
-            If (CPword <> VryPword) Then
-                Dim MSG, style, title, response, MyString
-                MSG = "Passwords do not match"
-                title = "Input Error- Password"
-                style = vbOKOnly + vbDefaultButton1
-                response = MsgBox(MSG, style, title)
-                If response = vbOKOnly Then
-                    MyString = "OK"
+                'Password Verification
+                If (CPword <> VryPword) Then
+                    Dim MSG, style, title, response, MyString
+                    MSG = "Passwords do not match"
+                    title = "Input Error- Password"
+                    style = vbOKOnly + vbDefaultButton1
+                    response = MsgBox(MSG, style, title)
+                    If response = vbOKOnly Then
+                        MyString = "OK"
+                    End If
                 End If
             End If
-        End If
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
