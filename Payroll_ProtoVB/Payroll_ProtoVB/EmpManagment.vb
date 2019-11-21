@@ -106,11 +106,13 @@ Public Class EmpManagment
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
         'ATTENTION: This button should navigate to AddEmployee.vb
         AddEmployee.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub editEmpBtn_Click(sender As Object, e As EventArgs) Handles editEmpBtn.Click
-
+        Me.EmployeeBindingSource.EndEdit()
+        'Me.TableAdapterManager1.UpdateAll(Me.Primary)
+        employTA.Adapter.Update(Me.Primary)
     End Sub
 
     Private Sub ClearBtn_Click(sender As Object, e As EventArgs) Handles ClearBtn.Click

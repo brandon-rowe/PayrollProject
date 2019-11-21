@@ -40,6 +40,7 @@ Partial Class EmpManagment
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
         Me.WelcomeLabel = New System.Windows.Forms.Label()
         Me.EmployeeInfoGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ClearBtn = New System.Windows.Forms.Button()
         Me.SalaryTxt = New System.Windows.Forms.TextBox()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
@@ -71,7 +72,6 @@ Partial Class EmpManagment
         Me.employeeMGMTFormFirstNameLabel = New System.Windows.Forms.Label()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.TableAdapterManager = New Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager()
-        Me.ClearBtn = New System.Windows.Forms.Button()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
         Me.splitContainer1.Panel2.SuspendLayout()
@@ -288,6 +288,15 @@ Partial Class EmpManagment
         Me.EmployeeInfoGroupBox.TabStop = False
         Me.EmployeeInfoGroupBox.Visible = False
         '
+        'ClearBtn
+        '
+        Me.ClearBtn.Location = New System.Drawing.Point(505, 295)
+        Me.ClearBtn.Name = "ClearBtn"
+        Me.ClearBtn.Size = New System.Drawing.Size(118, 23)
+        Me.ClearBtn.TabIndex = 111
+        Me.ClearBtn.Text = "Clear Selection"
+        Me.ClearBtn.UseVisualStyleBackColor = True
+        '
         'SalaryTxt
         '
         Me.SalaryTxt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "hourlyrate", True))
@@ -387,7 +396,7 @@ Partial Class EmpManagment
         Me.editEmpBtn.Name = "editEmpBtn"
         Me.editEmpBtn.Size = New System.Drawing.Size(118, 23)
         Me.editEmpBtn.TabIndex = 95
-        Me.editEmpBtn.Text = "Edit Fields"
+        Me.editEmpBtn.Text = "Update"
         Me.editEmpBtn.UseVisualStyleBackColor = True
         '
         'PayRateTxt
@@ -559,15 +568,6 @@ Partial Class EmpManagment
         Me.TableAdapterManager.EmployeePastTableAdapter = Nothing
         Me.TableAdapterManager.EmployeeTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'ClearBtn
-        '
-        Me.ClearBtn.Location = New System.Drawing.Point(505, 295)
-        Me.ClearBtn.Name = "ClearBtn"
-        Me.ClearBtn.Size = New System.Drawing.Size(118, 23)
-        Me.ClearBtn.TabIndex = 111
-        Me.ClearBtn.Text = "Clear Selection"
-        Me.ClearBtn.UseVisualStyleBackColor = True
         '
         'EmpManagment
         '
