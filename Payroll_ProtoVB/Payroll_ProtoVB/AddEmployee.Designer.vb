@@ -27,7 +27,6 @@ Partial Class AddEmployee
         Me.addEmployeeFormMstatLabel = New System.Windows.Forms.Label()
         Me.addEmployeeFormPaymentTypeLabel = New System.Windows.Forms.Label()
         Me.PayTypeCBox = New System.Windows.Forms.ComboBox()
-        Me.AccessCTRL = New System.Windows.Forms.CheckedListBox()
         Me.addEmployeeFormPermissionsLabel = New System.Windows.Forms.Label()
         Me.AddEmpBtn = New System.Windows.Forms.Button()
         Me.PositionTxt = New System.Windows.Forms.TextBox()
@@ -47,6 +46,10 @@ Partial Class AddEmployee
         Me.MaritalStatCB = New System.Windows.Forms.ComboBox()
         Me.SSN_Label = New System.Windows.Forms.Label()
         Me.SSN_Txt = New System.Windows.Forms.MaskedTextBox()
+        Me.AdminRadioBtn = New System.Windows.Forms.RadioButton()
+        Me.EmployeeRadioBtn = New System.Windows.Forms.RadioButton()
+        Me.AccessRadioBtnGroup = New System.Windows.Forms.GroupBox()
+        Me.AccessRadioBtnGroup.SuspendLayout()
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -96,15 +99,6 @@ Partial Class AddEmployee
         Me.PayTypeCBox.Name = "PayTypeCBox"
         Me.PayTypeCBox.Size = New System.Drawing.Size(121, 21)
         Me.PayTypeCBox.TabIndex = 7
-        '
-        'AccessCTRL
-        '
-        Me.AccessCTRL.FormattingEnabled = True
-        Me.AccessCTRL.Items.AddRange(New Object() {"FullAccess(Administrator)", "PartialAccess(Employees)"})
-        Me.AccessCTRL.Location = New System.Drawing.Point(202, 401)
-        Me.AccessCTRL.Name = "AccessCTRL"
-        Me.AccessCTRL.Size = New System.Drawing.Size(149, 34)
-        Me.AccessCTRL.TabIndex = 10
         '
         'addEmployeeFormPermissionsLabel
         '
@@ -276,11 +270,44 @@ Partial Class AddEmployee
         Me.SSN_Txt.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
         Me.SSN_Txt.UseSystemPasswordChar = True
         '
+        'AdminRadioBtn
+        '
+        Me.AdminRadioBtn.AutoSize = True
+        Me.AdminRadioBtn.Location = New System.Drawing.Point(6, 14)
+        Me.AdminRadioBtn.Name = "AdminRadioBtn"
+        Me.AdminRadioBtn.Size = New System.Drawing.Size(142, 17)
+        Me.AdminRadioBtn.TabIndex = 87
+        Me.AdminRadioBtn.TabStop = True
+        Me.AdminRadioBtn.Text = "FullAccess(Administrator)"
+        Me.AdminRadioBtn.UseVisualStyleBackColor = True
+        '
+        'EmployeeRadioBtn
+        '
+        Me.EmployeeRadioBtn.AutoSize = True
+        Me.EmployeeRadioBtn.Location = New System.Drawing.Point(6, 37)
+        Me.EmployeeRadioBtn.Name = "EmployeeRadioBtn"
+        Me.EmployeeRadioBtn.Size = New System.Drawing.Size(146, 17)
+        Me.EmployeeRadioBtn.TabIndex = 88
+        Me.EmployeeRadioBtn.TabStop = True
+        Me.EmployeeRadioBtn.Text = "PartialAccess(Employees)"
+        Me.EmployeeRadioBtn.UseVisualStyleBackColor = True
+        '
+        'AccessRadioBtnGroup
+        '
+        Me.AccessRadioBtnGroup.Controls.Add(Me.AdminRadioBtn)
+        Me.AccessRadioBtnGroup.Controls.Add(Me.EmployeeRadioBtn)
+        Me.AccessRadioBtnGroup.Location = New System.Drawing.Point(179, 391)
+        Me.AccessRadioBtnGroup.Name = "AccessRadioBtnGroup"
+        Me.AccessRadioBtnGroup.Size = New System.Drawing.Size(200, 63)
+        Me.AccessRadioBtnGroup.TabIndex = 89
+        Me.AccessRadioBtnGroup.TabStop = False
+        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(595, 539)
+        Me.Controls.Add(Me.AccessRadioBtnGroup)
         Me.Controls.Add(Me.SSN_Txt)
         Me.Controls.Add(Me.SSN_Label)
         Me.Controls.Add(Me.MaritalStatCB)
@@ -289,7 +316,6 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.addEmployeeFormMstatLabel)
         Me.Controls.Add(Me.addEmployeeFormPaymentTypeLabel)
         Me.Controls.Add(Me.PayTypeCBox)
-        Me.Controls.Add(Me.AccessCTRL)
         Me.Controls.Add(Me.addEmployeeFormPermissionsLabel)
         Me.Controls.Add(Me.AddEmpBtn)
         Me.Controls.Add(Me.PositionTxt)
@@ -309,6 +335,8 @@ Partial Class AddEmployee
         Me.Name = "AddEmployee"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Employees"
+        Me.AccessRadioBtnGroup.ResumeLayout(False)
+        Me.AccessRadioBtnGroup.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -319,7 +347,6 @@ Partial Class AddEmployee
     Private WithEvents addEmployeeFormMstatLabel As Label
     Private WithEvents addEmployeeFormPaymentTypeLabel As Label
     Private WithEvents PayTypeCBox As ComboBox
-    Private WithEvents AccessCTRL As CheckedListBox
     Private WithEvents addEmployeeFormPermissionsLabel As Label
     Private WithEvents AddEmpBtn As Button
     Private WithEvents PositionTxt As TextBox
@@ -339,4 +366,7 @@ Partial Class AddEmployee
     Private WithEvents MaritalStatCB As ComboBox
     Private WithEvents SSN_Label As Label
     Private WithEvents SSN_Txt As MaskedTextBox
+    Friend WithEvents AdminRadioBtn As RadioButton
+    Friend WithEvents EmployeeRadioBtn As RadioButton
+    Friend WithEvents AccessRadioBtnGroup As GroupBox
 End Class

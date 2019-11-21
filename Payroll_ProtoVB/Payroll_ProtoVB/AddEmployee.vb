@@ -20,6 +20,7 @@ Public Class AddEmployee
     Dim ID As Integer
     Dim Uname As String
     Dim Pass As String
+    Dim admin As Boolean
 
     'empty constructor
     Public Sub New()
@@ -66,6 +67,24 @@ Public Class AddEmployee
         paymentType = PayTypeCBox.Text
         ssn = SSN_Txt.Text
 
+        If (MaritalStatCB.SelectedIndex = 0) Then
+            status = False
+        ElseIf (MaritalStatCB.SelectedIndex = 1) Then
+            status = True
+        End If
+
+        If (PayTypeCBox.SelectedIndex = 0) Then
+            paymentType = True
+        ElseIf (MaritalStatCB.SelectedIndex = 1) Then
+            paymentType = False
+        End If
+
+        If (AdminRadioBtn.Checked = True) Then
+            admin = True
+        ElseIf (EmployeeRadioBtn.Checked = True) Then
+            admin = False
+        End If
+
         FnameTxt.Clear()
         LnameTxt.Clear()
         StreetTxt.Clear()
@@ -78,15 +97,15 @@ Public Class AddEmployee
         PayTypeCBox.Refresh()
         PayTypeCBox.ResetText()
         SSN_Txt.Clear()
-        AccessCTRL.ClearSelected()
-        AccessCTRL.Refresh()
-        AccessCTRL.ResetText()
-
+        AccessRadioBtnGroup.Refresh()
+        'AccessCTRL.ClearSelected()
+        'AccessCTRL.Refresh()
+        'AccessCTRL.ResetText()
 
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
 
-        employTA.InsertQuery(ID, Fname, Lname, position, address, True, 4, False, salaryVry, 0, 50, 24, ssn, Uname, Pass)
+        employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, 0, 0, ssn, Uname, Pass)
 
     End Sub
 
@@ -126,6 +145,8 @@ Public Class AddEmployee
     End Sub
 
     Private Sub AddEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        MaritalStatCB.SelectedIndex = 0
+        PayTypeCBox.SelectedIndex = 0
+        AdminRadioBtn.Checked = True
     End Sub
 End Class

@@ -42,7 +42,7 @@ Public Class EmpManagment
         PWord = PwordTxt.Text
 
         VryPword = employTA.CheckPassword(Uname)
-        If VryPword = PWord Then
+        If (VryPword = PWord) Then
             EmployeeInfoGroupBox.Visible = True
             LoginGroupBox.Visible = False
             SearchAddGroupBox.Visible = True
