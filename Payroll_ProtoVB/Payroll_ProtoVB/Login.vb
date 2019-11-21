@@ -151,7 +151,7 @@ Public Class Login
         ' HOWEVER, I'm leaving it out atm cause it makes testing easier lol
         If VryPword = CPword Then
             EmpDashboard.Show()
-            Me.Hide()
+            Me.Close()
         Else
             Dim MSG, style, title, response, MyString
             MSG = "The password didn't work."
