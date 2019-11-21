@@ -34,6 +34,7 @@ Public Class EmpManagment
     End Sub
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        ' Needs to handle non Integer text
         Me.employTA.FillByID(Me.Primary.Employee, SearchEmpTxt.Text)
     End Sub
 
