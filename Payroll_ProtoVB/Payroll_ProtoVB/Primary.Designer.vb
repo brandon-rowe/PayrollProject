@@ -1050,18 +1050,8 @@ Partial Public Class Primary
             Me.columnfname.MaxLength = 2147483647
             Me.columnlname.AllowDBNull = false
             Me.columnlname.MaxLength = 2147483647
-            Me.columntitle.AllowDBNull = false
             Me.columntitle.MaxLength = 2147483647
-            Me.columnaddress.AllowDBNull = false
             Me.columnaddress.MaxLength = 2147483647
-            Me.columnmaritalstatus.AllowDBNull = false
-            Me.columndependents.AllowDBNull = false
-            Me.columnadmin.AllowDBNull = false
-            Me.columnsalaried.AllowDBNull = false
-            Me.columnsalary.AllowDBNull = false
-            Me.columnhourlyrate.AllowDBNull = false
-            Me.columnhoursworked.AllowDBNull = false
-            Me.columnssn.AllowDBNull = false
             Me.columnssn.MaxLength = 2147483647
             Me.columnusern.MaxLength = 2147483647
             Me.columnpass.MaxLength = 2147483647
@@ -2045,7 +2035,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property title() As String
             Get
-                Return CType(Me(Me.tableEmployee.titleColumn),String)
+                Try 
+                    Return CType(Me(Me.tableEmployee.titleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'title' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.titleColumn) = value
@@ -2056,7 +2050,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property address() As String
             Get
-                Return CType(Me(Me.tableEmployee.addressColumn),String)
+                Try 
+                    Return CType(Me(Me.tableEmployee.addressColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'address' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.addressColumn) = value
@@ -2067,7 +2065,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property maritalstatus() As Boolean
             Get
-                Return CType(Me(Me.tableEmployee.maritalstatusColumn),Boolean)
+                Try 
+                    Return CType(Me(Me.tableEmployee.maritalstatusColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'maritalstatus' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.maritalstatusColumn) = value
@@ -2078,7 +2080,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property dependents() As Integer
             Get
-                Return CType(Me(Me.tableEmployee.dependentsColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableEmployee.dependentsColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dependents' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.dependentsColumn) = value
@@ -2089,7 +2095,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property admin() As Boolean
             Get
-                Return CType(Me(Me.tableEmployee.adminColumn),Boolean)
+                Try 
+                    Return CType(Me(Me.tableEmployee.adminColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'admin' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.adminColumn) = value
@@ -2100,7 +2110,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property salaried() As Boolean
             Get
-                Return CType(Me(Me.tableEmployee.salariedColumn),Boolean)
+                Try 
+                    Return CType(Me(Me.tableEmployee.salariedColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'salaried' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.salariedColumn) = value
@@ -2111,7 +2125,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property salary() As Decimal
             Get
-                Return CType(Me(Me.tableEmployee.salaryColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableEmployee.salaryColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'salary' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.salaryColumn) = value
@@ -2122,7 +2140,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property hourlyrate() As Decimal
             Get
-                Return CType(Me(Me.tableEmployee.hourlyrateColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableEmployee.hourlyrateColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'hourlyrate' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.hourlyrateColumn) = value
@@ -2133,7 +2155,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property hoursworked() As Decimal
             Get
-                Return CType(Me(Me.tableEmployee.hoursworkedColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableEmployee.hoursworkedColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'hoursworked' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.hoursworkedColumn) = value
@@ -2144,7 +2170,11 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ssn() As String
             Get
-                Return CType(Me(Me.tableEmployee.ssnColumn),String)
+                Try 
+                    Return CType(Me(Me.tableEmployee.ssnColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ssn' in table 'Employee' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableEmployee.ssnColumn) = value
@@ -2180,6 +2210,126 @@ Partial Public Class Primary
                 Me(Me.tableEmployee.passColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstitleNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.titleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettitleNull()
+            Me(Me.tableEmployee.titleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsaddressNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.addressColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetaddressNull()
+            Me(Me.tableEmployee.addressColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsmaritalstatusNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.maritalstatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetmaritalstatusNull()
+            Me(Me.tableEmployee.maritalstatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsdependentsNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.dependentsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetdependentsNull()
+            Me(Me.tableEmployee.dependentsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsadminNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.adminColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetadminNull()
+            Me(Me.tableEmployee.adminColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IssalariedNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.salariedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetsalariedNull()
+            Me(Me.tableEmployee.salariedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IssalaryNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.salaryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetsalaryNull()
+            Me(Me.tableEmployee.salaryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IshourlyrateNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.hourlyrateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SethourlyrateNull()
+            Me(Me.tableEmployee.hourlyrateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IshoursworkedNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.hoursworkedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SethoursworkedNull()
+            Me(Me.tableEmployee.hoursworkedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsssnNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.ssnColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetssnNull()
+            Me(Me.tableEmployee.ssnColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -3361,7 +3511,7 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Boolean, ByVal dependents As Integer, ByVal admin As Boolean, ByVal salaried As Boolean, ByVal salary As Decimal, ByVal hourlyrate As Decimal, ByVal hoursworked As Decimal, ByVal ssn As String, ByVal usern As String, ByVal pass As String) As Integer
+        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal fname As String, ByVal lname As String, ByVal title As String, ByVal address As String, ByVal maritalstatus As Global.System.Nullable(Of Boolean), ByVal dependents As Global.System.Nullable(Of Integer), ByVal admin As Global.System.Nullable(Of Boolean), ByVal salaried As Global.System.Nullable(Of Boolean), ByVal salary As Global.System.Nullable(Of Decimal), ByVal hourlyrate As Global.System.Nullable(Of Decimal), ByVal hoursworked As Global.System.Nullable(Of Decimal), ByVal ssn As String, ByVal usern As String, ByVal pass As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             command.Parameters(0).Value = CType(ID,Integer)
             If (fname Is Nothing) Then
@@ -3375,24 +3525,52 @@ Namespace PrimaryTableAdapters
                 command.Parameters(2).Value = CType(lname,String)
             End If
             If (title Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("title")
+                command.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(3).Value = CType(title,String)
             End If
             If (address Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("address")
+                command.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(4).Value = CType(address,String)
             End If
-            command.Parameters(5).Value = CType(maritalstatus,Boolean)
-            command.Parameters(6).Value = CType(dependents,Integer)
-            command.Parameters(7).Value = CType(admin,Boolean)
-            command.Parameters(8).Value = CType(salaried,Boolean)
-            command.Parameters(9).Value = CType(salary,Decimal)
-            command.Parameters(10).Value = CType(hourlyrate,Decimal)
-            command.Parameters(11).Value = CType(hoursworked,Decimal)
+            If (maritalstatus.HasValue = true) Then
+                command.Parameters(5).Value = CType(maritalstatus.Value,Boolean)
+            Else
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (dependents.HasValue = true) Then
+                command.Parameters(6).Value = CType(dependents.Value,Integer)
+            Else
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (admin.HasValue = true) Then
+                command.Parameters(7).Value = CType(admin.Value,Boolean)
+            Else
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (salaried.HasValue = true) Then
+                command.Parameters(8).Value = CType(salaried.Value,Boolean)
+            Else
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (salary.HasValue = true) Then
+                command.Parameters(9).Value = CType(salary.Value,Decimal)
+            Else
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (hourlyrate.HasValue = true) Then
+                command.Parameters(10).Value = CType(hourlyrate.Value,Decimal)
+            Else
+                command.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (hoursworked.HasValue = true) Then
+                command.Parameters(11).Value = CType(hoursworked.Value,Decimal)
+            Else
+                command.Parameters(11).Value = Global.System.DBNull.Value
+            End If
             If (ssn Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ssn")
+                command.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(12).Value = CType(ssn,String)
             End If

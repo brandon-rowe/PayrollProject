@@ -32,6 +32,8 @@
     End Sub
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+        Me.EmployeeBindingSource.EndEdit()
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         EmployeeTableAdapter.Adapter.Update(Me.Primary)
     End Sub
 

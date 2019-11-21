@@ -10,10 +10,11 @@ Public Class EmpDashboard
     End Sub
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
-        Dim tbm As New TableAdapterManager
-        ' Me.Validate()
-        'Me.EmployeeBindingSource.EndEdit()
+        'Dim tbm As New TableAdapterManager
+        'Me.Validate()
+        Me.EmployeeBindingSource.EndEdit()
         'Me.TableAdapterManager1.UpdateAll(Me.Primary)
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         employTA.Adapter.Update(Me.Primary)
     End Sub
 
