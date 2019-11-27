@@ -61,6 +61,9 @@ Public Class AddEmployee
         'ATTENTION: This button should remain on AddEmployee.vb 
         'until Next Or Back button is selected
 
+        Dim nPayRate As Double = CDbl(PayRateTxtBox.Text)
+        Dim nHoursWorked As Double = CDbl(HoursWorkedTxtBox.Text)
+
         Fname = FnameTxt.Text
         Lname = LnameTxt.Text
         street = StreetTxt.Text
@@ -111,20 +114,20 @@ Public Class AddEmployee
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
 
-
-        'CultureInfo provider = CultureInfo.InvariantCulture
-        'If (Date.Today.Day > 15) Then
-        'PayDate = DateTime.ParseExact("12/15/19", "MMddyyyy", IFormatProvider provider)
-        'End If
+        If (Date.Today.Day > 15) Then
+            PayDate = DateTime.ParseExact("12152019", "MMddyyyy", Nothing)
+        End If
 
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
+        PaymentID = futureTA.CountRows() + 1
 
         If (paymentType = True) Then
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass)
-            'futureTA.InsertQuery(PaymentID, ID, PayDate, PayRateTxtBox.Text / 12, Fname, Lname)
+            futureTA.InsertQuery(PaymentID, ID, PayDate, nPayRate / 12, Fname, Lname)
         Else
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass)
+            futureTA.InsertQuery(PaymentID, ID, PayDate, nPayRate * nHoursWorked, Fname, Lname)
         End If
 
     End Sub
