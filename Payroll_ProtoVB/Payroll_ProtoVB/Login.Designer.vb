@@ -50,6 +50,7 @@ Partial Class Login
         Me.SignUpGB = New System.Windows.Forms.GroupBox()
         Me.backToLoginBtn = New System.Windows.Forms.Button()
         Me.CreatePwordTxt = New System.Windows.Forms.MaskedTextBox()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.splitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainer1.Panel1.SuspendLayout()
@@ -339,6 +340,10 @@ Partial Class Login
         Me.CreatePwordTxt.TabIndex = 6
         Me.CreatePwordTxt.UseSystemPasswordChar = True
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -389,4 +394,5 @@ Partial Class Login
     Friend WithEvents LoginGB As GroupBox
     Friend WithEvents SignUpGB As GroupBox
     Private WithEvents backToLoginBtn As Button
+    Friend WithEvents PrintDialog1 As PrintDialog
 End Class

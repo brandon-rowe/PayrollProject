@@ -49,7 +49,13 @@ Partial Class AddEmployee
         Me.AdminRadioBtn = New System.Windows.Forms.RadioButton()
         Me.EmployeeRadioBtn = New System.Windows.Forms.RadioButton()
         Me.AccessRadioBtnGroup = New System.Windows.Forms.GroupBox()
+        Me.PaymentGroupBox = New System.Windows.Forms.GroupBox()
+        Me.HoursWorkedLabel = New System.Windows.Forms.Label()
+        Me.HourlySalaryLabel = New System.Windows.Forms.Label()
+        Me.PayRateTxtBox = New System.Windows.Forms.TextBox()
+        Me.HoursWorkedTxtBox = New System.Windows.Forms.TextBox()
         Me.AccessRadioBtnGroup.SuspendLayout()
+        Me.PaymentGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'DependentsTxt
@@ -302,11 +308,59 @@ Partial Class AddEmployee
         Me.AccessRadioBtnGroup.TabIndex = 89
         Me.AccessRadioBtnGroup.TabStop = False
         '
+        'PaymentGroupBox
+        '
+        Me.PaymentGroupBox.Controls.Add(Me.HoursWorkedTxtBox)
+        Me.PaymentGroupBox.Controls.Add(Me.PayRateTxtBox)
+        Me.PaymentGroupBox.Controls.Add(Me.HoursWorkedLabel)
+        Me.PaymentGroupBox.Controls.Add(Me.HourlySalaryLabel)
+        Me.PaymentGroupBox.Location = New System.Drawing.Point(342, 233)
+        Me.PaymentGroupBox.Name = "PaymentGroupBox"
+        Me.PaymentGroupBox.Size = New System.Drawing.Size(241, 152)
+        Me.PaymentGroupBox.TabIndex = 94
+        Me.PaymentGroupBox.TabStop = False
+        Me.PaymentGroupBox.Visible = False
+        '
+        'HoursWorkedLabel
+        '
+        Me.HoursWorkedLabel.AutoSize = True
+        Me.HoursWorkedLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HoursWorkedLabel.Location = New System.Drawing.Point(20, 84)
+        Me.HoursWorkedLabel.Name = "HoursWorkedLabel"
+        Me.HoursWorkedLabel.Size = New System.Drawing.Size(123, 20)
+        Me.HoursWorkedLabel.TabIndex = 97
+        Me.HoursWorkedLabel.Text = "Hours Worked"
+        '
+        'HourlySalaryLabel
+        '
+        Me.HourlySalaryLabel.AutoSize = True
+        Me.HourlySalaryLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HourlySalaryLabel.Location = New System.Drawing.Point(20, 15)
+        Me.HourlySalaryLabel.Name = "HourlySalaryLabel"
+        Me.HourlySalaryLabel.Size = New System.Drawing.Size(169, 20)
+        Me.HourlySalaryLabel.TabIndex = 95
+        Me.HourlySalaryLabel.Text = "Hourly Rate / Salary"
+        '
+        'PayRateTxtBox
+        '
+        Me.PayRateTxtBox.Location = New System.Drawing.Point(24, 54)
+        Me.PayRateTxtBox.Name = "PayRateTxtBox"
+        Me.PayRateTxtBox.Size = New System.Drawing.Size(78, 20)
+        Me.PayRateTxtBox.TabIndex = 98
+        '
+        'HoursWorkedTxtBox
+        '
+        Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(24, 117)
+        Me.HoursWorkedTxtBox.Name = "HoursWorkedTxtBox"
+        Me.HoursWorkedTxtBox.Size = New System.Drawing.Size(78, 20)
+        Me.HoursWorkedTxtBox.TabIndex = 99
+        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(595, 539)
+        Me.Controls.Add(Me.PaymentGroupBox)
         Me.Controls.Add(Me.AccessRadioBtnGroup)
         Me.Controls.Add(Me.SSN_Txt)
         Me.Controls.Add(Me.SSN_Label)
@@ -337,6 +391,8 @@ Partial Class AddEmployee
         Me.Text = "Add Employees"
         Me.AccessRadioBtnGroup.ResumeLayout(False)
         Me.AccessRadioBtnGroup.PerformLayout()
+        Me.PaymentGroupBox.ResumeLayout(False)
+        Me.PaymentGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -369,4 +425,9 @@ Partial Class AddEmployee
     Friend WithEvents AdminRadioBtn As RadioButton
     Friend WithEvents EmployeeRadioBtn As RadioButton
     Friend WithEvents AccessRadioBtnGroup As GroupBox
+    Friend WithEvents PaymentGroupBox As GroupBox
+    Private WithEvents HoursWorkedLabel As Label
+    Private WithEvents HourlySalaryLabel As Label
+    Friend WithEvents HoursWorkedTxtBox As TextBox
+    Friend WithEvents PayRateTxtBox As TextBox
 End Class

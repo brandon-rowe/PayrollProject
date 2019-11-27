@@ -38,7 +38,7 @@ Public Class Login
 
         'this is checking to make sure nothing is blank and that the passwords match
         'it has been extracted out of this class so that it can be unit tested
-        If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) AndAlso PwordVAL = True Then
+        If LginLog.IsCreateUsrFormValid(Fname, Lname, street, state, zip, CPword, VryPword) Then
 
             Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
             AddEmployee.Show()

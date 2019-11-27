@@ -1,10 +1,13 @@
 ﻿Imports Payroll_ProtoVB.PrimaryTableAdapters
+Imports System
+Imports System.Globalization
 
 Public Class AddEmployee
     Inherits System.Windows.Forms.Form
     'load form
 
     Dim employTA As New EmployeeTableAdapter
+    Dim futureTA As New EmployeeFutureTableAdapter
     Dim Fname As String
     Dim Lname As String
     Dim address As String
@@ -14,13 +17,16 @@ Public Class AddEmployee
     Dim status As String
     Dim dependents As String
     Dim position As String
-    Dim paymentType As String
-    Dim salaryVry As Boolean
+    Dim paymentType As Boolean
     Dim ssn As String
     Dim ID As Integer
     Dim Uname As String
     Dim Pass As String
     Dim admin As Boolean
+    Dim PayRate As String
+    Dim HoursWorked As String
+    Dim PaymentID As Integer
+    Dim PayDate As DateTime
 
     'empty constructor
     Public Sub New()
@@ -64,8 +70,9 @@ Public Class AddEmployee
         status = MaritalStatCB.Text
         dependents = DependentsTxt.Text
         position = PositionTxt.Text
-        paymentType = PayTypeCBox.Text
         ssn = SSN_Txt.Text
+        PayRate = PayRateTxtBox.Text
+        HoursWorked = HoursWorkedTxtBox.Text
 
         If (MaritalStatCB.SelectedIndex = 0) Then
             status = False
@@ -90,6 +97,8 @@ Public Class AddEmployee
         StreetTxt.Clear()
         StateTxt.Clear()
         ZipTxt.Clear()
+        PayRateTxtBox.Clear()
+        HoursWorkedTxtBox.Clear()
         MaritalStatCB.Refresh()
         MaritalStatCB.ResetText()
         DependentsTxt.Clear()
@@ -102,10 +111,21 @@ Public Class AddEmployee
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
 
+
+        'CultureInfo provider = CultureInfo.InvariantCulture
+        'If (Date.Today.Day > 15) Then
+        'PayDate = DateTime.ParseExact("12/15/19", "MMddyyyy", IFormatProvider provider)
+        'End If
+
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
 
-        employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, 0, 0, ssn, Uname, Pass)
+        If (paymentType = True) Then
+            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass)
+            'futureTA.InsertQuery(PaymentID, ID, PayDate, PayRateTxtBox.Text / 12, Fname, Lname)
+        Else
+            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass)
+        End If
 
     End Sub
 
@@ -132,12 +152,12 @@ Public Class AddEmployee
     End Sub
 
     Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
-        paymentType = PayTypeCBox.Text
-        If paymentType = "Salary" Then
-            salaryVry = True
-        ElseIf paymentType = "Hourly" Then
-            salaryVry = False
+        If (PayTypeCBox.SelectedIndex = 0) Then
+            HourlySalaryLabel.Text = "Salary"
+        Else
+            HourlySalaryLabel.Text = "Hourly Rate"
         End If
+        PaymentGroupBox.Visible = True
     End Sub
 
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
@@ -145,8 +165,8 @@ Public Class AddEmployee
     End Sub
 
     Private Sub AddEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MaritalStatCB.SelectedIndex = 0
-        PayTypeCBox.SelectedIndex = 0
+        'MaritalStatCB.SelectedIndex = 0
+        'PayTypeCBox.SelectedIndex = 0
         AdminRadioBtn.Checked = True
     End Sub
 End Class
