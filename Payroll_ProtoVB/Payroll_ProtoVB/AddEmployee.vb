@@ -114,9 +114,22 @@ Public Class AddEmployee
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
 
-        If (Date.Today.Day > 15) Then
-            PayDate = DateTime.ParseExact("12152019", "MMddyyyy", Nothing)
+
+        Dim newMonth As String = CStr(Date.Today.Month)
+        Dim newYear As String = CStr(Date.Today.Year)
+
+        If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
+            newMonth = 1
+            newYear = Date.Today.Year + 1
+        ElseIf (Date.Today.Day > 15) Then
+            newMonth = Date.Today.Month + 1
         End If
+
+        If (newMonth.Length = 1) Then
+            newMonth = "0" + newMonth
+        End If
+
+        PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
 
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
