@@ -45,7 +45,7 @@
 
     Function CalculateTaxAmount(Dependents As Integer, marStatus As Boolean) As Double
         If marStatus Then
-            Return (Dependents * 20) - 50
+            Return (Dependents * 20) + 50
         Else
             Return (Dependents * 20)
         End If
