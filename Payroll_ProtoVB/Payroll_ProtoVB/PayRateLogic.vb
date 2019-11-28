@@ -3,7 +3,7 @@
         Dim Pay As Double = CalculateHourlyPay(hourlyPayRate, numHours)
         Dim TaxedPay As Double = ApplyTaxes(Pay, dependents, maritalstatus)
 
-        Return Pay
+        Return TaxedPay
     End Function
 
     Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double) As Double

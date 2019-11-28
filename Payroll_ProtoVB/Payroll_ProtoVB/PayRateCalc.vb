@@ -6,26 +6,7 @@ Public Class PayRateCalc
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.FillBySalaried(Me.Primary.Employee)
 
-        Dim payRateLogic As New PayRateLogic
-        Dim grossPay, netPay As Double
-
-        Try
-            GrossPayTxtBox.Text = "$" + CStr((DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value * DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value))
-            grossPay = GrossPayTxtBox.Text.Substring(1)
-        Catch
-            GrossPayTxtBox.Text = "$0.0"
-            grossPay = 0.0
-        End Try
-
-        Try
-            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
-            netPay = NetPayTxtBox.Text.Substring(1)
-        Catch
-            NetPayTxtBox.Text = "$0.0"
-            netPay = 0.0
-        End Try
-
-        TaxesTxtBox.Text = "$" + CStr(Abs(netPay - grossPay))
+        UpdatePayTextBoxes()
 
     End Sub
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
