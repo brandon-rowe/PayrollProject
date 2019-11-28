@@ -110,6 +110,7 @@ Public Class AddEmployee
         PayTypeCBox.ResetText()
         SSN_Txt.Clear()
         AccessRadioBtnGroup.Refresh()
+        PaymentGroupBox.Visible = False
         'AccessCTRL.ClearSelected()
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
@@ -135,12 +136,14 @@ Public Class AddEmployee
         ID = employTA.CountRows() + 1
         PaymentID = futureTA.CountRows() + 1
 
+        Dim payRateLogic As New PayRateLogic
+
         If (paymentType = True) Then
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass)
-            futureTA.InsertQuery(PaymentID, ID, PayDate, nPayRate / 12, Fname, Lname)
+            futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1)
         Else
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass)
-            futureTA.InsertQuery(PaymentID, ID, PayDate, nPayRate * nHoursWorked, Fname, Lname)
+            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPay(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0)
         End If
 
     End Sub

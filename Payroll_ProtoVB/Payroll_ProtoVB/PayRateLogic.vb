@@ -1,28 +1,34 @@
 ﻿Public Class PayRateLogic
 
 
-    Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double) As Double
+    Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double, dependents As Integer, maritalstatus As Boolean) As Double
 
         Dim otpayrate As Double
         Dim otHours As Double
         Dim otpay As Double
         Dim regpay As Double
-        Dim totalpay As Double = 0.0
+        Dim netPay As Double = 0.0
         Dim regHours As Double
+        Dim grossPay As Double
 
-        regHours = 40.0
+        regHours = 160.0
 
         If numHours <= regHours AndAlso numHours >= 0 AndAlso hourlyPayRate >= 0 Then
-            totalpay = hourlyPayRate * numHours
+            grossPay = hourlyPayRate * numHours
         ElseIf numHours > regHours Then
             otHours = numHours - regHours
             otpayrate = 1.5 * hourlyPayRate
             otpay = otpayrate * otHours
             regpay = regHours * hourlyPayRate
-            totalpay = otpay + regpay
+            grossPay = otpay + regpay
+        End If
+        If maritalstatus = True Then
+            netPay = grossPay - (dependents * 20) - 50
+        Else
+            netPay = grossPay - (dependents * 20)
         End If
 
-        Return totalpay
+        Return netPay
     End Function
 
     'Once we do the above calculations, we then make some percentage

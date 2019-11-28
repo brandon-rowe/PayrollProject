@@ -12,9 +12,9 @@ Public Class PayRateTest
     <TestCase(25, 41, ExpectedResult:=1037.5)>
     Function PayTest(pay As Double, hours As Double) As Double
         Dim PayRate As PayRateLogic = New PayRateLogic()
-        Dim result As Double = PayRate.CalculateHourlyPay(pay, hours)
+        'Dim result As Double = PayRate.CalculateHourlyPay(pay, hours)
 
-        Return result
+        ' Return result
     End Function
 
     'Stub for testing when taxes work
