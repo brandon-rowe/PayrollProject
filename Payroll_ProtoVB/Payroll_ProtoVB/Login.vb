@@ -123,28 +123,28 @@ Public Class Login
             End If
             'Password Requriment- Between 1-15 Characters
             If CPword.Length = 0 OrElse CPword.Length() > 15 Then
-                    Dim MSG, style, title, response, MyString
-                    MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
-                    title = "Input Error- Password"
-                    style = vbOKOnly + vbDefaultButton1
-                    response = MsgBox(MSG, style, title)
-                    If response = vbOKOnly Then
-                        MyString = "OK"
-                    End If
-                End If
-
-                'Password Verification
-                If (CPword <> VryPword) Then
-                    Dim MSG, style, title, response, MyString
-                    MSG = "Passwords do not match"
-                    title = "Input Error- Password"
-                    style = vbOKOnly + vbDefaultButton1
-                    response = MsgBox(MSG, style, title)
-                    If response = vbOKOnly Then
-                        MyString = "OK"
-                    End If
+                Dim MSG, style, title, response, MyString
+                MSG = "The Password Input is invalid: Passwords cannot exceed 15 characters "
+                title = "Input Error- Password"
+                style = vbOKOnly + vbDefaultButton1
+                response = MsgBox(MSG, style, title)
+                If response = vbOKOnly Then
+                    MyString = "OK"
                 End If
             End If
+
+            'Password Verification
+            If (CPword <> VryPword) Then
+                Dim MSG, style, title, response, MyString
+                MSG = "Passwords do not match"
+                title = "Input Error- Password"
+                style = vbOKOnly + vbDefaultButton1
+                response = MsgBox(MSG, style, title)
+                If response = vbOKOnly Then
+                    MyString = "OK"
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click

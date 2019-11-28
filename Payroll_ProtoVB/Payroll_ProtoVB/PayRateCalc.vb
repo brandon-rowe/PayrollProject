@@ -1,5 +1,7 @@
 ﻿Imports System.Math
 Public Class PayRateCalc
+    Const HourlyPayColIndex = 10
+    Const HoursColIndex = 11
     Private Sub PayRateCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.FillBySalaried(Me.Primary.Employee)
@@ -8,7 +10,7 @@ Public Class PayRateCalc
         Dim grossPay, netPay As Double
 
         Try
-            GrossPayTxtBox.Text = "$" + CStr((DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value * DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value))
+            GrossPayTxtBox.Text = "$" + CStr((DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value * DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value))
             grossPay = GrossPayTxtBox.Text.Substring(1)
         Catch
             GrossPayTxtBox.Text = "$0.0"
@@ -16,7 +18,7 @@ Public Class PayRateCalc
         End Try
 
         Try
-            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
+            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
             netPay = NetPayTxtBox.Text.Substring(1)
         Catch
             NetPayTxtBox.Text = "$0.0"
@@ -112,7 +114,7 @@ Public Class PayRateCalc
         Dim payRateLogic As New PayRateLogic
 
         While (i < (DataGridView1.Rows.Count() - 1))
-            amount = payRateLogic.CalculateHourlyPay(DataGridView1.Item(10, i).Value, DataGridView1.Item(11, i).Value, DataGridView1.Item(6, i).Value, DataGridView1.Item(5, i).Value)
+            amount = payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, i).Value, DataGridView1.Item(HoursColIndex, i).Value, DataGridView1.Item(6, i).Value, DataGridView1.Item(5, i).Value)
             ID = DataGridView1.Item(0, i).Value
             firstname = DataGridView1.Item(1, i).Value
             lastname = DataGridView1.Item(2, i).Value
@@ -124,11 +126,23 @@ Public Class PayRateCalc
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        UpdatePayTextBoxes()
+    End Sub
+
+    Private Sub DataGridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridView1.KeyDown
+        UpdatePayTextBoxes()
+    End Sub
+
+
+    ' Updates GrossPayTxtBox, NetPayTxtBox, and TaxesTxtBox
+    Private Sub UpdatePayTextBoxes()
         Dim payRateLogic As New PayRateLogic
         Dim grossPay, netPay As Double
 
+
+        ' Trys to get values from DataGridView, if it cannot then the Text defaults to 0.0
         Try
-            GrossPayTxtBox.Text = "$" + CStr((DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value * DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value))
+            GrossPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value))
             grossPay = GrossPayTxtBox.Text.Substring(1)
         Catch
             GrossPayTxtBox.Text = "$0.0"
@@ -136,7 +150,7 @@ Public Class PayRateCalc
         End Try
 
         Try
-            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
+            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
             netPay = NetPayTxtBox.Text.Substring(1)
         Catch
             NetPayTxtBox.Text = "$0.0"
@@ -146,27 +160,8 @@ Public Class PayRateCalc
         TaxesTxtBox.Text = "$" + CStr(Abs(netPay - grossPay))
     End Sub
 
-    Private Sub DataGridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridView1.KeyDown
-        Dim payRateLogic As New PayRateLogic
-        Dim grossPay, netPay As Double
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
-        Try
-            GrossPayTxtBox.Text = "$" + CStr((DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value * DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value))
-            grossPay = GrossPayTxtBox.Text.Substring(1)
-        Catch
-            GrossPayTxtBox.Text = "$0.0"
-            grossPay = 0.0
-        End Try
-
-        Try
-            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(10, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(11, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
-            netPay = NetPayTxtBox.Text.Substring(1)
-        Catch
-            NetPayTxtBox.Text = "$0.0"
-            netPay = 0.0
-        End Try
-
-        TaxesTxtBox.Text = "$" + CStr(Abs(netPay - grossPay))
     End Sub
 
 

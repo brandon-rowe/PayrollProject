@@ -143,7 +143,7 @@ Public Class AddEmployee
             futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1)
         Else
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass)
-            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPay(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0)
+            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0)
         End If
 
     End Sub
