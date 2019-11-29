@@ -50,10 +50,12 @@ Partial Class AddEmployee
         Me.EmployeeRadioBtn = New System.Windows.Forms.RadioButton()
         Me.AccessRadioBtnGroup = New System.Windows.Forms.GroupBox()
         Me.PaymentGroupBox = New System.Windows.Forms.GroupBox()
+        Me.PayFreqCmbBox = New System.Windows.Forms.ComboBox()
+        Me.PayFreqLabel = New System.Windows.Forms.Label()
+        Me.HoursWorkedTxtBox = New System.Windows.Forms.TextBox()
+        Me.PayRateTxtBox = New System.Windows.Forms.TextBox()
         Me.HoursWorkedLabel = New System.Windows.Forms.Label()
         Me.HourlySalaryLabel = New System.Windows.Forms.Label()
-        Me.PayRateTxtBox = New System.Windows.Forms.TextBox()
-        Me.HoursWorkedTxtBox = New System.Windows.Forms.TextBox()
         Me.AccessRadioBtnGroup.SuspendLayout()
         Me.PaymentGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -110,7 +112,7 @@ Partial Class AddEmployee
         '
         Me.addEmployeeFormPermissionsLabel.AutoSize = True
         Me.addEmployeeFormPermissionsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addEmployeeFormPermissionsLabel.Location = New System.Drawing.Point(41, 415)
+        Me.addEmployeeFormPermissionsLabel.Location = New System.Drawing.Point(36, 442)
         Me.addEmployeeFormPermissionsLabel.Name = "addEmployeeFormPermissionsLabel"
         Me.addEmployeeFormPermissionsLabel.Size = New System.Drawing.Size(105, 20)
         Me.addEmployeeFormPermissionsLabel.TabIndex = 77
@@ -118,7 +120,7 @@ Partial Class AddEmployee
         '
         'AddEmpBtn
         '
-        Me.AddEmpBtn.Location = New System.Drawing.Point(44, 460)
+        Me.AddEmpBtn.Location = New System.Drawing.Point(39, 487)
         Me.AddEmpBtn.Name = "AddEmpBtn"
         Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
         Me.AddEmpBtn.TabIndex = 11
@@ -144,7 +146,7 @@ Partial Class AddEmployee
         '
         'BackBtn
         '
-        Me.BackBtn.Location = New System.Drawing.Point(342, 460)
+        Me.BackBtn.Location = New System.Drawing.Point(337, 487)
         Me.BackBtn.Name = "BackBtn"
         Me.BackBtn.Size = New System.Drawing.Size(102, 23)
         Me.BackBtn.TabIndex = 13
@@ -153,7 +155,7 @@ Partial Class AddEmployee
         '
         'NextBtn
         '
-        Me.NextBtn.Location = New System.Drawing.Point(202, 460)
+        Me.NextBtn.Location = New System.Drawing.Point(197, 487)
         Me.NextBtn.Name = "NextBtn"
         Me.NextBtn.Size = New System.Drawing.Size(102, 23)
         Me.NextBtn.TabIndex = 12
@@ -302,7 +304,7 @@ Partial Class AddEmployee
         '
         Me.AccessRadioBtnGroup.Controls.Add(Me.AdminRadioBtn)
         Me.AccessRadioBtnGroup.Controls.Add(Me.EmployeeRadioBtn)
-        Me.AccessRadioBtnGroup.Location = New System.Drawing.Point(179, 391)
+        Me.AccessRadioBtnGroup.Location = New System.Drawing.Point(174, 418)
         Me.AccessRadioBtnGroup.Name = "AccessRadioBtnGroup"
         Me.AccessRadioBtnGroup.Size = New System.Drawing.Size(200, 63)
         Me.AccessRadioBtnGroup.TabIndex = 89
@@ -310,16 +312,52 @@ Partial Class AddEmployee
         '
         'PaymentGroupBox
         '
+        Me.PaymentGroupBox.Controls.Add(Me.PayFreqCmbBox)
+        Me.PaymentGroupBox.Controls.Add(Me.PayFreqLabel)
         Me.PaymentGroupBox.Controls.Add(Me.HoursWorkedTxtBox)
         Me.PaymentGroupBox.Controls.Add(Me.PayRateTxtBox)
         Me.PaymentGroupBox.Controls.Add(Me.HoursWorkedLabel)
         Me.PaymentGroupBox.Controls.Add(Me.HourlySalaryLabel)
-        Me.PaymentGroupBox.Location = New System.Drawing.Point(342, 233)
+        Me.PaymentGroupBox.Location = New System.Drawing.Point(342, 197)
         Me.PaymentGroupBox.Name = "PaymentGroupBox"
-        Me.PaymentGroupBox.Size = New System.Drawing.Size(241, 152)
+        Me.PaymentGroupBox.Size = New System.Drawing.Size(241, 218)
         Me.PaymentGroupBox.TabIndex = 94
         Me.PaymentGroupBox.TabStop = False
         Me.PaymentGroupBox.Visible = False
+        '
+        'PayFreqCmbBox
+        '
+        Me.PayFreqCmbBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.PayFreqCmbBox.FormattingEnabled = True
+        Me.PayFreqCmbBox.Items.AddRange(New Object() {"Monthly", "Bi-Weekly", "Weekly"})
+        Me.PayFreqCmbBox.Location = New System.Drawing.Point(22, 183)
+        Me.PayFreqCmbBox.Name = "PayFreqCmbBox"
+        Me.PayFreqCmbBox.Size = New System.Drawing.Size(121, 21)
+        Me.PayFreqCmbBox.TabIndex = 101
+        '
+        'PayFreqLabel
+        '
+        Me.PayFreqLabel.AutoSize = True
+        Me.PayFreqLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PayFreqLabel.Location = New System.Drawing.Point(20, 149)
+        Me.PayFreqLabel.Name = "PayFreqLabel"
+        Me.PayFreqLabel.Size = New System.Drawing.Size(127, 20)
+        Me.PayFreqLabel.TabIndex = 100
+        Me.PayFreqLabel.Text = "Pay Frequency"
+        '
+        'HoursWorkedTxtBox
+        '
+        Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(24, 117)
+        Me.HoursWorkedTxtBox.Name = "HoursWorkedTxtBox"
+        Me.HoursWorkedTxtBox.Size = New System.Drawing.Size(78, 20)
+        Me.HoursWorkedTxtBox.TabIndex = 99
+        '
+        'PayRateTxtBox
+        '
+        Me.PayRateTxtBox.Location = New System.Drawing.Point(24, 54)
+        Me.PayRateTxtBox.Name = "PayRateTxtBox"
+        Me.PayRateTxtBox.Size = New System.Drawing.Size(78, 20)
+        Me.PayRateTxtBox.TabIndex = 98
         '
         'HoursWorkedLabel
         '
@@ -341,25 +379,11 @@ Partial Class AddEmployee
         Me.HourlySalaryLabel.TabIndex = 95
         Me.HourlySalaryLabel.Text = "Hourly Rate / Salary"
         '
-        'PayRateTxtBox
-        '
-        Me.PayRateTxtBox.Location = New System.Drawing.Point(24, 54)
-        Me.PayRateTxtBox.Name = "PayRateTxtBox"
-        Me.PayRateTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.PayRateTxtBox.TabIndex = 98
-        '
-        'HoursWorkedTxtBox
-        '
-        Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(24, 117)
-        Me.HoursWorkedTxtBox.Name = "HoursWorkedTxtBox"
-        Me.HoursWorkedTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.HoursWorkedTxtBox.TabIndex = 99
-        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(595, 539)
+        Me.ClientSize = New System.Drawing.Size(596, 552)
         Me.Controls.Add(Me.PaymentGroupBox)
         Me.Controls.Add(Me.AccessRadioBtnGroup)
         Me.Controls.Add(Me.SSN_Txt)
@@ -430,4 +454,6 @@ Partial Class AddEmployee
     Private WithEvents HourlySalaryLabel As Label
     Friend WithEvents HoursWorkedTxtBox As TextBox
     Friend WithEvents PayRateTxtBox As TextBox
+    Private WithEvents PayFreqCmbBox As ComboBox
+    Private WithEvents PayFreqLabel As Label
 End Class

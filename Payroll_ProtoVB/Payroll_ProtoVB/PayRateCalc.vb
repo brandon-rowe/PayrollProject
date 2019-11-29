@@ -47,62 +47,64 @@ Public Class PayRateCalc
     End Sub
 
     Private Sub UpdateBtn_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
-        Me.EmployeeBindingSource.EndEdit()
-        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
-        EmployeeTableAdapter.Adapter.Update(Me.Primary)
-        EmployeeFutureTableAdapter1.CopyQuery()
-        EmployeeFutureTableAdapter1.DeleteHourlyQuery()
 
-        Dim PayDate As DateTime
-        Dim newMonth As String = CStr(Date.Today.Month)
-        Dim newYear As String = CStr(Date.Today.Year)
-
-        If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
-            newMonth = 1
-            newYear = Date.Today.Year + 1
-        ElseIf (Date.Today.Day > 15) Then
-            newMonth = Date.Today.Month + 1
-        End If
-
-        If (newMonth.Length = 1) Then
-            newMonth = "0" + newMonth
-        End If
-
-        PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
-
-        Dim datesalaried As DateTime = PayDate
-
-        Try
-            datesalaried = EmployeeFutureTableAdapter1.SalariedDateQuery()
-        Catch
-        End Try
-
-        If (datesalaried < PayDate) Then
-            EmployeeFutureTableAdapter1.CopySalariedQuery()
-            EmployeeFutureTableAdapter1.SalariedUpdateQuery(datesalaried.AddMonths(1))
-            Try
-                EmployeeFutureTableAdapter1.SalariedDeleteQuery(datesalaried)
-            Catch
-            End Try
-        End If
-
-
-        Dim i = 0
+        Dim j = 0
         Dim amount As Double
         Dim ID As Integer
         Dim firstname, lastname As String
         Dim salaried As Boolean
+        Dim hourlyRate, hoursWorked As Double
+        Dim dependents As Integer
+        Dim maritalstatus As Boolean
+        Dim payFrequency As String
         Dim payRateLogic As New PayRateLogic
+        Dim PayDate, PayDateMinusTwoDays As DateTime
 
-        While (i < (DataGridView1.Rows.Count() - 1))
-            amount = payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, i).Value, DataGridView1.Item(HoursColIndex, i).Value, DataGridView1.Item(6, i).Value, DataGridView1.Item(5, i).Value)
-            ID = DataGridView1.Item(0, i).Value
-            firstname = DataGridView1.Item(1, i).Value
-            lastname = DataGridView1.Item(2, i).Value
-            salaried = DataGridView1.Item(8, i).Value
-            EmployeeFutureTableAdapter1.InsertHourlyQuery(ID, PayDate, amount, firstname, lastname, salaried)
-            i = i + 1
+        'Saves edits to the datagrid CM
+        Me.EmployeeBindingSource.EndEdit()
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+        EmployeeTableAdapter.Adapter.Update(Me.Primary)
+
+
+        'Handles hourly employee CM
+        While (j < (DataGridView1.Rows.Count() - 1))
+            PayDateMinusTwoDays = EmployeeFutureTableAdapter1.GetFutureDate(DataGridView1.Item(0, j).Value)
+            If (Date.Today = PayDateMinusTwoDays.AddDays(-2)) Then
+                payFrequency = DataGridView1.Item(13, j).Value
+                PayDate = EmployeeFutureTableAdapter1.GetFutureDate(DataGridView1.Item(0, j).Value)
+                ID = DataGridView1.Item(0, j).Value
+                firstname = DataGridView1.Item(1, j).Value
+                lastname = DataGridView1.Item(2, j).Value
+                salaried = DataGridView1.Item(8, j).Value
+                hourlyRate = DataGridView1.Item(HourlyPayColIndex, j).Value
+                hoursWorked = DataGridView1.Item(HoursColIndex, j).Value
+                dependents = DataGridView1.Item(6, j).Value
+                maritalstatus = DataGridView1.Item(5, j).Value
+                EmployeeFutureTableAdapter1.CopyQuery(ID)
+                EmployeeFutureTableAdapter1.DeleteHourlyQuery(ID)
+                amount = payRateLogic.CalculateHourlyPayTaxed(hourlyRate, hoursWorked, dependents, maritalstatus)
+                If (payFrequency = "Monthly") Then
+                    PayDate = PayDate.AddMonths(1)
+                ElseIf (payFrequency = "Bi-Weekly") Then
+                    PayDate = PayDate.AddDays(14)
+                Else
+                    PayDate = PayDate.AddDays(7)
+                End If
+                EmployeeFutureTableAdapter1.InsertHourlyQuery(ID, PayDate, amount, firstname, lastname, salaried)
+            End If
+            j = j + 1
         End While
+
+
+        'Handles salaried employee CM
+        Dim salariedDate As DateTime = EmployeeFutureTableAdapter1.SalariedDateQuery()
+
+        If (Date.Today = salariedDate.AddDays(-2)) Then
+            EmployeeFutureTableAdapter1.CopySalariedQuery()
+            EmployeeFutureTableAdapter1.SalariedUpdateQuery(salariedDate.AddMonths(1))
+            EmployeeFutureTableAdapter1.SalariedDeleteQuery(salariedDate.AddMonths(1))
+        End If
+
 
     End Sub
 

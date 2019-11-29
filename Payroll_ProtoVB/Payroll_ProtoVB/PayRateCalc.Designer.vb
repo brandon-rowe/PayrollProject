@@ -37,6 +37,21 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaritalstatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DependentsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AdminDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.SalariedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.SalaryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -60,29 +75,15 @@ Partial Class PayRateCalc
         Me.TaxesTxtBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TitleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaritalstatusDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DependentsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AdminDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.SalariedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.SalaryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.EmployeeFutureTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
+        Me.payfrequency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BindingNavigator1.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         Me.SuspendLayout()
         '
         'metricsTstripBTN
@@ -186,12 +187,107 @@ Partial Class PayRateCalc
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FnameDataGridViewTextBoxColumn, Me.LnameDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.MaritalstatusDataGridViewCheckBoxColumn, Me.DependentsDataGridViewTextBoxColumn, Me.AdminDataGridViewCheckBoxColumn, Me.SalariedDataGridViewCheckBoxColumn, Me.SalaryDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.HoursworkedDataGridViewTextBoxColumn, Me.SsnDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FnameDataGridViewTextBoxColumn, Me.LnameDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.MaritalstatusDataGridViewCheckBoxColumn, Me.DependentsDataGridViewTextBoxColumn, Me.AdminDataGridViewCheckBoxColumn, Me.SalariedDataGridViewCheckBoxColumn, Me.SalaryDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.HoursworkedDataGridViewTextBoxColumn, Me.SsnDataGridViewTextBoxColumn, Me.payfrequency})
         Me.DataGridView1.DataSource = Me.EmployeeBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(95, 28)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(771, 332)
         Me.DataGridView1.TabIndex = 4
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        '
+        'FnameDataGridViewTextBoxColumn
+        '
+        Me.FnameDataGridViewTextBoxColumn.DataPropertyName = "fname"
+        Me.FnameDataGridViewTextBoxColumn.HeaderText = "First Name"
+        Me.FnameDataGridViewTextBoxColumn.Name = "FnameDataGridViewTextBoxColumn"
+        '
+        'LnameDataGridViewTextBoxColumn
+        '
+        Me.LnameDataGridViewTextBoxColumn.DataPropertyName = "lname"
+        Me.LnameDataGridViewTextBoxColumn.HeaderText = "Last Name"
+        Me.LnameDataGridViewTextBoxColumn.Name = "LnameDataGridViewTextBoxColumn"
+        '
+        'TitleDataGridViewTextBoxColumn
+        '
+        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
+        Me.TitleDataGridViewTextBoxColumn.HeaderText = "Title"
+        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "address"
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.Visible = False
+        '
+        'MaritalstatusDataGridViewCheckBoxColumn
+        '
+        Me.MaritalstatusDataGridViewCheckBoxColumn.DataPropertyName = "maritalstatus"
+        Me.MaritalstatusDataGridViewCheckBoxColumn.HeaderText = "maritalstatus"
+        Me.MaritalstatusDataGridViewCheckBoxColumn.Name = "MaritalstatusDataGridViewCheckBoxColumn"
+        Me.MaritalstatusDataGridViewCheckBoxColumn.Visible = False
+        '
+        'DependentsDataGridViewTextBoxColumn
+        '
+        Me.DependentsDataGridViewTextBoxColumn.DataPropertyName = "dependents"
+        Me.DependentsDataGridViewTextBoxColumn.HeaderText = "dependents"
+        Me.DependentsDataGridViewTextBoxColumn.Name = "DependentsDataGridViewTextBoxColumn"
+        Me.DependentsDataGridViewTextBoxColumn.Visible = False
+        '
+        'AdminDataGridViewCheckBoxColumn
+        '
+        Me.AdminDataGridViewCheckBoxColumn.DataPropertyName = "admin"
+        Me.AdminDataGridViewCheckBoxColumn.HeaderText = "admin"
+        Me.AdminDataGridViewCheckBoxColumn.Name = "AdminDataGridViewCheckBoxColumn"
+        Me.AdminDataGridViewCheckBoxColumn.Visible = False
+        '
+        'SalariedDataGridViewCheckBoxColumn
+        '
+        Me.SalariedDataGridViewCheckBoxColumn.DataPropertyName = "salaried"
+        Me.SalariedDataGridViewCheckBoxColumn.HeaderText = "salaried"
+        Me.SalariedDataGridViewCheckBoxColumn.Name = "SalariedDataGridViewCheckBoxColumn"
+        Me.SalariedDataGridViewCheckBoxColumn.Visible = False
+        '
+        'SalaryDataGridViewTextBoxColumn
+        '
+        Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
+        Me.SalaryDataGridViewTextBoxColumn.HeaderText = "salary"
+        Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
+        Me.SalaryDataGridViewTextBoxColumn.Visible = False
+        '
+        'HourlyrateDataGridViewTextBoxColumn
+        '
+        Me.HourlyrateDataGridViewTextBoxColumn.DataPropertyName = "hourlyrate"
+        Me.HourlyrateDataGridViewTextBoxColumn.HeaderText = "Hourly Rate"
+        Me.HourlyrateDataGridViewTextBoxColumn.Name = "HourlyrateDataGridViewTextBoxColumn"
+        '
+        'HoursworkedDataGridViewTextBoxColumn
+        '
+        Me.HoursworkedDataGridViewTextBoxColumn.DataPropertyName = "hoursworked"
+        Me.HoursworkedDataGridViewTextBoxColumn.HeaderText = "Hours Worked"
+        Me.HoursworkedDataGridViewTextBoxColumn.Name = "HoursworkedDataGridViewTextBoxColumn"
+        '
+        'SsnDataGridViewTextBoxColumn
+        '
+        Me.SsnDataGridViewTextBoxColumn.DataPropertyName = "ssn"
+        Me.SsnDataGridViewTextBoxColumn.HeaderText = "ssn"
+        Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
+        Me.SsnDataGridViewTextBoxColumn.Visible = False
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigator1
         '
@@ -312,7 +408,6 @@ Partial Class PayRateCalc
         '
         'UpdateBtn
         '
-        Me.UpdateBtn.Enabled = False
         Me.UpdateBtn.Location = New System.Drawing.Point(885, 406)
         Me.UpdateBtn.Name = "UpdateBtn"
         Me.UpdateBtn.Size = New System.Drawing.Size(106, 41)
@@ -386,101 +481,6 @@ Partial Class PayRateCalc
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "="
         '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        '
-        'FnameDataGridViewTextBoxColumn
-        '
-        Me.FnameDataGridViewTextBoxColumn.DataPropertyName = "fname"
-        Me.FnameDataGridViewTextBoxColumn.HeaderText = "First Name"
-        Me.FnameDataGridViewTextBoxColumn.Name = "FnameDataGridViewTextBoxColumn"
-        '
-        'LnameDataGridViewTextBoxColumn
-        '
-        Me.LnameDataGridViewTextBoxColumn.DataPropertyName = "lname"
-        Me.LnameDataGridViewTextBoxColumn.HeaderText = "Last Name"
-        Me.LnameDataGridViewTextBoxColumn.Name = "LnameDataGridViewTextBoxColumn"
-        '
-        'TitleDataGridViewTextBoxColumn
-        '
-        Me.TitleDataGridViewTextBoxColumn.DataPropertyName = "title"
-        Me.TitleDataGridViewTextBoxColumn.HeaderText = "Title"
-        Me.TitleDataGridViewTextBoxColumn.Name = "TitleDataGridViewTextBoxColumn"
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "address"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.Visible = False
-        '
-        'MaritalstatusDataGridViewCheckBoxColumn
-        '
-        Me.MaritalstatusDataGridViewCheckBoxColumn.DataPropertyName = "maritalstatus"
-        Me.MaritalstatusDataGridViewCheckBoxColumn.HeaderText = "maritalstatus"
-        Me.MaritalstatusDataGridViewCheckBoxColumn.Name = "MaritalstatusDataGridViewCheckBoxColumn"
-        Me.MaritalstatusDataGridViewCheckBoxColumn.Visible = False
-        '
-        'DependentsDataGridViewTextBoxColumn
-        '
-        Me.DependentsDataGridViewTextBoxColumn.DataPropertyName = "dependents"
-        Me.DependentsDataGridViewTextBoxColumn.HeaderText = "dependents"
-        Me.DependentsDataGridViewTextBoxColumn.Name = "DependentsDataGridViewTextBoxColumn"
-        Me.DependentsDataGridViewTextBoxColumn.Visible = False
-        '
-        'AdminDataGridViewCheckBoxColumn
-        '
-        Me.AdminDataGridViewCheckBoxColumn.DataPropertyName = "admin"
-        Me.AdminDataGridViewCheckBoxColumn.HeaderText = "admin"
-        Me.AdminDataGridViewCheckBoxColumn.Name = "AdminDataGridViewCheckBoxColumn"
-        Me.AdminDataGridViewCheckBoxColumn.Visible = False
-        '
-        'SalariedDataGridViewCheckBoxColumn
-        '
-        Me.SalariedDataGridViewCheckBoxColumn.DataPropertyName = "salaried"
-        Me.SalariedDataGridViewCheckBoxColumn.HeaderText = "salaried"
-        Me.SalariedDataGridViewCheckBoxColumn.Name = "SalariedDataGridViewCheckBoxColumn"
-        Me.SalariedDataGridViewCheckBoxColumn.Visible = False
-        '
-        'SalaryDataGridViewTextBoxColumn
-        '
-        Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
-        Me.SalaryDataGridViewTextBoxColumn.HeaderText = "salary"
-        Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
-        Me.SalaryDataGridViewTextBoxColumn.Visible = False
-        '
-        'HourlyrateDataGridViewTextBoxColumn
-        '
-        Me.HourlyrateDataGridViewTextBoxColumn.DataPropertyName = "hourlyrate"
-        Me.HourlyrateDataGridViewTextBoxColumn.HeaderText = "Hourly Rate"
-        Me.HourlyrateDataGridViewTextBoxColumn.Name = "HourlyrateDataGridViewTextBoxColumn"
-        '
-        'HoursworkedDataGridViewTextBoxColumn
-        '
-        Me.HoursworkedDataGridViewTextBoxColumn.DataPropertyName = "hoursworked"
-        Me.HoursworkedDataGridViewTextBoxColumn.HeaderText = "Hours Worked"
-        Me.HoursworkedDataGridViewTextBoxColumn.Name = "HoursworkedDataGridViewTextBoxColumn"
-        '
-        'SsnDataGridViewTextBoxColumn
-        '
-        Me.SsnDataGridViewTextBoxColumn.DataPropertyName = "ssn"
-        Me.SsnDataGridViewTextBoxColumn.HeaderText = "ssn"
-        Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
-        Me.SsnDataGridViewTextBoxColumn.Visible = False
-        '
         'EmployeeTableAdapter
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
@@ -488,6 +488,12 @@ Partial Class PayRateCalc
         'EmployeeFutureTableAdapter1
         '
         Me.EmployeeFutureTableAdapter1.ClearBeforeFill = True
+        '
+        'payfrequency
+        '
+        Me.payfrequency.DataPropertyName = "payfrequency"
+        Me.payfrequency.HeaderText = "Pay Frequency"
+        Me.payfrequency.Name = "payfrequency"
         '
         'PayRateCalc
         '
@@ -512,11 +518,11 @@ Partial Class PayRateCalc
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
-        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -574,4 +580,5 @@ Partial Class PayRateCalc
     Friend WithEvents TaxesTxtBox As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents payfrequency As DataGridViewTextBoxColumn
 End Class

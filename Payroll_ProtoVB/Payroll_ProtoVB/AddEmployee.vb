@@ -26,6 +26,7 @@ Public Class AddEmployee
     Dim PayRate As String
     Dim HoursWorked As String
     Dim PaymentID As Integer
+    Dim PayFrequency As String
     Dim PayDate As DateTime
 
     'empty constructor
@@ -76,6 +77,7 @@ Public Class AddEmployee
         ssn = SSN_Txt.Text
         PayRate = PayRateTxtBox.Text
         HoursWorked = HoursWorkedTxtBox.Text
+        PayFrequency = PayFreqCmbBox.Text
 
         If (MaritalStatCB.SelectedIndex = 0) Then
             status = False
@@ -139,10 +141,10 @@ Public Class AddEmployee
         Dim payRateLogic As New PayRateLogic
 
         If (paymentType = True) Then
-            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass)
+            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass, PayFrequency)
             futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1)
         Else
-            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass)
+            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
             futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0)
         End If
 
@@ -173,10 +175,15 @@ Public Class AddEmployee
     Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
         If (PayTypeCBox.SelectedIndex = 0) Then
             HourlySalaryLabel.Text = "Salary"
+            PaymentGroupBox.Visible = True
+            PayFreqCmbBox.SelectedIndex = 0
+            PayFreqCmbBox.Enabled = 0
         Else
             HourlySalaryLabel.Text = "Hourly Rate"
+            PaymentGroupBox.Visible = True
+            PayFreqCmbBox.Enabled = True
+            PayFreqCmbBox.Refresh()
         End If
-        PaymentGroupBox.Visible = True
     End Sub
 
     Private Sub MaritalStatCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaritalStatCB.SelectedIndexChanged
