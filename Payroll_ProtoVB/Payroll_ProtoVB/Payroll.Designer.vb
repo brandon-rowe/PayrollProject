@@ -237,6 +237,8 @@ Partial Class Payroll
         '
         'PayrollDataGridViewPast
         '
+        Me.PayrollDataGridViewPast.AllowUserToAddRows = False
+        Me.PayrollDataGridViewPast.AllowUserToDeleteRows = False
         Me.PayrollDataGridViewPast.AutoGenerateColumns = False
         Me.PayrollDataGridViewPast.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -250,6 +252,7 @@ Partial Class Payroll
         Me.PayrollDataGridViewPast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PayrollDataGridViewPast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn8, Me.payfrequency, Me.DataGridViewTextBoxColumn7})
         Me.PayrollDataGridViewPast.DataSource = Me.EmployeePastBindingSource2
+        Me.PayrollDataGridViewPast.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.PayrollDataGridViewPast.Location = New System.Drawing.Point(-3, -3)
         Me.PayrollDataGridViewPast.Name = "PayrollDataGridViewPast"
         Me.PayrollDataGridViewPast.Size = New System.Drawing.Size(800, 347)
@@ -320,12 +323,15 @@ Partial Class Payroll
         '
         'PayrollDataGridViewFuture
         '
+        Me.PayrollDataGridViewFuture.AllowUserToAddRows = False
+        Me.PayrollDataGridViewFuture.AllowUserToDeleteRows = False
         Me.PayrollDataGridViewFuture.AllowUserToOrderColumns = True
         Me.PayrollDataGridViewFuture.AutoGenerateColumns = False
         Me.PayrollDataGridViewFuture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PayrollDataGridViewFuture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PayrollDataGridViewFuture.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PaymentIDDataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn10, Me.payfrequency1, Me.DataGridViewTextBoxColumn9})
         Me.PayrollDataGridViewFuture.DataSource = Me.EmployeeFutureBindingSource1
+        Me.PayrollDataGridViewFuture.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.PayrollDataGridViewFuture.Location = New System.Drawing.Point(0, 0)
         Me.PayrollDataGridViewFuture.Name = "PayrollDataGridViewFuture"
         Me.PayrollDataGridViewFuture.Size = New System.Drawing.Size(793, 340)
