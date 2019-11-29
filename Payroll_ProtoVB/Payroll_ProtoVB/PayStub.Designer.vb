@@ -75,6 +75,7 @@ Partial Class PayStub
         Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PayStubGroupBox.SuspendLayout()
         Me.menueStrip.SuspendLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,10 +129,10 @@ Partial Class PayStub
         Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox5.Enabled = False
-        Me.TextBox5.Font = New System.Drawing.Font("Mistral", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(455, 191)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(81, 24)
+        Me.TextBox5.Size = New System.Drawing.Size(81, 22)
         Me.TextBox5.TabIndex = 29
         Me.TextBox5.Text = "Bob Burger"
         '
@@ -645,4 +646,5 @@ Partial Class PayStub
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

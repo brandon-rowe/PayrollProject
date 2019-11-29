@@ -154,6 +154,7 @@
     <Compile Include="Primary.vb">
       <DependentUpon>Primary.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PrintForm.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddEmployee.resx">

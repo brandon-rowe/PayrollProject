@@ -11,20 +11,22 @@
     End Sub
 
     Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
-        Dim MSG, style, title, response, MyString
-        MSG = "Would You Like To Print the PayStub? "
-        title = "Payroll- Rollout Payroll"
-        style = vbYesNo + vbDefaultButton1
-        response = MsgBox(MSG, style, title)
-        If response = vbYes Then
-            MSG = "Printing in Process "
-            title = "Payroll- Rollout Payroll"
-            style = vbOK + vbDefaultButton1
-            response = MsgBox(MSG, style, title)
-            If (response = vbOKOnly) Then
-                MyString = "OK"
-            End If
-        End If
+        PrintDocument1.Print()
+
+        'Dim MSG, style, title, response, MyString
+        'MSG = "Would You Like To Print the PayStub? "
+        'title = "Payroll- Rollout Payroll"
+        'style = vbYesNo + vbDefaultButton1
+        'response = MsgBox(MSG, style, title)
+        'If response = vbYes Then
+        '    MSG = "Printing in Process "
+        '    title = "Payroll- Rollout Payroll"
+        '    style = vbOK + vbDefaultButton1
+        '    response = MsgBox(MSG, style, title)
+        '    If (response = vbOKOnly) Then
+        '        MyString = "OK"
+        '    End If
+        'End If
     End Sub
 
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click

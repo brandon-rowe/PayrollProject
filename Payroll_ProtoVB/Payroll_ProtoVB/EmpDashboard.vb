@@ -10,10 +10,7 @@ Public Class EmpDashboard
     End Sub
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
-        'Dim tbm As New TableAdapterManager
-        'Me.Validate()
         Me.EmployeeBindingSource.EndEdit()
-        'Me.TableAdapterManager1.UpdateAll(Me.Primary)
         DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         employTA.Adapter.Update(Me.Primary)
     End Sub
@@ -54,8 +51,5 @@ Public Class EmpDashboard
             Me.Close()
             Application.Exit()
         End If
-    End Sub
-
-    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
     End Sub
 End Class
