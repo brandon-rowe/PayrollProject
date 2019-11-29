@@ -54,18 +54,6 @@ Partial Class PayStub
         Me.bankNameMTxtBox = New System.Windows.Forms.MaskedTextBox()
         Me.companyAddyMTxtBox = New System.Windows.Forms.MaskedTextBox()
         Me.companyNameMTxtBox = New System.Windows.Forms.MaskedTextBox()
-        Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
-        Me.menueStrip = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.printStubBTN = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Primary = New Payroll_ProtoVB.Primary()
@@ -75,14 +63,28 @@ Partial Class PayStub
         Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.payTstripBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
+        Me.menueStrip = New System.Windows.Forms.ToolStrip()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
         Me.PayStubGroupBox.SuspendLayout()
-        Me.menueStrip.SuspendLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.menueStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'PayStubGroupBox
@@ -425,102 +427,6 @@ Partial Class PayStub
         Me.companyNameMTxtBox.TabIndex = 0
         Me.companyNameMTxtBox.Text = "Bob's Company"
         '
-        'metricsTstripBTN
-        '
-        Me.metricsTstripBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.metricsTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.metricsTstripBTN.Image = CType(resources.GetObject("metricsTstripBTN.Image"), System.Drawing.Image)
-        Me.metricsTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.metricsTstripBTN.Name = "metricsTstripBTN"
-        Me.metricsTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.metricsTstripBTN.Text = "Metrics"
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(74, 6)
-        '
-        'calcPayBTN
-        '
-        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
-        Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.calcPayBTN.Name = "calcPayBTN"
-        Me.calcPayBTN.Size = New System.Drawing.Size(74, 19)
-        Me.calcPayBTN.Text = "Calculate"
-        Me.calcPayBTN.ToolTipText = "Payroll"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(74, 6)
-        '
-        'payTstripBTN
-        '
-        Me.payTstripBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.payTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.payTstripBTN.Image = CType(resources.GetObject("payTstripBTN.Image"), System.Drawing.Image)
-        Me.payTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.payTstripBTN.Name = "payTstripBTN"
-        Me.payTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.payTstripBTN.Text = "Payroll"
-        Me.payTstripBTN.ToolTipText = "Payroll"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
-        '
-        'dashTstripBTN
-        '
-        Me.dashTstripBTN.BackColor = System.Drawing.Color.AliceBlue
-        Me.dashTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.dashTstripBTN.Image = CType(resources.GetObject("dashTstripBTN.Image"), System.Drawing.Image)
-        Me.dashTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.dashTstripBTN.Name = "dashTstripBTN"
-        Me.dashTstripBTN.Size = New System.Drawing.Size(74, 19)
-        Me.dashTstripBTN.Text = "Dashboard"
-        '
-        'menueStrip
-        '
-        Me.menueStrip.AutoSize = False
-        Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator6, Me.ExitBtn})
-        Me.menueStrip.Location = New System.Drawing.Point(0, 0)
-        Me.menueStrip.Name = "menueStrip"
-        Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.menueStrip.Size = New System.Drawing.Size(95, 495)
-        Me.menueStrip.Stretch = True
-        Me.menueStrip.TabIndex = 5
-        Me.menueStrip.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(74, 6)
-        '
-        'ExitBtn
-        '
-        Me.ExitBtn.BackColor = System.Drawing.Color.AliceBlue
-        Me.ExitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ExitBtn.Image = CType(resources.GetObject("ExitBtn.Image"), System.Drawing.Image)
-        Me.ExitBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ExitBtn.Name = "ExitBtn"
-        Me.ExitBtn.Size = New System.Drawing.Size(74, 19)
-        Me.ExitBtn.Text = "Exit"
-        '
         'printStubBTN
         '
         Me.printStubBTN.Location = New System.Drawing.Point(776, 408)
@@ -578,6 +484,116 @@ Partial Class PayStub
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'dashTstripBTN
+        '
+        Me.dashTstripBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.dashTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.dashTstripBTN.Image = CType(resources.GetObject("dashTstripBTN.Image"), System.Drawing.Image)
+        Me.dashTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.dashTstripBTN.Name = "dashTstripBTN"
+        Me.dashTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.dashTstripBTN.Text = "Dashboard"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(74, 6)
+        '
+        'payTstripBTN
+        '
+        Me.payTstripBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.payTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.payTstripBTN.Image = CType(resources.GetObject("payTstripBTN.Image"), System.Drawing.Image)
+        Me.payTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.payTstripBTN.Name = "payTstripBTN"
+        Me.payTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.payTstripBTN.Text = "Payroll"
+        Me.payTstripBTN.ToolTipText = "Payroll"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(74, 6)
+        '
+        'calcPayBTN
+        '
+        Me.calcPayBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.calcPayBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.calcPayBTN.Image = CType(resources.GetObject("calcPayBTN.Image"), System.Drawing.Image)
+        Me.calcPayBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.calcPayBTN.Name = "calcPayBTN"
+        Me.calcPayBTN.Size = New System.Drawing.Size(74, 19)
+        Me.calcPayBTN.Text = "Calculate"
+        Me.calcPayBTN.ToolTipText = "Payroll"
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(74, 6)
+        '
+        'metricsTstripBTN
+        '
+        Me.metricsTstripBTN.BackColor = System.Drawing.Color.AliceBlue
+        Me.metricsTstripBTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.metricsTstripBTN.Image = CType(resources.GetObject("metricsTstripBTN.Image"), System.Drawing.Image)
+        Me.metricsTstripBTN.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.metricsTstripBTN.Name = "metricsTstripBTN"
+        Me.metricsTstripBTN.Size = New System.Drawing.Size(74, 19)
+        Me.metricsTstripBTN.Text = "Metrics"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(74, 6)
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(74, 6)
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(74, 6)
+        '
+        'ExitBtn
+        '
+        Me.ExitBtn.BackColor = System.Drawing.Color.AliceBlue
+        Me.ExitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ExitBtn.Image = CType(resources.GetObject("ExitBtn.Image"), System.Drawing.Image)
+        Me.ExitBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ExitBtn.Name = "ExitBtn"
+        Me.ExitBtn.Size = New System.Drawing.Size(74, 19)
+        Me.ExitBtn.Text = "Exit"
+        '
+        'menueStrip
+        '
+        Me.menueStrip.AutoSize = False
+        Me.menueStrip.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.menueStrip.Dock = System.Windows.Forms.DockStyle.Left
+        Me.menueStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dashTstripBTN, Me.ToolStripSeparator3, Me.payTstripBTN, Me.ToolStripSeparator4, Me.calcPayBTN, Me.ToolStripSeparator5, Me.metricsTstripBTN, Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripSeparator6, Me.ExitBtn})
+        Me.menueStrip.Location = New System.Drawing.Point(0, 0)
+        Me.menueStrip.Name = "menueStrip"
+        Me.menueStrip.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.menueStrip.Size = New System.Drawing.Size(95, 495)
+        Me.menueStrip.Stretch = True
+        Me.menueStrip.TabIndex = 5
+        Me.menueStrip.Text = "ToolStrip1"
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
         'PayStub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -593,12 +609,12 @@ Partial Class PayStub
         Me.Text = "PayStubForm"
         Me.PayStubGroupBox.ResumeLayout(False)
         Me.PayStubGroupBox.PerformLayout()
-        Me.menueStrip.ResumeLayout(False)
-        Me.menueStrip.PerformLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeePastBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menueStrip.ResumeLayout(False)
+        Me.menueStrip.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -628,19 +644,7 @@ Partial Class PayStub
     Friend WithEvents bankNameMTxtBox As MaskedTextBox
     Friend WithEvents companyAddyMTxtBox As MaskedTextBox
     Friend WithEvents companyNameMTxtBox As MaskedTextBox
-    Friend WithEvents metricsTstripBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents calcPayBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents payTstripBTN As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents dashTstripBTN As ToolStripButton
-    Private WithEvents menueStrip As ToolStrip
     Friend WithEvents printStubBTN As Button
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents ExitBtn As ToolStripButton
     Friend WithEvents Cancel As Button
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeeFutureBindingSource As BindingSource
@@ -654,6 +658,20 @@ Partial Class PayStub
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
+    Private WithEvents menueStrip As ToolStrip
+    Friend WithEvents dashTstripBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents payTstripBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents calcPayBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents metricsTstripBTN As ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Friend WithEvents ExitBtn As ToolStripButton
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument As Printing.PrintDocument
 End Class

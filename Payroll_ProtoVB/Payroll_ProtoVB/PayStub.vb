@@ -1,8 +1,11 @@
-﻿Public Class PayStub
+﻿Imports System.Drawing.Printing
+
+Public Class PayStub
     Inherits System.Windows.Forms.Form
 
     Dim ID As String
     Dim type As String
+    Private BMP As Bitmap
 
     Public Sub New(nID As Integer, nType As String)
         InitializeComponent()
@@ -11,9 +14,37 @@
     End Sub
 
     Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
-        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
-        PrintForm1.Print()
-        Me.Refresh()
+
+        Dim pd As New PrintDocument
+        Dim pdialog As New PrintDialog
+        Dim ppd As New PrintPreviewDialog
+        BMP = New Bitmap(PayStubGroupBox.Width, PayStubGroupBox.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+        PayStubGroupBox.DrawToBitmap(BMP, New Rectangle(0, 0, PayStubGroupBox.Width, PayStubGroupBox.Height))
+        AddHandler pd.PrintPage, (Sub(s, args)
+                                      args.Graphics.DrawImage(BMP, 0, 0)
+                                      args.HasMorePages = False
+                                  End Sub)
+        'choose a printer
+        pdialog.ShowDialog(Me)
+        pd.PrinterSettings.PrinterName = pdialog.PrinterSettings.PrinterName
+
+        If pd.PrinterSettings.CanDuplex.ToString Then
+            pd.PrinterSettings.Duplex = Duplex.Vertical
+        End If
+
+        'Preview the document
+        ppd.Document = pd
+        ppd.ShowDialog(Me)
+
+        pd.Print()      'actually print data
+
+
+
+        'B. Rowe: This code below works. However, I am trying to implement something
+        'that works only on the groupbox instead of the entire form.
+        'PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+        'PrintForm1.Print()
+        'Me.Refresh()
 
         'Dim MSG, style, title, response, MyString
         'MSG = "Would You Like To Print the PayStub? "
