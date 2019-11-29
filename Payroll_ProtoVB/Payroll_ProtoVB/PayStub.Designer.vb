@@ -25,7 +25,6 @@ Partial Class PayStub
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayStub))
         Me.PayStubGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -63,7 +62,6 @@ Partial Class PayStub
         Me.EmployeePastBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -79,6 +77,7 @@ Partial Class PayStub
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
+        Me.TextBox5 = New System.Windows.Forms.RichTextBox()
         Me.PayStubGroupBox.SuspendLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,18 +125,6 @@ Partial Class PayStub
         Me.PayStubGroupBox.TabIndex = 4
         Me.PayStubGroupBox.TabStop = False
         Me.PayStubGroupBox.Text = "PayStub"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(455, 191)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(81, 22)
-        Me.TextBox5.TabIndex = 29
-        Me.TextBox5.Text = "Bob Burger"
         '
         'TextBox4
         '
@@ -477,13 +464,6 @@ Partial Class PayStub
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
-        'PrintForm1
-        '
-        Me.PrintForm1.Form = Me
-        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
-        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
-        Me.PrintForm1.PrintFileName = Nothing
-        '
         'PrintDialog1
         '
         Me.PrintDialog1.UseEXDialog = True
@@ -594,6 +574,18 @@ Partial Class PayStub
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(445, 190)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
+        Me.TextBox5.Size = New System.Drawing.Size(113, 26)
+        Me.TextBox5.TabIndex = 30
+        Me.TextBox5.Text = "Bob Burger"
+        '
         'PayStub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -657,8 +649,7 @@ Partial Class PayStub
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
+    ' Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
     Private WithEvents menueStrip As ToolStrip
     Friend WithEvents dashTstripBTN As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
@@ -674,4 +665,5 @@ Partial Class PayStub
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument As Printing.PrintDocument
+    Friend WithEvents TextBox5 As RichTextBox
 End Class
