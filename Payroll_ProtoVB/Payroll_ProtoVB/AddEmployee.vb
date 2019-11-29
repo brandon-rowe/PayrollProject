@@ -113,6 +113,7 @@ Public Class AddEmployee
         SSN_Txt.Clear()
         AccessRadioBtnGroup.Refresh()
         PaymentGroupBox.Visible = False
+        PayFreqCmbBox.SelectedIndex = 0
         'AccessCTRL.ClearSelected()
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
