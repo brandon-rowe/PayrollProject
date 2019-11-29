@@ -330,7 +330,7 @@ Partial Class AddEmployee
         Me.PayFreqCmbBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.PayFreqCmbBox.FormattingEnabled = True
         Me.PayFreqCmbBox.Items.AddRange(New Object() {"Monthly", "Bi-Weekly", "Weekly"})
-        Me.PayFreqCmbBox.Location = New System.Drawing.Point(22, 183)
+        Me.PayFreqCmbBox.Location = New System.Drawing.Point(26, 181)
         Me.PayFreqCmbBox.Name = "PayFreqCmbBox"
         Me.PayFreqCmbBox.Size = New System.Drawing.Size(121, 21)
         Me.PayFreqCmbBox.TabIndex = 101
@@ -347,23 +347,23 @@ Partial Class AddEmployee
         '
         'HoursWorkedTxtBox
         '
-        Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(24, 117)
+        Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(28, 49)
         Me.HoursWorkedTxtBox.Name = "HoursWorkedTxtBox"
         Me.HoursWorkedTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.HoursWorkedTxtBox.TabIndex = 99
+        Me.HoursWorkedTxtBox.TabIndex = 98
         '
         'PayRateTxtBox
         '
-        Me.PayRateTxtBox.Location = New System.Drawing.Point(24, 54)
+        Me.PayRateTxtBox.Location = New System.Drawing.Point(28, 119)
         Me.PayRateTxtBox.Name = "PayRateTxtBox"
         Me.PayRateTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.PayRateTxtBox.TabIndex = 98
+        Me.PayRateTxtBox.TabIndex = 99
         '
         'HoursWorkedLabel
         '
         Me.HoursWorkedLabel.AutoSize = True
         Me.HoursWorkedLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HoursWorkedLabel.Location = New System.Drawing.Point(20, 84)
+        Me.HoursWorkedLabel.Location = New System.Drawing.Point(24, 16)
         Me.HoursWorkedLabel.Name = "HoursWorkedLabel"
         Me.HoursWorkedLabel.Size = New System.Drawing.Size(123, 20)
         Me.HoursWorkedLabel.TabIndex = 97
@@ -373,7 +373,7 @@ Partial Class AddEmployee
         '
         Me.HourlySalaryLabel.AutoSize = True
         Me.HourlySalaryLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HourlySalaryLabel.Location = New System.Drawing.Point(20, 15)
+        Me.HourlySalaryLabel.Location = New System.Drawing.Point(24, 87)
         Me.HourlySalaryLabel.Name = "HourlySalaryLabel"
         Me.HourlySalaryLabel.Size = New System.Drawing.Size(169, 20)
         Me.HourlySalaryLabel.TabIndex = 95

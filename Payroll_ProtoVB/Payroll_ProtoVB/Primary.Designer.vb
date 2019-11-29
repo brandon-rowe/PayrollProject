@@ -4230,7 +4230,7 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(11).Connection = Me.Connection
-            Me._commandCollection(11).CommandText = "Select distnct date from employeefuture where payfrequency = @payfrequency"
+            Me._commandCollection(11).CommandText = "Select distinct date from employeefuture where payfrequency = @payfrequency"
             Me._commandCollection(11).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(12) = New Global.System.Data.SqlClient.SqlCommand()

@@ -63,7 +63,11 @@ Public Class AddEmployee
         'until Next Or Back button is selected
 
         Dim nPayRate As Double = CDbl(PayRateTxtBox.Text)
-        Dim nHoursWorked As Double = CDbl(HoursWorkedTxtBox.Text)
+        Dim nHoursWorked As Double = 0
+
+        If (PayTypeCBox.Text = "Hourly") Then
+            nHoursWorked = CDbl(HoursWorkedTxtBox.Text)
+        End If
 
         Fname = FnameTxt.Text
         Lname = LnameTxt.Text
@@ -97,27 +101,6 @@ Public Class AddEmployee
             admin = False
         End If
 
-        FnameTxt.Clear()
-        LnameTxt.Clear()
-        StreetTxt.Clear()
-        StateTxt.Clear()
-        ZipTxt.Clear()
-        PayRateTxtBox.Clear()
-        HoursWorkedTxtBox.Clear()
-        MaritalStatCB.Refresh()
-        MaritalStatCB.ResetText()
-        DependentsTxt.Clear()
-        PositionTxt.Clear()
-        PayTypeCBox.Refresh()
-        PayTypeCBox.ResetText()
-        SSN_Txt.Clear()
-        AccessRadioBtnGroup.Refresh()
-        PaymentGroupBox.Visible = False
-        PayFreqCmbBox.SelectedIndex = 0
-        'AccessCTRL.ClearSelected()
-        'AccessCTRL.Refresh()
-        'AccessCTRL.ResetText()
-
         If (PayFreqCmbBox.Text = "Monthly") Then
             Dim newMonth As String = CStr(Date.Today.Month)
             Dim newYear As String = CStr(Date.Today.Year)
@@ -146,10 +129,32 @@ Public Class AddEmployee
         PaymentID = futureTA.CountRows() + 1
 
 
+        FnameTxt.Clear()
+        LnameTxt.Clear()
+        StreetTxt.Clear()
+        StateTxt.Clear()
+        ZipTxt.Clear()
+        PayRateTxtBox.Clear()
+        HoursWorkedTxtBox.Clear()
+        MaritalStatCB.Refresh()
+        MaritalStatCB.ResetText()
+        DependentsTxt.Clear()
+        PositionTxt.Clear()
+        PayTypeCBox.Refresh()
+        PayTypeCBox.ResetText()
+        SSN_Txt.Clear()
+        AccessRadioBtnGroup.Refresh()
+        PaymentGroupBox.Visible = False
+        PayFreqCmbBox.SelectedIndex = 0
+        'AccessCTRL.ClearSelected()
+        'AccessCTRL.Refresh()
+        'AccessCTRL.ResetText()
+
+
         Dim payRateLogic As New PayRateLogic
 
         If (paymentType = True) Then
-            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass, PayFrequency)
+            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, 0, ssn, Uname, Pass, PayFrequency)
             futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1, PayFrequency)
         Else
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
@@ -185,11 +190,17 @@ Public Class AddEmployee
             HourlySalaryLabel.Text = "Salary"
             PaymentGroupBox.Visible = True
             PayFreqCmbBox.SelectedIndex = 0
-            PayFreqCmbBox.Enabled = 0
+            PayFreqLabel.Visible = 0
+            HoursWorkedLabel.Visible = 0
+            PayFreqCmbBox.Visible = 0
+            HoursWorkedTxtBox.Visible = 0
         Else
             HourlySalaryLabel.Text = "Hourly Rate"
             PaymentGroupBox.Visible = True
-            PayFreqCmbBox.Enabled = True
+            PayFreqCmbBox.Visible = True
+            HoursWorkedTxtBox.Visible = True
+            PayFreqLabel.Visible = True
+            HoursWorkedLabel.Visible = True
             PayFreqCmbBox.Refresh()
         End If
     End Sub
