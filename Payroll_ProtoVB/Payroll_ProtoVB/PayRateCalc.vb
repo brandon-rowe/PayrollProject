@@ -36,7 +36,7 @@ Public Class PayRateCalc
         End If
     End Sub
 
-    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs)
         Me.EmployeeBindingSource.EndEdit()
         DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         EmployeeTableAdapter.Adapter.Update(Me.Primary)

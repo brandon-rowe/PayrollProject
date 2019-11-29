@@ -8,6 +8,9 @@
     Private Sub PaymentRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeePast' table. You can move, or remove it, as needed.
         Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
+
+        endPayPeriodDatePicker.Value = Date.Today
+        strtPayPeriodDatePicker.Value = Date.Today.AddYears(-5)
     End Sub
     Private Sub DashTstripBTN_Click(sender As Object, e As EventArgs) Handles dashTstripBTN.Click
         Me.Refresh()

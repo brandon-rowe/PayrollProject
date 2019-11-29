@@ -2,6 +2,7 @@
 
 Public Class EmpDashboard
     Dim employTA As New EmployeeTableAdapter
+    Dim futureTA As New EmployeeFutureTableAdapter
 
 
     Private Sub EmpDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -58,5 +59,15 @@ Public Class EmpDashboard
             Me.Close()
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+        Me.EmployeeBindingSource.EndEdit()
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+        employTA.Adapter.Update(Me.Primary)
+        Try
+            futureTA.DeleteByID(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value)
+        Catch
+        End Try
     End Sub
 End Class

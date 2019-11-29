@@ -168,8 +168,14 @@ Public Class AddEmployee
             futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
         End If
 
-        EmpAddedLbl.Text = "Employee " + Fname + " " + Lname + " has been added successfully!"
-        EmpAddedLbl.Visible = True
+        Dim MSG, style, title, response, MyString
+        MSG = "Employee " + Fname + " " + Lname + " added succesfully."
+        title = "Employee Added"
+        style = vbOKOnly + vbDefaultButton1
+        response = MsgBox(MSG, style, title)
+        If response = vbOKOnly Then
+            MyString = "OK"
+        End If
 
         Fname = ""
         Lname = ""
@@ -184,7 +190,6 @@ Public Class AddEmployee
         PayRate = 0
         HoursWorked = 0
         PayFrequency = ""
-        PayDate = ""
         paymentType = ""
         Uname = ""
         Pass = ""

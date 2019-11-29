@@ -55,7 +55,6 @@ Partial Class AddEmployee
         Me.PayRateTxtBox = New System.Windows.Forms.TextBox()
         Me.HoursWorkedLabel = New System.Windows.Forms.Label()
         Me.HourlySalaryLabel = New System.Windows.Forms.Label()
-        Me.EmpAddedLbl = New System.Windows.Forms.Label()
         Me.usrGenFormUsrNameLabel = New System.Windows.Forms.Label()
         Me.userGenFormPassLabel = New System.Windows.Forms.Label()
         Me.CreateUnameTxt = New System.Windows.Forms.TextBox()
@@ -376,16 +375,6 @@ Partial Class AddEmployee
         Me.HourlySalaryLabel.TabIndex = 95
         Me.HourlySalaryLabel.Text = "Hourly Rate / Salary"
         '
-        'EmpAddedLbl
-        '
-        Me.EmpAddedLbl.AutoSize = True
-        Me.EmpAddedLbl.Location = New System.Drawing.Point(220, 612)
-        Me.EmpAddedLbl.Name = "EmpAddedLbl"
-        Me.EmpAddedLbl.Size = New System.Drawing.Size(87, 13)
-        Me.EmpAddedLbl.TabIndex = 95
-        Me.EmpAddedLbl.Text = "Employee Added"
-        Me.EmpAddedLbl.Visible = False
-        '
         'usrGenFormUsrNameLabel
         '
         Me.usrGenFormUsrNameLabel.AutoSize = True
@@ -452,7 +441,6 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.CreatePwordTxt)
         Me.Controls.Add(Me.userGenFormPassVrfyLabel)
         Me.Controls.Add(Me.VerifyPwordTxt)
-        Me.Controls.Add(Me.EmpAddedLbl)
         Me.Controls.Add(Me.PaymentGroupBox)
         Me.Controls.Add(Me.AccessRadioBtnGroup)
         Me.Controls.Add(Me.SSN_Txt)
@@ -523,7 +511,6 @@ Partial Class AddEmployee
     Friend WithEvents PayRateTxtBox As TextBox
     Private WithEvents PayFreqCmbBox As ComboBox
     Private WithEvents PayFreqLabel As Label
-    Friend WithEvents EmpAddedLbl As Label
     Private WithEvents usrGenFormUsrNameLabel As Label
     Protected Friend WithEvents userGenFormPassLabel As Label
     Protected Friend WithEvents CreateUnameTxt As TextBox
