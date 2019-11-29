@@ -11,7 +11,9 @@
     End Sub
 
     Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
-        PrintDocument1.Print()
+        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+        PrintForm1.Print()
+        Me.Refresh()
 
         'Dim MSG, style, title, response, MyString
         'MSG = "Would You Like To Print the PayStub? "

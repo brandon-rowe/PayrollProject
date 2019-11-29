@@ -76,6 +76,7 @@ Partial Class PayStub
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PayStubGroupBox.SuspendLayout()
         Me.menueStrip.SuspendLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -570,6 +571,13 @@ Partial Class PayStub
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
+        'PrintForm1
+        '
+        Me.PrintForm1.Form = Me
+        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
+        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
+        Me.PrintForm1.PrintFileName = Nothing
+        '
         'PayStub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -647,4 +655,5 @@ Partial Class PayStub
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintForm1 As PowerPacks.Printing.PrintForm
 End Class
