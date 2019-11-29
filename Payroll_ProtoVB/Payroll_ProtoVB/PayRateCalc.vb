@@ -69,7 +69,7 @@ Public Class PayRateCalc
         'Handles hourly employee CM
         While (j < (DataGridView1.Rows.Count() - 1))
             PayDateMinusTwoDays = EmployeeFutureTableAdapter1.GetFutureDate(DataGridView1.Item(0, j).Value)
-            If (Date.Today = PayDateMinusTwoDays.AddDays(-2)) Then
+            If (Date.Today >= PayDateMinusTwoDays.AddDays(-2)) Then
                 payFrequency = DataGridView1.Item(13, j).Value
                 PayDate = EmployeeFutureTableAdapter1.GetFutureDate(DataGridView1.Item(0, j).Value)
                 ID = DataGridView1.Item(0, j).Value
@@ -99,7 +99,7 @@ Public Class PayRateCalc
         'Handles salaried employee CM
         Dim salariedDate As DateTime = EmployeeFutureTableAdapter1.SalariedDateQuery()
 
-        If (Date.Today = salariedDate.AddDays(-2)) Then
+        If (Date.Today >= salariedDate.AddDays(-2)) Then
             EmployeeFutureTableAdapter1.CopySalariedQuery()
             EmployeeFutureTableAdapter1.SalariedUpdateQuery(salariedDate.AddMonths(1))
             EmployeeFutureTableAdapter1.SalariedDeleteQuery(salariedDate.AddMonths(1))
