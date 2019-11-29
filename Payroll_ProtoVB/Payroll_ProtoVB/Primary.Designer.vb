@@ -1236,6 +1236,8 @@ Partial Public Class Primary
         
         Private columnsalaried As Global.System.Data.DataColumn
         
+        Private columnpayfrequency As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1328,6 +1330,14 @@ Partial Public Class Primary
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property payfrequencyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayfrequency
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1364,9 +1374,9 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddEmployeeFutureRow(ByVal PaymentID As Long, ByVal parentEmployeeRowByFK_EmployeeFuture_Employee As EmployeeRow, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Boolean) As EmployeeFutureRow
+        Public Overloads Function AddEmployeeFutureRow(ByVal PaymentID As Long, ByVal parentEmployeeRowByFK_EmployeeFuture_Employee As EmployeeRow, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Boolean, ByVal payfrequency As String) As EmployeeFutureRow
             Dim rowEmployeeFutureRow As EmployeeFutureRow = CType(Me.NewRow,EmployeeFutureRow)
-            Dim columnValuesArray() As Object = New Object() {PaymentID, Nothing, _date, amount, fname, lname, salaried}
+            Dim columnValuesArray() As Object = New Object() {PaymentID, Nothing, _date, amount, fname, lname, salaried, payfrequency}
             If (Not (parentEmployeeRowByFK_EmployeeFuture_Employee) Is Nothing) Then
                 columnValuesArray(1) = parentEmployeeRowByFK_EmployeeFuture_Employee(0)
             End If
@@ -1405,6 +1415,7 @@ Partial Public Class Primary
             Me.columnfname = MyBase.Columns("fname")
             Me.columnlname = MyBase.Columns("lname")
             Me.columnsalaried = MyBase.Columns("salaried")
+            Me.columnpayfrequency = MyBase.Columns("payfrequency")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1427,6 +1438,8 @@ Partial Public Class Primary
             MyBase.Columns.Add(Me.columnlname)
             Me.columnsalaried = New Global.System.Data.DataColumn("salaried", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsalaried)
+            Me.columnpayfrequency = New Global.System.Data.DataColumn("payfrequency", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayfrequency)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPaymentID}, true))
             Me.columnPaymentID.AllowDBNull = false
             Me.columnPaymentID.Unique = true
@@ -1435,6 +1448,7 @@ Partial Public Class Primary
             Me.columnamount.AllowDBNull = false
             Me.columnfname.MaxLength = 2147483647
             Me.columnlname.MaxLength = 2147483647
+            Me.columnpayfrequency.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1586,6 +1600,8 @@ Partial Public Class Primary
         
         Private columnsalaried As Global.System.Data.DataColumn
         
+        Private columnpayfrequency As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1678,6 +1694,14 @@ Partial Public Class Primary
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property payfrequencyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayfrequency
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1714,9 +1738,9 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddEmployeePastRow(ByVal PaymentID As Long, ByVal parentEmployeeRowByFK_EmployeePast_Employee As EmployeeRow, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Boolean) As EmployeePastRow
+        Public Overloads Function AddEmployeePastRow(ByVal PaymentID As Long, ByVal parentEmployeeRowByFK_EmployeePast_Employee As EmployeeRow, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Boolean, ByVal payfrequency As String) As EmployeePastRow
             Dim rowEmployeePastRow As EmployeePastRow = CType(Me.NewRow,EmployeePastRow)
-            Dim columnValuesArray() As Object = New Object() {PaymentID, Nothing, _date, amount, fname, lname, salaried}
+            Dim columnValuesArray() As Object = New Object() {PaymentID, Nothing, _date, amount, fname, lname, salaried, payfrequency}
             If (Not (parentEmployeeRowByFK_EmployeePast_Employee) Is Nothing) Then
                 columnValuesArray(1) = parentEmployeeRowByFK_EmployeePast_Employee(0)
             End If
@@ -1755,6 +1779,7 @@ Partial Public Class Primary
             Me.columnfname = MyBase.Columns("fname")
             Me.columnlname = MyBase.Columns("lname")
             Me.columnsalaried = MyBase.Columns("salaried")
+            Me.columnpayfrequency = MyBase.Columns("payfrequency")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1777,6 +1802,8 @@ Partial Public Class Primary
             MyBase.Columns.Add(Me.columnlname)
             Me.columnsalaried = New Global.System.Data.DataColumn("salaried", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsalaried)
+            Me.columnpayfrequency = New Global.System.Data.DataColumn("payfrequency", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayfrequency)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPaymentID}, true))
             Me.columnPaymentID.AllowDBNull = false
             Me.columnPaymentID.Unique = true
@@ -1785,6 +1812,7 @@ Partial Public Class Primary
             Me.columnamount.AllowDBNull = false
             Me.columnfname.MaxLength = 2147483647
             Me.columnlname.MaxLength = 2147483647
+            Me.columnpayfrequency.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2575,6 +2603,21 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property payfrequency() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEmployeeFuture.payfrequencyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payfrequency' in table 'EmployeeFuture' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEmployeeFuture.payfrequencyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property EmployeeRow() As EmployeeRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_EmployeeFuture_Employee")),EmployeeRow)
@@ -2618,6 +2661,18 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetsalariedNull()
             Me(Me.tableEmployeeFuture.salariedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspayfrequencyNull() As Boolean
+            Return Me.IsNull(Me.tableEmployeeFuture.payfrequencyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpayfrequencyNull()
+            Me(Me.tableEmployeeFuture.payfrequencyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2727,6 +2782,21 @@ Partial Public Class Primary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property payfrequency() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEmployeePast.payfrequencyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payfrequency' in table 'EmployeePast' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEmployeePast.payfrequencyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property EmployeeRow() As EmployeeRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_EmployeePast_Employee")),EmployeeRow)
@@ -2770,6 +2840,18 @@ Partial Public Class Primary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetsalariedNull()
             Me(Me.tableEmployeePast.salariedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspayfrequencyNull() As Boolean
+            Return Me.IsNull(Me.tableEmployeePast.payfrequencyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpayfrequencyNull()
+            Me(Me.tableEmployeePast.payfrequencyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4004,6 +4086,7 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("fname", "fname")
             tableMapping.ColumnMappings.Add("lname", "lname")
             tableMapping.ColumnMappings.Add("salaried", "salaried")
+            tableMapping.ColumnMappings.Add("payfrequency", "payfrequency")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -4021,9 +4104,9 @@ Namespace PrimaryTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [EmployeeFuture] ([ID], [date], [amount], [fname], [lname], [salaried"& _ 
-                "]) VALUES (@ID, @date, @amount, @fname, @lname, @salaried);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, I"& _ 
-                "D, date, amount, fname, lname, salaried FROM EmployeeFuture WHERE (PaymentID = S"& _ 
-                "COPE_IDENTITY())"
+                "], [payfrequency]) VALUES (@ID, @date, @amount, @fname, @lname, @salaried, @payf"& _ 
+                "requency);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequ"& _ 
+                "ency FROM EmployeeFuture WHERE (PaymentID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4031,14 +4114,16 @@ Namespace PrimaryTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [EmployeeFuture] SET [ID] = @ID, [date] = @date, [amount] = @amount, [fnam"& _ 
-                "e] = @fname, [lname] = @lname, [salaried] = @salaried WHERE (([PaymentID] = @Ori"& _ 
-                "ginal_PaymentID) AND ([ID] = @Original_ID) AND ([date] = @Original_date) AND ([a"& _ 
-                "mount] = @Original_amount) AND ((@IsNull_salaried = 1 AND [salaried] IS NULL) OR"& _ 
-                " ([salaried] = @Original_salaried)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID, date, amount, fname"& _ 
-                ", lname, salaried FROM EmployeeFuture WHERE (PaymentID = @PaymentID)"
+                "e] = @fname, [lname] = @lname, [salaried] = @salaried, [payfrequency] = @payfreq"& _ 
+                "uency WHERE (([PaymentID] = @Original_PaymentID) AND ([ID] = @Original_ID) AND ("& _ 
+                "[date] = @Original_date) AND ([amount] = @Original_amount) AND ((@IsNull_salarie"& _ 
+                "d = 1 AND [salaried] IS NULL) OR ([salaried] = @Original_salaried)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Pa"& _ 
+                "ymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM EmployeeFut"& _ 
+                "ure WHERE (PaymentID = @PaymentID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4046,6 +4131,7 @@ Namespace PrimaryTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4065,23 +4151,24 @@ Namespace PrimaryTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(13) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(14) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeeFuture"
+            Me._commandCollection(0).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeeFuture"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "INSERT INTO EmployeePast"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ID, date, amount, fname, lnam"& _ 
-                "e, salaried)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        ID, date, amount, fname, lname, salaried"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
-                "      EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @id)"
+                "e, salaried, payfrequency)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        ID, date, amount, fname, lname, salari"& _ 
+                "ed, payfrequency"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @id)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "INSERT INTO EmployeePast"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ID, date, amount, fname, lnam"& _ 
-                "e, salaried)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        ID, date, amount, fname, lname, salaried"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
-                "      EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Where salaried = 1"
+                "e, salaried, payfrequency)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        ID, date, amount, fname, lname, salari"& _ 
+                "ed, payfrequency"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Where salaried = 1"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
@@ -4094,31 +4181,32 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeeFuture WH"& _ 
-                "ERE (fname = @fname)"
+            Me._commandCollection(5).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeeFuture WHERE (fname = @fname)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeeFuture WH"& _ 
-                "ERE (ID = @id)"
+            Me._commandCollection(6).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeeFuture WHERE (ID = @id)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeeFuture WH"& _ 
-                "ERE (lname = @lname)"
+            Me._commandCollection(7).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeeFuture WHERE (lname = @lname)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(8).Connection = Me.Connection
-            Me._commandCollection(8).CommandText = "select date from employeefuture where id = @id"
+            Me._commandCollection(8).CommandText = "SELECT date, payfrequency FROM EmployeeFuture WHERE (ID = @id)"
             Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(9).Connection = Me.Connection
-            Me._commandCollection(9).CommandText = "INSERT INTO EmployeeFuture(ID, date, amount, fname, lname, salaried)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES     "& _ 
-                "   (@ID, @date, @amount, @fname, @lname, @salaried)"
+            Me._commandCollection(9).CommandText = "INSERT INTO EmployeeFuture(ID, date, amount, fname, lname, salaried, payfrequency"& _ 
+                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ID, @date, @amount, @fname, @lname, @salaried, @payfrequency)"& _ 
+                ""
             Me._commandCollection(9).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4126,10 +4214,12 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(10).Connection = Me.Connection
-            Me._commandCollection(10).CommandText = "INSERT INTO EmployeeFuture(ID, date, amount, fname, lname, salaried)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES     "& _ 
-                "   (@ID, @date, @amount, @fname, @lname, @salaried)"
+            Me._commandCollection(10).CommandText = "INSERT INTO EmployeeFuture(ID, date, amount, fname, lname, salaried, payfrequency"& _ 
+                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ID, @date, @amount, @fname, @lname, @salaried, @payfrequency)"& _ 
+                ""
             Me._commandCollection(10).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4137,22 +4227,28 @@ Namespace PrimaryTableAdapters
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(11).Connection = Me.Connection
-            Me._commandCollection(11).CommandText = "SELECT DISTINCT date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (salaried = 1)"& _ 
-                ""
+            Me._commandCollection(11).CommandText = "Select distnct date from employeefuture where payfrequency = @payfrequency"
             Me._commandCollection(11).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(12) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(12).Connection = Me.Connection
-            Me._commandCollection(12).CommandText = "delete from employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where (date < @date and salaried = 1)"
+            Me._commandCollection(12).CommandText = "SELECT DISTINCT date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            EmployeeFuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (salaried = 1)"& _ 
+                ""
             Me._commandCollection(12).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(12).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(13) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(13).Connection = Me.Connection
-            Me._commandCollection(13).CommandText = "INSERT INTO employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, date = @date, amount, fname, lname, salari"& _ 
-                "ed"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where (salaried = 1)"
+            Me._commandCollection(13).CommandText = "delete from employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where (date < @date and salaried = 1)"
             Me._commandCollection(13).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(13).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(13).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(14) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(14).Connection = Me.Connection
+            Me._commandCollection(14).CommandText = "INSERT INTO employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, date = @date, amount, fname, lname, salari"& _ 
+                "ed, payfrequency"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM employeefuture"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where (salaried = 1)"
+            Me._commandCollection(14).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(14).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4437,7 +4533,7 @@ Namespace PrimaryTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function InsertHourlyQuery(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Global.System.Nullable(Of Boolean)) As Object
+        Public Overloads Overridable Function InsertHourlyQuery(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Global.System.Nullable(Of Boolean), ByVal payfrequency As String) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(9)
             command.Parameters(0).Value = CType(ID,Integer)
             command.Parameters(1).Value = CType(_date,Date)
@@ -4456,6 +4552,11 @@ Namespace PrimaryTableAdapters
                 command.Parameters(5).Value = CType(salaried.Value,Boolean)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (payfrequency Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(payfrequency,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4482,7 +4583,7 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function InsertQuery(ByVal ID As Integer, ByVal _date As Date, ByVal amount As Decimal, ByVal fname As String, ByVal lname As String, ByVal salaried As Global.System.Nullable(Of Boolean), ByVal payfrequency As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(10)
             command.Parameters(0).Value = CType(ID,Integer)
             command.Parameters(1).Value = CType(_date,Date)
@@ -4501,6 +4602,11 @@ Namespace PrimaryTableAdapters
                 command.Parameters(5).Value = CType(salaried.Value,Boolean)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (payfrequency Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(payfrequency,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4521,8 +4627,39 @@ Namespace PrimaryTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function SalariedDateQuery() As Object
+        Public Overloads Overridable Function PayFrequencyDate(ByVal payfrequency As String) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(11)
+            If (payfrequency Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(payfrequency,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SalariedDateQuery() As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(12)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4548,7 +4685,7 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function SalariedDeleteQuery(ByVal _date As Date) As Object
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(12)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(13)
             command.Parameters(0).Value = CType(_date,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4575,7 +4712,7 @@ Namespace PrimaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function SalariedUpdateQuery(ByVal _date As String) As Object
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(13)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(14)
             If (_date Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_date")
             Else
@@ -4737,6 +4874,7 @@ Namespace PrimaryTableAdapters
             tableMapping.ColumnMappings.Add("fname", "fname")
             tableMapping.ColumnMappings.Add("lname", "lname")
             tableMapping.ColumnMappings.Add("salaried", "salaried")
+            tableMapping.ColumnMappings.Add("payfrequency", "payfrequency")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -4753,10 +4891,10 @@ Namespace PrimaryTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [EmployeePast] ([ID], [date], [amount], [fname], [lname], [salaried])"& _ 
-                " VALUES (@ID, @date, @amount, @fname, @lname, @salaried);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID,"& _ 
-                " date, amount, fname, lname, salaried FROM EmployeePast WHERE (PaymentID = SCOPE"& _ 
-                "_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [EmployeePast] ([ID], [date], [amount], [fname], [lname], [salaried],"& _ 
+                " [payfrequency]) VALUES (@ID, @date, @amount, @fname, @lname, @salaried, @payfre"& _ 
+                "quency);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequen"& _ 
+                "cy FROM EmployeePast WHERE (PaymentID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4764,14 +4902,16 @@ Namespace PrimaryTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [EmployeePast] SET [ID] = @ID, [date] = @date, [amount] = @amount, [fname]"& _ 
-                " = @fname, [lname] = @lname, [salaried] = @salaried WHERE (([PaymentID] = @Origi"& _ 
-                "nal_PaymentID) AND ([ID] = @Original_ID) AND ([date] = @Original_date) AND ([amo"& _ 
-                "unt] = @Original_amount) AND ((@IsNull_salaried = 1 AND [salaried] IS NULL) OR ("& _ 
-                "[salaried] = @Original_salaried)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT PaymentID, ID, date, amount, fname, "& _ 
-                "lname, salaried FROM EmployeePast WHERE (PaymentID = @PaymentID)"
+                " = @fname, [lname] = @lname, [salaried] = @salaried, [payfrequency] = @payfreque"& _ 
+                "ncy WHERE (([PaymentID] = @Original_PaymentID) AND ([ID] = @Original_ID) AND ([d"& _ 
+                "ate] = @Original_date) AND ([amount] = @Original_amount) AND ((@IsNull_salaried "& _ 
+                "= 1 AND [salaried] IS NULL) OR ([salaried] = @Original_salaried)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Paym"& _ 
+                "entID, ID, date, amount, fname, lname, salaried, payfrequency FROM EmployeePast "& _ 
+                "WHERE (PaymentID = @PaymentID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4779,6 +4919,7 @@ Namespace PrimaryTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaried", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "salaried", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payfrequency", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payfrequency", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PaymentID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PaymentID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4801,32 +4942,33 @@ Namespace PrimaryTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeePast"
+            Me._commandCollection(0).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeePast"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeePast WHER"& _ 
-                "E (date >= @date1) AND (date <= @date2) AND (ID = @ID)"
+            Me._commandCollection(1).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeePast WHERE (date >= @date1) AND (date <= @date2) AND (ID = @ID)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date1", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@date2", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeePast WHER"& _ 
-                "E (fname = @fname)"
+            Me._commandCollection(2).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeePast WHERE (fname = @fname)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeePast WHER"& _ 
-                "E (ID = @id)"
+            Me._commandCollection(3).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeePast WHERE (ID = @id)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried FROM EmployeePast WHER"& _ 
-                "E (lname = @lname)"
+            Me._commandCollection(4).CommandText = "SELECT PaymentID, ID, date, amount, fname, lname, salaried, payfrequency FROM Emp"& _ 
+                "loyeePast WHERE (lname = @lname)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

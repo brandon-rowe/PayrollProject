@@ -90,7 +90,7 @@ Public Class PayRateCalc
                 Else
                     PayDate = PayDate.AddDays(7)
                 End If
-                EmployeeFutureTableAdapter1.InsertHourlyQuery(ID, PayDate, amount, firstname, lastname, salaried)
+                EmployeeFutureTableAdapter1.InsertHourlyQuery(ID, PayDate, amount, firstname, lastname, salaried, payFrequency)
             End If
             j = j + 1
         End While

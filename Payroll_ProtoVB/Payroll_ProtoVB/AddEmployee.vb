@@ -118,35 +118,42 @@ Public Class AddEmployee
         'AccessCTRL.Refresh()
         'AccessCTRL.ResetText()
 
+        If (PayFreqCmbBox.Text = "Monthly") Then
+            Dim newMonth As String = CStr(Date.Today.Month)
+            Dim newYear As String = CStr(Date.Today.Year)
 
-        Dim newMonth As String = CStr(Date.Today.Month)
-        Dim newYear As String = CStr(Date.Today.Year)
+            If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
+                newMonth = 1
+                newYear = Date.Today.Year + 1
+            ElseIf (Date.Today.Day > 15) Then
+                newMonth = Date.Today.Month + 1
+            End If
 
-        If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
-            newMonth = 1
-            newYear = Date.Today.Year + 1
-        ElseIf (Date.Today.Day > 15) Then
-            newMonth = Date.Today.Month + 1
+            If (newMonth.Length = 1) Then
+                newMonth = "0" + newMonth
+            End If
+
+            PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
+
+        ElseIf (PayFreqCmbBox.Text = "Bi-Weekly") Then
+            PayDate = futureTA.PayFrequencyDate("Bi-Weekly")
+        ElseIf (PayFreqCmbBox.Text = "Weekly") Then
+            PayDate = futureTA.PayFrequencyDate("Weekly")
         End If
-
-        If (newMonth.Length = 1) Then
-            newMonth = "0" + newMonth
-        End If
-
-        PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
 
         'Update and automate ID assignment by incrementing the number of rows
         ID = employTA.CountRows() + 1
         PaymentID = futureTA.CountRows() + 1
 
+
         Dim payRateLogic As New PayRateLogic
 
         If (paymentType = True) Then
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, HoursWorked, ssn, Uname, Pass, PayFrequency)
-            futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1)
+            futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1, PayFrequency)
         Else
             employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
-            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0)
+            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
         End If
 
     End Sub
