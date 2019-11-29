@@ -21,19 +21,10 @@ Public Class Login
         'Create the Logic Class when the form loads
         LginLog = New LoginLogic()
         LoginGB.Visible = True
-        SignUpGB.Visible = False
     End Sub
 
     'create user button
-    Private Sub UsrGenFormCreateUsrButton_Click(sender As Object, e As EventArgs) Handles usrGenFormCreateUsrButton.Click
-        Fname = FnameTxt.Text
-        Lname = LnameTxt.Text
-        street = StreetTxt.Text
-        state = StateTxt.Text
-        zip = ZipTxt.Text
-        Uname = CreateUnameTxt.Text
-        CPword = CreatePwordTxt.Text
-        VryPword = VerifyPwordTxt.Text
+    Private Sub UsrGenFormCreateUsrButton_Click(sender As Object, e As EventArgs)
         address = street + " " + state + " " + zip
 
         'this is checking to make sure nothing is blank and that the passwords match
@@ -42,15 +33,6 @@ Public Class Login
 
             Dim AddEmployee = New AddEmployee(Fname, Lname, street, state, zip, Uname, CPword)
             AddEmployee.Show()
-
-            FnameTxt.Clear()
-            LnameTxt.Clear()
-            StreetTxt.Clear()
-            StateTxt.Clear()
-            ZipTxt.Clear()
-            CreateUnameTxt.Clear()
-            CreatePwordTxt.Clear()
-            VerifyPwordTxt.Clear()
 
             Me.Hide()
         Else
@@ -158,15 +140,26 @@ Public Class Login
         ' We should add the following condition, otherwise we can just login without typing in anything
         ' because an empty String is equivalent to Nothing returned by empTA
         ' 
-        ' AndAlso String.IsNullOrEmpty(VryPword)
+
         '
         ' HOWEVER, I'm leaving it out atm cause it makes testing easier lol
-        If VryPword = CPword Then
-            EmpDashboard.Show()
-            Me.Close()
+        If (Not (String.IsNullOrEmpty(CPword)) And Not (String.IsNullOrEmpty(Uname))) Then
+            If (VryPword = CPword) Then
+                EmpDashboard.Show()
+                Me.Close()
+            Else
+                Dim MSG, style, title, response, MyString
+                MSG = "The password didn't work."
+                title = "Input Error- Login"
+                style = vbOKOnly + vbDefaultButton1
+                response = MsgBox(MSG, style, title)
+                If response = vbOKOnly Then
+                    MyString = "OK"
+                End If
+            End If
         Else
             Dim MSG, style, title, response, MyString
-            MSG = "The password didn't work."
+            MSG = "Username or password is empty."
             title = "Input Error- Login"
             style = vbOKOnly + vbDefaultButton1
             response = MsgBox(MSG, style, title)
@@ -175,17 +168,27 @@ Public Class Login
             End If
         End If
 
+
+
         'want to create a counter that denies functionality if login attempts exceed a certain amount.
     End Sub
 
     Private Sub SignUp_Click(sender As Object, e As EventArgs) Handles SignUp.Click
-        LoginGB.Visible = False
-        SignUpGB.Visible = True
+        If (empTA.CountRows < 1) Then
+            AddEmployee.Show()
+        Else
+            Dim MSG, style, title, response, MyString
+            MSG = "Sorry, atleast one admin already exists."
+            title = "Admin Exists"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
+        End If
     End Sub
 
-    Private Sub backToLoginBtn_Click(sender As Object, e As EventArgs) Handles backToLoginBtn.Click
+    Private Sub backToLoginBtn_Click(sender As Object, e As EventArgs)
         LoginGB.Visible = True
-        SignUpGB.Visible = False
     End Sub
-
 End Class

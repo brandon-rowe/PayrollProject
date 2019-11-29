@@ -14,6 +14,9 @@ Public Class EmpManagment
         InitializeComponent()
         Row = nRow
     End Sub
+    Public Sub New()
+        InitializeComponent()
+    End Sub
 
 
     Private Sub EmpManagment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -43,14 +46,26 @@ Public Class EmpManagment
         PWord = PwordTxt.Text
 
         VryPword = employTA.CheckPassword(Uname)
-        If (VryPword = PWord) Then
-            EmployeeInfoGroupBox.Visible = True
-            LoginGroupBox.Visible = False
-            SearchAddGroupBox.Visible = True
-            WelcomeLabel.Visible = True
+
+        If (Not (String.IsNullOrEmpty(PWord)) And Not (String.IsNullOrEmpty(Uname))) Then
+            If (VryPword = PWord AndAlso Not (String.IsNullOrEmpty(VryPword))) Then
+                EmployeeInfoGroupBox.Visible = True
+                LoginGroupBox.Visible = False
+                SearchAddGroupBox.Visible = True
+                WelcomeLabel.Visible = True
+            Else
+                Dim MSG, style, title, response, MyString
+                MSG = "The password didn't work."
+                title = "Input Error- Login"
+                style = vbOKOnly + vbDefaultButton1
+                response = MsgBox(MSG, style, title)
+                If response = vbOKOnly Then
+                    MyString = "OK"
+                End If
+            End If
         Else
             Dim MSG, style, title, response, MyString
-            MSG = "The password didn't work."
+            MSG = "Username or password is empty."
             title = "Input Error- Login"
             style = vbOKOnly + vbDefaultButton1
             response = MsgBox(MSG, style, title)
@@ -58,6 +73,7 @@ Public Class EmpManagment
                 MyString = "OK"
             End If
         End If
+
     End Sub
 
     Private Sub removeEmpBtn_Click(sender As Object, e As EventArgs) Handles removeEmpBtn.Click
@@ -106,6 +122,7 @@ Public Class EmpManagment
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
         'ATTENTION: This button should navigate to AddEmployee.vb
+        Dim AddEmployee = New AddEmployee("Management")
         AddEmployee.Show()
         Me.Hide()
     End Sub

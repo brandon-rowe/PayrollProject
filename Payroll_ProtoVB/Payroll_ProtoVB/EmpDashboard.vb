@@ -17,6 +17,13 @@ Public Class EmpDashboard
 
     Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
         'ATTENTION: This button should navigate to EmpManagement.vb
+
+        'saves edit first CM
+        Me.EmployeeBindingSource.EndEdit()
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+        employTA.Adapter.Update(Me.Primary)
+
+        'shows empmanagement CM
         Dim EmpManagment = New EmpManagment(DataGridView1.CurrentRow.Index + 1)
         EmpManagment.Show()
         Me.Close()

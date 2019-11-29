@@ -32,7 +32,6 @@ Partial Class AddEmployee
         Me.PositionTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormPositionLable = New System.Windows.Forms.Label()
         Me.BackBtn = New System.Windows.Forms.Button()
-        Me.NextBtn = New System.Windows.Forms.Button()
         Me.LnameTxt = New System.Windows.Forms.TextBox()
         Me.addEmployeeFormLastNameLabel = New System.Windows.Forms.Label()
         Me.ZipTxt = New System.Windows.Forms.TextBox()
@@ -56,6 +55,13 @@ Partial Class AddEmployee
         Me.PayRateTxtBox = New System.Windows.Forms.TextBox()
         Me.HoursWorkedLabel = New System.Windows.Forms.Label()
         Me.HourlySalaryLabel = New System.Windows.Forms.Label()
+        Me.EmpAddedLbl = New System.Windows.Forms.Label()
+        Me.usrGenFormUsrNameLabel = New System.Windows.Forms.Label()
+        Me.userGenFormPassLabel = New System.Windows.Forms.Label()
+        Me.CreateUnameTxt = New System.Windows.Forms.TextBox()
+        Me.CreatePwordTxt = New System.Windows.Forms.MaskedTextBox()
+        Me.userGenFormPassVrfyLabel = New System.Windows.Forms.Label()
+        Me.VerifyPwordTxt = New System.Windows.Forms.MaskedTextBox()
         Me.AccessRadioBtnGroup.SuspendLayout()
         Me.PaymentGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -81,7 +87,7 @@ Partial Class AddEmployee
         '
         Me.addEmployeeFormMstatLabel.AutoSize = True
         Me.addEmployeeFormMstatLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addEmployeeFormMstatLabel.Location = New System.Drawing.Point(16, 257)
+        Me.addEmployeeFormMstatLabel.Location = New System.Drawing.Point(16, 252)
         Me.addEmployeeFormMstatLabel.Name = "addEmployeeFormMstatLabel"
         Me.addEmployeeFormMstatLabel.Size = New System.Drawing.Size(121, 20)
         Me.addEmployeeFormMstatLabel.TabIndex = 81
@@ -112,7 +118,7 @@ Partial Class AddEmployee
         '
         Me.addEmployeeFormPermissionsLabel.AutoSize = True
         Me.addEmployeeFormPermissionsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addEmployeeFormPermissionsLabel.Location = New System.Drawing.Point(36, 442)
+        Me.addEmployeeFormPermissionsLabel.Location = New System.Drawing.Point(36, 527)
         Me.addEmployeeFormPermissionsLabel.Name = "addEmployeeFormPermissionsLabel"
         Me.addEmployeeFormPermissionsLabel.Size = New System.Drawing.Size(105, 20)
         Me.addEmployeeFormPermissionsLabel.TabIndex = 77
@@ -120,7 +126,7 @@ Partial Class AddEmployee
         '
         'AddEmpBtn
         '
-        Me.AddEmpBtn.Location = New System.Drawing.Point(39, 487)
+        Me.AddEmpBtn.Location = New System.Drawing.Point(212, 576)
         Me.AddEmpBtn.Name = "AddEmpBtn"
         Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
         Me.AddEmpBtn.TabIndex = 11
@@ -129,7 +135,7 @@ Partial Class AddEmployee
         '
         'PositionTxt
         '
-        Me.PositionTxt.Location = New System.Drawing.Point(202, 365)
+        Me.PositionTxt.Location = New System.Drawing.Point(202, 363)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
         Me.PositionTxt.TabIndex = 9
@@ -138,7 +144,7 @@ Partial Class AddEmployee
         '
         Me.addEmployeeFormPositionLable.AutoSize = True
         Me.addEmployeeFormPositionLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addEmployeeFormPositionLable.Location = New System.Drawing.Point(64, 365)
+        Me.addEmployeeFormPositionLable.Location = New System.Drawing.Point(64, 363)
         Me.addEmployeeFormPositionLable.Name = "addEmployeeFormPositionLable"
         Me.addEmployeeFormPositionLable.Size = New System.Drawing.Size(73, 20)
         Me.addEmployeeFormPositionLable.TabIndex = 71
@@ -146,21 +152,12 @@ Partial Class AddEmployee
         '
         'BackBtn
         '
-        Me.BackBtn.Location = New System.Drawing.Point(337, 487)
+        Me.BackBtn.Location = New System.Drawing.Point(508, 602)
         Me.BackBtn.Name = "BackBtn"
         Me.BackBtn.Size = New System.Drawing.Size(102, 23)
         Me.BackBtn.TabIndex = 13
         Me.BackBtn.Text = "Back"
         Me.BackBtn.UseVisualStyleBackColor = True
-        '
-        'NextBtn
-        '
-        Me.NextBtn.Location = New System.Drawing.Point(197, 487)
-        Me.NextBtn.Name = "NextBtn"
-        Me.NextBtn.Size = New System.Drawing.Size(102, 23)
-        Me.NextBtn.TabIndex = 12
-        Me.NextBtn.Text = "Next"
-        Me.NextBtn.UseVisualStyleBackColor = True
         '
         'LnameTxt
         '
@@ -252,7 +249,7 @@ Partial Class AddEmployee
         Me.MaritalStatCB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.MaritalStatCB.FormattingEnabled = True
         Me.MaritalStatCB.Items.AddRange(New Object() {"Single", "Married"})
-        Me.MaritalStatCB.Location = New System.Drawing.Point(202, 253)
+        Me.MaritalStatCB.Location = New System.Drawing.Point(202, 248)
         Me.MaritalStatCB.Name = "MaritalStatCB"
         Me.MaritalStatCB.Size = New System.Drawing.Size(121, 21)
         Me.MaritalStatCB.TabIndex = 6
@@ -304,7 +301,7 @@ Partial Class AddEmployee
         '
         Me.AccessRadioBtnGroup.Controls.Add(Me.AdminRadioBtn)
         Me.AccessRadioBtnGroup.Controls.Add(Me.EmployeeRadioBtn)
-        Me.AccessRadioBtnGroup.Location = New System.Drawing.Point(174, 418)
+        Me.AccessRadioBtnGroup.Location = New System.Drawing.Point(174, 503)
         Me.AccessRadioBtnGroup.Name = "AccessRadioBtnGroup"
         Me.AccessRadioBtnGroup.Size = New System.Drawing.Size(200, 63)
         Me.AccessRadioBtnGroup.TabIndex = 89
@@ -379,11 +376,83 @@ Partial Class AddEmployee
         Me.HourlySalaryLabel.TabIndex = 95
         Me.HourlySalaryLabel.Text = "Hourly Rate / Salary"
         '
+        'EmpAddedLbl
+        '
+        Me.EmpAddedLbl.AutoSize = True
+        Me.EmpAddedLbl.Location = New System.Drawing.Point(220, 612)
+        Me.EmpAddedLbl.Name = "EmpAddedLbl"
+        Me.EmpAddedLbl.Size = New System.Drawing.Size(87, 13)
+        Me.EmpAddedLbl.TabIndex = 95
+        Me.EmpAddedLbl.Text = "Employee Added"
+        Me.EmpAddedLbl.Visible = False
+        '
+        'usrGenFormUsrNameLabel
+        '
+        Me.usrGenFormUsrNameLabel.AutoSize = True
+        Me.usrGenFormUsrNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usrGenFormUsrNameLabel.Location = New System.Drawing.Point(43, 398)
+        Me.usrGenFormUsrNameLabel.Name = "usrGenFormUsrNameLabel"
+        Me.usrGenFormUsrNameLabel.Size = New System.Drawing.Size(98, 20)
+        Me.usrGenFormUsrNameLabel.TabIndex = 96
+        Me.usrGenFormUsrNameLabel.Text = "User Name"
+        '
+        'userGenFormPassLabel
+        '
+        Me.userGenFormPassLabel.AutoSize = True
+        Me.userGenFormPassLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.userGenFormPassLabel.Location = New System.Drawing.Point(56, 433)
+        Me.userGenFormPassLabel.Name = "userGenFormPassLabel"
+        Me.userGenFormPassLabel.Size = New System.Drawing.Size(86, 20)
+        Me.userGenFormPassLabel.TabIndex = 98
+        Me.userGenFormPassLabel.Text = "Password"
+        '
+        'CreateUnameTxt
+        '
+        Me.CreateUnameTxt.Location = New System.Drawing.Point(202, 398)
+        Me.CreateUnameTxt.Name = "CreateUnameTxt"
+        Me.CreateUnameTxt.Size = New System.Drawing.Size(121, 20)
+        Me.CreateUnameTxt.TabIndex = 97
+        '
+        'CreatePwordTxt
+        '
+        Me.CreatePwordTxt.Location = New System.Drawing.Point(202, 433)
+        Me.CreatePwordTxt.Name = "CreatePwordTxt"
+        Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.CreatePwordTxt.TabIndex = 99
+        Me.CreatePwordTxt.UseSystemPasswordChar = True
+        '
+        'userGenFormPassVrfyLabel
+        '
+        Me.userGenFormPassVrfyLabel.AutoSize = True
+        Me.userGenFormPassVrfyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.userGenFormPassVrfyLabel.Location = New System.Drawing.Point(4, 467)
+        Me.userGenFormPassVrfyLabel.Name = "userGenFormPassVrfyLabel"
+        Me.userGenFormPassVrfyLabel.Size = New System.Drawing.Size(137, 20)
+        Me.userGenFormPassVrfyLabel.TabIndex = 101
+        Me.userGenFormPassVrfyLabel.Text = "Verify Password"
+        '
+        'VerifyPwordTxt
+        '
+        Me.VerifyPwordTxt.Location = New System.Drawing.Point(202, 467)
+        Me.VerifyPwordTxt.Name = "VerifyPwordTxt"
+        Me.VerifyPwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.VerifyPwordTxt.Size = New System.Drawing.Size(121, 20)
+        Me.VerifyPwordTxt.TabIndex = 100
+        Me.VerifyPwordTxt.UseSystemPasswordChar = True
+        '
         'AddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(596, 552)
+        Me.ClientSize = New System.Drawing.Size(622, 639)
+        Me.Controls.Add(Me.usrGenFormUsrNameLabel)
+        Me.Controls.Add(Me.userGenFormPassLabel)
+        Me.Controls.Add(Me.CreateUnameTxt)
+        Me.Controls.Add(Me.CreatePwordTxt)
+        Me.Controls.Add(Me.userGenFormPassVrfyLabel)
+        Me.Controls.Add(Me.VerifyPwordTxt)
+        Me.Controls.Add(Me.EmpAddedLbl)
         Me.Controls.Add(Me.PaymentGroupBox)
         Me.Controls.Add(Me.AccessRadioBtnGroup)
         Me.Controls.Add(Me.SSN_Txt)
@@ -399,7 +468,6 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.PositionTxt)
         Me.Controls.Add(Me.addEmployeeFormPositionLable)
         Me.Controls.Add(Me.BackBtn)
-        Me.Controls.Add(Me.NextBtn)
         Me.Controls.Add(Me.LnameTxt)
         Me.Controls.Add(Me.addEmployeeFormLastNameLabel)
         Me.Controls.Add(Me.ZipTxt)
@@ -432,7 +500,6 @@ Partial Class AddEmployee
     Private WithEvents PositionTxt As TextBox
     Private WithEvents addEmployeeFormPositionLable As Label
     Private WithEvents BackBtn As Button
-    Private WithEvents NextBtn As Button
     Private WithEvents LnameTxt As TextBox
     Private WithEvents addEmployeeFormLastNameLabel As Label
     Private WithEvents ZipTxt As TextBox
@@ -456,4 +523,11 @@ Partial Class AddEmployee
     Friend WithEvents PayRateTxtBox As TextBox
     Private WithEvents PayFreqCmbBox As ComboBox
     Private WithEvents PayFreqLabel As Label
+    Friend WithEvents EmpAddedLbl As Label
+    Private WithEvents usrGenFormUsrNameLabel As Label
+    Protected Friend WithEvents userGenFormPassLabel As Label
+    Protected Friend WithEvents CreateUnameTxt As TextBox
+    Protected Friend WithEvents CreatePwordTxt As MaskedTextBox
+    Private WithEvents userGenFormPassVrfyLabel As Label
+    Protected Friend WithEvents VerifyPwordTxt As MaskedTextBox
 End Class

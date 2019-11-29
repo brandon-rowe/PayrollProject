@@ -93,7 +93,7 @@ Public Class Payroll
         Me.EmployeeFutureTableAdapter.FillByLastName(Me.Primary.EmployeeFuture, LastName)
     End Sub
 
-    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs)
 
     End Sub
 

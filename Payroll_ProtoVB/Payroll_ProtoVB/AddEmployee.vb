@@ -28,6 +28,7 @@ Public Class AddEmployee
     Dim PaymentID As Integer
     Dim PayFrequency As String
     Dim PayDate As DateTime
+    Dim returnForm As String
 
     'empty constructor
     Public Sub New()
@@ -53,6 +54,12 @@ Public Class AddEmployee
         StreetTxt.Text = street.ToString()
         StateTxt.Text = state.ToString()
         ZipTxt.Text = zip.ToString()
+    End Sub
+
+    'Return to empmanagement CM
+    Public Sub New(nReturnForm As String)
+        InitializeComponent()
+        returnForm = nReturnForm
     End Sub
 
 
@@ -161,28 +168,45 @@ Public Class AddEmployee
             futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
         End If
 
+        EmpAddedLbl.Text = "Employee " + Fname + " " + Lname + " has been added successfully!"
+        EmpAddedLbl.Visible = True
+
+        Fname = ""
+        Lname = ""
+        street = ""
+        state = ""
+        zip = ""
+        address = ""
+        status = ""
+        dependents = ""
+        position = ""
+        ssn = ""
+        PayRate = 0
+        HoursWorked = 0
+        PayFrequency = ""
+        PayDate = ""
+        paymentType = ""
+        Uname = ""
+        Pass = ""
+        admin = False
+
     End Sub
 
-    Private Sub NextBtn_Click(sender As Object, e As EventArgs) Handles NextBtn.Click
+    Private Sub NextBtn_Click(sender As Object, e As EventArgs)
         'ATTENTION: This button should navigate to Login.vb
         Me.Close()
-        Login.LoginGB.Visible = True
-        Login.SignUpGB.Visible = False
         Login.Show()
-        Login.FnameTxt.Clear()
-        Login.LnameTxt.Clear()
-        Login.StreetTxt.Clear()
-        Login.StateTxt.Clear()
-        Login.ZipTxt.Clear()
-        Login.CreateUnameTxt.Clear()
-        Login.CreatePwordTxt.Clear()
-        Login.VerifyPwordTxt.Clear()
     End Sub
 
     Private Sub BackBtn_Click(sender As Object, e As EventArgs) Handles BackBtn.Click
-        'ATTENTION: This button should navigate to Login.vb
+        'will navigate to the form that it opened from
+        Dim EmpManagement As New EmpManagment
         Me.Close()
-        Login.Show()
+        If (returnForm = "Management") Then
+            EmpManagment.Show()
+        Else
+            Login.Show()
+        End If
     End Sub
 
     Private Sub PayTypeCBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PayTypeCBox.SelectedIndexChanged
