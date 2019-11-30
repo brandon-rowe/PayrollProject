@@ -14,6 +14,7 @@ Public Class PayStub
     End Sub
 
     Private Sub PrintStubBTN_Click(sender As Object, e As EventArgs) Handles printStubBTN.Click
+        FeedbackLogsTableAdapter1.CountPlusOne("Paystub", "Print Button")
 
         Dim pd As New PrintDocument
         Dim pdialog As New PrintDialog
@@ -91,6 +92,8 @@ Public Class PayStub
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
+        FeedbackLogsTableAdapter1.CountPlusOne("Paystub", "Cancel Button")
+
         Payroll.Show()
         Me.Close()
     End Sub

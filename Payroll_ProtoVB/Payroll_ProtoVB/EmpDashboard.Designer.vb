@@ -269,6 +269,7 @@ Partial Class EmpDashboard
         Me.TableAdapterManager1.EmployeeFutureTableAdapter = Nothing
         Me.TableAdapterManager1.EmployeePastTableAdapter = Nothing
         Me.TableAdapterManager1.EmployeeTableAdapter = Nothing
+        Me.TableAdapterManager1.FeedbackLogsTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = Payroll_ProtoVB.PrimaryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'IDDataGridViewTextBoxColumn
@@ -277,6 +278,7 @@ Partial Class EmpDashboard
         Me.IDDataGridViewTextBoxColumn.FillWeight = 70.0!
         Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FnameDataGridViewTextBoxColumn
         '

@@ -47,6 +47,7 @@ Public Class PayRateCalc
     End Sub
 
     Private Sub UpdateBtn_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
+        FeedbackLogsTableAdapter1.CountPlusOne("Calculate", "Submit Payroll Button")
 
         Dim j = 0
         Dim amount As Double

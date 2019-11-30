@@ -25,6 +25,7 @@ Partial Class PayStub
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayStub))
         Me.PayStubGroupBox = New System.Windows.Forms.GroupBox()
+        Me.TextBox5 = New System.Windows.Forms.RichTextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -77,7 +78,7 @@ Partial Class PayStub
         Me.menueStrip = New System.Windows.Forms.ToolStrip()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
-        Me.TextBox5 = New System.Windows.Forms.RichTextBox()
+        Me.FeedbackLogsTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.FeedbackLogsTableAdapter()
         Me.PayStubGroupBox.SuspendLayout()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeFutureBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +126,18 @@ Partial Class PayStub
         Me.PayStubGroupBox.TabIndex = 4
         Me.PayStubGroupBox.TabStop = False
         Me.PayStubGroupBox.Text = "PayStub"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(445, 190)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
+        Me.TextBox5.Size = New System.Drawing.Size(113, 26)
+        Me.TextBox5.TabIndex = 30
+        Me.TextBox5.Text = "Bob Burger"
         '
         'TextBox4
         '
@@ -574,17 +587,9 @@ Partial Class PayStub
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
-        'TextBox5
+        'FeedbackLogsTableAdapter1
         '
-        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(445, 190)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.TextBox5.Size = New System.Drawing.Size(113, 26)
-        Me.TextBox5.TabIndex = 30
-        Me.TextBox5.Text = "Bob Burger"
+        Me.FeedbackLogsTableAdapter1.ClearBeforeFill = True
         '
         'PayStub
         '
@@ -666,4 +671,5 @@ Partial Class PayStub
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument As Printing.PrintDocument
     Friend WithEvents TextBox5 As RichTextBox
+    Friend WithEvents FeedbackLogsTableAdapter1 As PrimaryTableAdapters.FeedbackLogsTableAdapter
 End Class

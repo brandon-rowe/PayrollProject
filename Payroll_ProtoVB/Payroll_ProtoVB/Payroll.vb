@@ -11,6 +11,7 @@ Public Class Payroll
     Dim ID As String
     Dim FirstName As String
     Dim LastName As String
+    Dim feedBackLogs As New FeedbackLogsTableAdapter
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Primary.EmployeeFuture' table. You can move, or remove it, as needed.
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
@@ -22,6 +23,8 @@ Public Class Payroll
 
     Private Sub EmpIDSearch_Click(sender As Object, e As EventArgs) Handles EmpIDSearch.Click
         'B. Rowe: We need to think through the functionality of this button and how best to implement.
+        feedBackLogs.CountPlusOne("Payroll", "Search (ID) Button")
+
         ID = EmpIDSeartTxt.Text
         Me.EmployeePastTableAdapter.FillByID(Me.Primary.EmployeePast, ID)
         Me.EmployeeFutureTableAdapter.FillByID(Me.Primary.EmployeeFuture, ID)
@@ -56,6 +59,8 @@ Public Class Payroll
         Me.Close()
     End Sub
     Private Sub PaymentRecordBTN_Click(sender As Object, e As EventArgs) Handles PaymentRecordBTN.Click
+        feedBackLogs.CountPlusOne("Payroll", "View Detailed Record Button")
+
         If TabControl.SelectedTab Is PastPayTab Then
             Dim PaymentRecord = New PaymentRecord(PayrollDataGridViewPast.CurrentRow.Cells(1).Value)
             PaymentRecord.Show()
@@ -67,6 +72,8 @@ Public Class Payroll
     End Sub
 
     Private Sub PayStubBTN_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
+        feedBackLogs.CountPlusOne("Payroll", "View Employee Paystub Button")
+
         'ATTENTION: This button should navigate to PayStub.vb
         If TabControl.SelectedTab Is PastPayTab Then
             Dim PayStub = New PayStub(PayrollDataGridViewPast.CurrentRow.Cells(1).Value, "past")
@@ -88,6 +95,8 @@ Public Class Payroll
     End Sub
 
     Private Sub LnameSearch_Click(sender As Object, e As EventArgs) Handles LnameSearch.Click
+        feedBackLogs.CountPlusOne("Payroll", "Search (Lname) Button")
+
         LastName = LnameSearchTxt.Text
         Me.EmployeePastTableAdapter.FillByLastName(Me.Primary.EmployeePast, LastName)
         Me.EmployeeFutureTableAdapter.FillByLastName(Me.Primary.EmployeeFuture, LastName)
@@ -98,12 +107,16 @@ Public Class Payroll
     End Sub
 
     Private Sub FnameSearch_Click(sender As Object, e As EventArgs) Handles FnameSearch.Click
+        feedBackLogs.CountPlusOne("Payroll", "Search (Fname) Button")
+
         FirstName = FnameSearchTxt.Text
         Me.EmployeePastTableAdapter.FillByFirstName(Me.Primary.EmployeePast, FirstName)
         Me.EmployeeFutureTableAdapter.FillByFirstName(Me.Primary.EmployeeFuture, FirstName)
     End Sub
 
     Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
+        feedBackLogs.CountPlusOne("Payroll", "Clear Selection Button")
+
         Me.EmployeePastTableAdapter.Fill(Me.Primary.EmployeePast)
         Me.EmployeeFutureTableAdapter.Fill(Me.Primary.EmployeeFuture)
         ID = ""

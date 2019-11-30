@@ -40,11 +40,23 @@
     End Sub
 
     Private Sub BackBTN_Click(sender As Object, e As EventArgs) Handles backBTN.Click
+        FeedbackLogsTableAdapter1.CountPlusOne("PaymentRecord", "Back Button")
+
         Payroll.Show()
         Me.Close()
     End Sub
 
     Private Sub populateTabelBTN_Click(sender As Object, e As EventArgs) Handles populateTabelBTN.Click
+        FeedbackLogsTableAdapter1.CountPlusOne("PaymentRecord", "Continue Button")
+
         Me.EmployeePastTableAdapter.FillByDate(Me.Primary.EmployeePast, strtPayPeriodDatePicker.Value, endPayPeriodDatePicker.Value, ID)
+    End Sub
+
+    Private Sub strtPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles strtPayPeriodDatePicker.ValueChanged
+        FeedbackLogsTableAdapter1.CountPlusOne("PaymentRecord", "Start Date Selector")
+    End Sub
+
+    Private Sub endPayPeriodDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles endPayPeriodDatePicker.ValueChanged
+        FeedbackLogsTableAdapter1.CountPlusOne("PaymentRecord", "End Date Selector")
     End Sub
 End Class

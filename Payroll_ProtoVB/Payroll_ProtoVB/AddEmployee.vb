@@ -29,6 +29,7 @@ Public Class AddEmployee
     Dim PayFrequency As String
     Dim PayDate As DateTime
     Dim returnForm As String
+    Dim feedBackLogs As New FeedbackLogsTableAdapter
 
     'empty constructor
     Public Sub New()
@@ -66,144 +67,154 @@ Public Class AddEmployee
 
 
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
+        feedBackLogs.CountPlusOne("AddEmployee", "Add Employee Button")
         'ATTENTION: This button should remain on AddEmployee.vb 
         'until Next Or Back button is selected
 
-        Dim nPayRate As Double = CDbl(PayRateTxtBox.Text)
-        Dim nHoursWorked As Double = 0
+        Try
+            Dim nPayRate As Double = CDbl(PayRateTxtBox.Text)
+            Dim nHoursWorked As Double = 0
 
-        If (PayTypeCBox.Text = "Hourly") Then
-            nHoursWorked = CDbl(HoursWorkedTxtBox.Text)
-        End If
+            If (PayTypeCBox.Text = "Hourly") Then
+                nHoursWorked = CDbl(HoursWorkedTxtBox.Text)
+            End If
 
-        Fname = FnameTxt.Text
-        Lname = LnameTxt.Text
-        street = StreetTxt.Text
-        state = StateTxt.Text
-        zip = ZipTxt.Text
-        address = street + " " + state + " " + zip
-        status = MaritalStatCB.Text
-        dependents = DependentsTxt.Text
-        position = PositionTxt.Text
-        ssn = SSN_Txt.Text
-        PayRate = PayRateTxtBox.Text
-        HoursWorked = HoursWorkedTxtBox.Text
-        PayFrequency = PayFreqCmbBox.Text
+            Fname = FnameTxt.Text
+            Lname = LnameTxt.Text
+            street = StreetTxt.Text
+            state = StateTxt.Text
+            zip = ZipTxt.Text
+            address = street + " " + state + " " + zip
+            status = MaritalStatCB.Text
+            dependents = DependentsTxt.Text
+            position = PositionTxt.Text
+            ssn = SSN_Txt.Text
+            PayRate = PayRateTxtBox.Text
+            HoursWorked = HoursWorkedTxtBox.Text
+            PayFrequency = PayFreqCmbBox.Text
 
-        If (MaritalStatCB.SelectedIndex = 0) Then
-            status = False
-        ElseIf (MaritalStatCB.SelectedIndex = 1) Then
-            status = True
-        End If
+            If (MaritalStatCB.SelectedIndex = 0) Then
+                status = False
+            ElseIf (MaritalStatCB.SelectedIndex = 1) Then
+                status = True
+            End If
 
-        If (PayTypeCBox.SelectedIndex = 0) Then
-            paymentType = True
-        ElseIf (MaritalStatCB.SelectedIndex = 1) Then
-            paymentType = False
-        End If
+            If (PayTypeCBox.SelectedIndex = 0) Then
+                paymentType = True
+            ElseIf (MaritalStatCB.SelectedIndex = 1) Then
+                paymentType = False
+            End If
 
-        If (AdminRadioBtn.Checked = True) Then
-            admin = True
-        ElseIf (EmployeeRadioBtn.Checked = True) Then
+            If (AdminRadioBtn.Checked = True) Then
+                admin = True
+            ElseIf (EmployeeRadioBtn.Checked = True) Then
+                admin = False
+            End If
+
+            If (PayFreqCmbBox.Text = "Monthly") Then
+                Dim newMonth As String = CStr(Date.Today.Month)
+                Dim newYear As String = CStr(Date.Today.Year)
+
+                If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
+                    newMonth = 1
+                    newYear = Date.Today.Year + 1
+                ElseIf (Date.Today.Day > 15) Then
+                    newMonth = Date.Today.Month + 1
+                End If
+
+                If (newMonth.Length = 1) Then
+                    newMonth = "0" + newMonth
+                End If
+
+                PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
+
+            ElseIf (PayFreqCmbBox.Text = "Bi-Weekly") Then
+                PayDate = futureTA.PayFrequencyDate("Bi-Weekly")
+            ElseIf (PayFreqCmbBox.Text = "Weekly") Then
+                PayDate = futureTA.PayFrequencyDate("Weekly")
+            End If
+
+            'Update and automate ID assignment by incrementing the number of rows
+            ID = employTA.CountRows() + 1
+            PaymentID = futureTA.CountRows() + 1
+
+
+            FnameTxt.Clear()
+            LnameTxt.Clear()
+            StreetTxt.Clear()
+            StateTxt.Clear()
+            ZipTxt.Clear()
+            PayRateTxtBox.Clear()
+            HoursWorkedTxtBox.Clear()
+            MaritalStatCB.Refresh()
+            MaritalStatCB.ResetText()
+            DependentsTxt.Clear()
+            PositionTxt.Clear()
+            PayTypeCBox.Refresh()
+            PayTypeCBox.ResetText()
+            SSN_Txt.Clear()
+            AccessRadioBtnGroup.Refresh()
+            PaymentGroupBox.Visible = False
+            PayFreqCmbBox.SelectedIndex = 0
+            'AccessCTRL.ClearSelected()
+            'AccessCTRL.Refresh()
+            'AccessCTRL.ResetText()
+
+
+            Dim payRateLogic As New PayRateLogic
+
+            If (paymentType = True) Then
+                employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, 0, ssn, Uname, Pass, PayFrequency)
+                futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1, PayFrequency)
+            Else
+                employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
+                futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
+            End If
+
+            Dim MSG, style, title, response, MyString
+            MSG = "Employee " + Fname + " " + Lname + " added succesfully."
+            title = "Employee Added"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
+            End If
+
+            Fname = ""
+            Lname = ""
+            street = ""
+            state = ""
+            zip = ""
+            address = ""
+            status = ""
+            dependents = ""
+            position = ""
+            ssn = ""
+            PayRate = 0
+            HoursWorked = 0
+            PayFrequency = ""
+            paymentType = ""
+            Uname = ""
+            Pass = ""
             admin = False
-        End If
 
-        If (PayFreqCmbBox.Text = "Monthly") Then
-            Dim newMonth As String = CStr(Date.Today.Month)
-            Dim newYear As String = CStr(Date.Today.Year)
+        Catch
 
-            If (Date.Today.Day > 15 And Date.Today.Month = 12) Then
-                newMonth = 1
-                newYear = Date.Today.Year + 1
-            ElseIf (Date.Today.Day > 15) Then
-                newMonth = Date.Today.Month + 1
+            Dim MSG, style, title, response, MyString
+            MSG = "Please make sure all fields were completed."
+            title = "Fields missing"
+            style = vbOKOnly + vbDefaultButton1
+            response = MsgBox(MSG, style, title)
+            If response = vbOKOnly Then
+                MyString = "OK"
             End If
 
-            If (newMonth.Length = 1) Then
-                newMonth = "0" + newMonth
-            End If
-
-            PayDate = DateTime.ParseExact(newMonth + "15" + newYear, "MMddyyyy", Nothing)
-
-        ElseIf (PayFreqCmbBox.Text = "Bi-Weekly") Then
-            PayDate = futureTA.PayFrequencyDate("Bi-Weekly")
-        ElseIf (PayFreqCmbBox.Text = "Weekly") Then
-            PayDate = futureTA.PayFrequencyDate("Weekly")
-        End If
-
-        'Update and automate ID assignment by incrementing the number of rows
-        ID = employTA.CountRows() + 1
-        PaymentID = futureTA.CountRows() + 1
-
-
-        FnameTxt.Clear()
-        LnameTxt.Clear()
-        StreetTxt.Clear()
-        StateTxt.Clear()
-        ZipTxt.Clear()
-        PayRateTxtBox.Clear()
-        HoursWorkedTxtBox.Clear()
-        MaritalStatCB.Refresh()
-        MaritalStatCB.ResetText()
-        DependentsTxt.Clear()
-        PositionTxt.Clear()
-        PayTypeCBox.Refresh()
-        PayTypeCBox.ResetText()
-        SSN_Txt.Clear()
-        AccessRadioBtnGroup.Refresh()
-        PaymentGroupBox.Visible = False
-        PayFreqCmbBox.SelectedIndex = 0
-        'AccessCTRL.ClearSelected()
-        'AccessCTRL.Refresh()
-        'AccessCTRL.ResetText()
-
-
-        Dim payRateLogic As New PayRateLogic
-
-        If (paymentType = True) Then
-            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, 0, ssn, Uname, Pass, PayFrequency)
-            futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1, PayFrequency)
-        Else
-            employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
-            futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
-        End If
-
-        Dim MSG, style, title, response, MyString
-        MSG = "Employee " + Fname + " " + Lname + " added succesfully."
-        title = "Employee Added"
-        style = vbOKOnly + vbDefaultButton1
-        response = MsgBox(MSG, style, title)
-        If response = vbOKOnly Then
-            MyString = "OK"
-        End If
-
-        Fname = ""
-        Lname = ""
-        street = ""
-        state = ""
-        zip = ""
-        address = ""
-        status = ""
-        dependents = ""
-        position = ""
-        ssn = ""
-        PayRate = 0
-        HoursWorked = 0
-        PayFrequency = ""
-        paymentType = ""
-        Uname = ""
-        Pass = ""
-        admin = False
+        End Try
 
     End Sub
-
-    Private Sub NextBtn_Click(sender As Object, e As EventArgs)
-        'ATTENTION: This button should navigate to Login.vb
-        Me.Close()
-        Login.Show()
-    End Sub
-
     Private Sub BackBtn_Click(sender As Object, e As EventArgs) Handles BackBtn.Click
+        feedBackLogs.CountPlusOne("AddEmployee", "Back Button")
+
         'will navigate to the form that it opened from
         Dim EmpManagement As New EmpManagment
         Me.Close()

@@ -3,6 +3,7 @@
 Public Class EmpDashboard
     Dim employTA As New EmployeeTableAdapter
     Dim futureTA As New EmployeeFutureTableAdapter
+    Dim feedBackLogs As New FeedbackLogsTableAdapter
 
 
     Private Sub EmpDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -11,12 +12,16 @@ Public Class EmpDashboard
     End Sub
 
     Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+        feedBackLogs.CountPlusOne("EmpDashboard", "Save Button (Toolstrip)")
+
         Me.EmployeeBindingSource.EndEdit()
         DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         employTA.Adapter.Update(Me.Primary)
     End Sub
 
     Private Sub EmpDetailedView_Click(sender As Object, e As EventArgs) Handles EmpDetailedView.Click
+        feedBackLogs.CountPlusOne("EmpDashboard", "Manage Employee Information Button")
+
         'ATTENTION: This button should navigate to EmpManagement.vb
 
         'saves edit first CM
@@ -62,12 +67,18 @@ Public Class EmpDashboard
     End Sub
 
     Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
-        Me.EmployeeBindingSource.EndEdit()
-        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
-        employTA.Adapter.Update(Me.Primary)
+        feedBackLogs.CountPlusOne("EmpDashboard", "Delete Button (Toolstrip)")
+
+        employTA.DeleteRow(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value)
+
         Try
             futureTA.DeleteByID(DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value)
         Catch
         End Try
+
+        Me.EmployeeBindingSource.EndEdit()
+        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+        employTA.Adapter.Update(Me.Primary)
+
     End Sub
 End Class
