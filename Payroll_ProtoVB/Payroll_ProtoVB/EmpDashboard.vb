@@ -24,11 +24,6 @@ Public Class EmpDashboard
 
         'ATTENTION: This button should navigate to EmpManagement.vb
 
-        'saves edit first CM
-        Me.EmployeeBindingSource.EndEdit()
-        DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
-        employTA.Adapter.Update(Me.Primary)
-
         'shows empmanagement CM
         Dim EmpManagment = New EmpManagment(DataGridView1.CurrentRow.Index + 1)
         EmpManagment.Show()
