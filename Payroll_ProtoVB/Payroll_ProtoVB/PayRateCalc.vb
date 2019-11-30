@@ -83,7 +83,7 @@ Public Class PayRateCalc
                 maritalstatus = DataGridView1.Item(5, j).Value
                 EmployeeFutureTableAdapter1.CopyQuery(ID)
                 EmployeeFutureTableAdapter1.DeleteHourlyQuery(ID)
-                amount = payRateLogic.CalculateHourlyPayTaxed(hourlyRate, hoursWorked, dependents, maritalstatus)
+                amount = payRateLogic.CalculateHourlyPayTaxed(hourlyRate, hoursWorked, dependents, maritalstatus, payFrequency)
                 If (payFrequency = "Monthly") Then
                     PayDate = PayDate.AddMonths(1)
                 ElseIf (payFrequency = "Bi-Weekly") Then
@@ -126,7 +126,7 @@ Public Class PayRateCalc
 
         ' Trys to get values from DataGridView, if it cannot then the Text defaults to 0.0
         Try
-            GrossPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value))
+            GrossPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPay(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(13, DataGridView1.CurrentRow.Index).Value))
             grossPay = GrossPayTxtBox.Text.Substring(1)
         Catch
             GrossPayTxtBox.Text = "$0.0"
@@ -134,7 +134,7 @@ Public Class PayRateCalc
         End Try
 
         Try
-            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value))
+            NetPayTxtBox.Text = "$" + CStr(payRateLogic.CalculateHourlyPayTaxed(DataGridView1.Item(HourlyPayColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(HoursColIndex, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(6, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(5, DataGridView1.CurrentRow.Index).Value, DataGridView1.Item(13, DataGridView1.CurrentRow.Index).Value))
             netPay = NetPayTxtBox.Text.Substring(1)
         Catch
             NetPayTxtBox.Text = "$0.0"

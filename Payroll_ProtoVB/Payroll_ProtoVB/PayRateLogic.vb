@@ -1,12 +1,12 @@
 ﻿Public Class PayRateLogic
-    Function CalculateHourlyPayTaxed(hourlyPayRate As Double, numHours As Double, dependents As Integer, maritalstatus As Boolean) As Double
-        Dim Pay As Double = CalculateHourlyPay(hourlyPayRate, numHours)
+    Function CalculateHourlyPayTaxed(hourlyPayRate As Double, numHours As Double, dependents As Integer, maritalstatus As Boolean, payfrequency As String) As Double
+        Dim Pay As Double = CalculateHourlyPay(hourlyPayRate, numHours, payfrequency)
         Dim MarriageDependentsPay As Double = ApplyMarriageDependents(Pay, dependents, maritalstatus)
         Dim TaxedPay As Double = ApplyTaxes(MarriageDependentsPay)
         Return TaxedPay
     End Function
 
-    Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double) As Double
+    Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double, payfrequency As String) As Double
 
         Dim otpayrate As Double
         Dim otHours As Double
@@ -16,7 +16,14 @@
         Dim regHours As Double
         Dim grossPay As Double
 
-        regHours = 160.0
+        If (payfrequency = "Monthly") Then
+            regHours = 160.0
+        ElseIf (payfrequency = "Bi-Weekly") Then
+            regHours = 80.0
+        Else
+            regHours = 40.0
+        End If
+
 
         If numHours <= regHours AndAlso numHours >= 0 AndAlso hourlyPayRate >= 0 Then
             grossPay = hourlyPayRate * numHours

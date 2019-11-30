@@ -168,7 +168,7 @@ Public Class AddEmployee
                 futureTA.InsertQuery(ID, PayDate, nPayRate / 12, Fname, Lname, 1, PayFrequency)
             Else
                 employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
-                futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status), Fname, Lname, 0, PayFrequency)
+                futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status, PayFrequency), Fname, Lname, 0, PayFrequency)
             End If
 
             Dim MSG, style, title, response, MyString
