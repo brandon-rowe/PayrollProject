@@ -1,7 +1,18 @@
 ﻿Public Class Metrics
     Private Sub Metrics_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Primary.FeedbackLogs' table. You can move, or remove it, as needed.
+        Me.FeedbackLogsTableAdapter.Fill(Me.Primary.FeedbackLogs)
         'TODO: This line of code loads data into the 'Primary.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
+        'Chart1.DataBindTable(FeedbackLogsBindingSource, "count")
+        Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Bar
+        Chart1.Series(0).Points.DataBind(EmployeeBindingSource, "hoursworked", "salary", "")
+
+        'Chart1.Series["Series 1"].XValueMember = "Name"
+        'Chart1.Series["Series 1"].YValueMembers = "Sales"
+        'Chart1.Series.Add()
+        'Chart1.DataBind()
+
 
     End Sub
 

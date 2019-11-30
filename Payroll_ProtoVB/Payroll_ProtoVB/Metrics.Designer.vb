@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Metrics
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Metrics
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Metrics))
@@ -38,11 +38,14 @@ Partial Class Metrics
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.FeedbackLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.FeedbackLogsTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.FeedbackLogsTableAdapter()
         Me.menueStrip.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FeedbackLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -137,6 +140,8 @@ Partial Class Metrics
         '
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.Chart1.DataBindings.Add(New System.Windows.Forms.Binding("DataSource", Me.FeedbackLogsBindingSource, "count", True))
+        Me.Chart1.DataSource = Me.FeedbackLogsBindingSource
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(255, 66)
@@ -144,10 +149,17 @@ Partial Class Metrics
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
+        Series1.XValueMember = "feature"
+        Series1.YValueMembers = "count"
         Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(300, 300)
         Me.Chart1.TabIndex = 4
         Me.Chart1.Text = "Chart1"
+        '
+        'FeedbackLogsBindingSource
+        '
+        Me.FeedbackLogsBindingSource.DataMember = "FeedbackLogs"
+        Me.FeedbackLogsBindingSource.DataSource = Me.Primary
         '
         'Primary
         '
@@ -163,6 +175,10 @@ Partial Class Metrics
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
+        'FeedbackLogsTableAdapter
+        '
+        Me.FeedbackLogsTableAdapter.ClearBeforeFill = True
+        '
         'Metrics
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -176,6 +192,7 @@ Partial Class Metrics
         Me.menueStrip.ResumeLayout(False)
         Me.menueStrip.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FeedbackLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -195,4 +212,6 @@ Partial Class Metrics
     Friend WithEvents Primary As Primary
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As PrimaryTableAdapters.EmployeeTableAdapter
+    Friend WithEvents FeedbackLogsBindingSource As BindingSource
+    Friend WithEvents FeedbackLogsTableAdapter As PrimaryTableAdapters.FeedbackLogsTableAdapter
 End Class
