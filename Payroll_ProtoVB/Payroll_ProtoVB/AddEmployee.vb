@@ -30,6 +30,7 @@ Public Class AddEmployee
     Dim PayFrequency As String
     Dim PayDate As DateTime
     Dim returnForm As String
+    Dim statusInt As Integer = 0
     Dim feedBackLogs As New FeedbackLogsTableAdapter
 
     'empty constructor
@@ -168,7 +169,6 @@ Public Class AddEmployee
                     CreatePwordTxt.Text = ""
                     VerifyPwordTxt.Text = ""
 
-
                     'AccessCTRL.ClearSelected()
                     'AccessCTRL.Refresh()
                     'AccessCTRL.ResetText()
@@ -178,7 +178,10 @@ Public Class AddEmployee
 
                     If (paymentType = True) Then
                         employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, PayRate, 0, 0, ssn, Uname, Pass, PayFrequency)
-                        futureTA.InsertQuery(ID, PayDate, (nPayRate - (nPayRate * 0.27)) / 12, Fname, Lname, 1, PayFrequency)
+                        If (status = True) Then
+                            statusInt = 1
+                        End If
+                        futureTA.InsertQuery(ID, PayDate, (nPayRate - (nPayRate * 0.27) + (statusInt * 50 + CInt(dependents) * 20)) / 12, Fname, Lname, 1, PayFrequency)
                     Else
                         employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
                         futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status, PayFrequency), Fname, Lname, 0, PayFrequency)

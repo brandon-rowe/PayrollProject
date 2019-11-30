@@ -70,7 +70,7 @@ Partial Class AddEmployee
         Me.DependentsTxt.Location = New System.Drawing.Point(202, 326)
         Me.DependentsTxt.Name = "DependentsTxt"
         Me.DependentsTxt.Size = New System.Drawing.Size(121, 20)
-        Me.DependentsTxt.TabIndex = 8
+        Me.DependentsTxt.TabIndex = 10
         '
         'addEmployeeFormDepStatLabel
         '
@@ -128,7 +128,7 @@ Partial Class AddEmployee
         Me.AddEmpBtn.Location = New System.Drawing.Point(212, 576)
         Me.AddEmpBtn.Name = "AddEmpBtn"
         Me.AddEmpBtn.Size = New System.Drawing.Size(102, 23)
-        Me.AddEmpBtn.TabIndex = 11
+        Me.AddEmpBtn.TabIndex = 17
         Me.AddEmpBtn.Text = "Add Employee"
         Me.AddEmpBtn.UseVisualStyleBackColor = True
         '
@@ -137,7 +137,7 @@ Partial Class AddEmployee
         Me.PositionTxt.Location = New System.Drawing.Point(202, 363)
         Me.PositionTxt.Name = "PositionTxt"
         Me.PositionTxt.Size = New System.Drawing.Size(121, 20)
-        Me.PositionTxt.TabIndex = 9
+        Me.PositionTxt.TabIndex = 11
         '
         'addEmployeeFormPositionLable
         '
@@ -154,7 +154,7 @@ Partial Class AddEmployee
         Me.BackBtn.Location = New System.Drawing.Point(508, 602)
         Me.BackBtn.Name = "BackBtn"
         Me.BackBtn.Size = New System.Drawing.Size(102, 23)
-        Me.BackBtn.TabIndex = 13
+        Me.BackBtn.TabIndex = 18
         Me.BackBtn.Text = "Back"
         Me.BackBtn.UseVisualStyleBackColor = True
         '
@@ -280,7 +280,7 @@ Partial Class AddEmployee
         Me.AdminRadioBtn.Location = New System.Drawing.Point(6, 14)
         Me.AdminRadioBtn.Name = "AdminRadioBtn"
         Me.AdminRadioBtn.Size = New System.Drawing.Size(142, 17)
-        Me.AdminRadioBtn.TabIndex = 87
+        Me.AdminRadioBtn.TabIndex = 15
         Me.AdminRadioBtn.TabStop = True
         Me.AdminRadioBtn.Text = "FullAccess(Administrator)"
         Me.AdminRadioBtn.UseVisualStyleBackColor = True
@@ -291,7 +291,7 @@ Partial Class AddEmployee
         Me.EmployeeRadioBtn.Location = New System.Drawing.Point(6, 37)
         Me.EmployeeRadioBtn.Name = "EmployeeRadioBtn"
         Me.EmployeeRadioBtn.Size = New System.Drawing.Size(146, 17)
-        Me.EmployeeRadioBtn.TabIndex = 88
+        Me.EmployeeRadioBtn.TabIndex = 16
         Me.EmployeeRadioBtn.TabStop = True
         Me.EmployeeRadioBtn.Text = "PartialAccess(Employees)"
         Me.EmployeeRadioBtn.UseVisualStyleBackColor = True
@@ -329,7 +329,7 @@ Partial Class AddEmployee
         Me.PayFreqCmbBox.Location = New System.Drawing.Point(26, 181)
         Me.PayFreqCmbBox.Name = "PayFreqCmbBox"
         Me.PayFreqCmbBox.Size = New System.Drawing.Size(121, 21)
-        Me.PayFreqCmbBox.TabIndex = 101
+        Me.PayFreqCmbBox.TabIndex = 9
         '
         'PayFreqLabel
         '
@@ -346,14 +346,14 @@ Partial Class AddEmployee
         Me.HoursWorkedTxtBox.Location = New System.Drawing.Point(28, 49)
         Me.HoursWorkedTxtBox.Name = "HoursWorkedTxtBox"
         Me.HoursWorkedTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.HoursWorkedTxtBox.TabIndex = 98
+        Me.HoursWorkedTxtBox.TabIndex = 7
         '
         'PayRateTxtBox
         '
         Me.PayRateTxtBox.Location = New System.Drawing.Point(28, 119)
         Me.PayRateTxtBox.Name = "PayRateTxtBox"
         Me.PayRateTxtBox.Size = New System.Drawing.Size(78, 20)
-        Me.PayRateTxtBox.TabIndex = 99
+        Me.PayRateTxtBox.TabIndex = 8
         '
         'HoursWorkedLabel
         '
@@ -400,7 +400,7 @@ Partial Class AddEmployee
         Me.CreateUnameTxt.Location = New System.Drawing.Point(202, 398)
         Me.CreateUnameTxt.Name = "CreateUnameTxt"
         Me.CreateUnameTxt.Size = New System.Drawing.Size(121, 20)
-        Me.CreateUnameTxt.TabIndex = 97
+        Me.CreateUnameTxt.TabIndex = 12
         '
         'CreatePwordTxt
         '
@@ -408,7 +408,7 @@ Partial Class AddEmployee
         Me.CreatePwordTxt.Name = "CreatePwordTxt"
         Me.CreatePwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.CreatePwordTxt.Size = New System.Drawing.Size(121, 20)
-        Me.CreatePwordTxt.TabIndex = 99
+        Me.CreatePwordTxt.TabIndex = 13
         Me.CreatePwordTxt.UseSystemPasswordChar = True
         '
         'userGenFormPassVrfyLabel
@@ -427,7 +427,7 @@ Partial Class AddEmployee
         Me.VerifyPwordTxt.Name = "VerifyPwordTxt"
         Me.VerifyPwordTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.VerifyPwordTxt.Size = New System.Drawing.Size(121, 20)
-        Me.VerifyPwordTxt.TabIndex = 100
+        Me.VerifyPwordTxt.TabIndex = 14
         Me.VerifyPwordTxt.UseSystemPasswordChar = True
         '
         'AddEmployee

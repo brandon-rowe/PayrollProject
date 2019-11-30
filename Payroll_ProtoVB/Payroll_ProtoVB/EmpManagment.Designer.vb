@@ -42,12 +42,12 @@ Partial Class EmpManagment
         Me.loginFormUsrLabel = New System.Windows.Forms.Label()
         Me.WelcomeLabel = New System.Windows.Forms.Label()
         Me.EmployeeInfoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.HourlyGroupBox = New System.Windows.Forms.GroupBox()
         Me.SalariedGroupBox = New System.Windows.Forms.GroupBox()
         Me.SalaryTxtBox = New System.Windows.Forms.TextBox()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Primary = New Payroll_ProtoVB.Primary()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.HourlyGroupBox = New System.Windows.Forms.GroupBox()
         Me.employeeMGMTPayableHrsLabel = New System.Windows.Forms.Label()
         Me.employeeMGMTFormWageRateLabel = New System.Windows.Forms.Label()
         Me.PayRateTxt = New System.Windows.Forms.TextBox()
@@ -85,10 +85,10 @@ Partial Class EmpManagment
         Me.SearchAddGroupBox.SuspendLayout()
         Me.LoginGroupBox.SuspendLayout()
         Me.EmployeeInfoGroupBox.SuspendLayout()
-        Me.HourlyGroupBox.SuspendLayout()
         Me.SalariedGroupBox.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.HourlyGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'IDLabel
@@ -314,19 +314,6 @@ Partial Class EmpManagment
         Me.EmployeeInfoGroupBox.TabStop = False
         Me.EmployeeInfoGroupBox.Visible = False
         '
-        'HourlyGroupBox
-        '
-        Me.HourlyGroupBox.Controls.Add(Me.employeeMGMTPayableHrsLabel)
-        Me.HourlyGroupBox.Controls.Add(Me.employeeMGMTFormWageRateLabel)
-        Me.HourlyGroupBox.Controls.Add(Me.PayRateTxt)
-        Me.HourlyGroupBox.Controls.Add(Me.PayHrsTxt)
-        Me.HourlyGroupBox.Location = New System.Drawing.Point(8, 219)
-        Me.HourlyGroupBox.Name = "HourlyGroupBox"
-        Me.HourlyGroupBox.Size = New System.Drawing.Size(281, 137)
-        Me.HourlyGroupBox.TabIndex = 115
-        Me.HourlyGroupBox.TabStop = False
-        Me.HourlyGroupBox.Visible = False
-        '
         'SalariedGroupBox
         '
         Me.SalariedGroupBox.Controls.Add(Me.SalaryTxtBox)
@@ -365,6 +352,19 @@ Partial Class EmpManagment
         Me.Label2.Size = New System.Drawing.Size(59, 20)
         Me.Label2.TabIndex = 112
         Me.Label2.Text = "Salary"
+        '
+        'HourlyGroupBox
+        '
+        Me.HourlyGroupBox.Controls.Add(Me.employeeMGMTPayableHrsLabel)
+        Me.HourlyGroupBox.Controls.Add(Me.employeeMGMTFormWageRateLabel)
+        Me.HourlyGroupBox.Controls.Add(Me.PayRateTxt)
+        Me.HourlyGroupBox.Controls.Add(Me.PayHrsTxt)
+        Me.HourlyGroupBox.Location = New System.Drawing.Point(8, 219)
+        Me.HourlyGroupBox.Name = "HourlyGroupBox"
+        Me.HourlyGroupBox.Size = New System.Drawing.Size(281, 137)
+        Me.HourlyGroupBox.TabIndex = 115
+        Me.HourlyGroupBox.TabStop = False
+        Me.HourlyGroupBox.Visible = False
         '
         'employeeMGMTPayableHrsLabel
         '
@@ -618,6 +618,7 @@ Partial Class EmpManagment
         '
         'EmpManagment
         '
+        Me.AcceptButton = Me.ConLoginBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 495)
@@ -636,12 +637,12 @@ Partial Class EmpManagment
         Me.LoginGroupBox.PerformLayout()
         Me.EmployeeInfoGroupBox.ResumeLayout(False)
         Me.EmployeeInfoGroupBox.PerformLayout()
-        Me.HourlyGroupBox.ResumeLayout(False)
-        Me.HourlyGroupBox.PerformLayout()
         Me.SalariedGroupBox.ResumeLayout(False)
         Me.SalariedGroupBox.PerformLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Primary, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.HourlyGroupBox.ResumeLayout(False)
+        Me.HourlyGroupBox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
