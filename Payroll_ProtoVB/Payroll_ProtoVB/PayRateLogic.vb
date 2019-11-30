@@ -1,8 +1,8 @@
 ﻿Public Class PayRateLogic
     Function CalculateHourlyPayTaxed(hourlyPayRate As Double, numHours As Double, dependents As Integer, maritalstatus As Boolean) As Double
         Dim Pay As Double = CalculateHourlyPay(hourlyPayRate, numHours)
-        Dim TaxedPay As Double = ApplyTaxes(Pay, dependents, maritalstatus)
-
+        Dim MarriageDependentsPay As Double = ApplyMarriageDependents(Pay, dependents, maritalstatus)
+        Dim TaxedPay As Double = ApplyTaxes(MarriageDependentsPay)
         Return TaxedPay
     End Function
 
@@ -38,18 +38,21 @@
     'bracket and dependents. (Ex. Non-married, <$36,000/yr, 1 dependent
     'would be around 27-29% tax taken out.)
 
-    Function ApplyTaxes(Pay As Double, Dependents As Integer, marStatus As Boolean) As Double
-        Return Pay - CalculateTaxAmount(Dependents, marStatus)
+    Function ApplyMarriageDependents(Pay As Double, Dependents As Integer, marStatus As Boolean) As Double
+        Return Pay + CalculateBonusAmount(Dependents, marStatus)
     End Function
 
-
-    Function CalculateTaxAmount(Dependents As Integer, marStatus As Boolean) As Double
+    Function CalculateBonusAmount(Dependents As Integer, marStatus As Boolean) As Double
         If marStatus Then
             Return (Dependents * 20) + 50
         Else
             Return (Dependents * 20)
         End If
 
+    End Function
+
+    Function ApplyTaxes(Pay As Double) As Double
+        Return Pay - (Pay * 0.27)
     End Function
 
 End Class
