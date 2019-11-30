@@ -6,7 +6,9 @@
         Me.EmployeeTableAdapter.Fill(Me.Primary.Employee)
         'Chart1.DataBindTable(FeedbackLogsBindingSource, "count")
         Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Bar
-        Chart1.Series(0).Points.DataBind(EmployeeBindingSource, "hoursworked", "salary", "")
+        Chart1.Series(0).Points.DataBind(EmployeeBindingSource, "hoursworked", "hourlyrate", "")
+        Chart1.Series(0).LegendText = "Hourly Rate"
+        Chart1.Series(0).AxisLabel = "Hours Worked"
 
         'Chart1.Series["Series 1"].XValueMember = "Name"
         'Chart1.Series["Series 1"].YValueMembers = "Sales"
