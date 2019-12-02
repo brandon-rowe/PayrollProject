@@ -24,8 +24,8 @@ Partial Class PayRateCalc
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayRateCalc))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.metricsTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.dashTstripBTN = New System.Windows.Forms.ToolStripButton()
         Me.calcPayBTN = New System.Windows.Forms.ToolStripButton()
@@ -39,8 +39,7 @@ Partial Class PayRateCalc
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitBtn = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.payfrequency = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UpdateBtn = New System.Windows.Forms.Button()
         Me.GrossPayTxtBox = New System.Windows.Forms.TextBox()
         Me.NetPayTxtBox = New System.Windows.Forms.TextBox()
@@ -50,9 +49,6 @@ Partial Class PayRateCalc
         Me.TaxesTxtBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
-        Me.EmployeeFutureTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
-        Me.FeedbackLogsTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.FeedbackLogsTableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,7 +62,11 @@ Partial Class PayRateCalc
         Me.HourlyrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoursworkedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SsnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.payfrequency = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Primary = New Payroll_ProtoVB.Primary()
+        Me.EmployeeTableAdapter = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeTableAdapter()
+        Me.EmployeeFutureTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.EmployeeFutureTableAdapter()
+        Me.FeedbackLogsTableAdapter1 = New Payroll_ProtoVB.PrimaryTableAdapters.FeedbackLogsTableAdapter()
         Me.menueStrip.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,40 +175,36 @@ Partial Class PayRateCalc
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FnameDataGridViewTextBoxColumn, Me.LnameDataGridViewTextBoxColumn, Me.TitleDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.MaritalstatusDataGridViewCheckBoxColumn, Me.DependentsDataGridViewTextBoxColumn, Me.AdminDataGridViewCheckBoxColumn, Me.SalariedDataGridViewCheckBoxColumn, Me.SalaryDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.HoursworkedDataGridViewTextBoxColumn, Me.SsnDataGridViewTextBoxColumn, Me.payfrequency})
         Me.DataGridView1.DataSource = Me.EmployeeBindingSource
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke
         Me.DataGridView1.Location = New System.Drawing.Point(98, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(829, 382)
         Me.DataGridView1.TabIndex = 4
         '
-        'EmployeeBindingSource
+        'payfrequency
         '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Primary
-        '
-        'Primary
-        '
-        Me.Primary.DataSetName = "Primary"
-        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.payfrequency.DataPropertyName = "payfrequency"
+        Me.payfrequency.HeaderText = "Pay Frequency"
+        Me.payfrequency.Name = "payfrequency"
         '
         'UpdateBtn
         '
@@ -293,18 +289,6 @@ Partial Class PayRateCalc
         Me.Label5.Size = New System.Drawing.Size(14, 13)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "="
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'EmployeeFutureTableAdapter1
-        '
-        Me.EmployeeFutureTableAdapter1.ClearBeforeFill = True
-        '
-        'FeedbackLogsTableAdapter1
-        '
-        Me.FeedbackLogsTableAdapter1.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -392,11 +376,27 @@ Partial Class PayRateCalc
         Me.SsnDataGridViewTextBoxColumn.Name = "SsnDataGridViewTextBoxColumn"
         Me.SsnDataGridViewTextBoxColumn.Visible = False
         '
-        'payfrequency
+        'EmployeeBindingSource
         '
-        Me.payfrequency.DataPropertyName = "payfrequency"
-        Me.payfrequency.HeaderText = "Pay Frequency"
-        Me.payfrequency.Name = "payfrequency"
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Primary
+        '
+        'Primary
+        '
+        Me.Primary.DataSetName = "Primary"
+        Me.Primary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'EmployeeFutureTableAdapter1
+        '
+        Me.EmployeeFutureTableAdapter1.ClearBeforeFill = True
+        '
+        'FeedbackLogsTableAdapter1
+        '
+        Me.FeedbackLogsTableAdapter1.ClearBeforeFill = True
         '
         'PayRateCalc
         '

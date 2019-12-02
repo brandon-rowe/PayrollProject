@@ -92,6 +92,7 @@ Public Class PayRateCalc
                     PayDate = PayDate.AddDays(7)
                 End If
                 EmployeeFutureTableAdapter1.InsertHourlyQuery(ID, PayDate, amount, firstname, lastname, salaried, payFrequency)
+                EmployeeTableAdapter.HoursWorkedReset(ID)
             End If
             j = j + 1
         End While
@@ -106,6 +107,11 @@ Public Class PayRateCalc
             EmployeeFutureTableAdapter1.SalariedDeleteQuery(salariedDate.AddMonths(1))
         End If
 
+
+        'Reloads the form CM
+        Dim payRateCalc As New PayRateCalc
+        Me.Hide()
+        payRateCalc.Show()
 
     End Sub
 
