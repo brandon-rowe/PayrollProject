@@ -9,7 +9,6 @@ Public Class Login
     Dim state As String
     Dim zip As String
     Dim Uname As String
-    Dim UnameVryfy As String
     Dim CPword As String
     Dim VryPword As String
     Dim Pword As String

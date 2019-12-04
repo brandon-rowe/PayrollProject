@@ -74,6 +74,7 @@ Public Class Payroll
     Private Sub PayStubBTN_Click(sender As Object, e As EventArgs) Handles PayStubBTN.Click
         feedBackLogs.CountPlusOne("Payroll", "View Employee Paystub Button")
 
+
         'ATTENTION: This button should navigate to PayStub.vb
         If TabControl.SelectedTab Is PastPayTab Then
             Dim PayStub = New PayStub(PayrollDataGridViewPast.CurrentRow.Cells(1).Value, "past")
