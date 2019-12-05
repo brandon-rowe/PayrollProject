@@ -1,9 +1,12 @@
 ﻿Public Class PayRateLogic
     Function CalculateHourlyPayTaxed(hourlyPayRate As Double, numHours As Double, dependents As Integer, maritalstatus As Boolean, payfrequency As String) As Double
+        If numHours <= 0 Then
+            Return 0
+        End If
         Dim GrossPay As Double = CalculateHourlyPay(hourlyPayRate, numHours, payfrequency)
         Dim TaxedPay As Double = ApplyTaxes(GrossPay)
         Dim NetPay As Double = ApplyMarriageDependents(TaxedPay, dependents, maritalstatus)
-        Return NetPay
+        Return Math.Round(NetPay, 2)
     End Function
 
     Function CalculateHourlyPay(hourlyPayRate As Double, numHours As Double, payfrequency As String) As Double
@@ -50,6 +53,9 @@
     End Function
 
     Function CalculateBonusAmount(Dependents As Integer, marStatus As Boolean) As Double
+        If Dependents < 0 Then
+            Dependents = 0
+        End If
         If marStatus Then
             Return (Dependents * 20) + 50
         Else

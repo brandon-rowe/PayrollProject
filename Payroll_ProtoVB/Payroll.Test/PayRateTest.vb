@@ -13,7 +13,9 @@ Public Class PayRateTest
         PayRate = New PayRateLogic()
     End Sub
 
-
+    '
+    ' Tests untaxed calculations for hourly worker paid Monthly
+    '
     <TestCase(25, 10, Monthly, ExpectedResult:=250)>
     <TestCase(0, 10, Monthly, ExpectedResult:=0)>
     <TestCase(0, 0, Monthly, ExpectedResult:=0)>
@@ -27,6 +29,11 @@ Public Class PayRateTest
         Return result
     End Function
 
+
+
+    '
+    ' Tests untaxed calculations for hourly worker paid Biweekly
+    '
     <TestCase(25, 10, Biweekly, ExpectedResult:=250)>
     <TestCase(0, 10, Biweekly, ExpectedResult:=0)>
     <TestCase(0, 0, Biweekly, ExpectedResult:=0)>
@@ -40,6 +47,12 @@ Public Class PayRateTest
         Return result
     End Function
 
+
+
+    '
+    ' Tests untaxed calculations for hourly worker paid Weekly
+    '
+
     <TestCase(25, 10, Weekly, ExpectedResult:=250)>
     <TestCase(0, 10, Weekly, ExpectedResult:=0)>
     <TestCase(0, 0, Weekly, ExpectedResult:=0)>
@@ -52,22 +65,33 @@ Public Class PayRateTest
 
         Return result
     End Function
+
+
+
+    '
+    ' Tests taxed calculations for Unmarried hourly worker paid Monthly
+    '
     <TestCase(25, 10, 1, False, Monthly, ExpectedResult:=202.5)>
     <TestCase(25, 10, 0, False, Monthly, ExpectedResult:=182.5)>
     <TestCase(25, 10, -1, False, Monthly, ExpectedResult:=182.5)>
-    <TestCase(0, 10, 1, False, Monthly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, False, Monthly, ExpectedResult:=20)>
     <TestCase(0, 0, 1, False, Monthly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, False, Monthly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, False, Monthly, ExpectedResult:=0)>
     <TestCase(0, -1, 1, False, Monthly, ExpectedResult:=0)>
     <TestCase(25, 41, 1, False, Monthly, ExpectedResult:=768.25)>
-    <TestCase(25, 161, 1, False, Monthly, ExpectedResult:=2937.38)>
+    <TestCase(25, 161, 1, False, Monthly, ExpectedResult:=2967.38)>
     Function HourlyTaxedTestMonthly_UnMarried(Pay As Double, Hours As Double, Dependents As Integer, MarStatus As Boolean, PayFrequency As String) As Double
         Return PayRate.CalculateHourlyPayTaxed(Pay, Hours, Dependents, MarStatus, PayFrequency)
     End Function
 
+
+
+    '
+    ' Tests taxed calculations for Unmarried hourly worker paid Biweekly
+    '
     <TestCase(25, 10, 1, False, Biweekly, ExpectedResult:=202.5)>
-    <TestCase(0, 10, 1, False, Biweekly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, False, Biweekly, ExpectedResult:=20)>
     <TestCase(0, 0, 1, False, Biweekly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, False, Biweekly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, False, Biweekly, ExpectedResult:=0)>
@@ -78,8 +102,14 @@ Public Class PayRateTest
         Return PayRate.CalculateHourlyPayTaxed(Pay, Hours, Dependents, MarStatus, PayFrequency)
     End Function
 
+
+
+
+    '
+    ' Tests taxed calculations for Unmarried hourly worker paid Weekly
+    '
     <TestCase(25, 10, 1, False, Weekly, ExpectedResult:=202.5)>
-    <TestCase(0, 10, 1, False, Weekly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, False, Weekly, ExpectedResult:=20)>
     <TestCase(0, 0, 1, False, Weekly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, False, Weekly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, False, Weekly, ExpectedResult:=0)>
@@ -89,8 +119,13 @@ Public Class PayRateTest
         Return PayRate.CalculateHourlyPayTaxed(Pay, Hours, Dependents, MarStatus, PayFrequency)
     End Function
 
+
+
+    '
+    ' Tests taxed calculations for Married hourly worker paid Monthly
+    '
     <TestCase(25, 10, 1, True, Monthly, ExpectedResult:=252.5)>
-    <TestCase(0, 10, 1, True, Monthly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, True, Monthly, ExpectedResult:=70)>
     <TestCase(0, 0, 1, True, Monthly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, True, Monthly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, True, Monthly, ExpectedResult:=0)>
@@ -101,8 +136,13 @@ Public Class PayRateTest
         Return PayRate.CalculateHourlyPayTaxed(Pay, Hours, Dependents, MarStatus, PayFrequency)
     End Function
 
+
+
+    '
+    ' Tests taxed calculations for Married hourly worker paid Biweekly
+    '
     <TestCase(25, 10, 1, True, Biweekly, ExpectedResult:=252.5)>
-    <TestCase(0, 10, 1, True, Biweekly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, True, Biweekly, ExpectedResult:=70)>
     <TestCase(0, 0, 1, True, Biweekly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, True, Biweekly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, True, Biweekly, ExpectedResult:=0)>
@@ -113,8 +153,12 @@ Public Class PayRateTest
         Return PayRate.CalculateHourlyPayTaxed(Pay, Hours, Dependents, MarStatus, PayFrequency)
     End Function
 
+
+    '
+    ' Tests taxed calculations for Married hourly worker paid Weekly
+    '
     <TestCase(25, 10, 1, True, Weekly, ExpectedResult:=252.5)>
-    <TestCase(0, 10, 1, True, Weekly, ExpectedResult:=0)>
+    <TestCase(0, 10, 1, True, Weekly, ExpectedResult:=70)>
     <TestCase(0, 0, 1, True, Weekly, ExpectedResult:=0)>
     <TestCase(-1, 0, 1, True, Weekly, ExpectedResult:=0)>
     <TestCase(-1, -1, 1, True, Weekly, ExpectedResult:=0)>
