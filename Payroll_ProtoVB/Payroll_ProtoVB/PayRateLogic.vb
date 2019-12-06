@@ -5,7 +5,8 @@
         End If
         Dim GrossPay As Double = CalculateHourlyPay(hourlyPayRate, numHours, payfrequency)
         Dim TaxedPay As Double = ApplyTaxes(GrossPay)
-        Dim NetPay As Double = ApplyMarriageDependents(TaxedPay, dependents, maritalstatus)
+        Dim MarriageDependentsBonus As Double = ApplyMarriageDependents(GrossPay, dependents, maritalstatus)
+        Dim NetPay As Double = TaxedPay + MarriageDependentsBonus
         Return Math.Round(NetPay, 2)
     End Function
 
@@ -15,7 +16,6 @@
         Dim otHours As Double
         Dim otpay As Double
         Dim regpay As Double
-        Dim netPay As Double = 0.0
         Dim regHours As Double
         Dim grossPay As Double
 
@@ -48,20 +48,15 @@
     'bracket and dependents. (Ex. Non-married, <$36,000/yr, 1 dependent
     'would be around 27-29% tax taken out.)
 
-    Function ApplyMarriageDependents(Pay As Double, Dependents As Integer, marStatus As Boolean) As Double
-        Return Pay + CalculateBonusAmount(Dependents, marStatus)
-    End Function
-
-    Function CalculateBonusAmount(Dependents As Integer, marStatus As Boolean) As Double
+    Function ApplyMarriageDependents(GrossPay As Double, Dependents As Integer, marStatus As Boolean) As Double
         If Dependents < 0 Then
             Dependents = 0
         End If
         If marStatus Then
-            Return (Dependents * 20) + 50
+            Return ((GrossPay * 0.02) * Dependents) + (GrossPay * 0.02)
         Else
-            Return (Dependents * 20)
+            Return ((GrossPay * 0.02) * Dependents)
         End If
-
     End Function
 
     Function ApplyTaxes(Pay As Double) As Double

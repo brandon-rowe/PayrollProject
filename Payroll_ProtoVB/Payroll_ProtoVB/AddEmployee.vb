@@ -26,7 +26,6 @@ Public Class AddEmployee
     Dim admin As Boolean
     Dim PayRate As String
     Dim HoursWorked As String
-    Dim PaymentID As Integer
     Dim PayFrequency As String
     Dim PayDate As DateTime
     Dim returnForm As String
@@ -143,9 +142,8 @@ Public Class AddEmployee
                         PayDate = futureTA.PayFrequencyDate("Weekly")
                     End If
 
-                    'Update and automate ID assignment by incrementing the number of rows
-                    ID = employTA.CountRows() + 1
-                    PaymentID = futureTA.CountRows() + 1
+                    'Update and automate ID assignment by incrementing the maximum ID value by one
+                    ID = employTA.MaxID() + 1
 
 
                     FnameTxt.Clear()
@@ -181,7 +179,8 @@ Public Class AddEmployee
                         If (status = True) Then
                             statusInt = 1
                         End If
-                        futureTA.InsertQuery(ID, PayDate, (nPayRate - (nPayRate * 0.27) + (statusInt * 50 + CInt(dependents) * 20)) / 12, Fname, Lname, 1, PayFrequency)
+
+                        futureTA.InsertQuery(ID, PayDate, (nPayRate - (nPayRate * 0.27) + ((nPayRate * 0.02) * CInt(dependents)) + (statusInt * (nPayRate * 0.02))) / 12, Fname, Lname, 1, PayFrequency)
                     Else
                         employTA.InsertQuery(ID, Fname, Lname, position, address, status, dependents, admin, paymentType, 0, PayRate, HoursWorked, ssn, Uname, Pass, PayFrequency)
                         futureTA.InsertQuery(ID, PayDate, payRateLogic.CalculateHourlyPayTaxed(nPayRate, nHoursWorked, dependents, status, PayFrequency), Fname, Lname, 0, PayFrequency)
