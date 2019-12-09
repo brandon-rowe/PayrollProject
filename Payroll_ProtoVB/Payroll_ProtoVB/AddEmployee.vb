@@ -63,10 +63,6 @@ Public Class AddEmployee
         InitializeComponent()
         returnForm = nReturnForm
     End Sub
-
-
-
-
     Private Sub AddEmpBtn_Click(sender As Object, e As EventArgs) Handles AddEmpBtn.Click
         feedBackLogs.CountPlusOne("AddEmployee", "Add Employee Button")
         'ATTENTION: This button should remain on AddEmployee.vb 

@@ -70,8 +70,10 @@ Public Class Login
     End Sub
 
     Private Sub createAdmin_Click(sender As Object, e As EventArgs) Handles createAdminBtn.Click
+        'Increasing the count of the "Create Admin" button in the database by one.
         feedBackLogs.CountPlusOne("Login", "Create Admin Button")
 
+        'If less than one employee (empty database) then allow creation of new admin
         If (empTA.CountRows < 1) Then
             AddEmployee.Show()
         Else
